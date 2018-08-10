@@ -1,0 +1,518 @@
+[
+    {
+        "Driver": {
+            "Description": "", 
+            "Enable": "true", 
+            "GroupType": "HREG_GROUP_TYPE_HAL", 
+            "Header": "System.h", 
+            "Instances": 1, 
+            "Name": "System"
+        }
+    }, 
+    {
+        "Hreg": {
+            "Description": "System : Power Up reason", 
+            "Enable": "true", 
+            "InitValue": "SYSTEM_FIRST_POWER_UP", 
+            "MaxValue": "SYSTEM_MAX_POWER_UP_REASONS", 
+            "MinValue": "SYSTEM_FIRST_POWER_UP", 
+            "NVM": "false", 
+            "Name": "powerUpReason", 
+            "OnRead": "false", 
+            "OnReadBody": "", 
+            "OnWrite": "false", 
+            "OnWriteBody": "", 
+            "TypeValue": "uint8_t"
+        }
+    }, 
+    {
+        "Hreg": {
+            "Description": "System: Power mode", 
+            "Enable": "true", 
+            "InitValue": "0", 
+            "MaxValue": "SYSTEM_MAX_POWER_MODES", 
+            "MinValue": "SYSTEM_EXECUTE_BOOTLOADER", 
+            "NVM": "false", 
+            "Name": "powerMode", 
+            "OnRead": "false", 
+            "OnReadBody": "", 
+            "OnWrite": "true", 
+            "OnWriteBody": "", 
+            "TypeValue": "uint8_t"
+        }
+    }, 
+    {
+        "Hreg": {
+            "Description": "System: Date info: Year, Month, Day and WeekDay", 
+            "Enable": "true", 
+            "InitValue": "0", 
+            "MaxValue": "0xFFFFFFFF", 
+            "MinValue": 0, 
+            "NVM": "false", 
+            "Name": "date", 
+            "OnRead": "true", 
+            "OnReadBody": "", 
+            "OnWrite": "true", 
+            "OnWriteBody": "", 
+            "TypeValue": "uint32_t"
+        }
+    }, 
+    {
+        "Hreg": {
+            "Description": "System: Time info: Hour, Minute, Second and Subseconds", 
+            "Enable": "true", 
+            "InitValue": "0", 
+            "MaxValue": "0xFFFFFFFF", 
+            "MinValue": 0, 
+            "NVM": "false", 
+            "Name": "time", 
+            "OnRead": "true", 
+            "OnReadBody": "", 
+            "OnWrite": "true", 
+            "OnWriteBody": "", 
+            "TypeValue": "uint32_t"
+        }
+    }, 
+    {
+        "Driver": {
+            "Description": "", 
+            "Enable": "true", 
+            "GroupType": "HREG_GROUP_TYPE_HAL", 
+            "Header": "Flash.h", 
+            "Instances": "NUM_OF_FLASH", 
+            "Name": "Flash"
+        }
+    }, 
+    {
+        "Hreg": {
+            "Description": "Flash: Size", 
+            "Enable": "true", 
+            "InitValue": "0", 
+            "MaxValue": "0xFFFFFFFF", 
+            "MinValue": 0, 
+            "NVM": "false", 
+            "Name": "size", 
+            "OnRead": "true", 
+            "OnReadBody": "", 
+            "OnWrite": "false", 
+            "OnWriteBody": "", 
+            "TypeValue": "uint32_t"
+        }
+    }, 
+    {
+        "Hreg": {
+            "Description": "Flash: Data", 
+            "Enable": "true", 
+            "InitValue": "0", 
+            "MaxValue": "0xFFFF", 
+            "MinValue": 0, 
+            "NVM": "false", 
+            "Name": "data", 
+            "OnRead": "true", 
+            "OnReadBody": "", 
+            "OnWrite": "true", 
+            "OnWriteBody": "", 
+            "TypeValue": "uint16_t"
+        }
+    }, 
+    {
+        "Hreg": {
+            "Description": "Flash: Offset", 
+            "Enable": "true", 
+            "InitValue": "0", 
+            "MaxValue": "0xFFFFFFFF", 
+            "MinValue": 0, 
+            "NVM": "false", 
+            "Name": "offset", 
+            "OnRead": "false", 
+            "OnReadBody": "", 
+            "OnWrite": "false", 
+            "OnWriteBody": "", 
+            "TypeValue": "uint32_t"
+        }
+    }, 
+    {
+        "Driver": {
+            "Description": "", 
+            "Enable": "true", 
+            "GroupType": "HREG_GROUP_TYPE_HAL", 
+            "Header": "GPIO.h", 
+            "Instances": "NUM_OF_GPIO", 
+            "Name": "GPIO"
+        }
+    }, 
+    {
+        "Hreg": {
+            "Description": "GPIO: Value", 
+            "Enable": "true", 
+            "InitValue": "GPIO_LOW", 
+            "MaxValue": "GPIO_TOGGLE", 
+            "MinValue": "GPIO_LOW", 
+            "NVM": "false", 
+            "Name": "value", 
+            "OnRead": "true", 
+            "OnReadBody": "", 
+            "OnWrite": "true", 
+            "OnWriteBody": "", 
+            "TypeValue": "uint8_t"
+        }
+    }, 
+    {
+        "Driver": {
+            "Description": "", 
+            "Enable": "true", 
+            "GroupType": "HREG_GROUP_TYPE_HAL", 
+            "Header": "Uart.h", 
+            "Instances": "NUM_OF_UART", 
+            "Name": "Uart"
+        }
+    }, 
+    {
+        "Hreg": {
+            "Description": "UART: Buffer Size of data to read or write", 
+            "Enable": "true", 
+            "InitValue": "0", 
+            "MaxValue": "0xFFFFFFFF", 
+            "MinValue": 0, 
+            "NVM": "false", 
+            "Name": "bufferSize", 
+            "OnRead": "true", 
+            "OnReadBody": "", 
+            "OnWrite": "true", 
+            "OnWriteBody": "", 
+            "TypeValue": "uint32_t"
+        }
+    }, 
+    {
+        "Hreg": {
+            "Description": "UART: Pointer to data to send", 
+            "Enable": "true", 
+            "InitValue": "0", 
+            "MaxValue": "0xFFFFFFFF", 
+            "MinValue": 0, 
+            "NVM": "false", 
+            "Name": "data", 
+            "OnRead": "true", 
+            "OnReadBody": "", 
+            "OnWrite": "true", 
+            "OnWriteBody": "", 
+            "TypeValue": "uint32_t"
+        }
+    }, 
+    {
+        "Hreg": {
+            "Description": "UART: Status", 
+            "Enable": "true", 
+            "InitValue": "0", 
+            "MaxValue": "NUM_OF_RET_ERRORS", 
+            "MinValue": 0, 
+            "NVM": "false", 
+            "Name": "status", 
+            "OnRead": "true", 
+            "OnReadBody": "", 
+            "OnWrite": "false", 
+            "OnWriteBody": "", 
+            "TypeValue": "uint8_t"
+        }
+    }, 
+    {
+        "Driver": {
+            "Description": "", 
+            "Enable": "true", 
+            "GroupType": "HREG_GROUP_TYPE_HAL", 
+            "Header": "Spi.h", 
+            "Instances": "NUM_OF_SPI", 
+            "Name": "Spi"
+        }
+    }, 
+    {
+        "Hreg": {
+            "Description": "SPI: Buffer Size of data to read or write", 
+            "Enable": "true", 
+            "InitValue": "0", 
+            "MaxValue": "0xFFFFFFFF", 
+            "MinValue": 0, 
+            "NVM": "false", 
+            "Name": "bufferSize", 
+            "OnRead": "true", 
+            "OnReadBody": "", 
+            "OnWrite": "true", 
+            "OnWriteBody": "", 
+            "TypeValue": "uint32_t"
+        }
+    }, 
+    {
+        "Hreg": {
+            "Description": "SPI: pointer to data to send", 
+            "Enable": "true", 
+            "InitValue": "0", 
+            "MaxValue": "0xFFFFFFFF", 
+            "MinValue": 0, 
+            "NVM": "false", 
+            "Name": "data", 
+            "OnRead": "true", 
+            "OnReadBody": "", 
+            "OnWrite": "true", 
+            "OnWriteBody": "", 
+            "TypeValue": "uint32_t"
+        }
+    }, 
+    {
+        "Hreg": {
+            "Description": "SPI: Status", 
+            "Enable": "true", 
+            "InitValue": "0", 
+            "MaxValue": "NUM_OF_RET_ERRORS", 
+            "MinValue": 0, 
+            "NVM": "false", 
+            "Name": "status", 
+            "OnRead": "true", 
+            "OnReadBody": "", 
+            "OnWrite": "false", 
+            "OnWriteBody": "", 
+            "TypeValue": "uint8_t"
+        }
+    }, 
+    {
+        "Driver": {
+            "Description": "", 
+            "Enable": "true", 
+            "GroupType": "HREG_GROUP_TYPE_HAL", 
+            "Header": "Interrupts.h", 
+            "Instances": "NUM_OF_INT", 
+            "Name": "Interrupts"
+        }
+    }, 
+    {
+        "Hreg": {
+            "Description": "IRQ: State of IRQ Chaneel to read or write", 
+            "Enable": "true", 
+            "InitValue": "IRQ_DISABLE", 
+            "MaxValue": "IRQ_ENABLE", 
+            "MinValue": "IRQ_DISABLE", 
+            "NVM": "false", 
+            "Name": "state", 
+            "OnRead": "true", 
+            "OnReadBody": "", 
+            "OnWrite": "true", 
+            "OnWriteBody": "", 
+            "TypeValue": "uint8_t"
+        }
+    }, 
+    {
+        "Driver": {
+            "Description": "", 
+            "Enable": "true", 
+            "GroupType": "HREG_GROUP_TYPE_DEVICE_DRIVER", 
+            "Header": "Buttons.h", 
+            "Instances": "NUM_OF_BUTTONS", 
+            "Name": "Buttons"
+        }
+    }, 
+    {
+        "Hreg": {
+            "Description": "Buttons: State", 
+            "Enable": "true", 
+            "InitValue": "0", 
+            "MaxValue": "0XFFFF", 
+            "MinValue": 0, 
+            "NVM": "false", 
+            "Name": "state", 
+            "OnRead": "true", 
+            "OnReadBody": "", 
+            "OnWrite": "false", 
+            "OnWriteBody": "", 
+            "TypeValue": "uint16_t"
+        }
+    }, 
+    {
+        "Driver": {
+            "Description": "", 
+            "Enable": "true", 
+            "GroupType": "HREG_GROUP_TYPE_DEVICE_DRIVER", 
+            "Header": "Leds.h", 
+            "Instances": "NUMBER_OF_LEDS", 
+            "Name": "Leds"
+        }
+    }, 
+    {
+        "Hreg": {
+            "Description": "Leds: Effect", 
+            "Enable": "true", 
+            "InitValue": "0", 
+            "MaxValue": "NUM_OF_LED_EFFECT", 
+            "MinValue": 0, 
+            "NVM": "false", 
+            "Name": "effect", 
+            "OnRead": "true", 
+            "OnReadBody": "", 
+            "OnWrite": "true", 
+            "OnWriteBody": "", 
+            "TypeValue": "uint16_t"
+        }
+    }, 
+    {
+        "Hreg": {
+            "Description": "Leds: State", 
+            "Enable": "true", 
+            "InitValue": "0", 
+            "MaxValue": "LED_NUM_OF_STATES", 
+            "MinValue": 0, 
+            "NVM": "false", 
+            "Name": "state", 
+            "OnRead": "true", 
+            "OnReadBody": "", 
+            "OnWrite": "true", 
+            "OnWriteBody": "", 
+            "TypeValue": "uint16_t"
+        }
+    }, 
+    {
+        "Driver": {
+            "Description": "", 
+            "Enable": "true", 
+            "GroupType": "HREG_GROUP_TYPE_DEVICE_DRIVER", 
+            "Header": "SwTimer.h", 
+            "Instances": "NUM_OF_SW_TIMER", 
+            "Name": "SwTimer"
+        }
+    }, 
+    {
+        "Hreg": {
+            "Description": "SwTimer: Callback Function", 
+            "Enable": "true", 
+            "InitValue": "0", 
+            "MaxValue": "0xFFFFFFFF", 
+            "MinValue": 0, 
+            "NVM": "false", 
+            "Name": "callbackFunction", 
+            "OnRead": "false", 
+            "OnReadBody": "", 
+            "OnWrite": "true", 
+            "OnWriteBody": "", 
+            "TypeValue": "uint32_t"
+        }
+    }, 
+    {
+        "Hreg": {
+            "Description": "SwTimer: GetPending", 
+            "Enable": "true", 
+            "InitValue": "0", 
+            "MaxValue": "0xFFFFFFFF", 
+            "MinValue": 0, 
+            "NVM": "false", 
+            "Name": "getPending", 
+            "OnRead": "true", 
+            "OnReadBody": "", 
+            "OnWrite": "false", 
+            "OnWriteBody": "", 
+            "TypeValue": "uint32_t"
+        }
+    }, 
+    {
+        "Hreg": {
+            "Description": "SwTimer: state", 
+            "Enable": "true", 
+            "InitValue": "0", 
+            "MaxValue": "SW_TIMER_NUM_OF_STATES", 
+            "MinValue": 0, 
+            "NVM": "false", 
+            "Name": "state", 
+            "OnRead": "true", 
+            "OnReadBody": "", 
+            "OnWrite": "true", 
+            "OnWriteBody": "", 
+            "TypeValue": "uint8_t"
+        }
+    }, 
+    {
+        "Hreg": {
+            "Description": "SwTimer: GetElapsed", 
+            "Enable": "true", 
+            "InitValue": "0", 
+            "MaxValue": "0xFFFFFFFF", 
+            "MinValue": 0, 
+            "NVM": "false", 
+            "Name": "getElapsed", 
+            "OnRead": "true", 
+            "OnReadBody": "", 
+            "OnWrite": "false", 
+            "OnWriteBody": "", 
+            "TypeValue": "uint32_t"
+        }
+    }, 
+    {
+        "Hreg": {
+            "Description": "SwTimer: Set", 
+            "Enable": "true", 
+            "InitValue": "0", 
+            "MaxValue": "0xFFFFFFFF", 
+            "MinValue": 0, 
+            "NVM": "false", 
+            "Name": "set", 
+            "OnRead": "false", 
+            "OnReadBody": "", 
+            "OnWrite": "true", 
+            "OnWriteBody": "", 
+            "TypeValue": "uint32_t"
+        }
+    }, 
+    {
+        "Driver": {
+            "Description": "", 
+            "Enable": "true", 
+            "GroupType": "HREG_GROUP_TYPE_EEPROM", 
+            "Header": "VirtualEeprom.h", 
+            "Instances": "NUM_OF_VIRTUAL_EEPROMS", 
+            "Name": "VirtualEEPROM"
+        }
+    }, 
+    {
+        "Hreg": {
+            "Description": "Virtual EEPROM: Register", 
+            "Enable": "true", 
+            "InitValue": "0", 
+            "MaxValue": "0xFFFF", 
+            "MinValue": 0, 
+            "NVM": "false", 
+            "Name": "register", 
+            "OnRead": "false", 
+            "OnReadBody": "", 
+            "OnWrite": "false", 
+            "OnWriteBody": "", 
+            "TypeValue": "uint16_t"
+        }
+    }, 
+    {
+        "Hreg": {
+            "Description": "Virtual EEPROM: InstanceReg", 
+            "Enable": "true", 
+            "InitValue": "0", 
+            "MaxValue": "0xFFFF", 
+            "MinValue": 0, 
+            "NVM": "false", 
+            "Name": "instanceReg", 
+            "OnRead": "false", 
+            "OnReadBody": "", 
+            "OnWrite": "false", 
+            "OnWriteBody": "", 
+            "TypeValue": "uint16_t"
+        }
+    }, 
+    {
+        "Hreg": {
+            "Description": "EEPROM: Data", 
+            "Enable": "true", 
+            "InitValue": "0", 
+            "MaxValue": "0xFFFFFFFF", 
+            "MinValue": 0, 
+            "NVM": "false", 
+            "Name": "data", 
+            "OnRead": "true", 
+            "OnReadBody": "", 
+            "OnWrite": "true", 
+            "OnWriteBody": "", 
+            "TypeValue": "uint32_t"
+        }
+    }
+]

@@ -1,0 +1,14 @@
+
+
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+SREG                                               Max                            Min                            init                          
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+0     SREG_HW_ID                                         0xFF                           0                              HW_VERSION                    
+1     SREG_FW_MAJOR_VERSION                              0xFF                           0                              FW_MAJOR_VERSION              
+2     SREG_FW_MINOR_VERSION                              0xFF                           0                              FW_MINOR_VERSION              
+3     SREG_FW_PATCH_VERSION                              0xFF                           0                              FW_RC_VERSION                 
+4     SREG_SYSTEM_STATE                                  SYSTEM_APP_MAX_STATES          SYSTEM_APP_INIT_SHELL          SYSTEM_APP_INIT_SHELL         
+5     SREG_SYSTEM_MW_NOTIF                               NOTIF_SYSTEM_MW_MAX_NOTIF      NOTIF_SYSTEM_MW_NO_REQUEST     NOTIF_SYSTEM_MW_NO_REQUEST    
+6     SREG_NUMBER_OF_POWER_UPS                           0xFFFFFFFF                     0                              0                             
+7     SREG_WORKING_HOURS                                 0xFFFFFFFF                     0                              0                             
+8     SREG_ALARM_I2C                                     1                              0                              0                             

@@ -1,0 +1,60 @@
+[
+	{
+		"Driver" : {
+			"Enable": "true",
+			"Description": "",
+			"Name": "VirtualEEPROM",
+			"Header": "VirtualEeprom.h",
+            "Instances": "NUM_OF_VIRTUAL_EEPROMS",
+			"GroupType": "HREG_GROUP_TYPE_EEPROM"
+		}
+	},
+	{
+		"Hreg" : {
+			"NVM": "false",
+			"MaxValue": "0xFFFF",
+			"Enable": "true",
+			"Description": "Virtual EEPROM: Register",
+			"OnWriteBody": "",
+			"OnRead": "false",
+			"OnWrite": "false",
+			"Name": "register",
+			"MinValue": "0",
+			"OnReadBody": "",
+			"InitValue": "0",
+			"TypeValue": "uint16_t"
+		}
+	},
+    {
+		"Hreg" : {
+			"NVM": "false",
+			"MaxValue": "0xFFFF",
+			"Enable": "true",
+			"Description": "Virtual EEPROM: InstanceReg",
+			"OnWriteBody": "",
+			"OnRead": "false",
+			"OnWrite": "false",
+			"Name": "instanceReg",
+			"MinValue": "0",
+			"OnReadBody": "",
+			"InitValue": "0",
+			"TypeValue": "uint16_t"
+		}
+	},
+	{
+		"Hreg" : {
+			"NVM": "false",
+			"MaxValue": "0xFFFFFFFF",
+			"Enable": "true",
+			"Description": "EEPROM: Data",
+			"OnWriteBody": "",
+			"OnRead": "true",
+			"OnWrite": "true",
+			"Name": "data",
+			"MinValue": "0",
+			"OnReadBody": "",
+			"InitValue": "0",
+			"TypeValue": "uint32_t"
+		}
+	}
+]

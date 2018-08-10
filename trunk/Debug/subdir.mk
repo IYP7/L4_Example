@@ -1,0 +1,1 @@
+EXECUTABLES := L4_Example_Project.elf

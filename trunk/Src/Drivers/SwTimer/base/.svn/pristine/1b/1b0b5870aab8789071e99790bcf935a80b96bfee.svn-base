@@ -1,0 +1,92 @@
+[
+	{
+		"Driver" : {
+			"Enable": "true",
+			"Description": "",
+			"Name": "SwTimer",
+			"Header": "SwTimer.h",
+            "Instances": "NUM_OF_SW_TIMER",
+			"GroupType": "HREG_GROUP_TYPE_DEVICE_DRIVER"
+		}
+	},
+	{
+		"Hreg" : {
+			"NVM": "false",
+			"MaxValue": "0xFFFFFFFF",
+			"Enable": "true",
+			"Description": "SwTimer: Callback Function",
+			"OnWriteBody": "",
+			"OnRead": "false",
+			"OnWrite": "true",
+			"Name": "callbackFunction",
+			"MinValue": "0",
+			"OnReadBody": "",
+			"InitValue": "0",
+			"TypeValue": "uint32_t"
+		}
+	},
+	{
+		"Hreg" : {
+			"NVM": "false",
+			"MaxValue": "0xFFFFFFFF",
+			"Enable": "true",
+			"Description": "SwTimer: GetPending",
+			"OnWriteBody": "",
+			"OnRead": "true",
+			"OnWrite": "false",
+			"Name": "getPending",
+			"MinValue": "0",
+			"OnReadBody": "",
+			"InitValue": "0",
+			"TypeValue": "uint32_t"
+		}
+	},
+	{
+		"Hreg" : {
+			"NVM": "false",
+			"MaxValue": "SW_TIMER_NUM_OF_STATES",
+			"Enable": "true",
+			"Description": "SwTimer: state",
+			"OnWriteBody": "",
+			"OnRead": "true",
+			"OnWrite": "true",
+			"Name": "state",
+			"MinValue": "0",
+			"OnReadBody": "",
+			"InitValue": "0",
+			"TypeValue": "uint8_t"
+		}
+	},
+	{
+		"Hreg" : {
+			"NVM": "false",
+			"MaxValue": "0xFFFFFFFF",
+			"Enable": "true",
+			"Description": "SwTimer: GetElapsed",
+			"OnWriteBody": "",
+			"OnRead": "true",
+			"OnWrite": "false",
+			"Name": "getElapsed",
+			"MinValue": "0",
+			"OnReadBody": "",
+			"InitValue": "0",
+			"TypeValue": "uint32_t"
+		}
+	},
+	{
+		"Hreg" : {
+			"NVM": "false",
+			"MaxValue": "0xFFFFFFFF",
+			"Enable": "true",
+			"Description": "SwTimer: Set",
+			"OnWriteBody": "",
+			"OnRead": "false",
+			"OnWrite": "true",
+			"Name": "set",
+			"MinValue": "0",
+			"OnReadBody": "",
+			"InitValue": "0",
+			"TypeValue": "uint32_t"
+		}
+	}
+]

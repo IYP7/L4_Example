@@ -1,0 +1,44 @@
+[
+	{
+		"Driver" : {
+			"Enable": "true",
+			"Description": "",
+			"Name": "Leds",
+			"Header": "Leds.h",
+            "Instances": "NUMBER_OF_LEDS",
+			"GroupType": "HREG_GROUP_TYPE_DEVICE_DRIVER"
+		}
+	},
+	{
+		"Hreg" : {
+			"NVM": "false",
+			"MaxValue": "NUM_OF_LED_EFFECT",
+			"Enable": "true",
+			"Description": "Leds: Effect",
+			"OnWriteBody": "",
+			"OnRead": "true",
+			"OnWrite": "true",
+			"Name": "effect",
+			"MinValue": "0",
+			"OnReadBody": "",
+			"InitValue": "0",
+			"TypeValue": "uint16_t"
+		}
+	},
+	{
+		"Hreg" : {
+			"NVM": "false",
+			"MaxValue": "LED_NUM_OF_STATES",
+			"Enable": "true",
+			"Description": "Leds: State",
+			"OnWriteBody": "",
+			"OnRead": "true",
+			"OnWrite": "true",
+			"Name": "state",
+			"MinValue": "0",
+			"OnReadBody": "",
+			"InitValue": "0",
+			"TypeValue": "uint16_t"
+		}
+	}
+]

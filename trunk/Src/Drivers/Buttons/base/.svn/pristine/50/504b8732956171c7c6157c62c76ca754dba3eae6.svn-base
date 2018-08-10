@@ -1,0 +1,28 @@
+[
+	{
+		"Driver" : {
+			"Enable": "true",
+			"Description": "",
+			"Name": "Buttons",
+			"Header": "Buttons.h",
+            "Instances": "NUM_OF_BUTTONS",
+			"GroupType": "HREG_GROUP_TYPE_DEVICE_DRIVER"
+		}
+	},
+	{
+		"Hreg" : {
+			"NVM": "false",
+			"MaxValue": "0XFFFF",
+			"Enable": "true",
+			"Description": "Buttons: State",
+			"OnWriteBody": "",
+			"OnRead": "true",
+			"OnWrite": "false",
+			"Name": "state",
+			"MinValue": "0",
+			"OnReadBody": "",
+			"InitValue": "0",
+			"TypeValue": "uint16_t"
+		}
+	}
+]

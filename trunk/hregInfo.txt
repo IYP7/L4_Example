@@ -1,0 +1,71 @@
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+Module               Instances                      HREG                                     MaxValue                       MinValue                       initValue                      EEPROM                        
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+SYSTEM                                              0 HREG_SYSTEM_POWER_UP_REASON            SYSTEM_MAX_POWER_UP_REASONS    SYSTEM_FIRST_POWER_UP          SYSTEM_FIRST_POWER_UP          false                         
+                                                    1 HREG_SYSTEM_POWER_MODE                 SYSTEM_MAX_POWER_MODES         SYSTEM_EXECUTE_BOOTLOADER      0                              false                         
+                                                    2 HREG_SYSTEM_DATE                       0xFFFFFFFF                     0                              0                              false                         
+                                                    3 HREG_SYSTEM_TIME                       0xFFFFFFFF                     0                              0                              false                         
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+FLASH                0 FLASH_PROGRAM                4 HREG_FLASH_SIZE                        0xFFFFFFFF                     0                              0                              false                         
+                     1 FLASH_EEPROM_1               5 HREG_FLASH_DATA                        0xFFFF                         0                              0                              false                         
+                     2 FLASH_EEPROM_2               6 HREG_FLASH_OFFSET                      0xFFFFFFFF                     0                              0                              false                         
+                     3 FLASH_DATA_1                                                                                                                       
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+GPIO                 0 GPIO_LED_2                   7 HREG_GPIO_VALUE                        GPIO_TOGGLE                    GPIO_LOW                       GPIO_LOW                       false                         
+                     1 GPIO_BUTTON_B1                                                                                                                     
+                     2 GPIO_PWM                                                                                                                           
+                     3 GPIO_PWM_2                                                                                                                         
+                     4 GPIO_BUTTON_B2                                                                                                                     
+                     5 GPIO_BUTTON_B3                                                                                                                     
+                     6 GPIO_LED_1                                                                                                                         
+                     7 GPIO_UART1_TX                                                                                                                      
+                     8 GPIO_UART1_RX                                                                                                                      
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+UART                 0 UART_2                       8 HREG_UART_BUFFER_SIZE                  0xFFFFFFFF                     0                              0                              false                         
+                                                    9 HREG_UART_DATA                         0xFFFFFFFF                     0                              0                              false                         
+                                                    10 HREG_UART_STATUS                      NUM_OF_RET_ERRORS              0                              0                              false                         
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+SPI                  0 SPI_HMI_DISPLAY              11 HREG_SPI_BUFFER_SIZE                  0xFFFFFFFF                     0                              0                              false                         
+                                                    12 HREG_SPI_DATA                         0xFFFFFFFF                     0                              0                              false                         
+                                                    13 HREG_SPI_STATUS                       NUM_OF_RET_ERRORS              0                              0                              false                         
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+INTERRUPTS           0 IRQ_SYSTICK                  14 HREG_INTERRUPTS_STATE                                                                                                                                            
+                     1 IRQ_RTC                                                                                                                            
+                     2 IRQ_EXTI                                                                                                                           
+                     3 IRQ_EXTI1                                                                                                                          
+                     4 IRQ_EXTI9_5                                                                                                                        
+                     5 IRQ_ADC1                                                                                                                           
+                     6 IRQ_TIM2                                                                                                                           
+                     7 IRQ_TIM3                                                                                                                           
+                     8 IRQ_USART1                                                                                                                         
+                     9 IRQ_USART2                                                                                                                         
+                     10 IRQ_I2C1                                                                                                                          
+                     11 IRQ_I2C2                                                                                                                          
+                     12 IRQ_SPI1                                                                                                                          
+                     13 IRQ_SPI2                                                                                                                          
+                     14 IRQ_ALL                                                                                                                           
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+BUTTONS              0 BUTTON_INC_TIME              15 HREG_BUTTONS_STATE                    0XFFFF                         0                              0                              false                         
+                     1 BUTTON_DEC_TIME                                                                                                                    
+                     2 BUTTON_RESET_MODE                                                                                                                  
+                     3 BUTTON_RELEASE_TEST                                                                                                                
+                     4 BUTTON_ENCODER_INC                                                                                                                 
+                     5 BUTTON_ENCODER_DEC                                                                                                                 
+                     6 BUTTON_ADC_TEST                                                                                                                    
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+LEDS                 0 LED_TEST_1                   16 HREG_LEDS_EFFECT                      NUM_OF_LED_EFFECT              0                              0                              false                         
+                     1 LED_TEST_2                   17 HREG_LEDS_STATE                       LED_NUM_OF_STATES              0                              0                              false                         
+                     2 _TIMER_H                                                                                                                           
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+SWTIMER                                             18 HREG_SWTIMER_CALLBACK_FUNCTION        0xFFFFFFFF                     0                              0                              false                         
+                                                    19 HREG_SWTIMER_GET_PENDING              0xFFFFFFFF                     0                              0                              false                         
+                                                    20 HREG_SWTIMER_STATE                    SW_TIMER_NUM_OF_STATES         0                              0                              false                         
+                                                    21 HREG_SWTIMER_GET_ELAPSED              0xFFFFFFFF                     0                              0                              false                         
+                                                    22 HREG_SWTIMER_SET                      0xFFFFFFFF                     0                              0                              false                         
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+VIRTUALEEPROM        0 EEPROM_HREG                  23 HREG_VIRTUALEEPROM_REGISTER           0xFFFF                         0                              0                              false                         
+                     1 EEPROM_SREG_FACTORY          24 HREG_VIRTUALEEPROM_INSTANCE_REG       0xFFFF                         0                              0                              false                         
+                     2 EEPROM_SREG_CALIBRATION      25 HREG_VIRTUALEEPROM_DATA                                                                                                                                          
+                     3 EEPROM_SREG_USER                                                                                                                   
+                     4 EEPROM_DATA_OTHER                                                                                                                  
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------

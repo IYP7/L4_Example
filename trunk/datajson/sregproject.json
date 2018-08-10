@@ -1,0 +1,110 @@
+[
+    {
+        "Sreg": {
+            "enable": "true", 
+            "init": "HW_VERSION", 
+            "max": "0xFF", 
+            "min": 0, 
+            "name": "HwId", 
+            "nvm": "false", 
+            "nvmtype": "SREG_NO_STORAGE", 
+            "typevalue": "uint8_t"
+        }
+    }, 
+    {
+        "Sreg": {
+            "enable": "true", 
+            "init": "FW_MAJOR_VERSION", 
+            "max": "0xFF", 
+            "min": 0, 
+            "name": "FwMajorVersion", 
+            "nvm": "false", 
+            "nvmtype": "SREG_NO_STORAGE", 
+            "typevalue": "uint8_t"
+        }
+    }, 
+    {
+        "Sreg": {
+            "enable": "true", 
+            "init": "FW_MINOR_VERSION", 
+            "max": "0xFF", 
+            "min": 0, 
+            "name": "FwMinorVersion", 
+            "nvm": "false", 
+            "nvmtype": "SREG_NO_STORAGE", 
+            "typevalue": "uint8_t"
+        }
+    }, 
+    {
+        "Sreg": {
+            "enable": "true", 
+            "init": "FW_RC_VERSION", 
+            "max": "0xFF", 
+            "min": 0, 
+            "name": "FwPatchVersion", 
+            "nvm": "false", 
+            "nvmtype": "SREG_NO_STORAGE", 
+            "typevalue": "uint8_t"
+        }
+    }, 
+    {
+        "Sreg": {
+            "enable": "true", 
+            "init": "SYSTEM_APP_INIT_SHELL", 
+            "max": "SYSTEM_APP_MAX_STATES", 
+            "min": "SYSTEM_APP_INIT_SHELL", 
+            "name": "SystemState", 
+            "nvm": "false", 
+            "nvmtype": "SREG_NO_STORAGE", 
+            "typevalue": "uint8_t"
+        }
+    }, 
+    {
+        "Sreg": {
+            "enable": "true", 
+            "init": "NOTIF_SYSTEM_MW_NO_REQUEST", 
+            "max": "NOTIF_SYSTEM_MW_MAX_NOTIF", 
+            "min": "NOTIF_SYSTEM_MW_NO_REQUEST", 
+            "name": "SystemMwNotif", 
+            "nvm": "false", 
+            "nvmtype": "SREG_NO_STORAGE", 
+            "typevalue": "uint8_t"
+        }
+    }, 
+    {
+        "Sreg": {
+            "enable": "true", 
+            "init": "0", 
+            "max": "0xFFFFFFFF", 
+            "min": 0, 
+            "name": "NumberOfPowerUps", 
+            "nvm": "false", 
+            "nvmtype": "SREG_NO_STORAGE", 
+            "typevalue": "uint32_t"
+        }
+    }, 
+    {
+        "Sreg": {
+            "enable": "true", 
+            "init": "0", 
+            "max": "0xFFFFFFFF", 
+            "min": 0, 
+            "name": "WorkingHours", 
+            "nvm": "false", 
+            "nvmtype": "SREG_NO_STORAGE", 
+            "typevalue": "uint32_t"
+        }
+    }, 
+    {
+        "Sreg": {
+            "enable": "true", 
+            "init": "0", 
+            "max": "1", 
+            "min": "0", 
+            "name": "AlarmI2c", 
+            "nvm": "false", 
+            "nvmtype": "SREG_NO_STORAGE", 
+            "typevalue": "uint8_t"
+        }
+    }
+]
