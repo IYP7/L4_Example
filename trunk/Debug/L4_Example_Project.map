@@ -1,0 +1,2075 @@
+Archive member included because of file (symbol)
+
+c:/program files (x86)/atollic/truestudio for arm 5.4.1/armtools/bin/../lib/gcc/arm-atollic-eabi/4.8.3/../../../../arm-atollic-eabi/lib/armv7e-m/fpu\libc_s.a(lib_a-init.o)
+                              libraries\CMSIS\Source\startup_stm32l452xx.o (__libc_init_array)
+c:/program files (x86)/atollic/truestudio for arm 5.4.1/armtools/bin/../lib/gcc/arm-atollic-eabi/4.8.3/armv7e-m/fpu\libgcc.a(_aeabi_uldivmod.o)
+                              libraries\ST_HAL\Src\stm32l4xx_hal_uart.o (__aeabi_uldivmod)
+c:/program files (x86)/atollic/truestudio for arm 5.4.1/armtools/bin/../lib/gcc/arm-atollic-eabi/4.8.3/armv7e-m/fpu\libgcc.a(bpabi.o)
+                              c:/program files (x86)/atollic/truestudio for arm 5.4.1/armtools/bin/../lib/gcc/arm-atollic-eabi/4.8.3/armv7e-m/fpu\libgcc.a(_aeabi_uldivmod.o) (__gnu_uldivmod_helper)
+c:/program files (x86)/atollic/truestudio for arm 5.4.1/armtools/bin/../lib/gcc/arm-atollic-eabi/4.8.3/armv7e-m/fpu\libgcc.a(_dvmd_tls.o)
+                              c:/program files (x86)/atollic/truestudio for arm 5.4.1/armtools/bin/../lib/gcc/arm-atollic-eabi/4.8.3/armv7e-m/fpu\libgcc.a(_aeabi_uldivmod.o) (__aeabi_ldiv0)
+c:/program files (x86)/atollic/truestudio for arm 5.4.1/armtools/bin/../lib/gcc/arm-atollic-eabi/4.8.3/armv7e-m/fpu\libgcc.a(_divdi3.o)
+                              c:/program files (x86)/atollic/truestudio for arm 5.4.1/armtools/bin/../lib/gcc/arm-atollic-eabi/4.8.3/armv7e-m/fpu\libgcc.a(bpabi.o) (__divdi3)
+c:/program files (x86)/atollic/truestudio for arm 5.4.1/armtools/bin/../lib/gcc/arm-atollic-eabi/4.8.3/armv7e-m/fpu\libgcc.a(_udivdi3.o)
+                              c:/program files (x86)/atollic/truestudio for arm 5.4.1/armtools/bin/../lib/gcc/arm-atollic-eabi/4.8.3/armv7e-m/fpu\libgcc.a(bpabi.o) (__udivdi3)
+
+Allocating common symbols
+Common symbol       size              file
+
+requestPowerState   0x1               Src\Applications\System_App\System_app.o
+uwTick              0x4               libraries\ST_HAL\Src\stm32l4xx_hal.o
+pFlash              0x20              libraries\ST_HAL\Src\stm32l4xx_hal_flash.o
+
+Discarded input sections
+
+ .text          0x00000000        0x0 c:/program files (x86)/atollic/truestudio for arm 5.4.1/armtools/bin/../lib/gcc/arm-atollic-eabi/4.8.3/armv7e-m/fpu/crti.o
+ .data          0x00000000        0x0 c:/program files (x86)/atollic/truestudio for arm 5.4.1/armtools/bin/../lib/gcc/arm-atollic-eabi/4.8.3/armv7e-m/fpu/crti.o
+ .bss           0x00000000        0x0 c:/program files (x86)/atollic/truestudio for arm 5.4.1/armtools/bin/../lib/gcc/arm-atollic-eabi/4.8.3/armv7e-m/fpu/crti.o
+ .data          0x00000000        0x4 c:/program files (x86)/atollic/truestudio for arm 5.4.1/armtools/bin/../lib/gcc/arm-atollic-eabi/4.8.3/armv7e-m/fpu/crtbegin.o
+ .text          0x00000000        0x0 Src\Applications\Main\main.o
+ .data          0x00000000        0x0 Src\Applications\Main\main.o
+ .bss           0x00000000        0x0 Src\Applications\Main\main.o
+ .text          0x00000000        0x0 Src\Applications\System_App\System_app.o
+ .data          0x00000000        0x0 Src\Applications\System_App\System_app.o
+ .bss           0x00000000        0x0 Src\Applications\System_App\System_app.o
+ .text.initSystemApp
+                0x00000000       0x14 Src\Applications\System_App\System_app.o
+ .text.callSystemApp
+                0x00000000       0x78 Src\Applications\System_App\System_app.o
+ .text.requestSystemAppPowerState
+                0x00000000        0xc Src\Applications\System_App\System_app.o
+ .text.requestSystemAppLaunchBootloader
+                0x00000000       0x14 Src\Applications\System_App\System_app.o
+ .text.requestSystemAppReset
+                0x00000000       0x14 Src\Applications\System_App\System_app.o
+ .debug_info    0x00000000      0x3d8 Src\Applications\System_App\System_app.o
+ .debug_abbrev  0x00000000      0x13b Src\Applications\System_App\System_app.o
+ .debug_loc     0x00000000       0xb2 Src\Applications\System_App\System_app.o
+ .debug_aranges
+                0x00000000       0x40 Src\Applications\System_App\System_app.o
+ .debug_ranges  0x00000000       0x30 Src\Applications\System_App\System_app.o
+ .debug_line    0x00000000      0x373 Src\Applications\System_App\System_app.o
+ .debug_str     0x00000000      0x691 Src\Applications\System_App\System_app.o
+ .comment       0x00000000       0x83 Src\Applications\System_App\System_app.o
+ .ARM.attributes
+                0x00000000       0x39 Src\Applications\System_App\System_app.o
+ .debug_frame   0x00000000       0x80 Src\Applications\System_App\System_app.o
+ COMMON         0x00000000        0x1 Src\Applications\System_App\System_app.o
+ .text          0x00000000       0x14 libraries\CMSIS\Source\startup_stm32l452xx.o
+ .data          0x00000000        0x0 libraries\CMSIS\Source\startup_stm32l452xx.o
+ .bss           0x00000000        0x0 libraries\CMSIS\Source\startup_stm32l452xx.o
+ .text          0x00000000        0x0 libraries\CMSIS\Source\system_stm32l4xx.o
+ .data          0x00000000        0x0 libraries\CMSIS\Source\system_stm32l4xx.o
+ .bss           0x00000000        0x0 libraries\CMSIS\Source\system_stm32l4xx.o
+ .text.SystemCoreClockUpdate
+                0x00000000       0xd4 libraries\CMSIS\Source\system_stm32l4xx.o
+ .rodata.AHBPrescTable
+                0x00000000       0x10 libraries\CMSIS\Source\system_stm32l4xx.o
+ .rodata.APBPrescTable
+                0x00000000        0x8 libraries\CMSIS\Source\system_stm32l4xx.o
+ .data.SystemCoreClock
+                0x00000000        0x4 libraries\CMSIS\Source\system_stm32l4xx.o
+ .rodata.MSIRangeTable
+                0x00000000       0x30 libraries\CMSIS\Source\system_stm32l4xx.o
+ .text          0x00000000        0x0 libraries\ST_HAL\Src\stm32l4xx_hal.o
+ .data          0x00000000        0x0 libraries\ST_HAL\Src\stm32l4xx_hal.o
+ .bss           0x00000000        0x0 libraries\ST_HAL\Src\stm32l4xx_hal.o
+ .text.HAL_MspInit
+                0x00000000        0x4 libraries\ST_HAL\Src\stm32l4xx_hal.o
+ .text.HAL_MspDeInit
+                0x00000000        0x4 libraries\ST_HAL\Src\stm32l4xx_hal.o
+ .text.HAL_DeInit
+                0x00000000       0x2c libraries\ST_HAL\Src\stm32l4xx_hal.o
+ .text.HAL_InitTick
+                0x00000000       0x2c libraries\ST_HAL\Src\stm32l4xx_hal.o
+ .text.HAL_Init
+                0x00000000       0x18 libraries\ST_HAL\Src\stm32l4xx_hal.o
+ .text.HAL_IncTick
+                0x00000000       0x10 libraries\ST_HAL\Src\stm32l4xx_hal.o
+ .text.HAL_GetTick
+                0x00000000        0xc libraries\ST_HAL\Src\stm32l4xx_hal.o
+ .text.HAL_Delay
+                0x00000000       0x20 libraries\ST_HAL\Src\stm32l4xx_hal.o
+ .text.HAL_SuspendTick
+                0x00000000       0x10 libraries\ST_HAL\Src\stm32l4xx_hal.o
+ .text.HAL_ResumeTick
+                0x00000000       0x10 libraries\ST_HAL\Src\stm32l4xx_hal.o
+ .text.HAL_GetHalVersion
+                0x00000000        0x8 libraries\ST_HAL\Src\stm32l4xx_hal.o
+ .text.HAL_GetREVID
+                0x00000000        0xc libraries\ST_HAL\Src\stm32l4xx_hal.o
+ .text.HAL_GetDEVID
+                0x00000000       0x10 libraries\ST_HAL\Src\stm32l4xx_hal.o
+ .text.HAL_GetUIDw0
+                0x00000000        0xc libraries\ST_HAL\Src\stm32l4xx_hal.o
+ .text.HAL_GetUIDw1
+                0x00000000        0xc libraries\ST_HAL\Src\stm32l4xx_hal.o
+ .text.HAL_GetUIDw2
+                0x00000000        0xc libraries\ST_HAL\Src\stm32l4xx_hal.o
+ .text.HAL_DBGMCU_EnableDBGSleepMode
+                0x00000000       0x10 libraries\ST_HAL\Src\stm32l4xx_hal.o
+ .text.HAL_DBGMCU_DisableDBGSleepMode
+                0x00000000       0x10 libraries\ST_HAL\Src\stm32l4xx_hal.o
+ .text.HAL_DBGMCU_EnableDBGStopMode
+                0x00000000       0x10 libraries\ST_HAL\Src\stm32l4xx_hal.o
+ .text.HAL_DBGMCU_DisableDBGStopMode
+                0x00000000       0x10 libraries\ST_HAL\Src\stm32l4xx_hal.o
+ .text.HAL_DBGMCU_EnableDBGStandbyMode
+                0x00000000       0x10 libraries\ST_HAL\Src\stm32l4xx_hal.o
+ .text.HAL_DBGMCU_DisableDBGStandbyMode
+                0x00000000       0x10 libraries\ST_HAL\Src\stm32l4xx_hal.o
+ .text.HAL_SYSCFG_SRAM2Erase
+                0x00000000       0x1c libraries\ST_HAL\Src\stm32l4xx_hal.o
+ .text.HAL_SYSCFG_EnableMemorySwappingBank
+                0x00000000        0xc libraries\ST_HAL\Src\stm32l4xx_hal.o
+ .text.HAL_SYSCFG_DisableMemorySwappingBank
+                0x00000000        0xc libraries\ST_HAL\Src\stm32l4xx_hal.o
+ .text.HAL_SYSCFG_VREFBUF_VoltageScalingConfig
+                0x00000000       0x14 libraries\ST_HAL\Src\stm32l4xx_hal.o
+ .text.HAL_SYSCFG_VREFBUF_HighImpedanceConfig
+                0x00000000       0x14 libraries\ST_HAL\Src\stm32l4xx_hal.o
+ .text.HAL_SYSCFG_VREFBUF_TrimmingConfig
+                0x00000000       0x14 libraries\ST_HAL\Src\stm32l4xx_hal.o
+ .text.HAL_SYSCFG_EnableVREFBUF
+                0x00000000       0x34 libraries\ST_HAL\Src\stm32l4xx_hal.o
+ .text.HAL_SYSCFG_DisableVREFBUF
+                0x00000000       0x10 libraries\ST_HAL\Src\stm32l4xx_hal.o
+ .text.HAL_SYSCFG_EnableIOAnalogSwitchBooster
+                0x00000000       0x10 libraries\ST_HAL\Src\stm32l4xx_hal.o
+ .text.HAL_SYSCFG_DisableIOAnalogSwitchBooster
+                0x00000000       0x10 libraries\ST_HAL\Src\stm32l4xx_hal.o
+ .debug_info    0x00000000      0xa83 libraries\ST_HAL\Src\stm32l4xx_hal.o
+ .debug_abbrev  0x00000000      0x219 libraries\ST_HAL\Src\stm32l4xx_hal.o
+ .debug_loc     0x00000000      0x103 libraries\ST_HAL\Src\stm32l4xx_hal.o
+ .debug_aranges
+                0x00000000      0x118 libraries\ST_HAL\Src\stm32l4xx_hal.o
+ .debug_ranges  0x00000000      0x108 libraries\ST_HAL\Src\stm32l4xx_hal.o
+ .debug_line    0x00000000      0x475 libraries\ST_HAL\Src\stm32l4xx_hal.o
+ .debug_str     0x00000000      0xbf5 libraries\ST_HAL\Src\stm32l4xx_hal.o
+ .comment       0x00000000       0x83 libraries\ST_HAL\Src\stm32l4xx_hal.o
+ .ARM.attributes
+                0x00000000       0x39 libraries\ST_HAL\Src\stm32l4xx_hal.o
+ .debug_frame   0x00000000      0x240 libraries\ST_HAL\Src\stm32l4xx_hal.o
+ COMMON         0x00000000        0x4 libraries\ST_HAL\Src\stm32l4xx_hal.o
+ .text          0x00000000        0x0 libraries\ST_HAL\Src\stm32l4xx_hal_cortex.o
+ .data          0x00000000        0x0 libraries\ST_HAL\Src\stm32l4xx_hal_cortex.o
+ .bss           0x00000000        0x0 libraries\ST_HAL\Src\stm32l4xx_hal_cortex.o
+ .text.HAL_NVIC_SetPriorityGrouping
+                0x00000000       0x24 libraries\ST_HAL\Src\stm32l4xx_hal_cortex.o
+ .text.HAL_NVIC_SetPriority
+                0x00000000       0x64 libraries\ST_HAL\Src\stm32l4xx_hal_cortex.o
+ .text.HAL_NVIC_EnableIRQ
+                0x00000000       0x18 libraries\ST_HAL\Src\stm32l4xx_hal_cortex.o
+ .text.HAL_NVIC_DisableIRQ
+                0x00000000       0x1c libraries\ST_HAL\Src\stm32l4xx_hal_cortex.o
+ .text.HAL_NVIC_SystemReset
+                0x00000000       0x24 libraries\ST_HAL\Src\stm32l4xx_hal_cortex.o
+ .text.HAL_SYSTICK_Config
+                0x00000000       0x2c libraries\ST_HAL\Src\stm32l4xx_hal_cortex.o
+ .text.HAL_NVIC_GetPriorityGrouping
+                0x00000000       0x10 libraries\ST_HAL\Src\stm32l4xx_hal_cortex.o
+ .text.HAL_NVIC_GetPriority
+                0x00000000       0x5c libraries\ST_HAL\Src\stm32l4xx_hal_cortex.o
+ .text.HAL_NVIC_SetPendingIRQ
+                0x00000000       0x1c libraries\ST_HAL\Src\stm32l4xx_hal_cortex.o
+ .text.HAL_NVIC_GetPendingIRQ
+                0x00000000       0x1c libraries\ST_HAL\Src\stm32l4xx_hal_cortex.o
+ .text.HAL_NVIC_ClearPendingIRQ
+                0x00000000       0x1c libraries\ST_HAL\Src\stm32l4xx_hal_cortex.o
+ .text.HAL_NVIC_GetActive
+                0x00000000       0x1c libraries\ST_HAL\Src\stm32l4xx_hal_cortex.o
+ .text.HAL_SYSTICK_CLKSourceConfig
+                0x00000000       0x18 libraries\ST_HAL\Src\stm32l4xx_hal_cortex.o
+ .text.HAL_SYSTICK_Callback
+                0x00000000        0x4 libraries\ST_HAL\Src\stm32l4xx_hal_cortex.o
+ .text.HAL_SYSTICK_IRQHandler
+                0x00000000        0x8 libraries\ST_HAL\Src\stm32l4xx_hal_cortex.o
+ .text.HAL_MPU_Disable
+                0x00000000       0x1c libraries\ST_HAL\Src\stm32l4xx_hal_cortex.o
+ .text.HAL_MPU_Enable
+                0x00000000       0x20 libraries\ST_HAL\Src\stm32l4xx_hal_cortex.o
+ .text.HAL_MPU_ConfigRegion
+                0x00000000       0x54 libraries\ST_HAL\Src\stm32l4xx_hal_cortex.o
+ .debug_info    0x00000000      0xebe libraries\ST_HAL\Src\stm32l4xx_hal_cortex.o
+ .debug_abbrev  0x00000000      0x2b0 libraries\ST_HAL\Src\stm32l4xx_hal_cortex.o
+ .debug_loc     0x00000000      0x4da libraries\ST_HAL\Src\stm32l4xx_hal_cortex.o
+ .debug_aranges
+                0x00000000       0xa8 libraries\ST_HAL\Src\stm32l4xx_hal_cortex.o
+ .debug_ranges  0x00000000       0x98 libraries\ST_HAL\Src\stm32l4xx_hal_cortex.o
+ .debug_line    0x00000000      0x40d libraries\ST_HAL\Src\stm32l4xx_hal_cortex.o
+ .debug_str     0x00000000      0xb8c libraries\ST_HAL\Src\stm32l4xx_hal_cortex.o
+ .comment       0x00000000       0x83 libraries\ST_HAL\Src\stm32l4xx_hal_cortex.o
+ .ARM.attributes
+                0x00000000       0x39 libraries\ST_HAL\Src\stm32l4xx_hal_cortex.o
+ .debug_frame   0x00000000      0x14c libraries\ST_HAL\Src\stm32l4xx_hal_cortex.o
+ .text          0x00000000        0x0 libraries\ST_HAL\Src\stm32l4xx_hal_dma.o
+ .data          0x00000000        0x0 libraries\ST_HAL\Src\stm32l4xx_hal_dma.o
+ .bss           0x00000000        0x0 libraries\ST_HAL\Src\stm32l4xx_hal_dma.o
+ .text.DMA_SetConfig
+                0x00000000       0x30 libraries\ST_HAL\Src\stm32l4xx_hal_dma.o
+ .text.HAL_DMA_Init
+                0x00000000       0xdc libraries\ST_HAL\Src\stm32l4xx_hal_dma.o
+ .text.HAL_DMA_DeInit
+                0x00000000       0xa8 libraries\ST_HAL\Src\stm32l4xx_hal_dma.o
+ .text.HAL_DMA_Start
+                0x00000000       0x54 libraries\ST_HAL\Src\stm32l4xx_hal_dma.o
+ .text.HAL_DMA_Start_IT
+                0x00000000       0x78 libraries\ST_HAL\Src\stm32l4xx_hal_dma.o
+ .text.HAL_DMA_Abort
+                0x00000000       0x34 libraries\ST_HAL\Src\stm32l4xx_hal_dma.o
+ .text.HAL_DMA_Abort_IT
+                0x00000000       0x4c libraries\ST_HAL\Src\stm32l4xx_hal_dma.o
+ .text.HAL_DMA_PollForTransfer
+                0x00000000       0xd8 libraries\ST_HAL\Src\stm32l4xx_hal_dma.o
+ .text.HAL_DMA_IRQHandler
+                0x00000000       0xb8 libraries\ST_HAL\Src\stm32l4xx_hal_dma.o
+ .text.HAL_DMA_RegisterCallback
+                0x00000000       0x50 libraries\ST_HAL\Src\stm32l4xx_hal_dma.o
+ .text.HAL_DMA_UnRegisterCallback
+                0x00000000       0x60 libraries\ST_HAL\Src\stm32l4xx_hal_dma.o
+ .text.HAL_DMA_GetState
+                0x00000000        0x8 libraries\ST_HAL\Src\stm32l4xx_hal_dma.o
+ .text.HAL_DMA_GetError
+                0x00000000        0x4 libraries\ST_HAL\Src\stm32l4xx_hal_dma.o
+ .debug_info    0x00000000      0x7de libraries\ST_HAL\Src\stm32l4xx_hal_dma.o
+ .debug_abbrev  0x00000000      0x20d libraries\ST_HAL\Src\stm32l4xx_hal_dma.o
+ .debug_loc     0x00000000      0x6b9 libraries\ST_HAL\Src\stm32l4xx_hal_dma.o
+ .debug_aranges
+                0x00000000       0x80 libraries\ST_HAL\Src\stm32l4xx_hal_dma.o
+ .debug_ranges  0x00000000       0x70 libraries\ST_HAL\Src\stm32l4xx_hal_dma.o
+ .debug_line    0x00000000      0x485 libraries\ST_HAL\Src\stm32l4xx_hal_dma.o
+ .debug_str     0x00000000      0x677 libraries\ST_HAL\Src\stm32l4xx_hal_dma.o
+ .comment       0x00000000       0x83 libraries\ST_HAL\Src\stm32l4xx_hal_dma.o
+ .ARM.attributes
+                0x00000000       0x39 libraries\ST_HAL\Src\stm32l4xx_hal_dma.o
+ .debug_frame   0x00000000      0x13c libraries\ST_HAL\Src\stm32l4xx_hal_dma.o
+ .text          0x00000000        0x0 libraries\ST_HAL\Src\stm32l4xx_hal_dma_ex.o
+ .data          0x00000000        0x0 libraries\ST_HAL\Src\stm32l4xx_hal_dma_ex.o
+ .bss           0x00000000        0x0 libraries\ST_HAL\Src\stm32l4xx_hal_dma_ex.o
+ .debug_info    0x00000000       0x99 libraries\ST_HAL\Src\stm32l4xx_hal_dma_ex.o
+ .debug_abbrev  0x00000000       0x4b libraries\ST_HAL\Src\stm32l4xx_hal_dma_ex.o
+ .debug_aranges
+                0x00000000       0x18 libraries\ST_HAL\Src\stm32l4xx_hal_dma_ex.o
+ .debug_line    0x00000000      0x152 libraries\ST_HAL\Src\stm32l4xx_hal_dma_ex.o
+ .debug_str     0x00000000      0x1e1 libraries\ST_HAL\Src\stm32l4xx_hal_dma_ex.o
+ .comment       0x00000000       0x83 libraries\ST_HAL\Src\stm32l4xx_hal_dma_ex.o
+ .ARM.attributes
+                0x00000000       0x39 libraries\ST_HAL\Src\stm32l4xx_hal_dma_ex.o
+ .text          0x00000000        0x0 libraries\ST_HAL\Src\stm32l4xx_hal_flash.o
+ .data          0x00000000        0x0 libraries\ST_HAL\Src\stm32l4xx_hal_flash.o
+ .bss           0x00000000        0x0 libraries\ST_HAL\Src\stm32l4xx_hal_flash.o
+ .text.FLASH_SetErrorCode
+                0x00000000      0x110 libraries\ST_HAL\Src\stm32l4xx_hal_flash.o
+ .text.FLASH_Program_DoubleWord
+                0x00000000       0x18 libraries\ST_HAL\Src\stm32l4xx_hal_flash.o
+ .text.FLASH_Program_Fast
+                0x00000000       0x28 libraries\ST_HAL\Src\stm32l4xx_hal_flash.o
+ .text.HAL_FLASH_Program_IT
+                0x00000000       0x80 libraries\ST_HAL\Src\stm32l4xx_hal_flash.o
+ .text.HAL_FLASH_EndOfOperationCallback
+                0x00000000        0x4 libraries\ST_HAL\Src\stm32l4xx_hal_flash.o
+ .text.HAL_FLASH_OperationErrorCallback
+                0x00000000        0x4 libraries\ST_HAL\Src\stm32l4xx_hal_flash.o
+ .text.HAL_FLASH_IRQHandler
+                0x00000000      0x1a0 libraries\ST_HAL\Src\stm32l4xx_hal_flash.o
+ .text.HAL_FLASH_Unlock
+                0x00000000       0x28 libraries\ST_HAL\Src\stm32l4xx_hal_flash.o
+ .text.HAL_FLASH_Lock
+                0x00000000       0x14 libraries\ST_HAL\Src\stm32l4xx_hal_flash.o
+ .text.HAL_FLASH_OB_Unlock
+                0x00000000       0x28 libraries\ST_HAL\Src\stm32l4xx_hal_flash.o
+ .text.HAL_FLASH_OB_Lock
+                0x00000000       0x14 libraries\ST_HAL\Src\stm32l4xx_hal_flash.o
+ .text.HAL_FLASH_GetError
+                0x00000000        0xc libraries\ST_HAL\Src\stm32l4xx_hal_flash.o
+ .text.FLASH_WaitForLastOperation
+                0x00000000       0xc4 libraries\ST_HAL\Src\stm32l4xx_hal_flash.o
+ .text.HAL_FLASH_Program
+                0x00000000       0xb0 libraries\ST_HAL\Src\stm32l4xx_hal_flash.o
+ .text.HAL_FLASH_OB_Launch
+                0x00000000       0x1c libraries\ST_HAL\Src\stm32l4xx_hal_flash.o
+ .debug_info    0x00000000      0x729 libraries\ST_HAL\Src\stm32l4xx_hal_flash.o
+ .debug_abbrev  0x00000000      0x25b libraries\ST_HAL\Src\stm32l4xx_hal_flash.o
+ .debug_loc     0x00000000      0x394 libraries\ST_HAL\Src\stm32l4xx_hal_flash.o
+ .debug_aranges
+                0x00000000       0x90 libraries\ST_HAL\Src\stm32l4xx_hal_flash.o
+ .debug_ranges  0x00000000       0x80 libraries\ST_HAL\Src\stm32l4xx_hal_flash.o
+ .debug_line    0x00000000      0x4cd libraries\ST_HAL\Src\stm32l4xx_hal_flash.o
+ .debug_str     0x00000000      0x642 libraries\ST_HAL\Src\stm32l4xx_hal_flash.o
+ .comment       0x00000000       0x83 libraries\ST_HAL\Src\stm32l4xx_hal_flash.o
+ .ARM.attributes
+                0x00000000       0x39 libraries\ST_HAL\Src\stm32l4xx_hal_flash.o
+ .debug_frame   0x00000000      0x140 libraries\ST_HAL\Src\stm32l4xx_hal_flash.o
+ COMMON         0x00000000       0x20 libraries\ST_HAL\Src\stm32l4xx_hal_flash.o
+ .text          0x00000000        0x0 libraries\ST_HAL\Src\stm32l4xx_hal_flash_ex.o
+ .data          0x00000000        0x0 libraries\ST_HAL\Src\stm32l4xx_hal_flash_ex.o
+ .bss           0x00000000        0x0 libraries\ST_HAL\Src\stm32l4xx_hal_flash_ex.o
+ .text.FLASH_MassErase
+                0x00000000       0x20 libraries\ST_HAL\Src\stm32l4xx_hal_flash_ex.o
+ .text.FLASH_OB_GetWRP
+                0x00000000       0x30 libraries\ST_HAL\Src\stm32l4xx_hal_flash_ex.o
+ .text.FLASH_OB_GetRDP
+                0x00000000       0x24 libraries\ST_HAL\Src\stm32l4xx_hal_flash_ex.o
+ .text.FLASH_OB_GetUser
+                0x00000000       0x10 libraries\ST_HAL\Src\stm32l4xx_hal_flash_ex.o
+ .text.FLASH_OB_GetPCROP
+                0x00000000       0x40 libraries\ST_HAL\Src\stm32l4xx_hal_flash_ex.o
+ .text.FLASH_OB_WRPConfig
+                0x00000000       0x60 libraries\ST_HAL\Src\stm32l4xx_hal_flash_ex.o
+ .text.FLASH_OB_RDPConfig
+                0x00000000       0x40 libraries\ST_HAL\Src\stm32l4xx_hal_flash_ex.o
+ .text.FLASH_OB_UserConfig
+                0x00000000      0x114 libraries\ST_HAL\Src\stm32l4xx_hal_flash_ex.o
+ .text.FLASH_OB_PCROPConfig
+                0x00000000       0x78 libraries\ST_HAL\Src\stm32l4xx_hal_flash_ex.o
+ .text.HAL_FLASHEx_OBProgram
+                0x00000000       0x8c libraries\ST_HAL\Src\stm32l4xx_hal_flash_ex.o
+ .text.HAL_FLASHEx_OBGetConfig
+                0x00000000       0x4c libraries\ST_HAL\Src\stm32l4xx_hal_flash_ex.o
+ .text.FLASH_PageErase
+                0x00000000       0x34 libraries\ST_HAL\Src\stm32l4xx_hal_flash_ex.o
+ .text.HAL_FLASHEx_Erase_IT
+                0x00000000       0xbc libraries\ST_HAL\Src\stm32l4xx_hal_flash_ex.o
+ .text.FLASH_FlushCaches
+                0x00000000       0x6c libraries\ST_HAL\Src\stm32l4xx_hal_flash_ex.o
+ .text.HAL_FLASHEx_Erase
+                0x00000000      0x104 libraries\ST_HAL\Src\stm32l4xx_hal_flash_ex.o
+ .debug_info    0x00000000      0x942 libraries\ST_HAL\Src\stm32l4xx_hal_flash_ex.o
+ .debug_abbrev  0x00000000      0x299 libraries\ST_HAL\Src\stm32l4xx_hal_flash_ex.o
+ .debug_loc     0x00000000      0x619 libraries\ST_HAL\Src\stm32l4xx_hal_flash_ex.o
+ .debug_aranges
+                0x00000000       0x90 libraries\ST_HAL\Src\stm32l4xx_hal_flash_ex.o
+ .debug_ranges  0x00000000       0x80 libraries\ST_HAL\Src\stm32l4xx_hal_flash_ex.o
+ .debug_line    0x00000000      0x486 libraries\ST_HAL\Src\stm32l4xx_hal_flash_ex.o
+ .debug_str     0x00000000      0x6b3 libraries\ST_HAL\Src\stm32l4xx_hal_flash_ex.o
+ .comment       0x00000000       0x83 libraries\ST_HAL\Src\stm32l4xx_hal_flash_ex.o
+ .ARM.attributes
+                0x00000000       0x39 libraries\ST_HAL\Src\stm32l4xx_hal_flash_ex.o
+ .debug_frame   0x00000000      0x168 libraries\ST_HAL\Src\stm32l4xx_hal_flash_ex.o
+ .text          0x00000000        0x0 libraries\ST_HAL\Src\stm32l4xx_hal_flash_ramfunc.o
+ .data          0x00000000        0x0 libraries\ST_HAL\Src\stm32l4xx_hal_flash_ramfunc.o
+ .bss           0x00000000        0x0 libraries\ST_HAL\Src\stm32l4xx_hal_flash_ramfunc.o
+ .RamFunc       0x00000000       0x48 libraries\ST_HAL\Src\stm32l4xx_hal_flash_ramfunc.o
+ .debug_info    0x00000000      0x1cf libraries\ST_HAL\Src\stm32l4xx_hal_flash_ramfunc.o
+ .debug_abbrev  0x00000000       0xb7 libraries\ST_HAL\Src\stm32l4xx_hal_flash_ramfunc.o
+ .debug_aranges
+                0x00000000       0x28 libraries\ST_HAL\Src\stm32l4xx_hal_flash_ramfunc.o
+ .debug_ranges  0x00000000       0x18 libraries\ST_HAL\Src\stm32l4xx_hal_flash_ramfunc.o
+ .debug_line    0x00000000      0x210 libraries\ST_HAL\Src\stm32l4xx_hal_flash_ramfunc.o
+ .debug_str     0x00000000      0x2c9 libraries\ST_HAL\Src\stm32l4xx_hal_flash_ramfunc.o
+ .comment       0x00000000       0x83 libraries\ST_HAL\Src\stm32l4xx_hal_flash_ramfunc.o
+ .ARM.attributes
+                0x00000000       0x39 libraries\ST_HAL\Src\stm32l4xx_hal_flash_ramfunc.o
+ .debug_frame   0x00000000       0x30 libraries\ST_HAL\Src\stm32l4xx_hal_flash_ramfunc.o
+ .text          0x00000000        0x0 libraries\ST_HAL\Src\stm32l4xx_hal_gpio.o
+ .data          0x00000000        0x0 libraries\ST_HAL\Src\stm32l4xx_hal_gpio.o
+ .bss           0x00000000        0x0 libraries\ST_HAL\Src\stm32l4xx_hal_gpio.o
+ .text.HAL_GPIO_Init
+                0x00000000      0x1d4 libraries\ST_HAL\Src\stm32l4xx_hal_gpio.o
+ .text.HAL_GPIO_DeInit
+                0x00000000      0x120 libraries\ST_HAL\Src\stm32l4xx_hal_gpio.o
+ .text.HAL_GPIO_ReadPin
+                0x00000000        0xc libraries\ST_HAL\Src\stm32l4xx_hal_gpio.o
+ .text.HAL_GPIO_WritePin
+                0x00000000        0xc libraries\ST_HAL\Src\stm32l4xx_hal_gpio.o
+ .text.HAL_GPIO_TogglePin
+                0x00000000        0x8 libraries\ST_HAL\Src\stm32l4xx_hal_gpio.o
+ .text.HAL_GPIO_LockPin
+                0x00000000       0x30 libraries\ST_HAL\Src\stm32l4xx_hal_gpio.o
+ .text.HAL_GPIO_EXTI_Callback
+                0x00000000        0x4 libraries\ST_HAL\Src\stm32l4xx_hal_gpio.o
+ .text.HAL_GPIO_EXTI_IRQHandler
+                0x00000000       0x18 libraries\ST_HAL\Src\stm32l4xx_hal_gpio.o
+ .debug_info    0x00000000      0x7dc libraries\ST_HAL\Src\stm32l4xx_hal_gpio.o
+ .debug_abbrev  0x00000000      0x1c6 libraries\ST_HAL\Src\stm32l4xx_hal_gpio.o
+ .debug_loc     0x00000000      0x2eb libraries\ST_HAL\Src\stm32l4xx_hal_gpio.o
+ .debug_aranges
+                0x00000000       0x58 libraries\ST_HAL\Src\stm32l4xx_hal_gpio.o
+ .debug_ranges  0x00000000       0x60 libraries\ST_HAL\Src\stm32l4xx_hal_gpio.o
+ .debug_line    0x00000000      0x3aa libraries\ST_HAL\Src\stm32l4xx_hal_gpio.o
+ .debug_str     0x00000000      0x579 libraries\ST_HAL\Src\stm32l4xx_hal_gpio.o
+ .comment       0x00000000       0x83 libraries\ST_HAL\Src\stm32l4xx_hal_gpio.o
+ .ARM.attributes
+                0x00000000       0x39 libraries\ST_HAL\Src\stm32l4xx_hal_gpio.o
+ .debug_frame   0x00000000       0xcc libraries\ST_HAL\Src\stm32l4xx_hal_gpio.o
+ .text          0x00000000        0x0 libraries\ST_HAL\Src\stm32l4xx_hal_i2c.o
+ .data          0x00000000        0x0 libraries\ST_HAL\Src\stm32l4xx_hal_i2c.o
+ .bss           0x00000000        0x0 libraries\ST_HAL\Src\stm32l4xx_hal_i2c.o
+ .text.I2C_Flush_TXDR
+                0x00000000       0x24 libraries\ST_HAL\Src\stm32l4xx_hal_i2c.o
+ .text.I2C_DMASlaveTransmitCplt
+                0x00000000        0x4 libraries\ST_HAL\Src\stm32l4xx_hal_i2c.o
+ .text.I2C_DMASlaveReceiveCplt
+                0x00000000        0x4 libraries\ST_HAL\Src\stm32l4xx_hal_i2c.o
+ .text.I2C_TransferConfig
+                0x00000000       0x38 libraries\ST_HAL\Src\stm32l4xx_hal_i2c.o
+ .text.I2C_Enable_IRQ
+                0x00000000       0x84 libraries\ST_HAL\Src\stm32l4xx_hal_i2c.o
+ .text.I2C_Disable_IRQ
+                0x00000000       0x78 libraries\ST_HAL\Src\stm32l4xx_hal_i2c.o
+ .text.I2C_IsAcknowledgeFailed
+                0x00000000       0x84 libraries\ST_HAL\Src\stm32l4xx_hal_i2c.o
+ .text.I2C_WaitOnTXISFlagUntilTimeout
+                0x00000000       0x58 libraries\ST_HAL\Src\stm32l4xx_hal_i2c.o
+ .text.I2C_WaitOnFlagUntilTimeout
+                0x00000000       0x4c libraries\ST_HAL\Src\stm32l4xx_hal_i2c.o
+ .text.I2C_RequestMemoryWrite
+                0x00000000       0x8c libraries\ST_HAL\Src\stm32l4xx_hal_i2c.o
+ .text.I2C_RequestMemoryRead
+                0x00000000       0x88 libraries\ST_HAL\Src\stm32l4xx_hal_i2c.o
+ .text.I2C_WaitOnSTOPFlagUntilTimeout
+                0x00000000       0x50 libraries\ST_HAL\Src\stm32l4xx_hal_i2c.o
+ .text.I2C_WaitOnRXNEFlagUntilTimeout
+                0x00000000       0x98 libraries\ST_HAL\Src\stm32l4xx_hal_i2c.o
+ .text.I2C_DMAMasterTransmitCplt
+                0x00000000       0x4c libraries\ST_HAL\Src\stm32l4xx_hal_i2c.o
+ .text.I2C_DMAMasterReceiveCplt
+                0x00000000       0x4c libraries\ST_HAL\Src\stm32l4xx_hal_i2c.o
+ .text.HAL_I2C_MspInit
+                0x00000000        0x4 libraries\ST_HAL\Src\stm32l4xx_hal_i2c.o
+ .text.HAL_I2C_Init
+                0x00000000       0xb4 libraries\ST_HAL\Src\stm32l4xx_hal_i2c.o
+ .text.HAL_I2C_MspDeInit
+                0x00000000        0x4 libraries\ST_HAL\Src\stm32l4xx_hal_i2c.o
+ .text.HAL_I2C_DeInit
+                0x00000000       0x34 libraries\ST_HAL\Src\stm32l4xx_hal_i2c.o
+ .text.HAL_I2C_Master_Transmit
+                0x00000000      0x18c libraries\ST_HAL\Src\stm32l4xx_hal_i2c.o
+ .text.HAL_I2C_Master_Receive
+                0x00000000      0x18c libraries\ST_HAL\Src\stm32l4xx_hal_i2c.o
+ .text.HAL_I2C_Slave_Transmit
+                0x00000000      0x18c libraries\ST_HAL\Src\stm32l4xx_hal_i2c.o
+ .text.HAL_I2C_Slave_Receive
+                0x00000000      0x17c libraries\ST_HAL\Src\stm32l4xx_hal_i2c.o
+ .text.HAL_I2C_Master_Transmit_IT
+                0x00000000       0x98 libraries\ST_HAL\Src\stm32l4xx_hal_i2c.o
+ .text.HAL_I2C_Master_Receive_IT
+                0x00000000       0x98 libraries\ST_HAL\Src\stm32l4xx_hal_i2c.o
+ .text.HAL_I2C_Slave_Transmit_IT
+                0x00000000       0x64 libraries\ST_HAL\Src\stm32l4xx_hal_i2c.o
+ .text.HAL_I2C_Slave_Receive_IT
+                0x00000000       0x64 libraries\ST_HAL\Src\stm32l4xx_hal_i2c.o
+ .text.HAL_I2C_Master_Transmit_DMA
+                0x00000000      0x110 libraries\ST_HAL\Src\stm32l4xx_hal_i2c.o
+ .text.HAL_I2C_Master_Receive_DMA
+                0x00000000      0x10c libraries\ST_HAL\Src\stm32l4xx_hal_i2c.o
+ .text.HAL_I2C_Slave_Transmit_DMA
+                0x00000000       0xa8 libraries\ST_HAL\Src\stm32l4xx_hal_i2c.o
+ .text.HAL_I2C_Slave_Receive_DMA
+                0x00000000       0xac libraries\ST_HAL\Src\stm32l4xx_hal_i2c.o
+ .text.HAL_I2C_Mem_Write
+                0x00000000      0x1c8 libraries\ST_HAL\Src\stm32l4xx_hal_i2c.o
+ .text.HAL_I2C_Mem_Read
+                0x00000000      0x1cc libraries\ST_HAL\Src\stm32l4xx_hal_i2c.o
+ .text.HAL_I2C_Mem_Write_IT
+                0x00000000       0xe8 libraries\ST_HAL\Src\stm32l4xx_hal_i2c.o
+ .text.HAL_I2C_Mem_Read_IT
+                0x00000000       0xec libraries\ST_HAL\Src\stm32l4xx_hal_i2c.o
+ .text.HAL_I2C_Mem_Write_DMA
+                0x00000000      0x124 libraries\ST_HAL\Src\stm32l4xx_hal_i2c.o
+ .text.HAL_I2C_Mem_Read_DMA
+                0x00000000      0x12c libraries\ST_HAL\Src\stm32l4xx_hal_i2c.o
+ .text.HAL_I2C_IsDeviceReady
+                0x00000000      0x158 libraries\ST_HAL\Src\stm32l4xx_hal_i2c.o
+ .text.HAL_I2C_Master_Sequential_Transmit_IT
+                0x00000000       0x8c libraries\ST_HAL\Src\stm32l4xx_hal_i2c.o
+ .text.HAL_I2C_Master_Sequential_Receive_IT
+                0x00000000       0x8c libraries\ST_HAL\Src\stm32l4xx_hal_i2c.o
+ .text.HAL_I2C_Slave_Sequential_Transmit_IT
+                0x00000000       0xa4 libraries\ST_HAL\Src\stm32l4xx_hal_i2c.o
+ .text.HAL_I2C_Slave_Sequential_Receive_IT
+                0x00000000       0xa4 libraries\ST_HAL\Src\stm32l4xx_hal_i2c.o
+ .text.HAL_I2C_EnableListen_IT
+                0x00000000       0x28 libraries\ST_HAL\Src\stm32l4xx_hal_i2c.o
+ .text.HAL_I2C_DisableListen_IT
+                0x00000000       0x38 libraries\ST_HAL\Src\stm32l4xx_hal_i2c.o
+ .text.HAL_I2C_Master_Abort_IT
+                0x00000000       0x68 libraries\ST_HAL\Src\stm32l4xx_hal_i2c.o
+ .text.HAL_I2C_EV_IRQHandler
+                0x00000000       0x10 libraries\ST_HAL\Src\stm32l4xx_hal_i2c.o
+ .text.HAL_I2C_MasterTxCpltCallback
+                0x00000000        0x4 libraries\ST_HAL\Src\stm32l4xx_hal_i2c.o
+ .text.HAL_I2C_MasterRxCpltCallback
+                0x00000000        0x4 libraries\ST_HAL\Src\stm32l4xx_hal_i2c.o
+ .text.I2C_ITMasterSequentialCplt
+                0x00000000       0x54 libraries\ST_HAL\Src\stm32l4xx_hal_i2c.o
+ .text.HAL_I2C_SlaveTxCpltCallback
+                0x00000000        0x4 libraries\ST_HAL\Src\stm32l4xx_hal_i2c.o
+ .text.HAL_I2C_SlaveRxCpltCallback
+                0x00000000        0x4 libraries\ST_HAL\Src\stm32l4xx_hal_i2c.o
+ .text.I2C_ITSlaveSequentialCplt
+                0x00000000       0x5c libraries\ST_HAL\Src\stm32l4xx_hal_i2c.o
+ .text.HAL_I2C_AddrCallback
+                0x00000000        0x4 libraries\ST_HAL\Src\stm32l4xx_hal_i2c.o
+ .text.I2C_ITAddrCplt
+                0x00000000       0xb0 libraries\ST_HAL\Src\stm32l4xx_hal_i2c.o
+ .text.HAL_I2C_ListenCpltCallback
+                0x00000000        0x4 libraries\ST_HAL\Src\stm32l4xx_hal_i2c.o
+ .text.I2C_ITListenCplt
+                0x00000000       0x64 libraries\ST_HAL\Src\stm32l4xx_hal_i2c.o
+ .text.HAL_I2C_MemTxCpltCallback
+                0x00000000        0x4 libraries\ST_HAL\Src\stm32l4xx_hal_i2c.o
+ .text.HAL_I2C_MemRxCpltCallback
+                0x00000000        0x4 libraries\ST_HAL\Src\stm32l4xx_hal_i2c.o
+ .text.HAL_I2C_ErrorCallback
+                0x00000000        0x4 libraries\ST_HAL\Src\stm32l4xx_hal_i2c.o
+ .text.HAL_I2C_AbortCpltCallback
+                0x00000000        0x4 libraries\ST_HAL\Src\stm32l4xx_hal_i2c.o
+ .text.I2C_ITError
+                0x00000000       0xfc libraries\ST_HAL\Src\stm32l4xx_hal_i2c.o
+ .text.I2C_ITSlaveCplt
+                0x00000000      0x11c libraries\ST_HAL\Src\stm32l4xx_hal_i2c.o
+ .text.I2C_Slave_ISR_IT
+                0x00000000      0x148 libraries\ST_HAL\Src\stm32l4xx_hal_i2c.o
+ .text.I2C_Slave_ISR_DMA
+                0x00000000       0x84 libraries\ST_HAL\Src\stm32l4xx_hal_i2c.o
+ .text.I2C_ITMasterCplt
+                0x00000000       0xe4 libraries\ST_HAL\Src\stm32l4xx_hal_i2c.o
+ .text.I2C_Master_ISR_IT
+                0x00000000      0x174 libraries\ST_HAL\Src\stm32l4xx_hal_i2c.o
+ .text.I2C_Master_ISR_DMA
+                0x00000000       0xd8 libraries\ST_HAL\Src\stm32l4xx_hal_i2c.o
+ .text.I2C_DMAError
+                0x00000000       0x18 libraries\ST_HAL\Src\stm32l4xx_hal_i2c.o
+ .text.HAL_I2C_ER_IRQHandler
+                0x00000000       0x6c libraries\ST_HAL\Src\stm32l4xx_hal_i2c.o
+ .text.I2C_DMAAbort
+                0x00000000       0x34 libraries\ST_HAL\Src\stm32l4xx_hal_i2c.o
+ .text.HAL_I2C_GetState
+                0x00000000        0x8 libraries\ST_HAL\Src\stm32l4xx_hal_i2c.o
+ .text.HAL_I2C_GetMode
+                0x00000000        0x8 libraries\ST_HAL\Src\stm32l4xx_hal_i2c.o
+ .text.HAL_I2C_GetError
+                0x00000000        0x4 libraries\ST_HAL\Src\stm32l4xx_hal_i2c.o
+ .debug_info    0x00000000     0x3191 libraries\ST_HAL\Src\stm32l4xx_hal_i2c.o
+ .debug_abbrev  0x00000000      0x23a libraries\ST_HAL\Src\stm32l4xx_hal_i2c.o
+ .debug_loc     0x00000000     0x30b5 libraries\ST_HAL\Src\stm32l4xx_hal_i2c.o
+ .debug_aranges
+                0x00000000      0x260 libraries\ST_HAL\Src\stm32l4xx_hal_i2c.o
+ .debug_ranges  0x00000000      0x250 libraries\ST_HAL\Src\stm32l4xx_hal_i2c.o
+ .debug_line    0x00000000     0x129b libraries\ST_HAL\Src\stm32l4xx_hal_i2c.o
+ .debug_str     0x00000000      0xeaf libraries\ST_HAL\Src\stm32l4xx_hal_i2c.o
+ .comment       0x00000000       0x83 libraries\ST_HAL\Src\stm32l4xx_hal_i2c.o
+ .ARM.attributes
+                0x00000000       0x39 libraries\ST_HAL\Src\stm32l4xx_hal_i2c.o
+ .debug_frame   0x00000000      0x788 libraries\ST_HAL\Src\stm32l4xx_hal_i2c.o
+ .text          0x00000000        0x0 libraries\ST_HAL\Src\stm32l4xx_hal_i2c_ex.o
+ .data          0x00000000        0x0 libraries\ST_HAL\Src\stm32l4xx_hal_i2c_ex.o
+ .bss           0x00000000        0x0 libraries\ST_HAL\Src\stm32l4xx_hal_i2c_ex.o
+ .text.HAL_I2CEx_ConfigAnalogFilter
+                0x00000000       0x5c libraries\ST_HAL\Src\stm32l4xx_hal_i2c_ex.o
+ .text.HAL_I2CEx_ConfigDigitalFilter
+                0x00000000       0x58 libraries\ST_HAL\Src\stm32l4xx_hal_i2c_ex.o
+ .text.HAL_I2CEx_EnableWakeUp
+                0x00000000       0x54 libraries\ST_HAL\Src\stm32l4xx_hal_i2c_ex.o
+ .text.HAL_I2CEx_DisableWakeUp
+                0x00000000       0x54 libraries\ST_HAL\Src\stm32l4xx_hal_i2c_ex.o
+ .text.HAL_I2CEx_EnableFastModePlus
+                0x00000000       0x2c libraries\ST_HAL\Src\stm32l4xx_hal_i2c_ex.o
+ .text.HAL_I2CEx_DisableFastModePlus
+                0x00000000       0x2c libraries\ST_HAL\Src\stm32l4xx_hal_i2c_ex.o
+ .debug_info    0x00000000      0x9cb libraries\ST_HAL\Src\stm32l4xx_hal_i2c_ex.o
+ .debug_abbrev  0x00000000      0x180 libraries\ST_HAL\Src\stm32l4xx_hal_i2c_ex.o
+ .debug_loc     0x00000000      0x21c libraries\ST_HAL\Src\stm32l4xx_hal_i2c_ex.o
+ .debug_aranges
+                0x00000000       0x48 libraries\ST_HAL\Src\stm32l4xx_hal_i2c_ex.o
+ .debug_ranges  0x00000000       0x38 libraries\ST_HAL\Src\stm32l4xx_hal_i2c_ex.o
+ .debug_line    0x00000000      0x368 libraries\ST_HAL\Src\stm32l4xx_hal_i2c_ex.o
+ .debug_str     0x00000000      0x932 libraries\ST_HAL\Src\stm32l4xx_hal_i2c_ex.o
+ .comment       0x00000000       0x83 libraries\ST_HAL\Src\stm32l4xx_hal_i2c_ex.o
+ .ARM.attributes
+                0x00000000       0x39 libraries\ST_HAL\Src\stm32l4xx_hal_i2c_ex.o
+ .debug_frame   0x00000000       0x78 libraries\ST_HAL\Src\stm32l4xx_hal_i2c_ex.o
+ .text          0x00000000        0x0 libraries\ST_HAL\Src\stm32l4xx_hal_pwr.o
+ .data          0x00000000        0x0 libraries\ST_HAL\Src\stm32l4xx_hal_pwr.o
+ .bss           0x00000000        0x0 libraries\ST_HAL\Src\stm32l4xx_hal_pwr.o
+ .text.HAL_PWR_DeInit
+                0x00000000       0x18 libraries\ST_HAL\Src\stm32l4xx_hal_pwr.o
+ .text.HAL_PWR_EnableBkUpAccess
+                0x00000000       0x10 libraries\ST_HAL\Src\stm32l4xx_hal_pwr.o
+ .text.HAL_PWR_DisableBkUpAccess
+                0x00000000       0x10 libraries\ST_HAL\Src\stm32l4xx_hal_pwr.o
+ .text.HAL_PWR_ConfigPVD
+                0x00000000       0x88 libraries\ST_HAL\Src\stm32l4xx_hal_pwr.o
+ .text.HAL_PWR_EnablePVD
+                0x00000000       0x10 libraries\ST_HAL\Src\stm32l4xx_hal_pwr.o
+ .text.HAL_PWR_DisablePVD
+                0x00000000       0x10 libraries\ST_HAL\Src\stm32l4xx_hal_pwr.o
+ .text.HAL_PWR_EnableWakeUpPin
+                0x00000000       0x20 libraries\ST_HAL\Src\stm32l4xx_hal_pwr.o
+ .text.HAL_PWR_DisableWakeUpPin
+                0x00000000       0x14 libraries\ST_HAL\Src\stm32l4xx_hal_pwr.o
+ .text.HAL_PWR_EnterSLEEPMode
+                0x00000000       0x48 libraries\ST_HAL\Src\stm32l4xx_hal_pwr.o
+ .text.HAL_PWR_EnterSTOPMode
+                0x00000000       0x18 libraries\ST_HAL\Src\stm32l4xx_hal_pwr.o
+ .text.HAL_PWR_EnterSTANDBYMode
+                0x00000000       0x24 libraries\ST_HAL\Src\stm32l4xx_hal_pwr.o
+ .text.HAL_PWR_EnableSleepOnExit
+                0x00000000       0x10 libraries\ST_HAL\Src\stm32l4xx_hal_pwr.o
+ .text.HAL_PWR_DisableSleepOnExit
+                0x00000000       0x10 libraries\ST_HAL\Src\stm32l4xx_hal_pwr.o
+ .text.HAL_PWR_EnableSEVOnPend
+                0x00000000       0x10 libraries\ST_HAL\Src\stm32l4xx_hal_pwr.o
+ .text.HAL_PWR_DisableSEVOnPend
+                0x00000000       0x10 libraries\ST_HAL\Src\stm32l4xx_hal_pwr.o
+ .text.HAL_PWR_PVDCallback
+                0x00000000        0x4 libraries\ST_HAL\Src\stm32l4xx_hal_pwr.o
+ .debug_info    0x00000000      0x97d libraries\ST_HAL\Src\stm32l4xx_hal_pwr.o
+ .debug_abbrev  0x00000000      0x1d1 libraries\ST_HAL\Src\stm32l4xx_hal_pwr.o
+ .debug_loc     0x00000000      0x14b libraries\ST_HAL\Src\stm32l4xx_hal_pwr.o
+ .debug_aranges
+                0x00000000       0x98 libraries\ST_HAL\Src\stm32l4xx_hal_pwr.o
+ .debug_ranges  0x00000000       0x88 libraries\ST_HAL\Src\stm32l4xx_hal_pwr.o
+ .debug_line    0x00000000      0x379 libraries\ST_HAL\Src\stm32l4xx_hal_pwr.o
+ .debug_str     0x00000000      0x6d7 libraries\ST_HAL\Src\stm32l4xx_hal_pwr.o
+ .comment       0x00000000       0x83 libraries\ST_HAL\Src\stm32l4xx_hal_pwr.o
+ .ARM.attributes
+                0x00000000       0x39 libraries\ST_HAL\Src\stm32l4xx_hal_pwr.o
+ .debug_frame   0x00000000      0x120 libraries\ST_HAL\Src\stm32l4xx_hal_pwr.o
+ .text          0x00000000        0x0 libraries\ST_HAL\Src\stm32l4xx_hal_pwr_ex.o
+ .data          0x00000000        0x0 libraries\ST_HAL\Src\stm32l4xx_hal_pwr_ex.o
+ .bss           0x00000000        0x0 libraries\ST_HAL\Src\stm32l4xx_hal_pwr_ex.o
+ .text.HAL_PWREx_GetVoltageRange
+                0x00000000       0x10 libraries\ST_HAL\Src\stm32l4xx_hal_pwr_ex.o
+ .text.HAL_PWREx_ControlVoltageScaling
+                0x00000000       0x8c libraries\ST_HAL\Src\stm32l4xx_hal_pwr_ex.o
+ .text.HAL_PWREx_EnableBatteryCharging
+                0x00000000       0x1c libraries\ST_HAL\Src\stm32l4xx_hal_pwr_ex.o
+ .text.HAL_PWREx_DisableBatteryCharging
+                0x00000000       0x10 libraries\ST_HAL\Src\stm32l4xx_hal_pwr_ex.o
+ .text.HAL_PWREx_EnableVddUSB
+                0x00000000       0x10 libraries\ST_HAL\Src\stm32l4xx_hal_pwr_ex.o
+ .text.HAL_PWREx_DisableVddUSB
+                0x00000000       0x10 libraries\ST_HAL\Src\stm32l4xx_hal_pwr_ex.o
+ .text.HAL_PWREx_EnableInternalWakeUpLine
+                0x00000000       0x10 libraries\ST_HAL\Src\stm32l4xx_hal_pwr_ex.o
+ .text.HAL_PWREx_DisableInternalWakeUpLine
+                0x00000000       0x10 libraries\ST_HAL\Src\stm32l4xx_hal_pwr_ex.o
+ .text.HAL_PWREx_EnableGPIOPullUp
+                0x00000000       0xa0 libraries\ST_HAL\Src\stm32l4xx_hal_pwr_ex.o
+ .text.HAL_PWREx_DisableGPIOPullUp
+                0x00000000       0x74 libraries\ST_HAL\Src\stm32l4xx_hal_pwr_ex.o
+ .text.HAL_PWREx_EnableGPIOPullDown
+                0x00000000       0xa0 libraries\ST_HAL\Src\stm32l4xx_hal_pwr_ex.o
+ .text.HAL_PWREx_DisableGPIOPullDown
+                0x00000000       0x78 libraries\ST_HAL\Src\stm32l4xx_hal_pwr_ex.o
+ .text.HAL_PWREx_EnablePullUpPullDownConfig
+                0x00000000       0x10 libraries\ST_HAL\Src\stm32l4xx_hal_pwr_ex.o
+ .text.HAL_PWREx_DisablePullUpPullDownConfig
+                0x00000000       0x10 libraries\ST_HAL\Src\stm32l4xx_hal_pwr_ex.o
+ .text.HAL_PWREx_EnableSRAM2ContentRetention
+                0x00000000       0x10 libraries\ST_HAL\Src\stm32l4xx_hal_pwr_ex.o
+ .text.HAL_PWREx_DisableSRAM2ContentRetention
+                0x00000000       0x10 libraries\ST_HAL\Src\stm32l4xx_hal_pwr_ex.o
+ .text.HAL_PWREx_EnablePVM1
+                0x00000000       0x10 libraries\ST_HAL\Src\stm32l4xx_hal_pwr_ex.o
+ .text.HAL_PWREx_DisablePVM1
+                0x00000000       0x10 libraries\ST_HAL\Src\stm32l4xx_hal_pwr_ex.o
+ .text.HAL_PWREx_EnablePVM3
+                0x00000000       0x10 libraries\ST_HAL\Src\stm32l4xx_hal_pwr_ex.o
+ .text.HAL_PWREx_DisablePVM3
+                0x00000000       0x10 libraries\ST_HAL\Src\stm32l4xx_hal_pwr_ex.o
+ .text.HAL_PWREx_EnablePVM4
+                0x00000000       0x10 libraries\ST_HAL\Src\stm32l4xx_hal_pwr_ex.o
+ .text.HAL_PWREx_DisablePVM4
+                0x00000000       0x10 libraries\ST_HAL\Src\stm32l4xx_hal_pwr_ex.o
+ .text.HAL_PWREx_ConfigPVM
+                0x00000000      0x170 libraries\ST_HAL\Src\stm32l4xx_hal_pwr_ex.o
+ .text.HAL_PWREx_EnableLowPowerRunMode
+                0x00000000       0x10 libraries\ST_HAL\Src\stm32l4xx_hal_pwr_ex.o
+ .text.HAL_PWREx_DisableLowPowerRunMode
+                0x00000000       0x4c libraries\ST_HAL\Src\stm32l4xx_hal_pwr_ex.o
+ .text.HAL_PWREx_EnterSTOP0Mode
+                0x00000000       0x38 libraries\ST_HAL\Src\stm32l4xx_hal_pwr_ex.o
+ .text.HAL_PWREx_EnterSTOP1Mode
+                0x00000000       0x3c libraries\ST_HAL\Src\stm32l4xx_hal_pwr_ex.o
+ .text.HAL_PWREx_EnterSTOP2Mode
+                0x00000000       0x3c libraries\ST_HAL\Src\stm32l4xx_hal_pwr_ex.o
+ .text.HAL_PWREx_EnterSHUTDOWNMode
+                0x00000000       0x24 libraries\ST_HAL\Src\stm32l4xx_hal_pwr_ex.o
+ .text.HAL_PWREx_PVM1Callback
+                0x00000000        0x4 libraries\ST_HAL\Src\stm32l4xx_hal_pwr_ex.o
+ .text.HAL_PWREx_PVM3Callback
+                0x00000000        0x4 libraries\ST_HAL\Src\stm32l4xx_hal_pwr_ex.o
+ .text.HAL_PWREx_PVM4Callback
+                0x00000000        0x4 libraries\ST_HAL\Src\stm32l4xx_hal_pwr_ex.o
+ .text.HAL_PWREx_PVD_PVM_IRQHandler
+                0x00000000       0x5c libraries\ST_HAL\Src\stm32l4xx_hal_pwr_ex.o
+ .debug_info    0x00000000      0x9b9 libraries\ST_HAL\Src\stm32l4xx_hal_pwr_ex.o
+ .debug_abbrev  0x00000000      0x1fe libraries\ST_HAL\Src\stm32l4xx_hal_pwr_ex.o
+ .debug_loc     0x00000000      0x70e libraries\ST_HAL\Src\stm32l4xx_hal_pwr_ex.o
+ .debug_aranges
+                0x00000000      0x120 libraries\ST_HAL\Src\stm32l4xx_hal_pwr_ex.o
+ .debug_ranges  0x00000000      0x110 libraries\ST_HAL\Src\stm32l4xx_hal_pwr_ex.o
+ .debug_line    0x00000000      0x604 libraries\ST_HAL\Src\stm32l4xx_hal_pwr_ex.o
+ .debug_str     0x00000000      0x7b1 libraries\ST_HAL\Src\stm32l4xx_hal_pwr_ex.o
+ .comment       0x00000000       0x83 libraries\ST_HAL\Src\stm32l4xx_hal_pwr_ex.o
+ .ARM.attributes
+                0x00000000       0x39 libraries\ST_HAL\Src\stm32l4xx_hal_pwr_ex.o
+ .debug_frame   0x00000000      0x228 libraries\ST_HAL\Src\stm32l4xx_hal_pwr_ex.o
+ .text          0x00000000        0x0 libraries\ST_HAL\Src\stm32l4xx_hal_rcc.o
+ .data          0x00000000        0x0 libraries\ST_HAL\Src\stm32l4xx_hal_rcc.o
+ .bss           0x00000000        0x0 libraries\ST_HAL\Src\stm32l4xx_hal_rcc.o
+ .text.RCC_SetFlashLatencyFromMSIRange
+                0x00000000       0x88 libraries\ST_HAL\Src\stm32l4xx_hal_rcc.o
+ .text.HAL_RCC_DeInit
+                0x00000000       0xe8 libraries\ST_HAL\Src\stm32l4xx_hal_rcc.o
+ .text.HAL_RCC_MCOConfig
+                0x00000000       0x50 libraries\ST_HAL\Src\stm32l4xx_hal_rcc.o
+ .text.HAL_RCC_GetSysClockFreq
+                0x00000000       0xfc libraries\ST_HAL\Src\stm32l4xx_hal_rcc.o
+ .text.HAL_RCC_OscConfig
+                0x00000000      0x614 libraries\ST_HAL\Src\stm32l4xx_hal_rcc.o
+ .text.HAL_RCC_ClockConfig
+                0x00000000      0x1dc libraries\ST_HAL\Src\stm32l4xx_hal_rcc.o
+ .text.HAL_RCC_GetHCLKFreq
+                0x00000000        0xc libraries\ST_HAL\Src\stm32l4xx_hal_rcc.o
+ .text.HAL_RCC_GetPCLK1Freq
+                0x00000000       0x20 libraries\ST_HAL\Src\stm32l4xx_hal_rcc.o
+ .text.HAL_RCC_GetPCLK2Freq
+                0x00000000       0x20 libraries\ST_HAL\Src\stm32l4xx_hal_rcc.o
+ .text.HAL_RCC_GetOscConfig
+                0x00000000       0xfc libraries\ST_HAL\Src\stm32l4xx_hal_rcc.o
+ .text.HAL_RCC_GetClockConfig
+                0x00000000       0x3c libraries\ST_HAL\Src\stm32l4xx_hal_rcc.o
+ .text.HAL_RCC_EnableCSS
+                0x00000000       0x10 libraries\ST_HAL\Src\stm32l4xx_hal_rcc.o
+ .text.HAL_RCC_CSSCallback
+                0x00000000        0x4 libraries\ST_HAL\Src\stm32l4xx_hal_rcc.o
+ .text.HAL_RCC_NMI_IRQHandler
+                0x00000000       0x20 libraries\ST_HAL\Src\stm32l4xx_hal_rcc.o
+ .debug_info    0x00000000      0xdb4 libraries\ST_HAL\Src\stm32l4xx_hal_rcc.o
+ .debug_abbrev  0x00000000      0x256 libraries\ST_HAL\Src\stm32l4xx_hal_rcc.o
+ .debug_loc     0x00000000      0x750 libraries\ST_HAL\Src\stm32l4xx_hal_rcc.o
+ .debug_aranges
+                0x00000000       0x88 libraries\ST_HAL\Src\stm32l4xx_hal_rcc.o
+ .debug_ranges  0x00000000       0x90 libraries\ST_HAL\Src\stm32l4xx_hal_rcc.o
+ .debug_line    0x00000000      0x65e libraries\ST_HAL\Src\stm32l4xx_hal_rcc.o
+ .debug_str     0x00000000      0x838 libraries\ST_HAL\Src\stm32l4xx_hal_rcc.o
+ .comment       0x00000000       0x83 libraries\ST_HAL\Src\stm32l4xx_hal_rcc.o
+ .ARM.attributes
+                0x00000000       0x39 libraries\ST_HAL\Src\stm32l4xx_hal_rcc.o
+ .debug_frame   0x00000000      0x158 libraries\ST_HAL\Src\stm32l4xx_hal_rcc.o
+ .text          0x00000000        0x0 libraries\ST_HAL\Src\stm32l4xx_hal_rcc_ex.o
+ .data          0x00000000        0x0 libraries\ST_HAL\Src\stm32l4xx_hal_rcc_ex.o
+ .bss           0x00000000        0x0 libraries\ST_HAL\Src\stm32l4xx_hal_rcc_ex.o
+ .text.RCCEx_PLLSAI1_Config
+                0x00000000      0x184 libraries\ST_HAL\Src\stm32l4xx_hal_rcc_ex.o
+ .text.HAL_RCCEx_PeriphCLKConfig
+                0x00000000      0x3ac libraries\ST_HAL\Src\stm32l4xx_hal_rcc_ex.o
+ .text.HAL_RCCEx_GetPeriphCLKConfig
+                0x00000000      0x104 libraries\ST_HAL\Src\stm32l4xx_hal_rcc_ex.o
+ .text.HAL_RCCEx_GetPeriphCLKFreq
+                0x00000000      0x720 libraries\ST_HAL\Src\stm32l4xx_hal_rcc_ex.o
+ .text.HAL_RCCEx_EnablePLLSAI1
+                0x00000000       0x8c libraries\ST_HAL\Src\stm32l4xx_hal_rcc_ex.o
+ .text.HAL_RCCEx_DisablePLLSAI1
+                0x00000000       0x54 libraries\ST_HAL\Src\stm32l4xx_hal_rcc_ex.o
+ .text.HAL_RCCEx_WakeUpStopCLKConfig
+                0x00000000       0x14 libraries\ST_HAL\Src\stm32l4xx_hal_rcc_ex.o
+ .text.HAL_RCCEx_StandbyMSIRangeConfig
+                0x00000000       0x18 libraries\ST_HAL\Src\stm32l4xx_hal_rcc_ex.o
+ .text.HAL_RCCEx_EnableLSECSS
+                0x00000000       0x14 libraries\ST_HAL\Src\stm32l4xx_hal_rcc_ex.o
+ .text.HAL_RCCEx_DisableLSECSS
+                0x00000000       0x1c libraries\ST_HAL\Src\stm32l4xx_hal_rcc_ex.o
+ .text.HAL_RCCEx_EnableLSECSS_IT
+                0x00000000       0x30 libraries\ST_HAL\Src\stm32l4xx_hal_rcc_ex.o
+ .text.HAL_RCCEx_LSECSS_Callback
+                0x00000000        0x4 libraries\ST_HAL\Src\stm32l4xx_hal_rcc_ex.o
+ .text.HAL_RCCEx_LSECSS_IRQHandler
+                0x00000000       0x20 libraries\ST_HAL\Src\stm32l4xx_hal_rcc_ex.o
+ .text.HAL_RCCEx_EnableLSCO
+                0x00000000       0x9c libraries\ST_HAL\Src\stm32l4xx_hal_rcc_ex.o
+ .text.HAL_RCCEx_DisableLSCO
+                0x00000000       0x68 libraries\ST_HAL\Src\stm32l4xx_hal_rcc_ex.o
+ .text.HAL_RCCEx_EnableMSIPLLMode
+                0x00000000       0x10 libraries\ST_HAL\Src\stm32l4xx_hal_rcc_ex.o
+ .text.HAL_RCCEx_DisableMSIPLLMode
+                0x00000000       0x10 libraries\ST_HAL\Src\stm32l4xx_hal_rcc_ex.o
+ .text.HAL_RCCEx_CRSConfig
+                0x00000000       0x4c libraries\ST_HAL\Src\stm32l4xx_hal_rcc_ex.o
+ .text.HAL_RCCEx_CRSSoftwareSynchronizationGenerate
+                0x00000000       0x10 libraries\ST_HAL\Src\stm32l4xx_hal_rcc_ex.o
+ .text.HAL_RCCEx_CRSGetSynchronizationInfo
+                0x00000000       0x24 libraries\ST_HAL\Src\stm32l4xx_hal_rcc_ex.o
+ .text.HAL_RCCEx_CRSWaitSynchronization
+                0x00000000       0x98 libraries\ST_HAL\Src\stm32l4xx_hal_rcc_ex.o
+ .text.HAL_RCCEx_CRS_SyncOkCallback
+                0x00000000        0x4 libraries\ST_HAL\Src\stm32l4xx_hal_rcc_ex.o
+ .text.HAL_RCCEx_CRS_SyncWarnCallback
+                0x00000000        0x4 libraries\ST_HAL\Src\stm32l4xx_hal_rcc_ex.o
+ .text.HAL_RCCEx_CRS_ExpectedSyncCallback
+                0x00000000        0x4 libraries\ST_HAL\Src\stm32l4xx_hal_rcc_ex.o
+ .text.HAL_RCCEx_CRS_ErrorCallback
+                0x00000000        0x4 libraries\ST_HAL\Src\stm32l4xx_hal_rcc_ex.o
+ .text.HAL_RCCEx_CRS_IRQHandler
+                0x00000000       0x8c libraries\ST_HAL\Src\stm32l4xx_hal_rcc_ex.o
+ .debug_info    0x00000000     0x10c5 libraries\ST_HAL\Src\stm32l4xx_hal_rcc_ex.o
+ .debug_abbrev  0x00000000      0x269 libraries\ST_HAL\Src\stm32l4xx_hal_rcc_ex.o
+ .debug_loc     0x00000000     0x1760 libraries\ST_HAL\Src\stm32l4xx_hal_rcc_ex.o
+ .debug_aranges
+                0x00000000       0xe8 libraries\ST_HAL\Src\stm32l4xx_hal_rcc_ex.o
+ .debug_ranges  0x00000000       0xd8 libraries\ST_HAL\Src\stm32l4xx_hal_rcc_ex.o
+ .debug_line    0x00000000      0x837 libraries\ST_HAL\Src\stm32l4xx_hal_rcc_ex.o
+ .debug_str     0x00000000      0xbc0 libraries\ST_HAL\Src\stm32l4xx_hal_rcc_ex.o
+ .comment       0x00000000       0x83 libraries\ST_HAL\Src\stm32l4xx_hal_rcc_ex.o
+ .ARM.attributes
+                0x00000000       0x39 libraries\ST_HAL\Src\stm32l4xx_hal_rcc_ex.o
+ .debug_frame   0x00000000      0x238 libraries\ST_HAL\Src\stm32l4xx_hal_rcc_ex.o
+ .text          0x00000000        0x0 libraries\ST_HAL\Src\stm32l4xx_hal_spi.o
+ .data          0x00000000        0x0 libraries\ST_HAL\Src\stm32l4xx_hal_spi.o
+ .bss           0x00000000        0x0 libraries\ST_HAL\Src\stm32l4xx_hal_spi.o
+ .text.SPI_WaitFlagStateUntilTimeout
+                0x00000000       0x8c libraries\ST_HAL\Src\stm32l4xx_hal_spi.o
+ .text.SPI_WaitFifoStateUntilTimeout
+                0x00000000       0xb0 libraries\ST_HAL\Src\stm32l4xx_hal_spi.o
+ .text.SPI_EndRxTxTransaction
+                0x00000000       0x68 libraries\ST_HAL\Src\stm32l4xx_hal_spi.o
+ .text.SPI_EndRxTransaction
+                0x00000000       0x84 libraries\ST_HAL\Src\stm32l4xx_hal_spi.o
+ .text.SPI_AbortRx_ISR
+                0x00000000       0x90 libraries\ST_HAL\Src\stm32l4xx_hal_spi.o
+ .text.SPI_AbortTx_ISR
+                0x00000000       0x8c libraries\ST_HAL\Src\stm32l4xx_hal_spi.o
+ .text.HAL_SPI_MspInit
+                0x00000000        0x4 libraries\ST_HAL\Src\stm32l4xx_hal_spi.o
+ .text.HAL_SPI_Init
+                0x00000000       0xac libraries\ST_HAL\Src\stm32l4xx_hal_spi.o
+ .text.HAL_SPI_MspDeInit
+                0x00000000        0x4 libraries\ST_HAL\Src\stm32l4xx_hal_spi.o
+ .text.HAL_SPI_DeInit
+                0x00000000       0x2c libraries\ST_HAL\Src\stm32l4xx_hal_spi.o
+ .text.HAL_SPI_Transmit
+                0x00000000      0x1c0 libraries\ST_HAL\Src\stm32l4xx_hal_spi.o
+ .text.HAL_SPI_TransmitReceive
+                0x00000000      0x2b4 libraries\ST_HAL\Src\stm32l4xx_hal_spi.o
+ .text.HAL_SPI_Receive
+                0x00000000      0x180 libraries\ST_HAL\Src\stm32l4xx_hal_spi.o
+ .text.HAL_SPI_Transmit_IT
+                0x00000000       0xa0 libraries\ST_HAL\Src\stm32l4xx_hal_spi.o
+ .text.HAL_SPI_TransmitReceive_IT
+                0x00000000       0xf8 libraries\ST_HAL\Src\stm32l4xx_hal_spi.o
+ .text.HAL_SPI_Receive_IT
+                0x00000000       0xd8 libraries\ST_HAL\Src\stm32l4xx_hal_spi.o
+ .text.HAL_SPI_Transmit_DMA
+                0x00000000      0x114 libraries\ST_HAL\Src\stm32l4xx_hal_spi.o
+ .text.HAL_SPI_TransmitReceive_DMA
+                0x00000000      0x1ec libraries\ST_HAL\Src\stm32l4xx_hal_spi.o
+ .text.HAL_SPI_Receive_DMA
+                0x00000000      0x160 libraries\ST_HAL\Src\stm32l4xx_hal_spi.o
+ .text.HAL_SPI_Abort
+                0x00000000      0x188 libraries\ST_HAL\Src\stm32l4xx_hal_spi.o
+ .text.HAL_SPI_DMAPause
+                0x00000000       0x28 libraries\ST_HAL\Src\stm32l4xx_hal_spi.o
+ .text.HAL_SPI_DMAResume
+                0x00000000       0x28 libraries\ST_HAL\Src\stm32l4xx_hal_spi.o
+ .text.HAL_SPI_DMAStop
+                0x00000000       0x28 libraries\ST_HAL\Src\stm32l4xx_hal_spi.o
+ .text.HAL_SPI_TxCpltCallback
+                0x00000000        0x4 libraries\ST_HAL\Src\stm32l4xx_hal_spi.o
+ .text.HAL_SPI_RxCpltCallback
+                0x00000000        0x4 libraries\ST_HAL\Src\stm32l4xx_hal_spi.o
+ .text.HAL_SPI_TxRxCpltCallback
+                0x00000000        0x4 libraries\ST_HAL\Src\stm32l4xx_hal_spi.o
+ .text.HAL_SPI_TxHalfCpltCallback
+                0x00000000        0x4 libraries\ST_HAL\Src\stm32l4xx_hal_spi.o
+ .text.SPI_DMAHalfTransmitCplt
+                0x00000000        0xc libraries\ST_HAL\Src\stm32l4xx_hal_spi.o
+ .text.HAL_SPI_RxHalfCpltCallback
+                0x00000000        0x4 libraries\ST_HAL\Src\stm32l4xx_hal_spi.o
+ .text.SPI_DMAHalfReceiveCplt
+                0x00000000        0xc libraries\ST_HAL\Src\stm32l4xx_hal_spi.o
+ .text.HAL_SPI_TxRxHalfCpltCallback
+                0x00000000        0x4 libraries\ST_HAL\Src\stm32l4xx_hal_spi.o
+ .text.SPI_DMAHalfTransmitReceiveCplt
+                0x00000000        0xc libraries\ST_HAL\Src\stm32l4xx_hal_spi.o
+ .text.HAL_SPI_ErrorCallback
+                0x00000000        0x4 libraries\ST_HAL\Src\stm32l4xx_hal_spi.o
+ .text.SPI_CloseTx_ISR
+                0x00000000       0x58 libraries\ST_HAL\Src\stm32l4xx_hal_spi.o
+ .text.SPI_TxISR_8BIT
+                0x00000000       0x24 libraries\ST_HAL\Src\stm32l4xx_hal_spi.o
+ .text.SPI_TxISR_16BIT
+                0x00000000       0x24 libraries\ST_HAL\Src\stm32l4xx_hal_spi.o
+ .text.SPI_CloseRx_ISR
+                0x00000000       0x40 libraries\ST_HAL\Src\stm32l4xx_hal_spi.o
+ .text.SPI_RxISR_8BIT
+                0x00000000       0x28 libraries\ST_HAL\Src\stm32l4xx_hal_spi.o
+ .text.SPI_RxISR_16BIT
+                0x00000000       0x2c libraries\ST_HAL\Src\stm32l4xx_hal_spi.o
+ .text.SPI_CloseRxTx_ISR
+                0x00000000       0x60 libraries\ST_HAL\Src\stm32l4xx_hal_spi.o
+ .text.SPI_2linesTxISR_8BIT
+                0x00000000       0x54 libraries\ST_HAL\Src\stm32l4xx_hal_spi.o
+ .text.SPI_2linesRxISR_8BIT
+                0x00000000       0x74 libraries\ST_HAL\Src\stm32l4xx_hal_spi.o
+ .text.SPI_2linesTxISR_16BIT
+                0x00000000       0x38 libraries\ST_HAL\Src\stm32l4xx_hal_spi.o
+ .text.SPI_2linesRxISR_16BIT
+                0x00000000       0x3c libraries\ST_HAL\Src\stm32l4xx_hal_spi.o
+ .text.SPI_DMAError
+                0x00000000       0x24 libraries\ST_HAL\Src\stm32l4xx_hal_spi.o
+ .text.SPI_DMATransmitCplt
+                0x00000000       0x70 libraries\ST_HAL\Src\stm32l4xx_hal_spi.o
+ .text.SPI_DMAReceiveCplt
+                0x00000000       0x58 libraries\ST_HAL\Src\stm32l4xx_hal_spi.o
+ .text.SPI_DMATransmitReceiveCplt
+                0x00000000       0x60 libraries\ST_HAL\Src\stm32l4xx_hal_spi.o
+ .text.HAL_SPI_IRQHandler
+                0x00000000      0x104 libraries\ST_HAL\Src\stm32l4xx_hal_spi.o
+ .text.SPI_DMAAbortOnError
+                0x00000000       0x14 libraries\ST_HAL\Src\stm32l4xx_hal_spi.o
+ .text.HAL_SPI_AbortCpltCallback
+                0x00000000        0x4 libraries\ST_HAL\Src\stm32l4xx_hal_spi.o
+ .text.HAL_SPI_Abort_IT
+                0x00000000      0x19c libraries\ST_HAL\Src\stm32l4xx_hal_spi.o
+ .text.SPI_DMARxAbortCallback
+                0x00000000       0x94 libraries\ST_HAL\Src\stm32l4xx_hal_spi.o
+ .text.SPI_DMATxAbortCallback
+                0x00000000       0x90 libraries\ST_HAL\Src\stm32l4xx_hal_spi.o
+ .text.HAL_SPI_GetState
+                0x00000000        0x8 libraries\ST_HAL\Src\stm32l4xx_hal_spi.o
+ .text.HAL_SPI_GetError
+                0x00000000        0x4 libraries\ST_HAL\Src\stm32l4xx_hal_spi.o
+ .debug_info    0x00000000     0x1d83 libraries\ST_HAL\Src\stm32l4xx_hal_spi.o
+ .debug_abbrev  0x00000000      0x251 libraries\ST_HAL\Src\stm32l4xx_hal_spi.o
+ .debug_loc     0x00000000     0x185f libraries\ST_HAL\Src\stm32l4xx_hal_spi.o
+ .debug_aranges
+                0x00000000      0x1d8 libraries\ST_HAL\Src\stm32l4xx_hal_spi.o
+ .debug_ranges  0x00000000      0x1c8 libraries\ST_HAL\Src\stm32l4xx_hal_spi.o
+ .debug_line    0x00000000      0xcc6 libraries\ST_HAL\Src\stm32l4xx_hal_spi.o
+ .debug_str     0x00000000      0xbaa libraries\ST_HAL\Src\stm32l4xx_hal_spi.o
+ .comment       0x00000000       0x83 libraries\ST_HAL\Src\stm32l4xx_hal_spi.o
+ .ARM.attributes
+                0x00000000       0x39 libraries\ST_HAL\Src\stm32l4xx_hal_spi.o
+ .debug_frame   0x00000000      0x560 libraries\ST_HAL\Src\stm32l4xx_hal_spi.o
+ .text          0x00000000        0x0 libraries\ST_HAL\Src\stm32l4xx_hal_spi_ex.o
+ .data          0x00000000        0x0 libraries\ST_HAL\Src\stm32l4xx_hal_spi_ex.o
+ .bss           0x00000000        0x0 libraries\ST_HAL\Src\stm32l4xx_hal_spi_ex.o
+ .text.HAL_SPIEx_FlushRxFifo
+                0x00000000       0x28 libraries\ST_HAL\Src\stm32l4xx_hal_spi_ex.o
+ .debug_info    0x00000000      0x5da libraries\ST_HAL\Src\stm32l4xx_hal_spi_ex.o
+ .debug_abbrev  0x00000000      0x140 libraries\ST_HAL\Src\stm32l4xx_hal_spi_ex.o
+ .debug_loc     0x00000000       0x71 libraries\ST_HAL\Src\stm32l4xx_hal_spi_ex.o
+ .debug_aranges
+                0x00000000       0x20 libraries\ST_HAL\Src\stm32l4xx_hal_spi_ex.o
+ .debug_ranges  0x00000000       0x10 libraries\ST_HAL\Src\stm32l4xx_hal_spi_ex.o
+ .debug_line    0x00000000      0x242 libraries\ST_HAL\Src\stm32l4xx_hal_spi_ex.o
+ .debug_str     0x00000000      0x643 libraries\ST_HAL\Src\stm32l4xx_hal_spi_ex.o
+ .comment       0x00000000       0x83 libraries\ST_HAL\Src\stm32l4xx_hal_spi_ex.o
+ .ARM.attributes
+                0x00000000       0x39 libraries\ST_HAL\Src\stm32l4xx_hal_spi_ex.o
+ .debug_frame   0x00000000       0x24 libraries\ST_HAL\Src\stm32l4xx_hal_spi_ex.o
+ .text          0x00000000        0x0 libraries\ST_HAL\Src\stm32l4xx_hal_tim.o
+ .data          0x00000000        0x0 libraries\ST_HAL\Src\stm32l4xx_hal_tim.o
+ .bss           0x00000000        0x0 libraries\ST_HAL\Src\stm32l4xx_hal_tim.o
+ .debug_info    0x00000000       0x99 libraries\ST_HAL\Src\stm32l4xx_hal_tim.o
+ .debug_abbrev  0x00000000       0x4b libraries\ST_HAL\Src\stm32l4xx_hal_tim.o
+ .debug_aranges
+                0x00000000       0x18 libraries\ST_HAL\Src\stm32l4xx_hal_tim.o
+ .debug_line    0x00000000      0x152 libraries\ST_HAL\Src\stm32l4xx_hal_tim.o
+ .debug_str     0x00000000      0x1de libraries\ST_HAL\Src\stm32l4xx_hal_tim.o
+ .comment       0x00000000       0x83 libraries\ST_HAL\Src\stm32l4xx_hal_tim.o
+ .ARM.attributes
+                0x00000000       0x39 libraries\ST_HAL\Src\stm32l4xx_hal_tim.o
+ .text          0x00000000        0x0 libraries\ST_HAL\Src\stm32l4xx_hal_tim_ex.o
+ .data          0x00000000        0x0 libraries\ST_HAL\Src\stm32l4xx_hal_tim_ex.o
+ .bss           0x00000000        0x0 libraries\ST_HAL\Src\stm32l4xx_hal_tim_ex.o
+ .debug_info    0x00000000       0x99 libraries\ST_HAL\Src\stm32l4xx_hal_tim_ex.o
+ .debug_abbrev  0x00000000       0x4b libraries\ST_HAL\Src\stm32l4xx_hal_tim_ex.o
+ .debug_aranges
+                0x00000000       0x18 libraries\ST_HAL\Src\stm32l4xx_hal_tim_ex.o
+ .debug_line    0x00000000      0x152 libraries\ST_HAL\Src\stm32l4xx_hal_tim_ex.o
+ .debug_str     0x00000000      0x1e1 libraries\ST_HAL\Src\stm32l4xx_hal_tim_ex.o
+ .comment       0x00000000       0x83 libraries\ST_HAL\Src\stm32l4xx_hal_tim_ex.o
+ .ARM.attributes
+                0x00000000       0x39 libraries\ST_HAL\Src\stm32l4xx_hal_tim_ex.o
+ .text          0x00000000        0x0 libraries\ST_HAL\Src\stm32l4xx_hal_uart.o
+ .data          0x00000000        0x0 libraries\ST_HAL\Src\stm32l4xx_hal_uart.o
+ .bss           0x00000000        0x0 libraries\ST_HAL\Src\stm32l4xx_hal_uart.o
+ .text.UART_EndTxTransfer
+                0x00000000       0x14 libraries\ST_HAL\Src\stm32l4xx_hal_uart.o
+ .text.UART_EndRxTransfer
+                0x00000000       0x20 libraries\ST_HAL\Src\stm32l4xx_hal_uart.o
+ .text.UART_TxISR_8BIT
+                0x00000000       0x44 libraries\ST_HAL\Src\stm32l4xx_hal_uart.o
+ .text.UART_TxISR_16BIT
+                0x00000000       0x48 libraries\ST_HAL\Src\stm32l4xx_hal_uart.o
+ .text.HAL_UART_MspInit
+                0x00000000        0x4 libraries\ST_HAL\Src\stm32l4xx_hal_uart.o
+ .text.HAL_UART_MspDeInit
+                0x00000000        0x4 libraries\ST_HAL\Src\stm32l4xx_hal_uart.o
+ .text.HAL_UART_DeInit
+                0x00000000       0x40 libraries\ST_HAL\Src\stm32l4xx_hal_uart.o
+ .text.HAL_UART_Transmit_IT
+                0x00000000       0x74 libraries\ST_HAL\Src\stm32l4xx_hal_uart.o
+ .text.HAL_UART_Receive_IT
+                0x00000000       0xd0 libraries\ST_HAL\Src\stm32l4xx_hal_uart.o
+ .text.HAL_UART_Transmit_DMA
+                0x00000000       0x90 libraries\ST_HAL\Src\stm32l4xx_hal_uart.o
+ .text.HAL_UART_Receive_DMA
+                0x00000000       0x9c libraries\ST_HAL\Src\stm32l4xx_hal_uart.o
+ .text.HAL_UART_DMAPause
+                0x00000000       0x68 libraries\ST_HAL\Src\stm32l4xx_hal_uart.o
+ .text.HAL_UART_DMAResume
+                0x00000000       0x60 libraries\ST_HAL\Src\stm32l4xx_hal_uart.o
+ .text.HAL_UART_DMAStop
+                0x00000000       0x5c libraries\ST_HAL\Src\stm32l4xx_hal_uart.o
+ .text.HAL_UART_Abort
+                0x00000000       0x84 libraries\ST_HAL\Src\stm32l4xx_hal_uart.o
+ .text.HAL_UART_AbortTransmit
+                0x00000000       0x3c libraries\ST_HAL\Src\stm32l4xx_hal_uart.o
+ .text.HAL_UART_AbortReceive
+                0x00000000       0x58 libraries\ST_HAL\Src\stm32l4xx_hal_uart.o
+ .text.HAL_UART_TxCpltCallback
+                0x00000000        0x4 libraries\ST_HAL\Src\stm32l4xx_hal_uart.o
+ .text.UART_DMATransmitCplt
+                0x00000000       0x34 libraries\ST_HAL\Src\stm32l4xx_hal_uart.o
+ .text.UART_EndTransmit_IT
+                0x00000000       0x1c libraries\ST_HAL\Src\stm32l4xx_hal_uart.o
+ .text.HAL_UART_TxHalfCpltCallback
+                0x00000000        0x4 libraries\ST_HAL\Src\stm32l4xx_hal_uart.o
+ .text.UART_DMATxHalfCplt
+                0x00000000        0xc libraries\ST_HAL\Src\stm32l4xx_hal_uart.o
+ .text.HAL_UART_RxCpltCallback
+                0x00000000        0x4 libraries\ST_HAL\Src\stm32l4xx_hal_uart.o
+ .text.UART_RxISR_8BIT
+                0x00000000       0x60 libraries\ST_HAL\Src\stm32l4xx_hal_uart.o
+ .text.UART_RxISR_16BIT
+                0x00000000       0x60 libraries\ST_HAL\Src\stm32l4xx_hal_uart.o
+ .text.UART_DMAReceiveCplt
+                0x00000000       0x40 libraries\ST_HAL\Src\stm32l4xx_hal_uart.o
+ .text.HAL_UART_RxHalfCpltCallback
+                0x00000000        0x4 libraries\ST_HAL\Src\stm32l4xx_hal_uart.o
+ .text.UART_DMARxHalfCplt
+                0x00000000        0xc libraries\ST_HAL\Src\stm32l4xx_hal_uart.o
+ .text.HAL_UART_ErrorCallback
+                0x00000000        0x4 libraries\ST_HAL\Src\stm32l4xx_hal_uart.o
+ .text.UART_DMAError
+                0x00000000       0x54 libraries\ST_HAL\Src\stm32l4xx_hal_uart.o
+ .text.HAL_UART_IRQHandler
+                0x00000000      0x164 libraries\ST_HAL\Src\stm32l4xx_hal_uart.o
+ .text.UART_DMAAbortOnError
+                0x00000000       0x14 libraries\ST_HAL\Src\stm32l4xx_hal_uart.o
+ .text.HAL_UART_AbortCpltCallback
+                0x00000000        0x4 libraries\ST_HAL\Src\stm32l4xx_hal_uart.o
+ .text.HAL_UART_Abort_IT
+                0x00000000       0xd8 libraries\ST_HAL\Src\stm32l4xx_hal_uart.o
+ .text.UART_DMARxAbortCallback
+                0x00000000       0x40 libraries\ST_HAL\Src\stm32l4xx_hal_uart.o
+ .text.UART_DMATxAbortCallback
+                0x00000000       0x34 libraries\ST_HAL\Src\stm32l4xx_hal_uart.o
+ .text.HAL_UART_AbortTransmitCpltCallback
+                0x00000000        0x4 libraries\ST_HAL\Src\stm32l4xx_hal_uart.o
+ .text.HAL_UART_AbortTransmit_IT
+                0x00000000       0x68 libraries\ST_HAL\Src\stm32l4xx_hal_uart.o
+ .text.UART_DMATxOnlyAbortCallback
+                0x00000000       0x18 libraries\ST_HAL\Src\stm32l4xx_hal_uart.o
+ .text.HAL_UART_AbortReceiveCpltCallback
+                0x00000000        0x4 libraries\ST_HAL\Src\stm32l4xx_hal_uart.o
+ .text.HAL_UART_AbortReceive_IT
+                0x00000000       0x88 libraries\ST_HAL\Src\stm32l4xx_hal_uart.o
+ .text.UART_DMARxOnlyAbortCallback
+                0x00000000       0x28 libraries\ST_HAL\Src\stm32l4xx_hal_uart.o
+ .text.HAL_MultiProcessor_EnterMuteMode
+                0x00000000       0x10 libraries\ST_HAL\Src\stm32l4xx_hal_uart.o
+ .text.HAL_HalfDuplex_EnableTransmitter
+                0x00000000       0x3c libraries\ST_HAL\Src\stm32l4xx_hal_uart.o
+ .text.HAL_HalfDuplex_EnableReceiver
+                0x00000000       0x3c libraries\ST_HAL\Src\stm32l4xx_hal_uart.o
+ .text.HAL_LIN_SendBreak
+                0x00000000       0x34 libraries\ST_HAL\Src\stm32l4xx_hal_uart.o
+ .text.HAL_UART_GetState
+                0x00000000        0xc libraries\ST_HAL\Src\stm32l4xx_hal_uart.o
+ .text.HAL_UART_GetError
+                0x00000000        0x4 libraries\ST_HAL\Src\stm32l4xx_hal_uart.o
+ .text.UART_SetConfig
+                0x00000000      0x3d0 libraries\ST_HAL\Src\stm32l4xx_hal_uart.o
+ .text.UART_AdvFeatureConfig
+                0x00000000       0xc8 libraries\ST_HAL\Src\stm32l4xx_hal_uart.o
+ .text.UART_WaitOnFlagUntilTimeout
+                0x00000000       0x68 libraries\ST_HAL\Src\stm32l4xx_hal_uart.o
+ .text.HAL_UART_Transmit
+                0x00000000       0xd8 libraries\ST_HAL\Src\stm32l4xx_hal_uart.o
+ .text.HAL_UART_Receive
+                0x00000000      0x114 libraries\ST_HAL\Src\stm32l4xx_hal_uart.o
+ .text.UART_CheckIdleState
+                0x00000000       0x6c libraries\ST_HAL\Src\stm32l4xx_hal_uart.o
+ .text.HAL_UART_Init
+                0x00000000       0x68 libraries\ST_HAL\Src\stm32l4xx_hal_uart.o
+ .text.HAL_HalfDuplex_Init
+                0x00000000       0x74 libraries\ST_HAL\Src\stm32l4xx_hal_uart.o
+ .text.HAL_LIN_Init
+                0x00000000       0x98 libraries\ST_HAL\Src\stm32l4xx_hal_uart.o
+ .text.HAL_MultiProcessor_Init
+                0x00000000       0x90 libraries\ST_HAL\Src\stm32l4xx_hal_uart.o
+ .text.HAL_MultiProcessor_EnableMuteMode
+                0x00000000       0x30 libraries\ST_HAL\Src\stm32l4xx_hal_uart.o
+ .text.HAL_MultiProcessor_DisableMuteMode
+                0x00000000       0x30 libraries\ST_HAL\Src\stm32l4xx_hal_uart.o
+ .debug_info    0x00000000     0x1bca libraries\ST_HAL\Src\stm32l4xx_hal_uart.o
+ .debug_abbrev  0x00000000      0x260 libraries\ST_HAL\Src\stm32l4xx_hal_uart.o
+ .debug_loc     0x00000000     0x159a libraries\ST_HAL\Src\stm32l4xx_hal_uart.o
+ .debug_aranges
+                0x00000000      0x1f8 libraries\ST_HAL\Src\stm32l4xx_hal_uart.o
+ .debug_ranges  0x00000000      0x1e8 libraries\ST_HAL\Src\stm32l4xx_hal_uart.o
+ .debug_line    0x00000000      0xd49 libraries\ST_HAL\Src\stm32l4xx_hal_uart.o
+ .debug_str     0x00000000      0xfe5 libraries\ST_HAL\Src\stm32l4xx_hal_uart.o
+ .comment       0x00000000       0x83 libraries\ST_HAL\Src\stm32l4xx_hal_uart.o
+ .ARM.attributes
+                0x00000000       0x39 libraries\ST_HAL\Src\stm32l4xx_hal_uart.o
+ .debug_frame   0x00000000      0x538 libraries\ST_HAL\Src\stm32l4xx_hal_uart.o
+ .text          0x00000000        0x0 libraries\ST_HAL\Src\stm32l4xx_hal_uart_ex.o
+ .data          0x00000000        0x0 libraries\ST_HAL\Src\stm32l4xx_hal_uart_ex.o
+ .bss           0x00000000        0x0 libraries\ST_HAL\Src\stm32l4xx_hal_uart_ex.o
+ .text.UARTEx_Wakeup_AddressConfig
+                0x00000000       0x30 libraries\ST_HAL\Src\stm32l4xx_hal_uart_ex.o
+ .text.HAL_RS485Ex_Init
+                0x00000000       0x88 libraries\ST_HAL\Src\stm32l4xx_hal_uart_ex.o
+ .text.HAL_UARTEx_WakeupCallback
+                0x00000000        0x4 libraries\ST_HAL\Src\stm32l4xx_hal_uart_ex.o
+ .text.HAL_MultiProcessorEx_AddressLength_Set
+                0x00000000       0x38 libraries\ST_HAL\Src\stm32l4xx_hal_uart_ex.o
+ .text.HAL_UARTEx_StopModeWakeUpSourceConfig
+                0x00000000       0x80 libraries\ST_HAL\Src\stm32l4xx_hal_uart_ex.o
+ .text.HAL_UARTEx_EnableStopMode
+                0x00000000       0x34 libraries\ST_HAL\Src\stm32l4xx_hal_uart_ex.o
+ .text.HAL_UARTEx_DisableStopMode
+                0x00000000       0x34 libraries\ST_HAL\Src\stm32l4xx_hal_uart_ex.o
+ .debug_info    0x00000000      0x999 libraries\ST_HAL\Src\stm32l4xx_hal_uart_ex.o
+ .debug_abbrev  0x00000000      0x223 libraries\ST_HAL\Src\stm32l4xx_hal_uart_ex.o
+ .debug_loc     0x00000000      0x2ab libraries\ST_HAL\Src\stm32l4xx_hal_uart_ex.o
+ .debug_aranges
+                0x00000000       0x50 libraries\ST_HAL\Src\stm32l4xx_hal_uart_ex.o
+ .debug_ranges  0x00000000       0x40 libraries\ST_HAL\Src\stm32l4xx_hal_uart_ex.o
+ .debug_line    0x00000000      0x374 libraries\ST_HAL\Src\stm32l4xx_hal_uart_ex.o
+ .debug_str     0x00000000      0x8bd libraries\ST_HAL\Src\stm32l4xx_hal_uart_ex.o
+ .comment       0x00000000       0x83 libraries\ST_HAL\Src\stm32l4xx_hal_uart_ex.o
+ .ARM.attributes
+                0x00000000       0x39 libraries\ST_HAL\Src\stm32l4xx_hal_uart_ex.o
+ .debug_frame   0x00000000       0xa8 libraries\ST_HAL\Src\stm32l4xx_hal_uart_ex.o
+ .text          0x00000000        0x0 stm32l4xx_hal_msp.o
+ .data          0x00000000        0x0 stm32l4xx_hal_msp.o
+ .bss           0x00000000        0x0 stm32l4xx_hal_msp.o
+ .text.HAL_MspInit
+                0x00000000       0x90 stm32l4xx_hal_msp.o
+ .text.HAL_SPI_MspInit
+                0x00000000       0x4c stm32l4xx_hal_msp.o
+ .text.HAL_SPI_MspDeInit
+                0x00000000       0x28 stm32l4xx_hal_msp.o
+ .text.HAL_UART_MspInit
+                0x00000000       0x4c stm32l4xx_hal_msp.o
+ .text.HAL_UART_MspDeInit
+                0x00000000       0x28 stm32l4xx_hal_msp.o
+ .debug_info    0x00000000     0x1098 stm32l4xx_hal_msp.o
+ .debug_abbrev  0x00000000      0x194 stm32l4xx_hal_msp.o
+ .debug_loc     0x00000000       0x84 stm32l4xx_hal_msp.o
+ .debug_aranges
+                0x00000000       0x40 stm32l4xx_hal_msp.o
+ .debug_ranges  0x00000000       0x30 stm32l4xx_hal_msp.o
+ .debug_line    0x00000000      0x2c6 stm32l4xx_hal_msp.o
+ .debug_str     0x00000000      0xeb6 stm32l4xx_hal_msp.o
+ .comment       0x00000000       0x83 stm32l4xx_hal_msp.o
+ .ARM.attributes
+                0x00000000       0x39 stm32l4xx_hal_msp.o
+ .debug_frame   0x00000000       0x88 stm32l4xx_hal_msp.o
+ .text          0x00000000        0x0 c:/program files (x86)/atollic/truestudio for arm 5.4.1/armtools/bin/../lib/gcc/arm-atollic-eabi/4.8.3/../../../../arm-atollic-eabi/lib/armv7e-m/fpu\libc_s.a(lib_a-init.o)
+ .data          0x00000000        0x0 c:/program files (x86)/atollic/truestudio for arm 5.4.1/armtools/bin/../lib/gcc/arm-atollic-eabi/4.8.3/../../../../arm-atollic-eabi/lib/armv7e-m/fpu\libc_s.a(lib_a-init.o)
+ .bss           0x00000000        0x0 c:/program files (x86)/atollic/truestudio for arm 5.4.1/armtools/bin/../lib/gcc/arm-atollic-eabi/4.8.3/../../../../arm-atollic-eabi/lib/armv7e-m/fpu\libc_s.a(lib_a-init.o)
+ .text          0x00000000       0x2c c:/program files (x86)/atollic/truestudio for arm 5.4.1/armtools/bin/../lib/gcc/arm-atollic-eabi/4.8.3/armv7e-m/fpu\libgcc.a(_aeabi_uldivmod.o)
+ .data          0x00000000        0x0 c:/program files (x86)/atollic/truestudio for arm 5.4.1/armtools/bin/../lib/gcc/arm-atollic-eabi/4.8.3/armv7e-m/fpu\libgcc.a(_aeabi_uldivmod.o)
+ .bss           0x00000000        0x0 c:/program files (x86)/atollic/truestudio for arm 5.4.1/armtools/bin/../lib/gcc/arm-atollic-eabi/4.8.3/armv7e-m/fpu\libgcc.a(_aeabi_uldivmod.o)
+ .ARM.attributes
+                0x00000000       0x22 c:/program files (x86)/atollic/truestudio for arm 5.4.1/armtools/bin/../lib/gcc/arm-atollic-eabi/4.8.3/armv7e-m/fpu\libgcc.a(_aeabi_uldivmod.o)
+ .text          0x00000000       0x60 c:/program files (x86)/atollic/truestudio for arm 5.4.1/armtools/bin/../lib/gcc/arm-atollic-eabi/4.8.3/armv7e-m/fpu\libgcc.a(bpabi.o)
+ .data          0x00000000        0x0 c:/program files (x86)/atollic/truestudio for arm 5.4.1/armtools/bin/../lib/gcc/arm-atollic-eabi/4.8.3/armv7e-m/fpu\libgcc.a(bpabi.o)
+ .bss           0x00000000        0x0 c:/program files (x86)/atollic/truestudio for arm 5.4.1/armtools/bin/../lib/gcc/arm-atollic-eabi/4.8.3/armv7e-m/fpu\libgcc.a(bpabi.o)
+ .ARM.attributes
+                0x00000000       0x34 c:/program files (x86)/atollic/truestudio for arm 5.4.1/armtools/bin/../lib/gcc/arm-atollic-eabi/4.8.3/armv7e-m/fpu\libgcc.a(bpabi.o)
+ .debug_frame   0x00000000       0x50 c:/program files (x86)/atollic/truestudio for arm 5.4.1/armtools/bin/../lib/gcc/arm-atollic-eabi/4.8.3/armv7e-m/fpu\libgcc.a(bpabi.o)
+ .text          0x00000000        0x4 c:/program files (x86)/atollic/truestudio for arm 5.4.1/armtools/bin/../lib/gcc/arm-atollic-eabi/4.8.3/armv7e-m/fpu\libgcc.a(_dvmd_tls.o)
+ .data          0x00000000        0x0 c:/program files (x86)/atollic/truestudio for arm 5.4.1/armtools/bin/../lib/gcc/arm-atollic-eabi/4.8.3/armv7e-m/fpu\libgcc.a(_dvmd_tls.o)
+ .bss           0x00000000        0x0 c:/program files (x86)/atollic/truestudio for arm 5.4.1/armtools/bin/../lib/gcc/arm-atollic-eabi/4.8.3/armv7e-m/fpu\libgcc.a(_dvmd_tls.o)
+ .ARM.attributes
+                0x00000000       0x22 c:/program files (x86)/atollic/truestudio for arm 5.4.1/armtools/bin/../lib/gcc/arm-atollic-eabi/4.8.3/armv7e-m/fpu\libgcc.a(_dvmd_tls.o)
+ .text          0x00000000      0x298 c:/program files (x86)/atollic/truestudio for arm 5.4.1/armtools/bin/../lib/gcc/arm-atollic-eabi/4.8.3/armv7e-m/fpu\libgcc.a(_divdi3.o)
+ .data          0x00000000        0x0 c:/program files (x86)/atollic/truestudio for arm 5.4.1/armtools/bin/../lib/gcc/arm-atollic-eabi/4.8.3/armv7e-m/fpu\libgcc.a(_divdi3.o)
+ .bss           0x00000000        0x0 c:/program files (x86)/atollic/truestudio for arm 5.4.1/armtools/bin/../lib/gcc/arm-atollic-eabi/4.8.3/armv7e-m/fpu\libgcc.a(_divdi3.o)
+ .ARM.extab     0x00000000        0x0 c:/program files (x86)/atollic/truestudio for arm 5.4.1/armtools/bin/../lib/gcc/arm-atollic-eabi/4.8.3/armv7e-m/fpu\libgcc.a(_divdi3.o)
+ .ARM.exidx     0x00000000        0x8 c:/program files (x86)/atollic/truestudio for arm 5.4.1/armtools/bin/../lib/gcc/arm-atollic-eabi/4.8.3/armv7e-m/fpu\libgcc.a(_divdi3.o)
+ .ARM.attributes
+                0x00000000       0x34 c:/program files (x86)/atollic/truestudio for arm 5.4.1/armtools/bin/../lib/gcc/arm-atollic-eabi/4.8.3/armv7e-m/fpu\libgcc.a(_divdi3.o)
+ .debug_frame   0x00000000       0x34 c:/program files (x86)/atollic/truestudio for arm 5.4.1/armtools/bin/../lib/gcc/arm-atollic-eabi/4.8.3/armv7e-m/fpu\libgcc.a(_divdi3.o)
+ .text          0x00000000      0x284 c:/program files (x86)/atollic/truestudio for arm 5.4.1/armtools/bin/../lib/gcc/arm-atollic-eabi/4.8.3/armv7e-m/fpu\libgcc.a(_udivdi3.o)
+ .data          0x00000000        0x0 c:/program files (x86)/atollic/truestudio for arm 5.4.1/armtools/bin/../lib/gcc/arm-atollic-eabi/4.8.3/armv7e-m/fpu\libgcc.a(_udivdi3.o)
+ .bss           0x00000000        0x0 c:/program files (x86)/atollic/truestudio for arm 5.4.1/armtools/bin/../lib/gcc/arm-atollic-eabi/4.8.3/armv7e-m/fpu\libgcc.a(_udivdi3.o)
+ .ARM.extab     0x00000000        0x0 c:/program files (x86)/atollic/truestudio for arm 5.4.1/armtools/bin/../lib/gcc/arm-atollic-eabi/4.8.3/armv7e-m/fpu\libgcc.a(_udivdi3.o)
+ .ARM.exidx     0x00000000        0x8 c:/program files (x86)/atollic/truestudio for arm 5.4.1/armtools/bin/../lib/gcc/arm-atollic-eabi/4.8.3/armv7e-m/fpu\libgcc.a(_udivdi3.o)
+ .ARM.attributes
+                0x00000000       0x34 c:/program files (x86)/atollic/truestudio for arm 5.4.1/armtools/bin/../lib/gcc/arm-atollic-eabi/4.8.3/armv7e-m/fpu\libgcc.a(_udivdi3.o)
+ .debug_frame   0x00000000       0x34 c:/program files (x86)/atollic/truestudio for arm 5.4.1/armtools/bin/../lib/gcc/arm-atollic-eabi/4.8.3/armv7e-m/fpu\libgcc.a(_udivdi3.o)
+ .text          0x00000000        0x0 c:/program files (x86)/atollic/truestudio for arm 5.4.1/armtools/bin/../lib/gcc/arm-atollic-eabi/4.8.3/armv7e-m/fpu/crtend.o
+ .data          0x00000000        0x0 c:/program files (x86)/atollic/truestudio for arm 5.4.1/armtools/bin/../lib/gcc/arm-atollic-eabi/4.8.3/armv7e-m/fpu/crtend.o
+ .bss           0x00000000        0x0 c:/program files (x86)/atollic/truestudio for arm 5.4.1/armtools/bin/../lib/gcc/arm-atollic-eabi/4.8.3/armv7e-m/fpu/crtend.o
+ .eh_frame      0x00000000        0x4 c:/program files (x86)/atollic/truestudio for arm 5.4.1/armtools/bin/../lib/gcc/arm-atollic-eabi/4.8.3/armv7e-m/fpu/crtend.o
+ .ARM.attributes
+                0x00000000       0x34 c:/program files (x86)/atollic/truestudio for arm 5.4.1/armtools/bin/../lib/gcc/arm-atollic-eabi/4.8.3/armv7e-m/fpu/crtend.o
+ .text          0x00000000        0x0 c:/program files (x86)/atollic/truestudio for arm 5.4.1/armtools/bin/../lib/gcc/arm-atollic-eabi/4.8.3/armv7e-m/fpu/crtn.o
+ .data          0x00000000        0x0 c:/program files (x86)/atollic/truestudio for arm 5.4.1/armtools/bin/../lib/gcc/arm-atollic-eabi/4.8.3/armv7e-m/fpu/crtn.o
+ .bss           0x00000000        0x0 c:/program files (x86)/atollic/truestudio for arm 5.4.1/armtools/bin/../lib/gcc/arm-atollic-eabi/4.8.3/armv7e-m/fpu/crtn.o
+
+Memory Configuration
+
+Name             Origin             Length             Attributes
+FLASH            0x08000000         0x00080000         xr
+RAM              0x20000000         0x00020000         xrw
+RAM2             0x10000000         0x00008000         rw
+MEMORY_B1        0x60000000         0x00000000         xr
+*default*        0x00000000         0xffffffff
+
+Linker script and memory map
+
+LOAD c:/program files (x86)/atollic/truestudio for arm 5.4.1/armtools/bin/../lib/gcc/arm-atollic-eabi/4.8.3/armv7e-m/fpu/crti.o
+LOAD c:/program files (x86)/atollic/truestudio for arm 5.4.1/armtools/bin/../lib/gcc/arm-atollic-eabi/4.8.3/armv7e-m/fpu/crtbegin.o
+LOAD Src\Applications\Main\main.o
+LOAD Src\Applications\System_App\System_app.o
+LOAD libraries\CMSIS\Source\startup_stm32l452xx.o
+LOAD libraries\CMSIS\Source\system_stm32l4xx.o
+LOAD libraries\ST_HAL\Src\stm32l4xx_hal.o
+LOAD libraries\ST_HAL\Src\stm32l4xx_hal_cortex.o
+LOAD libraries\ST_HAL\Src\stm32l4xx_hal_dma.o
+LOAD libraries\ST_HAL\Src\stm32l4xx_hal_dma_ex.o
+LOAD libraries\ST_HAL\Src\stm32l4xx_hal_flash.o
+LOAD libraries\ST_HAL\Src\stm32l4xx_hal_flash_ex.o
+LOAD libraries\ST_HAL\Src\stm32l4xx_hal_flash_ramfunc.o
+LOAD libraries\ST_HAL\Src\stm32l4xx_hal_gpio.o
+LOAD libraries\ST_HAL\Src\stm32l4xx_hal_i2c.o
+LOAD libraries\ST_HAL\Src\stm32l4xx_hal_i2c_ex.o
+LOAD libraries\ST_HAL\Src\stm32l4xx_hal_pwr.o
+LOAD libraries\ST_HAL\Src\stm32l4xx_hal_pwr_ex.o
+LOAD libraries\ST_HAL\Src\stm32l4xx_hal_rcc.o
+LOAD libraries\ST_HAL\Src\stm32l4xx_hal_rcc_ex.o
+LOAD libraries\ST_HAL\Src\stm32l4xx_hal_spi.o
+LOAD libraries\ST_HAL\Src\stm32l4xx_hal_spi_ex.o
+LOAD libraries\ST_HAL\Src\stm32l4xx_hal_tim.o
+LOAD libraries\ST_HAL\Src\stm32l4xx_hal_tim_ex.o
+LOAD libraries\ST_HAL\Src\stm32l4xx_hal_uart.o
+LOAD libraries\ST_HAL\Src\stm32l4xx_hal_uart_ex.o
+LOAD stm32l4xx_hal_msp.o
+                0x00000080                malloc_getpagesize_P = 0x80
+START GROUP
+LOAD c:/program files (x86)/atollic/truestudio for arm 5.4.1/armtools/bin/../lib/gcc/arm-atollic-eabi/4.8.3/../../../../arm-atollic-eabi/lib/armv7e-m/fpu\libc_s.a
+LOAD c:/program files (x86)/atollic/truestudio for arm 5.4.1/armtools/bin/../lib/gcc/arm-atollic-eabi/4.8.3/../../../../arm-atollic-eabi/lib/armv7e-m/fpu\libm.a
+END GROUP
+START GROUP
+LOAD c:/program files (x86)/atollic/truestudio for arm 5.4.1/armtools/bin/../lib/gcc/arm-atollic-eabi/4.8.3/armv7e-m/fpu\libgcc.a
+LOAD c:/program files (x86)/atollic/truestudio for arm 5.4.1/armtools/bin/../lib/gcc/arm-atollic-eabi/4.8.3/../../../../arm-atollic-eabi/lib/armv7e-m/fpu\libc_s.a
+END GROUP
+START GROUP
+LOAD c:/program files (x86)/atollic/truestudio for arm 5.4.1/armtools/bin/../lib/gcc/arm-atollic-eabi/4.8.3/armv7e-m/fpu\libgcc.a
+LOAD c:/program files (x86)/atollic/truestudio for arm 5.4.1/armtools/bin/../lib/gcc/arm-atollic-eabi/4.8.3/../../../../arm-atollic-eabi/lib/armv7e-m/fpu\libc_s.a
+LOAD c:/program files (x86)/atollic/truestudio for arm 5.4.1/armtools/bin/../lib/gcc/arm-atollic-eabi/4.8.3/../../../../arm-atollic-eabi/lib/armv7e-m/fpu\libnosys.a
+END GROUP
+START GROUP
+LOAD c:/program files (x86)/atollic/truestudio for arm 5.4.1/armtools/bin/../lib/gcc/arm-atollic-eabi/4.8.3/armv7e-m/fpu\libgcc.a
+LOAD c:/program files (x86)/atollic/truestudio for arm 5.4.1/armtools/bin/../lib/gcc/arm-atollic-eabi/4.8.3/../../../../arm-atollic-eabi/lib/armv7e-m/fpu\libc_s.a
+LOAD c:/program files (x86)/atollic/truestudio for arm 5.4.1/armtools/bin/../lib/gcc/arm-atollic-eabi/4.8.3/../../../../arm-atollic-eabi/lib/armv7e-m/fpu\libnosys.a
+END GROUP
+LOAD c:/program files (x86)/atollic/truestudio for arm 5.4.1/armtools/bin/../lib/gcc/arm-atollic-eabi/4.8.3/armv7e-m/fpu/crtend.o
+LOAD c:/program files (x86)/atollic/truestudio for arm 5.4.1/armtools/bin/../lib/gcc/arm-atollic-eabi/4.8.3/armv7e-m/fpu/crtn.o
+                0x20020000                _estack = 0x20020000
+                0x00000000                _Min_Heap_Size = 0x0
+                0x00000400                _Min_Stack_Size = 0x400
+
+.isr_vector     0x08000000      0x194
+                0x08000000                . = ALIGN (0x4)
+ *(.isr_vector)
+ .isr_vector    0x08000000      0x194 libraries\CMSIS\Source\startup_stm32l452xx.o
+                0x08000000                g_pfnVectors
+                0x08000194                . = ALIGN (0x4)
+
+.text           0x08000194      0x150
+                0x08000194                . = ALIGN (0x4)
+ *(.text)
+ .text          0x08000194       0x40 c:/program files (x86)/atollic/truestudio for arm 5.4.1/armtools/bin/../lib/gcc/arm-atollic-eabi/4.8.3/armv7e-m/fpu/crtbegin.o
+ *(.text*)
+ .text.main     0x080001d4        0x4 Src\Applications\Main\main.o
+                0x080001d4                main
+ .text.Reset_Handler
+                0x080001d8       0x5c libraries\CMSIS\Source\startup_stm32l452xx.o
+                0x080001d8                Reset_Handler
+ .text.Default_Handler
+                0x08000234        0x4 libraries\CMSIS\Source\startup_stm32l452xx.o
+                0x08000234                RTC_Alarm_IRQHandler
+                0x08000234                EXTI2_IRQHandler
+                0x08000234                DebugMon_Handler
+                0x08000234                TIM1_CC_IRQHandler
+                0x08000234                TSC_IRQHandler
+                0x08000234                HardFault_Handler
+                0x08000234                SysTick_Handler
+                0x08000234                TAMP_STAMP_IRQHandler
+                0x08000234                PendSV_Handler
+                0x08000234                NMI_Handler
+                0x08000234                EXTI3_IRQHandler
+                0x08000234                LPTIM2_IRQHandler
+                0x08000234                DFSDM1_FLT1_IRQHandler
+                0x08000234                I2C3_ER_IRQHandler
+                0x08000234                EXTI0_IRQHandler
+                0x08000234                I2C2_EV_IRQHandler
+                0x08000234                CAN1_RX0_IRQHandler
+                0x08000234                FPU_IRQHandler
+                0x08000234                TIM1_UP_TIM16_IRQHandler
+                0x08000234                UsageFault_Handler
+                0x08000234                SPI1_IRQHandler
+                0x08000234                TIM6_DAC_IRQHandler
+                0x08000234                DMA2_Channel2_IRQHandler
+                0x08000234                DMA1_Channel4_IRQHandler
+                0x08000234                ADC1_IRQHandler
+                0x08000234                USART3_IRQHandler
+                0x08000234                DMA1_Channel7_IRQHandler
+                0x08000234                CAN1_RX1_IRQHandler
+                0x08000234                DMA2_Channel1_IRQHandler
+                0x08000234                QUADSPI_IRQHandler
+                0x08000234                I2C1_EV_IRQHandler
+                0x08000234                DMA1_Channel6_IRQHandler
+                0x08000234                UART4_IRQHandler
+                0x08000234                DMA2_Channel4_IRQHandler
+                0x08000234                TIM3_IRQHandler
+                0x08000234                RCC_IRQHandler
+                0x08000234                TIM1_TRG_COM_IRQHandler
+                0x08000234                DMA1_Channel1_IRQHandler
+                0x08000234                Default_Handler
+                0x08000234                DMA2_Channel7_IRQHandler
+                0x08000234                EXTI15_10_IRQHandler
+                0x08000234                SDMMC1_IRQHandler
+                0x08000234                I2C3_EV_IRQHandler
+                0x08000234                USB_IRQHandler
+                0x08000234                EXTI9_5_IRQHandler
+                0x08000234                RTC_WKUP_IRQHandler
+                0x08000234                PVD_PVM_IRQHandler
+                0x08000234                SPI2_IRQHandler
+                0x08000234                MemManage_Handler
+                0x08000234                CAN1_TX_IRQHandler
+                0x08000234                SVC_Handler
+                0x08000234                DMA2_Channel5_IRQHandler
+                0x08000234                CRS_IRQHandler
+                0x08000234                DMA1_Channel5_IRQHandler
+                0x08000234                EXTI4_IRQHandler
+                0x08000234                RNG_IRQHandler
+                0x08000234                DMA1_Channel3_IRQHandler
+                0x08000234                COMP_IRQHandler
+                0x08000234                WWDG_IRQHandler
+                0x08000234                I2C4_EV_IRQHandler
+                0x08000234                LPUART1_IRQHandler
+                0x08000234                DMA2_Channel6_IRQHandler
+                0x08000234                TIM2_IRQHandler
+                0x08000234                EXTI1_IRQHandler
+                0x08000234                USART2_IRQHandler
+                0x08000234                DFSDM1_FLT0_IRQHandler
+                0x08000234                I2C2_ER_IRQHandler
+                0x08000234                DMA1_Channel2_IRQHandler
+                0x08000234                CAN1_SCE_IRQHandler
+                0x08000234                FLASH_IRQHandler
+                0x08000234                BusFault_Handler
+                0x08000234                USART1_IRQHandler
+                0x08000234                SPI3_IRQHandler
+                0x08000234                I2C1_ER_IRQHandler
+                0x08000234                LPTIM1_IRQHandler
+                0x08000234                I2C4_ER_IRQHandler
+                0x08000234                SAI1_IRQHandler
+                0x08000234                DMA2_Channel3_IRQHandler
+                0x08000234                TIM1_BRK_TIM15_IRQHandler
+ .text.SystemInit
+                0x08000238       0x48 libraries\CMSIS\Source\system_stm32l4xx.o
+                0x08000238                SystemInit
+ .text.__libc_init_array
+                0x08000280       0x4c c:/program files (x86)/atollic/truestudio for arm 5.4.1/armtools/bin/../lib/gcc/arm-atollic-eabi/4.8.3/../../../../arm-atollic-eabi/lib/armv7e-m/fpu\libc_s.a(lib_a-init.o)
+                0x08000280                __libc_init_array
+ *(.glue_7)
+ .glue_7        0x00000000        0x0 linker stubs
+ *(.glue_7t)
+ .glue_7t       0x00000000        0x0 linker stubs
+ *(.eh_frame)
+ .eh_frame      0x080002cc        0x0 c:/program files (x86)/atollic/truestudio for arm 5.4.1/armtools/bin/../lib/gcc/arm-atollic-eabi/4.8.3/armv7e-m/fpu/crtbegin.o
+ *(.init)
+ .init          0x080002cc        0x4 c:/program files (x86)/atollic/truestudio for arm 5.4.1/armtools/bin/../lib/gcc/arm-atollic-eabi/4.8.3/armv7e-m/fpu/crti.o
+                0x080002cc                _init
+ .init          0x080002d0        0x8 c:/program files (x86)/atollic/truestudio for arm 5.4.1/armtools/bin/../lib/gcc/arm-atollic-eabi/4.8.3/armv7e-m/fpu/crtn.o
+ *(.fini)
+ .fini          0x080002d8        0x4 c:/program files (x86)/atollic/truestudio for arm 5.4.1/armtools/bin/../lib/gcc/arm-atollic-eabi/4.8.3/armv7e-m/fpu/crti.o
+                0x080002d8                _fini
+ .fini          0x080002dc        0x8 c:/program files (x86)/atollic/truestudio for arm 5.4.1/armtools/bin/../lib/gcc/arm-atollic-eabi/4.8.3/armv7e-m/fpu/crtn.o
+                0x080002e4                . = ALIGN (0x4)
+                0x080002e4                _etext = .
+
+.vfp11_veneer   0x080002e4        0x0
+ .vfp11_veneer  0x00000000        0x0 linker stubs
+
+.v4_bx          0x080002e4        0x0
+ .v4_bx         0x00000000        0x0 linker stubs
+
+.iplt           0x080002e4        0x0
+ .iplt          0x00000000        0x0 c:/program files (x86)/atollic/truestudio for arm 5.4.1/armtools/bin/../lib/gcc/arm-atollic-eabi/4.8.3/armv7e-m/fpu/crtbegin.o
+
+.rel.dyn        0x080002e4        0x0
+ .rel.iplt      0x00000000        0x0 c:/program files (x86)/atollic/truestudio for arm 5.4.1/armtools/bin/../lib/gcc/arm-atollic-eabi/4.8.3/armv7e-m/fpu/crtbegin.o
+
+.rodata         0x080002e4        0x0
+                0x080002e4                . = ALIGN (0x4)
+ *(.rodata)
+ *(.rodata*)
+                0x080002e4                . = ALIGN (0x4)
+
+.ARM.extab
+ *(.ARM.extab* .gnu.linkonce.armextab.*)
+
+.ARM            0x080002e4        0x0
+                0x080002e4                __exidx_start = .
+ *(.ARM.exidx*)
+                0x080002e4                __exidx_end = .
+
+.preinit_array  0x080002e4        0x0
+                0x080002e4                PROVIDE (__preinit_array_start, .)
+ *(.preinit_array*)
+                0x080002e4                PROVIDE (__preinit_array_end, .)
+
+.init_array     0x080002e4        0x4
+                0x080002e4                PROVIDE (__init_array_start, .)
+ *(SORT(.init_array.*))
+ *(.init_array*)
+ .init_array    0x080002e4        0x4 c:/program files (x86)/atollic/truestudio for arm 5.4.1/armtools/bin/../lib/gcc/arm-atollic-eabi/4.8.3/armv7e-m/fpu/crtbegin.o
+                0x080002e8                PROVIDE (__init_array_end, .)
+
+.fini_array     0x080002e8        0x4
+                0x080002e8                PROVIDE (__fini_array_start, .)
+ *(SORT(.fini_array.*))
+ *(.fini_array*)
+ .fini_array    0x080002e8        0x4 c:/program files (x86)/atollic/truestudio for arm 5.4.1/armtools/bin/../lib/gcc/arm-atollic-eabi/4.8.3/armv7e-m/fpu/crtbegin.o
+                0x080002ec                PROVIDE (__fini_array_end, .)
+                0x080002ec                _sidata = LOADADDR (.data)
+
+.data           0x20000000        0x0 load address 0x080002ec
+                0x20000000                . = ALIGN (0x4)
+                0x20000000                _sdata = .
+ *(.data)
+ *(.data*)
+                0x20000000                . = ALIGN (0x4)
+                0x20000000                _edata = .
+                0x080002ec                _siram2 = LOADADDR (.ram2)
+
+.igot.plt       0x20000000        0x0 load address 0x080002ec
+ .igot.plt      0x00000000        0x0 c:/program files (x86)/atollic/truestudio for arm 5.4.1/armtools/bin/../lib/gcc/arm-atollic-eabi/4.8.3/armv7e-m/fpu/crtbegin.o
+
+.ram2           0x10000000        0x0 load address 0x080002ec
+                0x10000000                . = ALIGN (0x4)
+                0x10000000                _sram2 = .
+ *(.ram2)
+ *(.ram2*)
+                0x10000000                . = ALIGN (0x4)
+                0x10000000                _eram2 = .
+                0x10000000                . = ALIGN (0x4)
+
+.bss            0x20000000       0x1c
+                0x20000000                _sbss = .
+                0x20000000                __bss_start__ = _sbss
+ *(.bss)
+ .bss           0x20000000       0x1c c:/program files (x86)/atollic/truestudio for arm 5.4.1/armtools/bin/../lib/gcc/arm-atollic-eabi/4.8.3/armv7e-m/fpu/crtbegin.o
+ *(.bss*)
+ *(COMMON)
+                0x2000001c                . = ALIGN (0x4)
+                0x2000001c                _ebss = .
+                0x2000001c                __bss_end__ = _ebss
+
+._user_heap_stack
+                0x2000001c      0x400
+                0x2000001c                . = ALIGN (0x4)
+                0x2000001c                PROVIDE (end, .)
+                0x2000001c                PROVIDE (_end, .)
+                0x2000001c                . = (. + _Min_Heap_Size)
+                0x2000041c                . = (. + _Min_Stack_Size)
+ *fill*         0x2000001c      0x400 
+                0x2000041c                . = ALIGN (0x4)
+
+.memory_b1_text
+ *(.mb1text)
+ *(.mb1text*)
+ *(.mb1rodata)
+ *(.mb1rodata*)
+
+/DISCARD/
+ libc.a(*)
+ libm.a(*)
+ libgcc.a(*)
+
+.ARM.attributes
+                0x00000000       0x30
+ *(.ARM.attributes)
+ .ARM.attributes
+                0x00000000       0x22 c:/program files (x86)/atollic/truestudio for arm 5.4.1/armtools/bin/../lib/gcc/arm-atollic-eabi/4.8.3/armv7e-m/fpu/crti.o
+ .ARM.attributes
+                0x00000022       0x34 c:/program files (x86)/atollic/truestudio for arm 5.4.1/armtools/bin/../lib/gcc/arm-atollic-eabi/4.8.3/armv7e-m/fpu/crtbegin.o
+ .ARM.attributes
+                0x00000056       0x39 Src\Applications\Main\main.o
+ .ARM.attributes
+                0x0000008f       0x21 libraries\CMSIS\Source\startup_stm32l452xx.o
+ .ARM.attributes
+                0x000000b0       0x39 libraries\CMSIS\Source\system_stm32l4xx.o
+ .ARM.attributes
+                0x000000e9       0x34 c:/program files (x86)/atollic/truestudio for arm 5.4.1/armtools/bin/../lib/gcc/arm-atollic-eabi/4.8.3/../../../../arm-atollic-eabi/lib/armv7e-m/fpu\libc_s.a(lib_a-init.o)
+ .ARM.attributes
+                0x0000011d       0x22 c:/program files (x86)/atollic/truestudio for arm 5.4.1/armtools/bin/../lib/gcc/arm-atollic-eabi/4.8.3/armv7e-m/fpu/crtn.o
+OUTPUT(L4_Example_Project.elf elf32-littlearm)
+
+.debug_info     0x00000000      0x6fa
+ .debug_info    0x00000000       0xcf Src\Applications\Main\main.o
+ .debug_info    0x000000cf       0x8d libraries\CMSIS\Source\startup_stm32l452xx.o
+ .debug_info    0x0000015c      0x59e libraries\CMSIS\Source\system_stm32l4xx.o
+
+.debug_abbrev   0x00000000      0x1b1
+ .debug_abbrev  0x00000000       0x7f Src\Applications\Main\main.o
+ .debug_abbrev  0x0000007f       0x12 libraries\CMSIS\Source\startup_stm32l452xx.o
+ .debug_abbrev  0x00000091      0x120 libraries\CMSIS\Source\system_stm32l4xx.o
+
+.debug_aranges  0x00000000       0x70
+ .debug_aranges
+                0x00000000       0x20 Src\Applications\Main\main.o
+ .debug_aranges
+                0x00000020       0x28 libraries\CMSIS\Source\startup_stm32l452xx.o
+ .debug_aranges
+                0x00000048       0x28 libraries\CMSIS\Source\system_stm32l4xx.o
+
+.debug_ranges   0x00000000       0x48
+ .debug_ranges  0x00000000       0x10 Src\Applications\Main\main.o
+ .debug_ranges  0x00000010       0x20 libraries\CMSIS\Source\startup_stm32l452xx.o
+ .debug_ranges  0x00000030       0x18 libraries\CMSIS\Source\system_stm32l4xx.o
+
+.debug_line     0x00000000      0x456
+ .debug_line    0x00000000      0x1e5 Src\Applications\Main\main.o
+ .debug_line    0x000001e5       0x8e libraries\CMSIS\Source\startup_stm32l452xx.o
+ .debug_line    0x00000273      0x1e3 libraries\CMSIS\Source\system_stm32l4xx.o
+
+.debug_str      0x00000000      0x410
+ .debug_str     0x00000000      0x1a7 Src\Applications\Main\main.o
+                                0x1e8 (size before relaxing)
+ .debug_str     0x000001a7      0x269 libraries\CMSIS\Source\system_stm32l4xx.o
+                                0x431 (size before relaxing)
+
+.comment        0x00000000       0x82
+ .comment       0x00000000       0x82 Src\Applications\Main\main.o
+                                 0x83 (size before relaxing)
+ .comment       0x00000000       0x83 libraries\CMSIS\Source\system_stm32l4xx.o
+
+.debug_frame    0x00000000       0x7c
+ .debug_frame   0x00000000       0x20 Src\Applications\Main\main.o
+ .debug_frame   0x00000020       0x30 libraries\CMSIS\Source\system_stm32l4xx.o
+ .debug_frame   0x00000050       0x2c c:/program files (x86)/atollic/truestudio for arm 5.4.1/armtools/bin/../lib/gcc/arm-atollic-eabi/4.8.3/../../../../arm-atollic-eabi/lib/armv7e-m/fpu\libc_s.a(lib_a-init.o)
+
+.debug_loc      0x00000000      0x15f
+ .debug_loc     0x00000000      0x15f libraries\CMSIS\Source\system_stm32l4xx.o
+
+Cross Reference Table
+
+Symbol                                            File
+ADC1_IRQHandler                                   libraries\CMSIS\Source\startup_stm32l452xx.o
+AHBPrescTable                                     libraries\CMSIS\Source\system_stm32l4xx.o
+                                                  libraries\ST_HAL\Src\stm32l4xx_hal_rcc.o
+APBPrescTable                                     libraries\CMSIS\Source\system_stm32l4xx.o
+                                                  libraries\ST_HAL\Src\stm32l4xx_hal_rcc.o
+BusFault_Handler                                  libraries\CMSIS\Source\startup_stm32l452xx.o
+CAN1_RX0_IRQHandler                               libraries\CMSIS\Source\startup_stm32l452xx.o
+CAN1_RX1_IRQHandler                               libraries\CMSIS\Source\startup_stm32l452xx.o
+CAN1_SCE_IRQHandler                               libraries\CMSIS\Source\startup_stm32l452xx.o
+CAN1_TX_IRQHandler                                libraries\CMSIS\Source\startup_stm32l452xx.o
+COMP_IRQHandler                                   libraries\CMSIS\Source\startup_stm32l452xx.o
+CRS_IRQHandler                                    libraries\CMSIS\Source\startup_stm32l452xx.o
+DFSDM1_FLT0_IRQHandler                            libraries\CMSIS\Source\startup_stm32l452xx.o
+DFSDM1_FLT1_IRQHandler                            libraries\CMSIS\Source\startup_stm32l452xx.o
+DMA1_Channel1_IRQHandler                          libraries\CMSIS\Source\startup_stm32l452xx.o
+DMA1_Channel2_IRQHandler                          libraries\CMSIS\Source\startup_stm32l452xx.o
+DMA1_Channel3_IRQHandler                          libraries\CMSIS\Source\startup_stm32l452xx.o
+DMA1_Channel4_IRQHandler                          libraries\CMSIS\Source\startup_stm32l452xx.o
+DMA1_Channel5_IRQHandler                          libraries\CMSIS\Source\startup_stm32l452xx.o
+DMA1_Channel6_IRQHandler                          libraries\CMSIS\Source\startup_stm32l452xx.o
+DMA1_Channel7_IRQHandler                          libraries\CMSIS\Source\startup_stm32l452xx.o
+DMA2_Channel1_IRQHandler                          libraries\CMSIS\Source\startup_stm32l452xx.o
+DMA2_Channel2_IRQHandler                          libraries\CMSIS\Source\startup_stm32l452xx.o
+DMA2_Channel3_IRQHandler                          libraries\CMSIS\Source\startup_stm32l452xx.o
+DMA2_Channel4_IRQHandler                          libraries\CMSIS\Source\startup_stm32l452xx.o
+DMA2_Channel5_IRQHandler                          libraries\CMSIS\Source\startup_stm32l452xx.o
+DMA2_Channel6_IRQHandler                          libraries\CMSIS\Source\startup_stm32l452xx.o
+DMA2_Channel7_IRQHandler                          libraries\CMSIS\Source\startup_stm32l452xx.o
+DebugMon_Handler                                  libraries\CMSIS\Source\startup_stm32l452xx.o
+Default_Handler                                   libraries\CMSIS\Source\startup_stm32l452xx.o
+EXTI0_IRQHandler                                  libraries\CMSIS\Source\startup_stm32l452xx.o
+EXTI15_10_IRQHandler                              libraries\CMSIS\Source\startup_stm32l452xx.o
+EXTI1_IRQHandler                                  libraries\CMSIS\Source\startup_stm32l452xx.o
+EXTI2_IRQHandler                                  libraries\CMSIS\Source\startup_stm32l452xx.o
+EXTI3_IRQHandler                                  libraries\CMSIS\Source\startup_stm32l452xx.o
+EXTI4_IRQHandler                                  libraries\CMSIS\Source\startup_stm32l452xx.o
+EXTI9_5_IRQHandler                                libraries\CMSIS\Source\startup_stm32l452xx.o
+FLASH_FlushCaches                                 libraries\ST_HAL\Src\stm32l4xx_hal_flash_ex.o
+                                                  libraries\ST_HAL\Src\stm32l4xx_hal_flash.o
+FLASH_IRQHandler                                  libraries\CMSIS\Source\startup_stm32l452xx.o
+FLASH_PageErase                                   libraries\ST_HAL\Src\stm32l4xx_hal_flash_ex.o
+                                                  libraries\ST_HAL\Src\stm32l4xx_hal_flash.o
+FLASH_WaitForLastOperation                        libraries\ST_HAL\Src\stm32l4xx_hal_flash.o
+                                                  libraries\ST_HAL\Src\stm32l4xx_hal_flash_ex.o
+FPU_IRQHandler                                    libraries\CMSIS\Source\startup_stm32l452xx.o
+HAL_DBGMCU_DisableDBGSleepMode                    libraries\ST_HAL\Src\stm32l4xx_hal.o
+HAL_DBGMCU_DisableDBGStandbyMode                  libraries\ST_HAL\Src\stm32l4xx_hal.o
+HAL_DBGMCU_DisableDBGStopMode                     libraries\ST_HAL\Src\stm32l4xx_hal.o
+HAL_DBGMCU_EnableDBGSleepMode                     libraries\ST_HAL\Src\stm32l4xx_hal.o
+HAL_DBGMCU_EnableDBGStandbyMode                   libraries\ST_HAL\Src\stm32l4xx_hal.o
+HAL_DBGMCU_EnableDBGStopMode                      libraries\ST_HAL\Src\stm32l4xx_hal.o
+HAL_DMA_Abort                                     libraries\ST_HAL\Src\stm32l4xx_hal_dma.o
+                                                  libraries\ST_HAL\Src\stm32l4xx_hal_uart.o
+                                                  libraries\ST_HAL\Src\stm32l4xx_hal_spi.o
+HAL_DMA_Abort_IT                                  libraries\ST_HAL\Src\stm32l4xx_hal_dma.o
+                                                  libraries\ST_HAL\Src\stm32l4xx_hal_uart.o
+                                                  libraries\ST_HAL\Src\stm32l4xx_hal_spi.o
+                                                  libraries\ST_HAL\Src\stm32l4xx_hal_i2c.o
+HAL_DMA_DeInit                                    libraries\ST_HAL\Src\stm32l4xx_hal_dma.o
+HAL_DMA_GetError                                  libraries\ST_HAL\Src\stm32l4xx_hal_dma.o
+HAL_DMA_GetState                                  libraries\ST_HAL\Src\stm32l4xx_hal_dma.o
+HAL_DMA_IRQHandler                                libraries\ST_HAL\Src\stm32l4xx_hal_dma.o
+HAL_DMA_Init                                      libraries\ST_HAL\Src\stm32l4xx_hal_dma.o
+HAL_DMA_PollForTransfer                           libraries\ST_HAL\Src\stm32l4xx_hal_dma.o
+HAL_DMA_RegisterCallback                          libraries\ST_HAL\Src\stm32l4xx_hal_dma.o
+HAL_DMA_Start                                     libraries\ST_HAL\Src\stm32l4xx_hal_dma.o
+HAL_DMA_Start_IT                                  libraries\ST_HAL\Src\stm32l4xx_hal_dma.o
+                                                  libraries\ST_HAL\Src\stm32l4xx_hal_uart.o
+                                                  libraries\ST_HAL\Src\stm32l4xx_hal_spi.o
+                                                  libraries\ST_HAL\Src\stm32l4xx_hal_i2c.o
+HAL_DMA_UnRegisterCallback                        libraries\ST_HAL\Src\stm32l4xx_hal_dma.o
+HAL_DeInit                                        libraries\ST_HAL\Src\stm32l4xx_hal.o
+HAL_Delay                                         libraries\ST_HAL\Src\stm32l4xx_hal.o
+HAL_FLASHEx_DisableRunPowerDown                   libraries\ST_HAL\Src\stm32l4xx_hal_flash_ramfunc.o
+HAL_FLASHEx_EnableRunPowerDown                    libraries\ST_HAL\Src\stm32l4xx_hal_flash_ramfunc.o
+HAL_FLASHEx_Erase                                 libraries\ST_HAL\Src\stm32l4xx_hal_flash_ex.o
+HAL_FLASHEx_Erase_IT                              libraries\ST_HAL\Src\stm32l4xx_hal_flash_ex.o
+HAL_FLASHEx_OBGetConfig                           libraries\ST_HAL\Src\stm32l4xx_hal_flash_ex.o
+HAL_FLASHEx_OBProgram                             libraries\ST_HAL\Src\stm32l4xx_hal_flash_ex.o
+HAL_FLASH_EndOfOperationCallback                  libraries\ST_HAL\Src\stm32l4xx_hal_flash.o
+HAL_FLASH_GetError                                libraries\ST_HAL\Src\stm32l4xx_hal_flash.o
+HAL_FLASH_IRQHandler                              libraries\ST_HAL\Src\stm32l4xx_hal_flash.o
+HAL_FLASH_Lock                                    libraries\ST_HAL\Src\stm32l4xx_hal_flash.o
+HAL_FLASH_OB_Launch                               libraries\ST_HAL\Src\stm32l4xx_hal_flash.o
+HAL_FLASH_OB_Lock                                 libraries\ST_HAL\Src\stm32l4xx_hal_flash.o
+HAL_FLASH_OB_Unlock                               libraries\ST_HAL\Src\stm32l4xx_hal_flash.o
+HAL_FLASH_OperationErrorCallback                  libraries\ST_HAL\Src\stm32l4xx_hal_flash.o
+HAL_FLASH_Program                                 libraries\ST_HAL\Src\stm32l4xx_hal_flash.o
+HAL_FLASH_Program_IT                              libraries\ST_HAL\Src\stm32l4xx_hal_flash.o
+HAL_FLASH_Unlock                                  libraries\ST_HAL\Src\stm32l4xx_hal_flash.o
+HAL_GPIO_DeInit                                   libraries\ST_HAL\Src\stm32l4xx_hal_gpio.o
+                                                  stm32l4xx_hal_msp.o
+HAL_GPIO_EXTI_Callback                            libraries\ST_HAL\Src\stm32l4xx_hal_gpio.o
+HAL_GPIO_EXTI_IRQHandler                          libraries\ST_HAL\Src\stm32l4xx_hal_gpio.o
+HAL_GPIO_Init                                     libraries\ST_HAL\Src\stm32l4xx_hal_gpio.o
+                                                  stm32l4xx_hal_msp.o
+                                                  libraries\ST_HAL\Src\stm32l4xx_hal_rcc_ex.o
+                                                  libraries\ST_HAL\Src\stm32l4xx_hal_rcc.o
+HAL_GPIO_LockPin                                  libraries\ST_HAL\Src\stm32l4xx_hal_gpio.o
+HAL_GPIO_ReadPin                                  libraries\ST_HAL\Src\stm32l4xx_hal_gpio.o
+HAL_GPIO_TogglePin                                libraries\ST_HAL\Src\stm32l4xx_hal_gpio.o
+HAL_GPIO_WritePin                                 libraries\ST_HAL\Src\stm32l4xx_hal_gpio.o
+HAL_GetDEVID                                      libraries\ST_HAL\Src\stm32l4xx_hal.o
+HAL_GetHalVersion                                 libraries\ST_HAL\Src\stm32l4xx_hal.o
+HAL_GetREVID                                      libraries\ST_HAL\Src\stm32l4xx_hal.o
+HAL_GetTick                                       libraries\ST_HAL\Src\stm32l4xx_hal.o
+                                                  libraries\ST_HAL\Src\stm32l4xx_hal_uart_ex.o
+                                                  libraries\ST_HAL\Src\stm32l4xx_hal_uart.o
+                                                  libraries\ST_HAL\Src\stm32l4xx_hal_spi.o
+                                                  libraries\ST_HAL\Src\stm32l4xx_hal_rcc_ex.o
+                                                  libraries\ST_HAL\Src\stm32l4xx_hal_rcc.o
+                                                  libraries\ST_HAL\Src\stm32l4xx_hal_i2c.o
+                                                  libraries\ST_HAL\Src\stm32l4xx_hal_flash.o
+                                                  libraries\ST_HAL\Src\stm32l4xx_hal_dma.o
+HAL_GetUIDw0                                      libraries\ST_HAL\Src\stm32l4xx_hal.o
+HAL_GetUIDw1                                      libraries\ST_HAL\Src\stm32l4xx_hal.o
+HAL_GetUIDw2                                      libraries\ST_HAL\Src\stm32l4xx_hal.o
+HAL_HalfDuplex_EnableReceiver                     libraries\ST_HAL\Src\stm32l4xx_hal_uart.o
+HAL_HalfDuplex_EnableTransmitter                  libraries\ST_HAL\Src\stm32l4xx_hal_uart.o
+HAL_HalfDuplex_Init                               libraries\ST_HAL\Src\stm32l4xx_hal_uart.o
+HAL_I2CEx_ConfigAnalogFilter                      libraries\ST_HAL\Src\stm32l4xx_hal_i2c_ex.o
+HAL_I2CEx_ConfigDigitalFilter                     libraries\ST_HAL\Src\stm32l4xx_hal_i2c_ex.o
+HAL_I2CEx_DisableFastModePlus                     libraries\ST_HAL\Src\stm32l4xx_hal_i2c_ex.o
+HAL_I2CEx_DisableWakeUp                           libraries\ST_HAL\Src\stm32l4xx_hal_i2c_ex.o
+HAL_I2CEx_EnableFastModePlus                      libraries\ST_HAL\Src\stm32l4xx_hal_i2c_ex.o
+HAL_I2CEx_EnableWakeUp                            libraries\ST_HAL\Src\stm32l4xx_hal_i2c_ex.o
+HAL_I2C_AbortCpltCallback                         libraries\ST_HAL\Src\stm32l4xx_hal_i2c.o
+HAL_I2C_AddrCallback                              libraries\ST_HAL\Src\stm32l4xx_hal_i2c.o
+HAL_I2C_DeInit                                    libraries\ST_HAL\Src\stm32l4xx_hal_i2c.o
+HAL_I2C_DisableListen_IT                          libraries\ST_HAL\Src\stm32l4xx_hal_i2c.o
+HAL_I2C_ER_IRQHandler                             libraries\ST_HAL\Src\stm32l4xx_hal_i2c.o
+HAL_I2C_EV_IRQHandler                             libraries\ST_HAL\Src\stm32l4xx_hal_i2c.o
+HAL_I2C_EnableListen_IT                           libraries\ST_HAL\Src\stm32l4xx_hal_i2c.o
+HAL_I2C_ErrorCallback                             libraries\ST_HAL\Src\stm32l4xx_hal_i2c.o
+HAL_I2C_GetError                                  libraries\ST_HAL\Src\stm32l4xx_hal_i2c.o
+HAL_I2C_GetMode                                   libraries\ST_HAL\Src\stm32l4xx_hal_i2c.o
+HAL_I2C_GetState                                  libraries\ST_HAL\Src\stm32l4xx_hal_i2c.o
+HAL_I2C_Init                                      libraries\ST_HAL\Src\stm32l4xx_hal_i2c.o
+HAL_I2C_IsDeviceReady                             libraries\ST_HAL\Src\stm32l4xx_hal_i2c.o
+HAL_I2C_ListenCpltCallback                        libraries\ST_HAL\Src\stm32l4xx_hal_i2c.o
+HAL_I2C_MasterRxCpltCallback                      libraries\ST_HAL\Src\stm32l4xx_hal_i2c.o
+HAL_I2C_MasterTxCpltCallback                      libraries\ST_HAL\Src\stm32l4xx_hal_i2c.o
+HAL_I2C_Master_Abort_IT                           libraries\ST_HAL\Src\stm32l4xx_hal_i2c.o
+HAL_I2C_Master_Receive                            libraries\ST_HAL\Src\stm32l4xx_hal_i2c.o
+HAL_I2C_Master_Receive_DMA                        libraries\ST_HAL\Src\stm32l4xx_hal_i2c.o
+HAL_I2C_Master_Receive_IT                         libraries\ST_HAL\Src\stm32l4xx_hal_i2c.o
+HAL_I2C_Master_Sequential_Receive_IT              libraries\ST_HAL\Src\stm32l4xx_hal_i2c.o
+HAL_I2C_Master_Sequential_Transmit_IT             libraries\ST_HAL\Src\stm32l4xx_hal_i2c.o
+HAL_I2C_Master_Transmit                           libraries\ST_HAL\Src\stm32l4xx_hal_i2c.o
+HAL_I2C_Master_Transmit_DMA                       libraries\ST_HAL\Src\stm32l4xx_hal_i2c.o
+HAL_I2C_Master_Transmit_IT                        libraries\ST_HAL\Src\stm32l4xx_hal_i2c.o
+HAL_I2C_MemRxCpltCallback                         libraries\ST_HAL\Src\stm32l4xx_hal_i2c.o
+HAL_I2C_MemTxCpltCallback                         libraries\ST_HAL\Src\stm32l4xx_hal_i2c.o
+HAL_I2C_Mem_Read                                  libraries\ST_HAL\Src\stm32l4xx_hal_i2c.o
+HAL_I2C_Mem_Read_DMA                              libraries\ST_HAL\Src\stm32l4xx_hal_i2c.o
+HAL_I2C_Mem_Read_IT                               libraries\ST_HAL\Src\stm32l4xx_hal_i2c.o
+HAL_I2C_Mem_Write                                 libraries\ST_HAL\Src\stm32l4xx_hal_i2c.o
+HAL_I2C_Mem_Write_DMA                             libraries\ST_HAL\Src\stm32l4xx_hal_i2c.o
+HAL_I2C_Mem_Write_IT                              libraries\ST_HAL\Src\stm32l4xx_hal_i2c.o
+HAL_I2C_MspDeInit                                 libraries\ST_HAL\Src\stm32l4xx_hal_i2c.o
+HAL_I2C_MspInit                                   libraries\ST_HAL\Src\stm32l4xx_hal_i2c.o
+HAL_I2C_SlaveRxCpltCallback                       libraries\ST_HAL\Src\stm32l4xx_hal_i2c.o
+HAL_I2C_SlaveTxCpltCallback                       libraries\ST_HAL\Src\stm32l4xx_hal_i2c.o
+HAL_I2C_Slave_Receive                             libraries\ST_HAL\Src\stm32l4xx_hal_i2c.o
+HAL_I2C_Slave_Receive_DMA                         libraries\ST_HAL\Src\stm32l4xx_hal_i2c.o
+HAL_I2C_Slave_Receive_IT                          libraries\ST_HAL\Src\stm32l4xx_hal_i2c.o
+HAL_I2C_Slave_Sequential_Receive_IT               libraries\ST_HAL\Src\stm32l4xx_hal_i2c.o
+HAL_I2C_Slave_Sequential_Transmit_IT              libraries\ST_HAL\Src\stm32l4xx_hal_i2c.o
+HAL_I2C_Slave_Transmit                            libraries\ST_HAL\Src\stm32l4xx_hal_i2c.o
+HAL_I2C_Slave_Transmit_DMA                        libraries\ST_HAL\Src\stm32l4xx_hal_i2c.o
+HAL_I2C_Slave_Transmit_IT                         libraries\ST_HAL\Src\stm32l4xx_hal_i2c.o
+HAL_IncTick                                       libraries\ST_HAL\Src\stm32l4xx_hal.o
+HAL_Init                                          libraries\ST_HAL\Src\stm32l4xx_hal.o
+HAL_InitTick                                      libraries\ST_HAL\Src\stm32l4xx_hal.o
+                                                  libraries\ST_HAL\Src\stm32l4xx_hal_rcc.o
+HAL_LIN_Init                                      libraries\ST_HAL\Src\stm32l4xx_hal_uart.o
+HAL_LIN_SendBreak                                 libraries\ST_HAL\Src\stm32l4xx_hal_uart.o
+HAL_MPU_ConfigRegion                              libraries\ST_HAL\Src\stm32l4xx_hal_cortex.o
+HAL_MPU_Disable                                   libraries\ST_HAL\Src\stm32l4xx_hal_cortex.o
+HAL_MPU_Enable                                    libraries\ST_HAL\Src\stm32l4xx_hal_cortex.o
+HAL_MspDeInit                                     libraries\ST_HAL\Src\stm32l4xx_hal.o
+HAL_MspInit                                       stm32l4xx_hal_msp.o
+                                                  libraries\ST_HAL\Src\stm32l4xx_hal.o
+HAL_MultiProcessorEx_AddressLength_Set            libraries\ST_HAL\Src\stm32l4xx_hal_uart_ex.o
+HAL_MultiProcessor_DisableMuteMode                libraries\ST_HAL\Src\stm32l4xx_hal_uart.o
+HAL_MultiProcessor_EnableMuteMode                 libraries\ST_HAL\Src\stm32l4xx_hal_uart.o
+HAL_MultiProcessor_EnterMuteMode                  libraries\ST_HAL\Src\stm32l4xx_hal_uart.o
+HAL_MultiProcessor_Init                           libraries\ST_HAL\Src\stm32l4xx_hal_uart.o
+HAL_NVIC_ClearPendingIRQ                          libraries\ST_HAL\Src\stm32l4xx_hal_cortex.o
+HAL_NVIC_DisableIRQ                               libraries\ST_HAL\Src\stm32l4xx_hal_cortex.o
+HAL_NVIC_EnableIRQ                                libraries\ST_HAL\Src\stm32l4xx_hal_cortex.o
+HAL_NVIC_GetActive                                libraries\ST_HAL\Src\stm32l4xx_hal_cortex.o
+HAL_NVIC_GetPendingIRQ                            libraries\ST_HAL\Src\stm32l4xx_hal_cortex.o
+HAL_NVIC_GetPriority                              libraries\ST_HAL\Src\stm32l4xx_hal_cortex.o
+HAL_NVIC_GetPriorityGrouping                      libraries\ST_HAL\Src\stm32l4xx_hal_cortex.o
+HAL_NVIC_SetPendingIRQ                            libraries\ST_HAL\Src\stm32l4xx_hal_cortex.o
+HAL_NVIC_SetPriority                              libraries\ST_HAL\Src\stm32l4xx_hal_cortex.o
+                                                  stm32l4xx_hal_msp.o
+                                                  libraries\ST_HAL\Src\stm32l4xx_hal.o
+HAL_NVIC_SetPriorityGrouping                      libraries\ST_HAL\Src\stm32l4xx_hal_cortex.o
+                                                  stm32l4xx_hal_msp.o
+                                                  libraries\ST_HAL\Src\stm32l4xx_hal.o
+HAL_NVIC_SystemReset                              libraries\ST_HAL\Src\stm32l4xx_hal_cortex.o
+HAL_PWREx_ConfigPVM                               libraries\ST_HAL\Src\stm32l4xx_hal_pwr_ex.o
+HAL_PWREx_ControlVoltageScaling                   libraries\ST_HAL\Src\stm32l4xx_hal_pwr_ex.o
+HAL_PWREx_DisableBatteryCharging                  libraries\ST_HAL\Src\stm32l4xx_hal_pwr_ex.o
+HAL_PWREx_DisableGPIOPullDown                     libraries\ST_HAL\Src\stm32l4xx_hal_pwr_ex.o
+HAL_PWREx_DisableGPIOPullUp                       libraries\ST_HAL\Src\stm32l4xx_hal_pwr_ex.o
+HAL_PWREx_DisableInternalWakeUpLine               libraries\ST_HAL\Src\stm32l4xx_hal_pwr_ex.o
+HAL_PWREx_DisableLowPowerRunMode                  libraries\ST_HAL\Src\stm32l4xx_hal_pwr_ex.o
+                                                  libraries\ST_HAL\Src\stm32l4xx_hal_pwr.o
+HAL_PWREx_DisablePVM1                             libraries\ST_HAL\Src\stm32l4xx_hal_pwr_ex.o
+HAL_PWREx_DisablePVM3                             libraries\ST_HAL\Src\stm32l4xx_hal_pwr_ex.o
+HAL_PWREx_DisablePVM4                             libraries\ST_HAL\Src\stm32l4xx_hal_pwr_ex.o
+HAL_PWREx_DisablePullUpPullDownConfig             libraries\ST_HAL\Src\stm32l4xx_hal_pwr_ex.o
+HAL_PWREx_DisableSRAM2ContentRetention            libraries\ST_HAL\Src\stm32l4xx_hal_pwr_ex.o
+HAL_PWREx_DisableVddUSB                           libraries\ST_HAL\Src\stm32l4xx_hal_pwr_ex.o
+HAL_PWREx_EnableBatteryCharging                   libraries\ST_HAL\Src\stm32l4xx_hal_pwr_ex.o
+HAL_PWREx_EnableGPIOPullDown                      libraries\ST_HAL\Src\stm32l4xx_hal_pwr_ex.o
+HAL_PWREx_EnableGPIOPullUp                        libraries\ST_HAL\Src\stm32l4xx_hal_pwr_ex.o
+HAL_PWREx_EnableInternalWakeUpLine                libraries\ST_HAL\Src\stm32l4xx_hal_pwr_ex.o
+HAL_PWREx_EnableLowPowerRunMode                   libraries\ST_HAL\Src\stm32l4xx_hal_pwr_ex.o
+                                                  libraries\ST_HAL\Src\stm32l4xx_hal_pwr.o
+HAL_PWREx_EnablePVM1                              libraries\ST_HAL\Src\stm32l4xx_hal_pwr_ex.o
+HAL_PWREx_EnablePVM3                              libraries\ST_HAL\Src\stm32l4xx_hal_pwr_ex.o
+HAL_PWREx_EnablePVM4                              libraries\ST_HAL\Src\stm32l4xx_hal_pwr_ex.o
+HAL_PWREx_EnablePullUpPullDownConfig              libraries\ST_HAL\Src\stm32l4xx_hal_pwr_ex.o
+HAL_PWREx_EnableSRAM2ContentRetention             libraries\ST_HAL\Src\stm32l4xx_hal_pwr_ex.o
+HAL_PWREx_EnableVddUSB                            libraries\ST_HAL\Src\stm32l4xx_hal_pwr_ex.o
+HAL_PWREx_EnterSHUTDOWNMode                       libraries\ST_HAL\Src\stm32l4xx_hal_pwr_ex.o
+HAL_PWREx_EnterSTOP0Mode                          libraries\ST_HAL\Src\stm32l4xx_hal_pwr_ex.o
+                                                  libraries\ST_HAL\Src\stm32l4xx_hal_pwr.o
+HAL_PWREx_EnterSTOP1Mode                          libraries\ST_HAL\Src\stm32l4xx_hal_pwr_ex.o
+                                                  libraries\ST_HAL\Src\stm32l4xx_hal_pwr.o
+HAL_PWREx_EnterSTOP2Mode                          libraries\ST_HAL\Src\stm32l4xx_hal_pwr_ex.o
+HAL_PWREx_GetVoltageRange                         libraries\ST_HAL\Src\stm32l4xx_hal_pwr_ex.o
+                                                  libraries\ST_HAL\Src\stm32l4xx_hal_rcc.o
+HAL_PWREx_PVD_PVM_IRQHandler                      libraries\ST_HAL\Src\stm32l4xx_hal_pwr_ex.o
+HAL_PWREx_PVM1Callback                            libraries\ST_HAL\Src\stm32l4xx_hal_pwr_ex.o
+HAL_PWREx_PVM3Callback                            libraries\ST_HAL\Src\stm32l4xx_hal_pwr_ex.o
+HAL_PWREx_PVM4Callback                            libraries\ST_HAL\Src\stm32l4xx_hal_pwr_ex.o
+HAL_PWR_ConfigPVD                                 libraries\ST_HAL\Src\stm32l4xx_hal_pwr.o
+HAL_PWR_DeInit                                    libraries\ST_HAL\Src\stm32l4xx_hal_pwr.o
+HAL_PWR_DisableBkUpAccess                         libraries\ST_HAL\Src\stm32l4xx_hal_pwr.o
+                                                  libraries\ST_HAL\Src\stm32l4xx_hal_rcc_ex.o
+HAL_PWR_DisablePVD                                libraries\ST_HAL\Src\stm32l4xx_hal_pwr.o
+HAL_PWR_DisableSEVOnPend                          libraries\ST_HAL\Src\stm32l4xx_hal_pwr.o
+HAL_PWR_DisableSleepOnExit                        libraries\ST_HAL\Src\stm32l4xx_hal_pwr.o
+HAL_PWR_DisableWakeUpPin                          libraries\ST_HAL\Src\stm32l4xx_hal_pwr.o
+HAL_PWR_EnableBkUpAccess                          libraries\ST_HAL\Src\stm32l4xx_hal_pwr.o
+                                                  libraries\ST_HAL\Src\stm32l4xx_hal_rcc_ex.o
+HAL_PWR_EnablePVD                                 libraries\ST_HAL\Src\stm32l4xx_hal_pwr.o
+HAL_PWR_EnableSEVOnPend                           libraries\ST_HAL\Src\stm32l4xx_hal_pwr.o
+HAL_PWR_EnableSleepOnExit                         libraries\ST_HAL\Src\stm32l4xx_hal_pwr.o
+HAL_PWR_EnableWakeUpPin                           libraries\ST_HAL\Src\stm32l4xx_hal_pwr.o
+HAL_PWR_EnterSLEEPMode                            libraries\ST_HAL\Src\stm32l4xx_hal_pwr.o
+HAL_PWR_EnterSTANDBYMode                          libraries\ST_HAL\Src\stm32l4xx_hal_pwr.o
+HAL_PWR_EnterSTOPMode                             libraries\ST_HAL\Src\stm32l4xx_hal_pwr.o
+HAL_PWR_PVDCallback                               libraries\ST_HAL\Src\stm32l4xx_hal_pwr.o
+                                                  libraries\ST_HAL\Src\stm32l4xx_hal_pwr_ex.o
+HAL_RCCEx_CRSConfig                               libraries\ST_HAL\Src\stm32l4xx_hal_rcc_ex.o
+HAL_RCCEx_CRSGetSynchronizationInfo               libraries\ST_HAL\Src\stm32l4xx_hal_rcc_ex.o
+HAL_RCCEx_CRSSoftwareSynchronizationGenerate      libraries\ST_HAL\Src\stm32l4xx_hal_rcc_ex.o
+HAL_RCCEx_CRSWaitSynchronization                  libraries\ST_HAL\Src\stm32l4xx_hal_rcc_ex.o
+HAL_RCCEx_CRS_ErrorCallback                       libraries\ST_HAL\Src\stm32l4xx_hal_rcc_ex.o
+HAL_RCCEx_CRS_ExpectedSyncCallback                libraries\ST_HAL\Src\stm32l4xx_hal_rcc_ex.o
+HAL_RCCEx_CRS_IRQHandler                          libraries\ST_HAL\Src\stm32l4xx_hal_rcc_ex.o
+HAL_RCCEx_CRS_SyncOkCallback                      libraries\ST_HAL\Src\stm32l4xx_hal_rcc_ex.o
+HAL_RCCEx_CRS_SyncWarnCallback                    libraries\ST_HAL\Src\stm32l4xx_hal_rcc_ex.o
+HAL_RCCEx_DisableLSCO                             libraries\ST_HAL\Src\stm32l4xx_hal_rcc_ex.o
+HAL_RCCEx_DisableLSECSS                           libraries\ST_HAL\Src\stm32l4xx_hal_rcc_ex.o
+HAL_RCCEx_DisableMSIPLLMode                       libraries\ST_HAL\Src\stm32l4xx_hal_rcc_ex.o
+HAL_RCCEx_DisablePLLSAI1                          libraries\ST_HAL\Src\stm32l4xx_hal_rcc_ex.o
+HAL_RCCEx_EnableLSCO                              libraries\ST_HAL\Src\stm32l4xx_hal_rcc_ex.o
+HAL_RCCEx_EnableLSECSS                            libraries\ST_HAL\Src\stm32l4xx_hal_rcc_ex.o
+HAL_RCCEx_EnableLSECSS_IT                         libraries\ST_HAL\Src\stm32l4xx_hal_rcc_ex.o
+HAL_RCCEx_EnableMSIPLLMode                        libraries\ST_HAL\Src\stm32l4xx_hal_rcc_ex.o
+HAL_RCCEx_EnablePLLSAI1                           libraries\ST_HAL\Src\stm32l4xx_hal_rcc_ex.o
+HAL_RCCEx_GetPeriphCLKConfig                      libraries\ST_HAL\Src\stm32l4xx_hal_rcc_ex.o
+HAL_RCCEx_GetPeriphCLKFreq                        libraries\ST_HAL\Src\stm32l4xx_hal_rcc_ex.o
+HAL_RCCEx_LSECSS_Callback                         libraries\ST_HAL\Src\stm32l4xx_hal_rcc_ex.o
+HAL_RCCEx_LSECSS_IRQHandler                       libraries\ST_HAL\Src\stm32l4xx_hal_rcc_ex.o
+HAL_RCCEx_PeriphCLKConfig                         libraries\ST_HAL\Src\stm32l4xx_hal_rcc_ex.o
+HAL_RCCEx_StandbyMSIRangeConfig                   libraries\ST_HAL\Src\stm32l4xx_hal_rcc_ex.o
+HAL_RCCEx_WakeUpStopCLKConfig                     libraries\ST_HAL\Src\stm32l4xx_hal_rcc_ex.o
+HAL_RCC_CSSCallback                               libraries\ST_HAL\Src\stm32l4xx_hal_rcc.o
+HAL_RCC_ClockConfig                               libraries\ST_HAL\Src\stm32l4xx_hal_rcc.o
+HAL_RCC_DeInit                                    libraries\ST_HAL\Src\stm32l4xx_hal_rcc.o
+HAL_RCC_EnableCSS                                 libraries\ST_HAL\Src\stm32l4xx_hal_rcc.o
+HAL_RCC_GetClockConfig                            libraries\ST_HAL\Src\stm32l4xx_hal_rcc.o
+HAL_RCC_GetHCLKFreq                               libraries\ST_HAL\Src\stm32l4xx_hal_rcc.o
+HAL_RCC_GetOscConfig                              libraries\ST_HAL\Src\stm32l4xx_hal_rcc.o
+HAL_RCC_GetPCLK1Freq                              libraries\ST_HAL\Src\stm32l4xx_hal_rcc.o
+                                                  libraries\ST_HAL\Src\stm32l4xx_hal_uart.o
+                                                  libraries\ST_HAL\Src\stm32l4xx_hal_rcc_ex.o
+HAL_RCC_GetPCLK2Freq                              libraries\ST_HAL\Src\stm32l4xx_hal_rcc.o
+                                                  libraries\ST_HAL\Src\stm32l4xx_hal_uart.o
+                                                  libraries\ST_HAL\Src\stm32l4xx_hal_rcc_ex.o
+HAL_RCC_GetSysClockFreq                           libraries\ST_HAL\Src\stm32l4xx_hal_rcc.o
+                                                  libraries\ST_HAL\Src\stm32l4xx_hal_uart.o
+                                                  libraries\ST_HAL\Src\stm32l4xx_hal_rcc_ex.o
+HAL_RCC_MCOConfig                                 libraries\ST_HAL\Src\stm32l4xx_hal_rcc.o
+HAL_RCC_NMI_IRQHandler                            libraries\ST_HAL\Src\stm32l4xx_hal_rcc.o
+HAL_RCC_OscConfig                                 libraries\ST_HAL\Src\stm32l4xx_hal_rcc.o
+HAL_RS485Ex_Init                                  libraries\ST_HAL\Src\stm32l4xx_hal_uart_ex.o
+HAL_ResumeTick                                    libraries\ST_HAL\Src\stm32l4xx_hal.o
+HAL_SPIEx_FlushRxFifo                             libraries\ST_HAL\Src\stm32l4xx_hal_spi_ex.o
+HAL_SPI_Abort                                     libraries\ST_HAL\Src\stm32l4xx_hal_spi.o
+HAL_SPI_AbortCpltCallback                         libraries\ST_HAL\Src\stm32l4xx_hal_spi.o
+HAL_SPI_Abort_IT                                  libraries\ST_HAL\Src\stm32l4xx_hal_spi.o
+HAL_SPI_DMAPause                                  libraries\ST_HAL\Src\stm32l4xx_hal_spi.o
+HAL_SPI_DMAResume                                 libraries\ST_HAL\Src\stm32l4xx_hal_spi.o
+HAL_SPI_DMAStop                                   libraries\ST_HAL\Src\stm32l4xx_hal_spi.o
+HAL_SPI_DeInit                                    libraries\ST_HAL\Src\stm32l4xx_hal_spi.o
+HAL_SPI_ErrorCallback                             libraries\ST_HAL\Src\stm32l4xx_hal_spi.o
+HAL_SPI_GetError                                  libraries\ST_HAL\Src\stm32l4xx_hal_spi.o
+HAL_SPI_GetState                                  libraries\ST_HAL\Src\stm32l4xx_hal_spi.o
+HAL_SPI_IRQHandler                                libraries\ST_HAL\Src\stm32l4xx_hal_spi.o
+HAL_SPI_Init                                      libraries\ST_HAL\Src\stm32l4xx_hal_spi.o
+HAL_SPI_MspDeInit                                 stm32l4xx_hal_msp.o
+                                                  libraries\ST_HAL\Src\stm32l4xx_hal_spi.o
+HAL_SPI_MspInit                                   stm32l4xx_hal_msp.o
+                                                  libraries\ST_HAL\Src\stm32l4xx_hal_spi.o
+HAL_SPI_Receive                                   libraries\ST_HAL\Src\stm32l4xx_hal_spi.o
+HAL_SPI_Receive_DMA                               libraries\ST_HAL\Src\stm32l4xx_hal_spi.o
+HAL_SPI_Receive_IT                                libraries\ST_HAL\Src\stm32l4xx_hal_spi.o
+HAL_SPI_RxCpltCallback                            libraries\ST_HAL\Src\stm32l4xx_hal_spi.o
+HAL_SPI_RxHalfCpltCallback                        libraries\ST_HAL\Src\stm32l4xx_hal_spi.o
+HAL_SPI_Transmit                                  libraries\ST_HAL\Src\stm32l4xx_hal_spi.o
+HAL_SPI_TransmitReceive                           libraries\ST_HAL\Src\stm32l4xx_hal_spi.o
+HAL_SPI_TransmitReceive_DMA                       libraries\ST_HAL\Src\stm32l4xx_hal_spi.o
+HAL_SPI_TransmitReceive_IT                        libraries\ST_HAL\Src\stm32l4xx_hal_spi.o
+HAL_SPI_Transmit_DMA                              libraries\ST_HAL\Src\stm32l4xx_hal_spi.o
+HAL_SPI_Transmit_IT                               libraries\ST_HAL\Src\stm32l4xx_hal_spi.o
+HAL_SPI_TxCpltCallback                            libraries\ST_HAL\Src\stm32l4xx_hal_spi.o
+HAL_SPI_TxHalfCpltCallback                        libraries\ST_HAL\Src\stm32l4xx_hal_spi.o
+HAL_SPI_TxRxCpltCallback                          libraries\ST_HAL\Src\stm32l4xx_hal_spi.o
+HAL_SPI_TxRxHalfCpltCallback                      libraries\ST_HAL\Src\stm32l4xx_hal_spi.o
+HAL_SYSCFG_DisableIOAnalogSwitchBooster           libraries\ST_HAL\Src\stm32l4xx_hal.o
+HAL_SYSCFG_DisableMemorySwappingBank              libraries\ST_HAL\Src\stm32l4xx_hal.o
+HAL_SYSCFG_DisableVREFBUF                         libraries\ST_HAL\Src\stm32l4xx_hal.o
+HAL_SYSCFG_EnableIOAnalogSwitchBooster            libraries\ST_HAL\Src\stm32l4xx_hal.o
+HAL_SYSCFG_EnableMemorySwappingBank               libraries\ST_HAL\Src\stm32l4xx_hal.o
+HAL_SYSCFG_EnableVREFBUF                          libraries\ST_HAL\Src\stm32l4xx_hal.o
+HAL_SYSCFG_SRAM2Erase                             libraries\ST_HAL\Src\stm32l4xx_hal.o
+HAL_SYSCFG_VREFBUF_HighImpedanceConfig            libraries\ST_HAL\Src\stm32l4xx_hal.o
+HAL_SYSCFG_VREFBUF_TrimmingConfig                 libraries\ST_HAL\Src\stm32l4xx_hal.o
+HAL_SYSCFG_VREFBUF_VoltageScalingConfig           libraries\ST_HAL\Src\stm32l4xx_hal.o
+HAL_SYSTICK_CLKSourceConfig                       libraries\ST_HAL\Src\stm32l4xx_hal_cortex.o
+HAL_SYSTICK_Callback                              libraries\ST_HAL\Src\stm32l4xx_hal_cortex.o
+HAL_SYSTICK_Config                                libraries\ST_HAL\Src\stm32l4xx_hal_cortex.o
+                                                  libraries\ST_HAL\Src\stm32l4xx_hal.o
+HAL_SYSTICK_IRQHandler                            libraries\ST_HAL\Src\stm32l4xx_hal_cortex.o
+HAL_SuspendTick                                   libraries\ST_HAL\Src\stm32l4xx_hal.o
+HAL_UARTEx_DisableStopMode                        libraries\ST_HAL\Src\stm32l4xx_hal_uart_ex.o
+HAL_UARTEx_EnableStopMode                         libraries\ST_HAL\Src\stm32l4xx_hal_uart_ex.o
+HAL_UARTEx_StopModeWakeUpSourceConfig             libraries\ST_HAL\Src\stm32l4xx_hal_uart_ex.o
+HAL_UARTEx_WakeupCallback                         libraries\ST_HAL\Src\stm32l4xx_hal_uart_ex.o
+                                                  libraries\ST_HAL\Src\stm32l4xx_hal_uart.o
+HAL_UART_Abort                                    libraries\ST_HAL\Src\stm32l4xx_hal_uart.o
+HAL_UART_AbortCpltCallback                        libraries\ST_HAL\Src\stm32l4xx_hal_uart.o
+HAL_UART_AbortReceive                             libraries\ST_HAL\Src\stm32l4xx_hal_uart.o
+HAL_UART_AbortReceiveCpltCallback                 libraries\ST_HAL\Src\stm32l4xx_hal_uart.o
+HAL_UART_AbortReceive_IT                          libraries\ST_HAL\Src\stm32l4xx_hal_uart.o
+HAL_UART_AbortTransmit                            libraries\ST_HAL\Src\stm32l4xx_hal_uart.o
+HAL_UART_AbortTransmitCpltCallback                libraries\ST_HAL\Src\stm32l4xx_hal_uart.o
+HAL_UART_AbortTransmit_IT                         libraries\ST_HAL\Src\stm32l4xx_hal_uart.o
+HAL_UART_Abort_IT                                 libraries\ST_HAL\Src\stm32l4xx_hal_uart.o
+HAL_UART_DMAPause                                 libraries\ST_HAL\Src\stm32l4xx_hal_uart.o
+HAL_UART_DMAResume                                libraries\ST_HAL\Src\stm32l4xx_hal_uart.o
+HAL_UART_DMAStop                                  libraries\ST_HAL\Src\stm32l4xx_hal_uart.o
+HAL_UART_DeInit                                   libraries\ST_HAL\Src\stm32l4xx_hal_uart.o
+HAL_UART_ErrorCallback                            libraries\ST_HAL\Src\stm32l4xx_hal_uart.o
+HAL_UART_GetError                                 libraries\ST_HAL\Src\stm32l4xx_hal_uart.o
+HAL_UART_GetState                                 libraries\ST_HAL\Src\stm32l4xx_hal_uart.o
+HAL_UART_IRQHandler                               libraries\ST_HAL\Src\stm32l4xx_hal_uart.o
+HAL_UART_Init                                     libraries\ST_HAL\Src\stm32l4xx_hal_uart.o
+HAL_UART_MspDeInit                                stm32l4xx_hal_msp.o
+                                                  libraries\ST_HAL\Src\stm32l4xx_hal_uart.o
+HAL_UART_MspInit                                  stm32l4xx_hal_msp.o
+                                                  libraries\ST_HAL\Src\stm32l4xx_hal_uart.o
+                                                  libraries\ST_HAL\Src\stm32l4xx_hal_uart_ex.o
+HAL_UART_Receive                                  libraries\ST_HAL\Src\stm32l4xx_hal_uart.o
+HAL_UART_Receive_DMA                              libraries\ST_HAL\Src\stm32l4xx_hal_uart.o
+HAL_UART_Receive_IT                               libraries\ST_HAL\Src\stm32l4xx_hal_uart.o
+HAL_UART_RxCpltCallback                           libraries\ST_HAL\Src\stm32l4xx_hal_uart.o
+HAL_UART_RxHalfCpltCallback                       libraries\ST_HAL\Src\stm32l4xx_hal_uart.o
+HAL_UART_Transmit                                 libraries\ST_HAL\Src\stm32l4xx_hal_uart.o
+HAL_UART_Transmit_DMA                             libraries\ST_HAL\Src\stm32l4xx_hal_uart.o
+HAL_UART_Transmit_IT                              libraries\ST_HAL\Src\stm32l4xx_hal_uart.o
+HAL_UART_TxCpltCallback                           libraries\ST_HAL\Src\stm32l4xx_hal_uart.o
+HAL_UART_TxHalfCpltCallback                       libraries\ST_HAL\Src\stm32l4xx_hal_uart.o
+HardFault_Handler                                 libraries\CMSIS\Source\startup_stm32l452xx.o
+I2C1_ER_IRQHandler                                libraries\CMSIS\Source\startup_stm32l452xx.o
+I2C1_EV_IRQHandler                                libraries\CMSIS\Source\startup_stm32l452xx.o
+I2C2_ER_IRQHandler                                libraries\CMSIS\Source\startup_stm32l452xx.o
+I2C2_EV_IRQHandler                                libraries\CMSIS\Source\startup_stm32l452xx.o
+I2C3_ER_IRQHandler                                libraries\CMSIS\Source\startup_stm32l452xx.o
+I2C3_EV_IRQHandler                                libraries\CMSIS\Source\startup_stm32l452xx.o
+I2C4_ER_IRQHandler                                libraries\CMSIS\Source\startup_stm32l452xx.o
+I2C4_EV_IRQHandler                                libraries\CMSIS\Source\startup_stm32l452xx.o
+LPTIM1_IRQHandler                                 libraries\CMSIS\Source\startup_stm32l452xx.o
+LPTIM2_IRQHandler                                 libraries\CMSIS\Source\startup_stm32l452xx.o
+LPUART1_IRQHandler                                libraries\CMSIS\Source\startup_stm32l452xx.o
+MSIRangeTable                                     libraries\CMSIS\Source\system_stm32l4xx.o
+                                                  libraries\ST_HAL\Src\stm32l4xx_hal_rcc_ex.o
+                                                  libraries\ST_HAL\Src\stm32l4xx_hal_rcc.o
+MemManage_Handler                                 libraries\CMSIS\Source\startup_stm32l452xx.o
+NMI_Handler                                       libraries\CMSIS\Source\startup_stm32l452xx.o
+PVD_PVM_IRQHandler                                libraries\CMSIS\Source\startup_stm32l452xx.o
+PendSV_Handler                                    libraries\CMSIS\Source\startup_stm32l452xx.o
+QUADSPI_IRQHandler                                libraries\CMSIS\Source\startup_stm32l452xx.o
+RCC_IRQHandler                                    libraries\CMSIS\Source\startup_stm32l452xx.o
+RNG_IRQHandler                                    libraries\CMSIS\Source\startup_stm32l452xx.o
+RTC_Alarm_IRQHandler                              libraries\CMSIS\Source\startup_stm32l452xx.o
+RTC_WKUP_IRQHandler                               libraries\CMSIS\Source\startup_stm32l452xx.o
+Reset_Handler                                     libraries\CMSIS\Source\startup_stm32l452xx.o
+SAI1_IRQHandler                                   libraries\CMSIS\Source\startup_stm32l452xx.o
+SDMMC1_IRQHandler                                 libraries\CMSIS\Source\startup_stm32l452xx.o
+SPI1_IRQHandler                                   libraries\CMSIS\Source\startup_stm32l452xx.o
+SPI2_IRQHandler                                   libraries\CMSIS\Source\startup_stm32l452xx.o
+SPI3_IRQHandler                                   libraries\CMSIS\Source\startup_stm32l452xx.o
+SVC_Handler                                       libraries\CMSIS\Source\startup_stm32l452xx.o
+SysTick_Handler                                   libraries\CMSIS\Source\startup_stm32l452xx.o
+SystemCoreClock                                   libraries\CMSIS\Source\system_stm32l4xx.o
+                                                  libraries\ST_HAL\Src\stm32l4xx_hal_spi.o
+                                                  libraries\ST_HAL\Src\stm32l4xx_hal_rcc.o
+                                                  libraries\ST_HAL\Src\stm32l4xx_hal_pwr_ex.o
+                                                  libraries\ST_HAL\Src\stm32l4xx_hal.o
+SystemCoreClockUpdate                             libraries\CMSIS\Source\system_stm32l4xx.o
+SystemInit                                        libraries\CMSIS\Source\system_stm32l4xx.o
+                                                  libraries\CMSIS\Source\startup_stm32l452xx.o
+TAMP_STAMP_IRQHandler                             libraries\CMSIS\Source\startup_stm32l452xx.o
+TIM1_BRK_TIM15_IRQHandler                         libraries\CMSIS\Source\startup_stm32l452xx.o
+TIM1_CC_IRQHandler                                libraries\CMSIS\Source\startup_stm32l452xx.o
+TIM1_TRG_COM_IRQHandler                           libraries\CMSIS\Source\startup_stm32l452xx.o
+TIM1_UP_TIM16_IRQHandler                          libraries\CMSIS\Source\startup_stm32l452xx.o
+TIM2_IRQHandler                                   libraries\CMSIS\Source\startup_stm32l452xx.o
+TIM3_IRQHandler                                   libraries\CMSIS\Source\startup_stm32l452xx.o
+TIM6_DAC_IRQHandler                               libraries\CMSIS\Source\startup_stm32l452xx.o
+TSC_IRQHandler                                    libraries\CMSIS\Source\startup_stm32l452xx.o
+UART4_IRQHandler                                  libraries\CMSIS\Source\startup_stm32l452xx.o
+UART_AdvFeatureConfig                             libraries\ST_HAL\Src\stm32l4xx_hal_uart.o
+                                                  libraries\ST_HAL\Src\stm32l4xx_hal_uart_ex.o
+UART_CheckIdleState                               libraries\ST_HAL\Src\stm32l4xx_hal_uart.o
+                                                  libraries\ST_HAL\Src\stm32l4xx_hal_uart_ex.o
+UART_SetConfig                                    libraries\ST_HAL\Src\stm32l4xx_hal_uart.o
+                                                  libraries\ST_HAL\Src\stm32l4xx_hal_uart_ex.o
+UART_WaitOnFlagUntilTimeout                       libraries\ST_HAL\Src\stm32l4xx_hal_uart.o
+                                                  libraries\ST_HAL\Src\stm32l4xx_hal_uart_ex.o
+USART1_IRQHandler                                 libraries\CMSIS\Source\startup_stm32l452xx.o
+USART2_IRQHandler                                 libraries\CMSIS\Source\startup_stm32l452xx.o
+USART3_IRQHandler                                 libraries\CMSIS\Source\startup_stm32l452xx.o
+USB_IRQHandler                                    libraries\CMSIS\Source\startup_stm32l452xx.o
+UsageFault_Handler                                libraries\CMSIS\Source\startup_stm32l452xx.o
+WWDG_IRQHandler                                   libraries\CMSIS\Source\startup_stm32l452xx.o
+__aeabi_idiv0                                     c:/program files (x86)/atollic/truestudio for arm 5.4.1/armtools/bin/../lib/gcc/arm-atollic-eabi/4.8.3/armv7e-m/fpu\libgcc.a(_dvmd_tls.o)
+__aeabi_ldiv0                                     c:/program files (x86)/atollic/truestudio for arm 5.4.1/armtools/bin/../lib/gcc/arm-atollic-eabi/4.8.3/armv7e-m/fpu\libgcc.a(_dvmd_tls.o)
+                                                  c:/program files (x86)/atollic/truestudio for arm 5.4.1/armtools/bin/../lib/gcc/arm-atollic-eabi/4.8.3/armv7e-m/fpu\libgcc.a(_aeabi_uldivmod.o)
+__aeabi_uldivmod                                  c:/program files (x86)/atollic/truestudio for arm 5.4.1/armtools/bin/../lib/gcc/arm-atollic-eabi/4.8.3/armv7e-m/fpu\libgcc.a(_aeabi_uldivmod.o)
+                                                  libraries\ST_HAL\Src\stm32l4xx_hal_uart.o
+__deregister_frame_info                           c:/program files (x86)/atollic/truestudio for arm 5.4.1/armtools/bin/../lib/gcc/arm-atollic-eabi/4.8.3/armv7e-m/fpu/crtbegin.o
+__divdi3                                          c:/program files (x86)/atollic/truestudio for arm 5.4.1/armtools/bin/../lib/gcc/arm-atollic-eabi/4.8.3/armv7e-m/fpu\libgcc.a(_divdi3.o)
+                                                  c:/program files (x86)/atollic/truestudio for arm 5.4.1/armtools/bin/../lib/gcc/arm-atollic-eabi/4.8.3/armv7e-m/fpu\libgcc.a(bpabi.o)
+__dso_handle                                      c:/program files (x86)/atollic/truestudio for arm 5.4.1/armtools/bin/../lib/gcc/arm-atollic-eabi/4.8.3/armv7e-m/fpu/crtbegin.o
+__gnu_ldivmod_helper                              c:/program files (x86)/atollic/truestudio for arm 5.4.1/armtools/bin/../lib/gcc/arm-atollic-eabi/4.8.3/armv7e-m/fpu\libgcc.a(bpabi.o)
+__gnu_uldivmod_helper                             c:/program files (x86)/atollic/truestudio for arm 5.4.1/armtools/bin/../lib/gcc/arm-atollic-eabi/4.8.3/armv7e-m/fpu\libgcc.a(bpabi.o)
+                                                  c:/program files (x86)/atollic/truestudio for arm 5.4.1/armtools/bin/../lib/gcc/arm-atollic-eabi/4.8.3/armv7e-m/fpu\libgcc.a(_aeabi_uldivmod.o)
+__init_array_end                                  c:/program files (x86)/atollic/truestudio for arm 5.4.1/armtools/bin/../lib/gcc/arm-atollic-eabi/4.8.3/../../../../arm-atollic-eabi/lib/armv7e-m/fpu\libc_s.a(lib_a-init.o)
+__init_array_start                                c:/program files (x86)/atollic/truestudio for arm 5.4.1/armtools/bin/../lib/gcc/arm-atollic-eabi/4.8.3/../../../../arm-atollic-eabi/lib/armv7e-m/fpu\libc_s.a(lib_a-init.o)
+__libc_init_array                                 c:/program files (x86)/atollic/truestudio for arm 5.4.1/armtools/bin/../lib/gcc/arm-atollic-eabi/4.8.3/../../../../arm-atollic-eabi/lib/armv7e-m/fpu\libc_s.a(lib_a-init.o)
+                                                  libraries\CMSIS\Source\startup_stm32l452xx.o
+__preinit_array_end                               c:/program files (x86)/atollic/truestudio for arm 5.4.1/armtools/bin/../lib/gcc/arm-atollic-eabi/4.8.3/../../../../arm-atollic-eabi/lib/armv7e-m/fpu\libc_s.a(lib_a-init.o)
+__preinit_array_start                             c:/program files (x86)/atollic/truestudio for arm 5.4.1/armtools/bin/../lib/gcc/arm-atollic-eabi/4.8.3/../../../../arm-atollic-eabi/lib/armv7e-m/fpu\libc_s.a(lib_a-init.o)
+__register_frame_info                             c:/program files (x86)/atollic/truestudio for arm 5.4.1/armtools/bin/../lib/gcc/arm-atollic-eabi/4.8.3/armv7e-m/fpu/crtbegin.o
+__udivdi3                                         c:/program files (x86)/atollic/truestudio for arm 5.4.1/armtools/bin/../lib/gcc/arm-atollic-eabi/4.8.3/armv7e-m/fpu\libgcc.a(_udivdi3.o)
+                                                  c:/program files (x86)/atollic/truestudio for arm 5.4.1/armtools/bin/../lib/gcc/arm-atollic-eabi/4.8.3/armv7e-m/fpu\libgcc.a(bpabi.o)
+_ebss                                             libraries\CMSIS\Source\startup_stm32l452xx.o
+_edata                                            libraries\CMSIS\Source\startup_stm32l452xx.o
+_estack                                           libraries\CMSIS\Source\startup_stm32l452xx.o
+_fini                                             c:/program files (x86)/atollic/truestudio for arm 5.4.1/armtools/bin/../lib/gcc/arm-atollic-eabi/4.8.3/armv7e-m/fpu/crti.o
+_init                                             c:/program files (x86)/atollic/truestudio for arm 5.4.1/armtools/bin/../lib/gcc/arm-atollic-eabi/4.8.3/armv7e-m/fpu/crti.o
+                                                  c:/program files (x86)/atollic/truestudio for arm 5.4.1/armtools/bin/../lib/gcc/arm-atollic-eabi/4.8.3/../../../../arm-atollic-eabi/lib/armv7e-m/fpu\libc_s.a(lib_a-init.o)
+_sbss                                             libraries\CMSIS\Source\startup_stm32l452xx.o
+_sdata                                            libraries\CMSIS\Source\startup_stm32l452xx.o
+_sidata                                           libraries\CMSIS\Source\startup_stm32l452xx.o
+callSystemApp                                     Src\Applications\System_App\System_app.o
+g_pfnVectors                                      libraries\CMSIS\Source\startup_stm32l452xx.o
+initSregAll                                       Src\Applications\System_App\System_app.o
+initSystemApp                                     Src\Applications\System_App\System_app.o
+main                                              Src\Applications\Main\main.o
+                                                  libraries\CMSIS\Source\startup_stm32l452xx.o
+pFlash                                            libraries\ST_HAL\Src\stm32l4xx_hal_flash_ex.o
+                                                  libraries\ST_HAL\Src\stm32l4xx_hal_flash.o
+readSreg                                          Src\Applications\System_App\System_app.o
+requestPowerState                                 Src\Applications\System_App\System_app.o
+requestSystemAppLaunchBootloader                  Src\Applications\System_App\System_app.o
+requestSystemAppPowerState                        Src\Applications\System_App\System_app.o
+requestSystemAppReset                             Src\Applications\System_App\System_app.o
+uwTick                                            libraries\ST_HAL\Src\stm32l4xx_hal.o
+writeSreg                                         Src\Applications\System_App\System_app.o
