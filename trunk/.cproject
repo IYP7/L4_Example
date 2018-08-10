@@ -104,7 +104,7 @@
 								<option id="com.atollic.truestudio.common_options.target.fpucore.2136753063" name="FPU" superClass="com.atollic.truestudio.common_options.target.fpucore" useByScannerDiscovery="false" value="com.atollic.truestudio.common_options.target.fpucore.fpv4-sp-d16" valueType="enumerated"/>
 								<option id="com.atollic.truestudio.common_options.target.fpu.1464269721" name="Floating point" superClass="com.atollic.truestudio.common_options.target.fpu" useByScannerDiscovery="false" value="com.atollic.truestudio.common_options.target.fpu.hard" valueType="enumerated"/>
 								<option id="com.atollic.truestudio.common_options.target.instr_set.1429022752" name="Instruction set" superClass="com.atollic.truestudio.common_options.target.instr_set" useByScannerDiscovery="false" value="com.atollic.truestudio.common_options.target.instr_set.thumb2" valueType="enumerated"/>
-								<option id="com.atollic.truestudio.ld.general.scriptfile.551168074" name="Linker script" superClass="com.atollic.truestudio.ld.general.scriptfile" useByScannerDiscovery="false" value="..\linkerFile.ld" valueType="string"/>
+								<option id="com.atollic.truestudio.ld.general.scriptfile.551168074" name="Linker script" superClass="com.atollic.truestudio.ld.general.scriptfile" useByScannerDiscovery="false" value="../Debug_STM32L452RE_FLASH.ld" valueType="string"/>
 								<option id="com.atollic.truestudio.ld.misc.genmapfile.137926048" name="Create map file" superClass="com.atollic.truestudio.ld.misc.genmapfile" useByScannerDiscovery="false" value="true" valueType="boolean"/>
 								<option id="com.atollic.truestudio.ld.misc.linkerflags.234549488" name="Other options" superClass="com.atollic.truestudio.ld.misc.linkerflags" useByScannerDiscovery="false" value="-Wl,-cref,-u,Reset_Handler" valueType="string"/>
 								<option id="com.atollic.truestudio.ld.optimization.do_garbage.717622847" name="Dead code removal " superClass="com.atollic.truestudio.ld.optimization.do_garbage" useByScannerDiscovery="false" value="true" valueType="boolean"/>
@@ -142,7 +142,7 @@
 						</toolChain>
 					</folderInfo>
 					<sourceEntries>
-						<entry excluding="Src/HAL/Flash|Src/HAL/Timer/test|Src/HAL/GPIO/test|Src/HAL/Interrupts/test|Src/HAL/spi/test|Src/HAL/i2c/test|Src/HAL/uart/test" flags="VALUE_WORKSPACE_PATH" kind="sourcePath" name=""/>
+						<entry excluding="Src/Applications/System_App|Src/Middleware/System_mw|Src/Architecture/SREG|Src/Architecture/Shell|Src/Architecture/HREG|Src/HAL/uart|Src/HAL/spi|Src/HAL/Interrupts|Src/HAL/GPIO|Src/Drivers/VirtualEEPROM|Src/Drivers/Leds|Src/Drivers/Buttons|Src/HAL/Flash|Src/HAL/Timer/test|Src/HAL/GPIO/test|Src/HAL/Interrupts/test|Src/HAL/spi/test|Src/HAL/i2c/test|Src/HAL/uart/test" flags="VALUE_WORKSPACE_PATH" kind="sourcePath" name=""/>
 					</sourceEntries>
 				</configuration>
 			</storageModule>
@@ -289,7 +289,7 @@
 						</toolChain>
 					</folderInfo>
 					<sourceEntries>
-						<entry excluding="Src/HAL/Flash|Src/HAL/ADC/base/ADC_copy_ok_polling.c|Src/HAL/Timer/test|Src/HAL/GPIO/test|Src/HAL/Interrupts/test|Src/HAL/spi/test|Src/HAL/i2c/test|Src/HAL/uart/test" flags="VALUE_WORKSPACE_PATH|RESOLVED" kind="sourcePath" name=""/>
+						<entry excluding="Src/Applications/System_App|Src/Middleware/System_mw|Src/Architecture/SREG|Src/Architecture/Shell|Src/Architecture/HREG|Src/HAL/uart|Src/HAL/spi|Src/HAL/Interrupts|Src/HAL/GPIO|Src/Drivers/VirtualEEPROM|Src/Drivers/Leds|Src/Drivers/Buttons|Src/HAL/Flash|Src/HAL/ADC/base/ADC_copy_ok_polling.c|Src/HAL/Timer/test|Src/HAL/GPIO/test|Src/HAL/Interrupts/test|Src/HAL/spi/test|Src/HAL/i2c/test|Src/HAL/uart/test" flags="VALUE_WORKSPACE_PATH|RESOLVED" kind="sourcePath" name=""/>
 					</sourceEntries>
 				</configuration>
 			</storageModule>

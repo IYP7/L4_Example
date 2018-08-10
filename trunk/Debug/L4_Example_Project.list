@@ -3,37 +3,43 @@ L4_Example_Project.elf:     file format elf32-littlearm
 
 Sections:
 Idx Name          Size      VMA       LMA       File off  Algn
-  0 .isr_vector   00000194  08000000  08000000  00008000  2**0
+  0 .isr_vector   00000194  08000000  08000000  00010000  2**0
                   CONTENTS, ALLOC, LOAD, READONLY, DATA
-  1 .text         00000150  08000194  08000194  00008194  2**2
+  1 .text         00000394  08000194  08000194  00010194  2**2
                   CONTENTS, ALLOC, LOAD, READONLY, CODE
-  2 .init_array   00000004  080002e4  080002e4  000082e4  2**2
+  2 .rodata       00000018  08000528  08000528  00010528  2**2
+                  CONTENTS, ALLOC, LOAD, READONLY, DATA
+  3 .init_array   00000004  08000540  08000540  00010540  2**2
                   CONTENTS, ALLOC, LOAD, DATA
-  3 .fini_array   00000004  080002e8  080002e8  000082e8  2**2
+  4 .fini_array   00000004  08000544  08000544  00010544  2**2
                   CONTENTS, ALLOC, LOAD, DATA
-  4 .bss          0000001c  20000000  20000000  00010000  2**2
+  5 .data         00000004  20000000  08000548  00020000  2**2
+                  CONTENTS, ALLOC, LOAD, DATA
+  6 .ram2         00000000  10000000  10000000  00020004  2**0
+                  CONTENTS
+  7 .bss          00000058  20000004  20000004  00020004  2**2
                   ALLOC
-  5 ._user_heap_stack 00000400  2000001c  2000001c  00010000  2**0
+  8 ._user_heap_stack 00000400  2000005c  2000005c  00020004  2**0
                   ALLOC
-  6 .ARM.attributes 00000030  00000000  00000000  000082ec  2**0
+  9 .ARM.attributes 00000030  00000000  00000000  00020004  2**0
                   CONTENTS, READONLY
-  7 .debug_info   000006fa  00000000  00000000  0000831c  2**0
+ 10 .debug_info   000061aa  00000000  00000000  00020034  2**0
                   CONTENTS, READONLY, DEBUGGING
-  8 .debug_abbrev 000001b1  00000000  00000000  00008a16  2**0
+ 11 .debug_abbrev 00000eb6  00000000  00000000  000261de  2**0
                   CONTENTS, READONLY, DEBUGGING
-  9 .debug_aranges 00000070  00000000  00000000  00008bc8  2**3
+ 12 .debug_aranges 00000240  00000000  00000000  00027098  2**3
                   CONTENTS, READONLY, DEBUGGING
- 10 .debug_ranges 00000048  00000000  00000000  00008c38  2**3
+ 13 .debug_ranges 00000248  00000000  00000000  000272d8  2**3
                   CONTENTS, READONLY, DEBUGGING
- 11 .debug_line   00000456  00000000  00000000  00008c80  2**0
+ 14 .debug_line   00001cd3  00000000  00000000  00027520  2**0
                   CONTENTS, READONLY, DEBUGGING
- 12 .debug_str    00000410  00000000  00000000  000090d6  2**0
+ 15 .debug_str    00001831  00000000  00000000  000291f3  2**0
                   CONTENTS, READONLY, DEBUGGING
- 13 .comment      00000082  00000000  00000000  000094e6  2**0
+ 16 .comment      0000007c  00000000  00000000  0002aa24  2**0
                   CONTENTS, READONLY
- 14 .debug_frame  0000007c  00000000  00000000  00009568  2**2
+ 17 .debug_frame  000004c8  00000000  00000000  0002aaa0  2**2
                   CONTENTS, READONLY, DEBUGGING
- 15 .debug_loc    0000015f  00000000  00000000  000095e4  2**0
+ 18 .debug_loc    00000d99  00000000  00000000  0002af68  2**0
                   CONTENTS, READONLY, DEBUGGING
 
 Disassembly of section .text:
@@ -50,21 +56,21 @@ Disassembly of section .text:
  80001a6:	2301      	movs	r3, #1
  80001a8:	7023      	strb	r3, [r4, #0]
  80001aa:	bd10      	pop	{r4, pc}
- 80001ac:	20000000 	.word	0x20000000
+ 80001ac:	20000004 	.word	0x20000004
  80001b0:	00000000 	.word	0x00000000
- 80001b4:	080002cc 	.word	0x080002cc
+ 80001b4:	08000510 	.word	0x08000510
 
 080001b8 <frame_dummy>:
  80001b8:	b508      	push	{r3, lr}
  80001ba:	4b03      	ldr	r3, [pc, #12]	; (80001c8 <frame_dummy+0x10>)
  80001bc:	b11b      	cbz	r3, 80001c6 <frame_dummy+0xe>
- 80001be:	4803      	ldr	r0, [pc, #12]	; (80001cc <frame_dummy+0x14>)
- 80001c0:	4903      	ldr	r1, [pc, #12]	; (80001d0 <frame_dummy+0x18>)
+ 80001be:	4903      	ldr	r1, [pc, #12]	; (80001cc <frame_dummy+0x14>)
+ 80001c0:	4803      	ldr	r0, [pc, #12]	; (80001d0 <frame_dummy+0x18>)
  80001c2:	f3af 8000 	nop.w
  80001c6:	bd08      	pop	{r3, pc}
  80001c8:	00000000 	.word	0x00000000
- 80001cc:	080002cc 	.word	0x080002cc
- 80001d0:	20000004 	.word	0x20000004
+ 80001cc:	20000008 	.word	0x20000008
+ 80001d0:	08000510 	.word	0x08000510
 
 080001d4 <main>:
  *
@@ -73,237 +79,584 @@ Disassembly of section .text:
  ****************************************************************************/
 int  main()
 {
- 80001d4:	e7fe      	b.n	80001d4 <main>
- 80001d6:	bf00      	nop
+ 80001d4:	b508      	push	{r3, lr}
+	/* Call to initial specific platform configuration */
+    systemPreConfiguration();
+ 80001d6:	f000 f922 	bl	800041e <systemPreConfiguration>
 
-080001d8 <Reset_Handler>:
+	/* Applications Initialization */
+    SchedulerInit();
+ 80001da:	f000 f839 	bl	8000250 <SchedulerInit>
+
+    while (TRUE)
+    {
+        SchedulerNextSystemProcess();
+ 80001de:	f000 f8b7 	bl	8000350 <SchedulerNextSystemProcess>
+ 80001e2:	e7fc      	b.n	80001de <main+0xa>
+
+080001e4 <SchedulerResetProcessTable>:
+ ****************************************************************************/
+void SchedulerResetProcessTable(void)
+{
+	uint8_t i;
+
+	ptrTask	= 0;
+ 80001e4:	2300      	movs	r3, #0
+ 80001e6:	4a16      	ldr	r2, [pc, #88]	; (8000240 <SchedulerResetProcessTable+0x5c>)
+ 80001e8:	7013      	strb	r3, [r2, #0]
+
+ 	for (i = 0; i < NUM_OF_SCHED_TASKS; i++)
+ 80001ea:	2b01      	cmp	r3, #1
+ 80001ec:	d826      	bhi.n	800023c <SchedulerResetProcessTable+0x58>
+{
+ 80001ee:	b430      	push	{r4, r5}
+ 	{
+		schedulerProcess[i].uiTimeProcessCounter	= 0;
+ 80001f0:	4914      	ldr	r1, [pc, #80]	; (8000244 <SchedulerResetProcessTable+0x60>)
+ 80001f2:	f831 2013 	ldrh.w	r2, [r1, r3, lsl #1]
+ 80001f6:	f36f 020d 	bfc	r2, #0, #14
+ 80001fa:	f821 2013 	strh.w	r2, [r1, r3, lsl #1]
+		schedulerProcess[i].bEnabledSystemTask	= SchedulerInstanceMap[i].initState;
+ 80001fe:	005a      	lsls	r2, r3, #1
+ 8000200:	18d0      	adds	r0, r2, r3
+ 8000202:	0084      	lsls	r4, r0, #2
+ 8000204:	4810      	ldr	r0, [pc, #64]	; (8000248 <SchedulerResetProcessTable+0x64>)
+ 8000206:	4420      	add	r0, r4
+ 8000208:	7a84      	ldrb	r4, [r0, #10]
+ 800020a:	4411      	add	r1, r2
+ 800020c:	7848      	ldrb	r0, [r1, #1]
+ 800020e:	f364 1086 	bfi	r0, r4, #6, #1
+		schedulerProcess[i].bEnabledUrgentSystemTask = FALSE;
+ 8000212:	f36f 10c7 	bfc	r0, #7, #1
+ 8000216:	7048      	strb	r0, [r1, #1]
+
+		schedulerContext[i].maxDelayProcessCtn = 0;
+ 8000218:	490c      	ldr	r1, [pc, #48]	; (800024c <SchedulerResetProcessTable+0x68>)
+ 800021a:	18d0      	adds	r0, r2, r3
+ 800021c:	00c5      	lsls	r5, r0, #3
+ 800021e:	194c      	adds	r4, r1, r5
+ 8000220:	2000      	movs	r0, #0
+ 8000222:	81a0      	strh	r0, [r4, #12]
+		schedulerContext[i].maximumTaskTime_us = 0;
+ 8000224:	60a0      	str	r0, [r4, #8]
+		schedulerContext[i].averageTaskTime_us = 0;
+ 8000226:	5148      	str	r0, [r1, r5]
+		schedulerContext[i].currentTaskTime_us = 0;
+ 8000228:	6060      	str	r0, [r4, #4]
+		schedulerContext[i].cntTaskTime = 0;
+ 800022a:	6120      	str	r0, [r4, #16]
+		schedulerContext[i].userEnabled = TRUE;
+ 800022c:	2201      	movs	r2, #1
+ 800022e:	7562      	strb	r2, [r4, #21]
+ 	for (i = 0; i < NUM_OF_SCHED_TASKS; i++)
+ 8000230:	4413      	add	r3, r2
+ 8000232:	b2db      	uxtb	r3, r3
+ 8000234:	2b01      	cmp	r3, #1
+ 8000236:	d9db      	bls.n	80001f0 <SchedulerResetProcessTable+0xc>
+ 	}
+}
+ 8000238:	bc30      	pop	{r4, r5}
+ 800023a:	4770      	bx	lr
+ 800023c:	4770      	bx	lr
+ 800023e:	bf00      	nop
+ 8000240:	20000054 	.word	0x20000054
+ 8000244:	20000058 	.word	0x20000058
+ 8000248:	08000528 	.word	0x08000528
+ 800024c:	20000024 	.word	0x20000024
+
+08000250 <SchedulerInit>:
+{
+ 8000250:	b510      	push	{r4, lr}
+	SchedulerResetProcessTable();
+ 8000252:	f7ff ffc7 	bl	80001e4 <SchedulerResetProcessTable>
+ 	for (i = 0; i < NUM_OF_SCHED_TASKS; i++)
+ 8000256:	2400      	movs	r4, #0
+ 8000258:	e001      	b.n	800025e <SchedulerInit+0xe>
+ 800025a:	3401      	adds	r4, #1
+ 800025c:	b2e4      	uxtb	r4, r4
+ 800025e:	2c01      	cmp	r4, #1
+ 8000260:	d808      	bhi.n	8000274 <SchedulerInit+0x24>
+		if(SchedulerInstanceMap[i].InitProcess != NULL)
+ 8000262:	eb04 0244 	add.w	r2, r4, r4, lsl #1
+ 8000266:	0093      	lsls	r3, r2, #2
+ 8000268:	4a08      	ldr	r2, [pc, #32]	; (800028c <SchedulerInit+0x3c>)
+ 800026a:	58d3      	ldr	r3, [r2, r3]
+ 800026c:	2b00      	cmp	r3, #0
+ 800026e:	d0f4      	beq.n	800025a <SchedulerInit+0xa>
+			(*(SchedulerInstanceMap[i].InitProcess))();
+ 8000270:	4798      	blx	r3
+ 8000272:	e7f2      	b.n	800025a <SchedulerInit+0xa>
+    systemGetCLkFreq(&ticks_per_us);
+ 8000274:	4c06      	ldr	r4, [pc, #24]	; (8000290 <SchedulerInit+0x40>)
+ 8000276:	4620      	mov	r0, r4
+ 8000278:	f000 f8ca 	bl	8000410 <systemGetCLkFreq>
+    ticks_per_us /= 1000000;
+ 800027c:	6823      	ldr	r3, [r4, #0]
+ 800027e:	4a05      	ldr	r2, [pc, #20]	; (8000294 <SchedulerInit+0x44>)
+ 8000280:	fba2 2303 	umull	r2, r3, r2, r3
+ 8000284:	0c9b      	lsrs	r3, r3, #18
+ 8000286:	6023      	str	r3, [r4, #0]
+ 8000288:	bd10      	pop	{r4, pc}
+ 800028a:	bf00      	nop
+ 800028c:	08000528 	.word	0x08000528
+ 8000290:	20000020 	.word	0x20000020
+ 8000294:	431bde83 	.word	0x431bde83
+
+08000298 <SchedulerUpdateTaskTime>:
+ * @brief  	Update average task time, maximum task time
+ * @param   process, initTime, finalTime
+ * @return  none
+ ****************************************************************************/
+void SchedulerUpdateTaskTime(int32_t initTimeTaskScheduler, int32_t finalTimeTaskScheduler)
+{
+ 8000298:	b4f0      	push	{r4, r5, r6, r7}
+	uint64_t averageTaskTemp;
+	schedulerContext[ptrTask].currentTaskTime_us += ((initTimeTaskScheduler - finalTimeTaskScheduler)/(int32_t)(ticks_per_us));
+ 800029a:	4b11      	ldr	r3, [pc, #68]	; (80002e0 <SchedulerUpdateTaskTime+0x48>)
+ 800029c:	781a      	ldrb	r2, [r3, #0]
+ 800029e:	1a41      	subs	r1, r0, r1
+ 80002a0:	4b10      	ldr	r3, [pc, #64]	; (80002e4 <SchedulerUpdateTaskTime+0x4c>)
+ 80002a2:	6818      	ldr	r0, [r3, #0]
+ 80002a4:	fb91 f1f0 	sdiv	r1, r1, r0
+ 80002a8:	4e0f      	ldr	r6, [pc, #60]	; (80002e8 <SchedulerUpdateTaskTime+0x50>)
+ 80002aa:	0053      	lsls	r3, r2, #1
+ 80002ac:	4413      	add	r3, r2
+ 80002ae:	00dd      	lsls	r5, r3, #3
+ 80002b0:	1974      	adds	r4, r6, r5
+ 80002b2:	6863      	ldr	r3, [r4, #4]
+ 80002b4:	4419      	add	r1, r3
+ 80002b6:	6061      	str	r1, [r4, #4]
+	schedulerContext[ptrTask].cntTaskTime %= MAX_TASK_TIME_CNT;
+ 80002b8:	6923      	ldr	r3, [r4, #16]
+ 80002ba:	f1b3 3fff 	cmp.w	r3, #4294967295
+ 80002be:	bf28      	it	cs
+ 80002c0:	3301      	addcs	r3, #1
+	schedulerContext[ptrTask].cntTaskTime++;
+ 80002c2:	1c58      	adds	r0, r3, #1
+ 80002c4:	6120      	str	r0, [r4, #16]
+
+	/* Calculate the average task time */
+	averageTaskTemp = (uint64_t)(schedulerContext[ptrTask].averageTaskTime_us*(schedulerContext[ptrTask].cntTaskTime-1));
+ 80002c6:	5977      	ldr	r7, [r6, r5]
+	schedulerContext[ptrTask].averageTaskTime_us = (uint32_t)(averageTaskTemp + schedulerContext[ptrTask].currentTaskTime_us) / schedulerContext[ptrTask].cntTaskTime;
+ 80002c8:	fb07 1303 	mla	r3, r7, r3, r1
+ 80002cc:	fbb3 f3f0 	udiv	r3, r3, r0
+ 80002d0:	5173      	str	r3, [r6, r5]
+
+    /* If current Task Time is higher than maximum, update maximum task time */
+    if ( schedulerContext[ptrTask].currentTaskTime_us > schedulerContext[ptrTask].maximumTaskTime_us )
+ 80002d2:	68a3      	ldr	r3, [r4, #8]
+ 80002d4:	4299      	cmp	r1, r3
+ 80002d6:	d900      	bls.n	80002da <SchedulerUpdateTaskTime+0x42>
+    {
+    	schedulerContext[ptrTask].maximumTaskTime_us = schedulerContext[ptrTask].currentTaskTime_us;
+ 80002d8:	60a1      	str	r1, [r4, #8]
+    }
+
+}
+ 80002da:	bcf0      	pop	{r4, r5, r6, r7}
+ 80002dc:	4770      	bx	lr
+ 80002de:	bf00      	nop
+ 80002e0:	20000054 	.word	0x20000054
+ 80002e4:	20000020 	.word	0x20000020
+ 80002e8:	20000024 	.word	0x20000024
+
+080002ec <SchedulerExecuteSystemProcess>:
+{
+ 80002ec:	e92d 41f0 	stmdb	sp!, {r4, r5, r6, r7, r8, lr}
+	schedulerContext[ptrTask].currentTaskTime_us = 0;
+ 80002f0:	f8df 8058 	ldr.w	r8, [pc, #88]	; 800034c <SchedulerExecuteSystemProcess+0x60>
+ 80002f4:	f898 1000 	ldrb.w	r1, [r8]
+ 80002f8:	4c11      	ldr	r4, [pc, #68]	; (8000340 <SchedulerExecuteSystemProcess+0x54>)
+ 80002fa:	004b      	lsls	r3, r1, #1
+ 80002fc:	1858      	adds	r0, r3, r1
+ 80002fe:	00c2      	lsls	r2, r0, #3
+ 8000300:	4422      	add	r2, r4
+ 8000302:	2700      	movs	r7, #0
+ 8000304:	6057      	str	r7, [r2, #4]
+	initTimeTaskScheduler =  SYSTEM_TICK;
+ 8000306:	4e0f      	ldr	r6, [pc, #60]	; (8000344 <SchedulerExecuteSystemProcess+0x58>)
+ 8000308:	68b5      	ldr	r5, [r6, #8]
+	schedulerContext[ptrTask].taskActive = TRUE;
+ 800030a:	2001      	movs	r0, #1
+ 800030c:	7510      	strb	r0, [r2, #20]
+    (*(SchedulerInstanceMap[ptrTask].CallProcess))();
+ 800030e:	440b      	add	r3, r1
+ 8000310:	009a      	lsls	r2, r3, #2
+ 8000312:	4b0d      	ldr	r3, [pc, #52]	; (8000348 <SchedulerExecuteSystemProcess+0x5c>)
+ 8000314:	4413      	add	r3, r2
+ 8000316:	685b      	ldr	r3, [r3, #4]
+ 8000318:	4798      	blx	r3
+	schedulerContext[ptrTask].taskActive = FALSE;
+ 800031a:	f898 0000 	ldrb.w	r0, [r8]
+ 800031e:	0043      	lsls	r3, r0, #1
+ 8000320:	1819      	adds	r1, r3, r0
+ 8000322:	00ca      	lsls	r2, r1, #3
+ 8000324:	4422      	add	r2, r4
+ 8000326:	7517      	strb	r7, [r2, #20]
+    finalTimeTaskScheduler = SYSTEM_TICK;
+ 8000328:	68b1      	ldr	r1, [r6, #8]
+    if ( schedulerContext[ptrTask].userEnabled == TRUE )
+ 800032a:	4403      	add	r3, r0
+ 800032c:	00da      	lsls	r2, r3, #3
+ 800032e:	4414      	add	r4, r2
+ 8000330:	7d63      	ldrb	r3, [r4, #21]
+ 8000332:	b90b      	cbnz	r3, 8000338 <SchedulerExecuteSystemProcess+0x4c>
+ 8000334:	e8bd 81f0 	ldmia.w	sp!, {r4, r5, r6, r7, r8, pc}
+    	SchedulerUpdateTaskTime(initTimeTaskScheduler, finalTimeTaskScheduler);
+ 8000338:	4628      	mov	r0, r5
+ 800033a:	f7ff ffad 	bl	8000298 <SchedulerUpdateTaskTime>
+}
+ 800033e:	e7f9      	b.n	8000334 <SchedulerExecuteSystemProcess+0x48>
+ 8000340:	20000024 	.word	0x20000024
+ 8000344:	e000e010 	.word	0xe000e010
+ 8000348:	08000528 	.word	0x08000528
+ 800034c:	20000054 	.word	0x20000054
+
+08000350 <SchedulerNextSystemProcess>:
+{
+ 8000350:	b570      	push	{r4, r5, r6, lr}
+    uint8_t i			= 0;
+ 8000352:	2400      	movs	r4, #0
+    bool taskExecuted	= FALSE;
+ 8000354:	4620      	mov	r0, r4
+ 8000356:	e027      	b.n	80003a8 <SchedulerNextSystemProcess+0x58>
+			if ( schedulerProcess[ptrTask].bEnabledUrgentSystemTask == TRUE )
+ 8000358:	2a00      	cmp	r2, #0
+ 800035a:	d148      	bne.n	80003ee <SchedulerNextSystemProcess+0x9e>
+				schedulerProcess[ptrTask].uiTimeProcessCounter = 0;
+ 800035c:	4a28      	ldr	r2, [pc, #160]	; (8000400 <SchedulerNextSystemProcess+0xb0>)
+ 800035e:	f832 1013 	ldrh.w	r1, [r2, r3, lsl #1]
+ 8000362:	f36f 010d 	bfc	r1, #0, #14
+ 8000366:	f822 1013 	strh.w	r1, [r2, r3, lsl #1]
+			if (schedulerContext[ptrTask].maxDelayProcessCtn < (schedulerProcess[ptrTask].uiTimeProcessCounter - SchedulerInstanceMap[ptrTask].uiTimeProcess))
+ 800036a:	005a      	lsls	r2, r3, #1
+ 800036c:	18d1      	adds	r1, r2, r3
+ 800036e:	00c8      	lsls	r0, r1, #3
+ 8000370:	4924      	ldr	r1, [pc, #144]	; (8000404 <SchedulerNextSystemProcess+0xb4>)
+ 8000372:	4401      	add	r1, r0
+ 8000374:	898d      	ldrh	r5, [r1, #12]
+ 8000376:	4922      	ldr	r1, [pc, #136]	; (8000400 <SchedulerNextSystemProcess+0xb0>)
+ 8000378:	f831 1013 	ldrh.w	r1, [r1, r3, lsl #1]
+ 800037c:	f3c1 010d 	ubfx	r1, r1, #0, #14
+ 8000380:	441a      	add	r2, r3
+ 8000382:	0090      	lsls	r0, r2, #2
+ 8000384:	4a20      	ldr	r2, [pc, #128]	; (8000408 <SchedulerNextSystemProcess+0xb8>)
+ 8000386:	4402      	add	r2, r0
+ 8000388:	8912      	ldrh	r2, [r2, #8]
+ 800038a:	1a88      	subs	r0, r1, r2
+ 800038c:	4285      	cmp	r5, r0
+ 800038e:	da05      	bge.n	800039c <SchedulerNextSystemProcess+0x4c>
+				schedulerContext[ptrTask].maxDelayProcessCtn = schedulerProcess[ptrTask].uiTimeProcessCounter - SchedulerInstanceMap[ptrTask].uiTimeProcess;
+ 8000390:	005a      	lsls	r2, r3, #1
+ 8000392:	4413      	add	r3, r2
+ 8000394:	00da      	lsls	r2, r3, #3
+ 8000396:	4b1b      	ldr	r3, [pc, #108]	; (8000404 <SchedulerNextSystemProcess+0xb4>)
+ 8000398:	4413      	add	r3, r2
+ 800039a:	8198      	strh	r0, [r3, #12]
+			SchedulerExecuteSystemProcess();
+ 800039c:	f7ff ffa6 	bl	80002ec <SchedulerExecuteSystemProcess>
+			taskExecuted = TRUE;
+ 80003a0:	2001      	movs	r0, #1
+	while ( ( taskExecuted == FALSE ) && ( i <= NUM_OF_SCHED_TASKS ) );
+ 80003a2:	bb60      	cbnz	r0, 80003fe <SchedulerNextSystemProcess+0xae>
+ 80003a4:	2c02      	cmp	r4, #2
+ 80003a6:	d82a      	bhi.n	80003fe <SchedulerNextSystemProcess+0xae>
+        i++;
+ 80003a8:	3401      	adds	r4, #1
+ 80003aa:	b2e4      	uxtb	r4, r4
+        ptrTask++;
+ 80003ac:	4a17      	ldr	r2, [pc, #92]	; (800040c <SchedulerNextSystemProcess+0xbc>)
+ 80003ae:	7813      	ldrb	r3, [r2, #0]
+ 80003b0:	3301      	adds	r3, #1
+		ptrTask %= NUM_OF_SCHED_TASKS;
+ 80003b2:	f003 0301 	and.w	r3, r3, #1
+ 80003b6:	7013      	strb	r3, [r2, #0]
+		if ( schedulerProcess[ptrTask].bEnabledUrgentSystemTask == TRUE ||
+ 80003b8:	4a11      	ldr	r2, [pc, #68]	; (8000400 <SchedulerNextSystemProcess+0xb0>)
+ 80003ba:	eb02 0243 	add.w	r2, r2, r3, lsl #1
+ 80003be:	7852      	ldrb	r2, [r2, #1]
+ 80003c0:	09d2      	lsrs	r2, r2, #7
+ 80003c2:	d1c9      	bne.n	8000358 <SchedulerNextSystemProcess+0x8>
+			 ( schedulerProcess[ptrTask].bEnabledSystemTask == TRUE  && schedulerProcess[ptrTask].uiTimeProcessCounter >= SchedulerInstanceMap[ptrTask].uiTimeProcess ) )
+ 80003c4:	490e      	ldr	r1, [pc, #56]	; (8000400 <SchedulerNextSystemProcess+0xb0>)
+ 80003c6:	eb01 0143 	add.w	r1, r1, r3, lsl #1
+ 80003ca:	7849      	ldrb	r1, [r1, #1]
+		if ( schedulerProcess[ptrTask].bEnabledUrgentSystemTask == TRUE ||
+ 80003cc:	f011 0f40 	tst.w	r1, #64	; 0x40
+ 80003d0:	d0e7      	beq.n	80003a2 <SchedulerNextSystemProcess+0x52>
+			 ( schedulerProcess[ptrTask].bEnabledSystemTask == TRUE  && schedulerProcess[ptrTask].uiTimeProcessCounter >= SchedulerInstanceMap[ptrTask].uiTimeProcess ) )
+ 80003d2:	490b      	ldr	r1, [pc, #44]	; (8000400 <SchedulerNextSystemProcess+0xb0>)
+ 80003d4:	f831 5013 	ldrh.w	r5, [r1, r3, lsl #1]
+ 80003d8:	f3c5 050d 	ubfx	r5, r5, #0, #14
+ 80003dc:	0059      	lsls	r1, r3, #1
+ 80003de:	4419      	add	r1, r3
+ 80003e0:	008e      	lsls	r6, r1, #2
+ 80003e2:	4909      	ldr	r1, [pc, #36]	; (8000408 <SchedulerNextSystemProcess+0xb8>)
+ 80003e4:	4431      	add	r1, r6
+ 80003e6:	8909      	ldrh	r1, [r1, #8]
+ 80003e8:	428d      	cmp	r5, r1
+ 80003ea:	dbda      	blt.n	80003a2 <SchedulerNextSystemProcess+0x52>
+ 80003ec:	e7b4      	b.n	8000358 <SchedulerNextSystemProcess+0x8>
+				schedulerProcess[ptrTask].bEnabledUrgentSystemTask = FALSE;
+ 80003ee:	4a04      	ldr	r2, [pc, #16]	; (8000400 <SchedulerNextSystemProcess+0xb0>)
+ 80003f0:	eb02 0243 	add.w	r2, r2, r3, lsl #1
+ 80003f4:	7851      	ldrb	r1, [r2, #1]
+ 80003f6:	f36f 11c7 	bfc	r1, #7, #1
+ 80003fa:	7051      	strb	r1, [r2, #1]
+ 80003fc:	e7b5      	b.n	800036a <SchedulerNextSystemProcess+0x1a>
+}
+ 80003fe:	bd70      	pop	{r4, r5, r6, pc}
+ 8000400:	20000058 	.word	0x20000058
+ 8000404:	20000024 	.word	0x20000024
+ 8000408:	08000528 	.word	0x08000528
+ 800040c:	20000054 	.word	0x20000054
+
+08000410 <systemGetCLkFreq>:
+ * @brief   Get the System CLK Frequency
+ * @param   ClockFrequency.
+ * @return  eError.
+ ****************************************************************************/
+eError systemGetCLkFreq(uint32_t *ClockFrequency)
+{
+ 8000410:	b510      	push	{r4, lr}
+ 8000412:	4604      	mov	r4, r0
+    eError result = RET_OK;
+
+    *ClockFrequency = HAL_RCC_GetHCLKFreq();
+ 8000414:	f000 f852 	bl	80004bc <HAL_RCC_GetHCLKFreq>
+ 8000418:	6020      	str	r0, [r4, #0]
+
+    return result;
+}
+ 800041a:	2000      	movs	r0, #0
+ 800041c:	bd10      	pop	{r4, pc}
+
+0800041e <systemPreConfiguration>:
+ *    then it will jump to execute the interrupt handler located in the Flash
+ * @param	None.
+ * @return  None.
+ ****************************************************************************/
+void systemPreConfiguration( void )
+{
+ 800041e:	4770      	bx	lr
+
+08000420 <Reset_Handler>:
 
     .section	.text.Reset_Handler
 	.weak	Reset_Handler
 	.type	Reset_Handler, %function
 Reset_Handler:
   ldr   sp, =_estack    /* Atollic update: set stack pointer */
- 80001d8:	f8df d040 	ldr.w	sp, [pc, #64]	; 800021c <LoopForever+0x6>
+ 8000420:	f8df d034 	ldr.w	sp, [pc, #52]	; 8000458 <LoopForever+0x2>
 
 /* Copy the data segment initializers from flash to SRAM */
   movs	r1, #0
- 80001dc:	2100      	movs	r1, #0
+ 8000424:	2100      	movs	r1, #0
   b	LoopCopyDataInit
- 80001de:	f000 b804 	b.w	80001ea <LoopCopyDataInit>
+ 8000426:	e003      	b.n	8000430 <LoopCopyDataInit>
 
-080001e2 <CopyDataInit>:
+08000428 <CopyDataInit>:
 
 CopyDataInit:
 	ldr	r3, =_sidata
- 80001e2:	4b0f      	ldr	r3, [pc, #60]	; (8000220 <LoopForever+0xa>)
+ 8000428:	4b0c      	ldr	r3, [pc, #48]	; (800045c <LoopForever+0x6>)
 	ldr	r3, [r3, r1]
- 80001e4:	585b      	ldr	r3, [r3, r1]
+ 800042a:	585b      	ldr	r3, [r3, r1]
 	str	r3, [r0, r1]
- 80001e6:	5043      	str	r3, [r0, r1]
+ 800042c:	5043      	str	r3, [r0, r1]
 	adds	r1, r1, #4
- 80001e8:	3104      	adds	r1, #4
+ 800042e:	3104      	adds	r1, #4
 
-080001ea <LoopCopyDataInit>:
+08000430 <LoopCopyDataInit>:
 
 LoopCopyDataInit:
 	ldr	r0, =_sdata
- 80001ea:	480e      	ldr	r0, [pc, #56]	; (8000224 <LoopForever+0xe>)
+ 8000430:	480b      	ldr	r0, [pc, #44]	; (8000460 <LoopForever+0xa>)
 	ldr	r3, =_edata
- 80001ec:	4b0e      	ldr	r3, [pc, #56]	; (8000228 <LoopForever+0x12>)
+ 8000432:	4b0c      	ldr	r3, [pc, #48]	; (8000464 <LoopForever+0xe>)
 	adds	r2, r0, r1
- 80001ee:	1842      	adds	r2, r0, r1
+ 8000434:	1842      	adds	r2, r0, r1
 	cmp	r2, r3
- 80001f0:	429a      	cmp	r2, r3
+ 8000436:	429a      	cmp	r2, r3
 	bcc	CopyDataInit
- 80001f2:	f4ff aff6 	bcc.w	80001e2 <CopyDataInit>
+ 8000438:	d3f6      	bcc.n	8000428 <CopyDataInit>
 	ldr	r2, =_sbss
- 80001f6:	4a0d      	ldr	r2, [pc, #52]	; (800022c <LoopForever+0x16>)
+ 800043a:	4a0b      	ldr	r2, [pc, #44]	; (8000468 <LoopForever+0x12>)
 	b	LoopFillZerobss
- 80001f8:	f000 b803 	b.w	8000202 <LoopFillZerobss>
+ 800043c:	e002      	b.n	8000444 <LoopFillZerobss>
 
-080001fc <FillZerobss>:
+0800043e <FillZerobss>:
 /* Zero fill the bss segment. */
 FillZerobss:
 	movs	r3, #0
- 80001fc:	2300      	movs	r3, #0
+ 800043e:	2300      	movs	r3, #0
 	str	r3, [r2], #4
- 80001fe:	f842 3b04 	str.w	r3, [r2], #4
+ 8000440:	f842 3b04 	str.w	r3, [r2], #4
 
-08000202 <LoopFillZerobss>:
+08000444 <LoopFillZerobss>:
 
 LoopFillZerobss:
 	ldr	r3, = _ebss
- 8000202:	4b0b      	ldr	r3, [pc, #44]	; (8000230 <LoopForever+0x1a>)
+ 8000444:	4b09      	ldr	r3, [pc, #36]	; (800046c <LoopForever+0x16>)
 	cmp	r2, r3
- 8000204:	429a      	cmp	r2, r3
+ 8000446:	429a      	cmp	r2, r3
 	bcc	FillZerobss
- 8000206:	f4ff aff9 	bcc.w	80001fc <FillZerobss>
+ 8000448:	d3f9      	bcc.n	800043e <FillZerobss>
 
 /* Call the clock system intitialization function.*/
     bl  SystemInit
- 800020a:	f000 f815 	bl	8000238 <SystemInit>
+ 800044a:	f000 f813 	bl	8000474 <SystemInit>
 /* Call static constructors */
     bl __libc_init_array
- 800020e:	f000 f837 	bl	8000280 <__libc_init_array>
+ 800044e:	f000 f83b 	bl	80004c8 <__libc_init_array>
 /* Call the application's entry point.*/
 	bl	main
- 8000212:	f7ff ffdf 	bl	80001d4 <main>
+ 8000452:	f7ff febf 	bl	80001d4 <main>
 
-08000216 <LoopForever>:
+08000456 <LoopForever>:
 
 LoopForever:
     b LoopForever
- 8000216:	f7ff bffe 	b.w	8000216 <LoopForever>
- 800021a:	0000      	.short	0x0000
-
-    .section	.text.Reset_Handler
-	.weak	Reset_Handler
-	.type	Reset_Handler, %function
-Reset_Handler:
+ 8000456:	e7fe      	b.n	8000456 <LoopForever>
   ldr   sp, =_estack    /* Atollic update: set stack pointer */
- 800021c:	20020000 	.word	0x20020000
-/* Copy the data segment initializers from flash to SRAM */
-  movs	r1, #0
-  b	LoopCopyDataInit
-
-CopyDataInit:
+ 8000458:	20020000 	.word	0x20020000
 	ldr	r3, =_sidata
- 8000220:	080002ec 	.word	0x080002ec
-	ldr	r3, [r3, r1]
-	str	r3, [r0, r1]
-	adds	r1, r1, #4
-
-LoopCopyDataInit:
+ 800045c:	08000548 	.word	0x08000548
 	ldr	r0, =_sdata
- 8000224:	20000000 	.word	0x20000000
+ 8000460:	20000000 	.word	0x20000000
 	ldr	r3, =_edata
- 8000228:	20000000 	.word	0x20000000
-	adds	r2, r0, r1
-	cmp	r2, r3
-	bcc	CopyDataInit
+ 8000464:	20000004 	.word	0x20000004
 	ldr	r2, =_sbss
- 800022c:	20000000 	.word	0x20000000
-FillZerobss:
-	movs	r3, #0
-	str	r3, [r2], #4
-
-LoopFillZerobss:
+ 8000468:	20000004 	.word	0x20000004
 	ldr	r3, = _ebss
- 8000230:	2000001c 	.word	0x2000001c
+ 800046c:	2000005c 	.word	0x2000005c
 
-08000234 <ADC1_IRQHandler>:
+08000470 <ADC1_IRQHandler>:
  * @retval : None
 */
     .section	.text.Default_Handler,"ax",%progbits
 Default_Handler:
 Infinite_Loop:
 	b	Infinite_Loop
- 8000234:	f7ff bffe 	b.w	8000234 <ADC1_IRQHandler>
+ 8000470:	e7fe      	b.n	8000470 <ADC1_IRQHandler>
+	...
 
-08000238 <SystemInit>:
+08000474 <SystemInit>:
 
 void SystemInit(void)
 {
   /* FPU settings ------------------------------------------------------------*/
   #if (__FPU_PRESENT == 1) && (__FPU_USED == 1)
     SCB->CPACR |= ((3UL << 10*2)|(3UL << 11*2));  /* set CP10 and CP11 Full Access */
- 8000238:	4a0f      	ldr	r2, [pc, #60]	; (8000278 <SystemInit+0x40>)
- 800023a:	f8d2 3088 	ldr.w	r3, [r2, #136]	; 0x88
- 800023e:	f443 0370 	orr.w	r3, r3, #15728640	; 0xf00000
- 8000242:	f8c2 3088 	str.w	r3, [r2, #136]	; 0x88
+ 8000474:	490f      	ldr	r1, [pc, #60]	; (80004b4 <SystemInit+0x40>)
+ 8000476:	f8d1 3088 	ldr.w	r3, [r1, #136]	; 0x88
+ 800047a:	f443 0370 	orr.w	r3, r3, #15728640	; 0xf00000
+ 800047e:	f8c1 3088 	str.w	r3, [r1, #136]	; 0x88
   #endif
 
   /* Reset the RCC clock configuration to the default reset state ------------*/
   /* Set MSION bit */
   RCC->CR |= RCC_CR_MSION;
- 8000246:	4b0d      	ldr	r3, [pc, #52]	; (800027c <SystemInit+0x44>)
- 8000248:	6819      	ldr	r1, [r3, #0]
- 800024a:	f041 0101 	orr.w	r1, r1, #1
- 800024e:	6019      	str	r1, [r3, #0]
+ 8000482:	4b0d      	ldr	r3, [pc, #52]	; (80004b8 <SystemInit+0x44>)
+ 8000484:	681a      	ldr	r2, [r3, #0]
+ 8000486:	f042 0201 	orr.w	r2, r2, #1
+ 800048a:	601a      	str	r2, [r3, #0]
 
   /* Reset CFGR register */
   RCC->CFGR = 0x00000000U;
- 8000250:	2000      	movs	r0, #0
- 8000252:	6098      	str	r0, [r3, #8]
+ 800048c:	2000      	movs	r0, #0
+ 800048e:	6098      	str	r0, [r3, #8]
 
   /* Reset HSEON, CSSON , HSION, and PLLON bits */
   RCC->CR &= 0xEAF6FFFFU;
- 8000254:	6819      	ldr	r1, [r3, #0]
- 8000256:	f021 51a8 	bic.w	r1, r1, #352321536	; 0x15000000
- 800025a:	f421 2110 	bic.w	r1, r1, #589824	; 0x90000
- 800025e:	6019      	str	r1, [r3, #0]
+ 8000490:	681a      	ldr	r2, [r3, #0]
+ 8000492:	f022 52a8 	bic.w	r2, r2, #352321536	; 0x15000000
+ 8000496:	f422 2210 	bic.w	r2, r2, #589824	; 0x90000
+ 800049a:	601a      	str	r2, [r3, #0]
 
   /* Reset PLLCFGR register */
   RCC->PLLCFGR = 0x00001000U;
- 8000260:	f44f 5180 	mov.w	r1, #4096	; 0x1000
- 8000264:	60d9      	str	r1, [r3, #12]
+ 800049c:	f44f 5280 	mov.w	r2, #4096	; 0x1000
+ 80004a0:	60da      	str	r2, [r3, #12]
 
   /* Reset HSEBYP bit */
   RCC->CR &= 0xFFFBFFFFU;
- 8000266:	6819      	ldr	r1, [r3, #0]
- 8000268:	f421 2180 	bic.w	r1, r1, #262144	; 0x40000
- 800026c:	6019      	str	r1, [r3, #0]
+ 80004a2:	681a      	ldr	r2, [r3, #0]
+ 80004a4:	f422 2280 	bic.w	r2, r2, #262144	; 0x40000
+ 80004a8:	601a      	str	r2, [r3, #0]
 
   /* Disable all interrupts */
   RCC->CIER = 0x00000000U;
- 800026e:	6198      	str	r0, [r3, #24]
+ 80004aa:	6198      	str	r0, [r3, #24]
 
   /* Configure the Vector Table location add offset address ------------------*/
 #ifdef VECT_TAB_SRAM
   SCB->VTOR = SRAM_BASE | VECT_TAB_OFFSET; /* Vector Table Relocation in Internal SRAM */
 #else
   SCB->VTOR = FLASH_BASE | VECT_TAB_OFFSET; /* Vector Table Relocation in Internal FLASH */
- 8000270:	f04f 6300 	mov.w	r3, #134217728	; 0x8000000
- 8000274:	6093      	str	r3, [r2, #8]
- 8000276:	4770      	bx	lr
- 8000278:	e000ed00 	.word	0xe000ed00
- 800027c:	40021000 	.word	0x40021000
+ 80004ac:	f04f 6300 	mov.w	r3, #134217728	; 0x8000000
+ 80004b0:	608b      	str	r3, [r1, #8]
+ 80004b2:	4770      	bx	lr
+ 80004b4:	e000ed00 	.word	0xe000ed00
+ 80004b8:	40021000 	.word	0x40021000
 
-08000280 <__libc_init_array>:
- 8000280:	b570      	push	{r4, r5, r6, lr}
- 8000282:	4b0e      	ldr	r3, [pc, #56]	; (80002bc <__libc_init_array+0x3c>)
- 8000284:	4d0e      	ldr	r5, [pc, #56]	; (80002c0 <__libc_init_array+0x40>)
- 8000286:	1aed      	subs	r5, r5, r3
- 8000288:	10ad      	asrs	r5, r5, #2
- 800028a:	2400      	movs	r4, #0
- 800028c:	461e      	mov	r6, r3
- 800028e:	42ac      	cmp	r4, r5
- 8000290:	d004      	beq.n	800029c <__libc_init_array+0x1c>
- 8000292:	f856 2024 	ldr.w	r2, [r6, r4, lsl #2]
- 8000296:	4790      	blx	r2
- 8000298:	3401      	adds	r4, #1
- 800029a:	e7f8      	b.n	800028e <__libc_init_array+0xe>
- 800029c:	f000 f816 	bl	80002cc <_init>
- 80002a0:	4d08      	ldr	r5, [pc, #32]	; (80002c4 <__libc_init_array+0x44>)
- 80002a2:	4b09      	ldr	r3, [pc, #36]	; (80002c8 <__libc_init_array+0x48>)
- 80002a4:	1aed      	subs	r5, r5, r3
- 80002a6:	10ad      	asrs	r5, r5, #2
- 80002a8:	2400      	movs	r4, #0
- 80002aa:	461e      	mov	r6, r3
- 80002ac:	42ac      	cmp	r4, r5
- 80002ae:	d004      	beq.n	80002ba <__libc_init_array+0x3a>
- 80002b0:	f856 2024 	ldr.w	r2, [r6, r4, lsl #2]
- 80002b4:	4790      	blx	r2
- 80002b6:	3401      	adds	r4, #1
- 80002b8:	e7f8      	b.n	80002ac <__libc_init_array+0x2c>
- 80002ba:	bd70      	pop	{r4, r5, r6, pc}
- 80002bc:	080002e4 	.word	0x080002e4
- 80002c0:	080002e4 	.word	0x080002e4
- 80002c4:	080002e8 	.word	0x080002e8
- 80002c8:	080002e4 	.word	0x080002e4
+080004bc <HAL_RCC_GetHCLKFreq>:
+  * @retval HCLK frequency in Hz
+  */
+uint32_t HAL_RCC_GetHCLKFreq(void)
+{
+  return SystemCoreClock;
+}
+ 80004bc:	4b01      	ldr	r3, [pc, #4]	; (80004c4 <HAL_RCC_GetHCLKFreq+0x8>)
+ 80004be:	6818      	ldr	r0, [r3, #0]
+ 80004c0:	4770      	bx	lr
+ 80004c2:	bf00      	nop
+ 80004c4:	20000000 	.word	0x20000000
 
-080002cc <_init>:
- 80002cc:	b5f8      	push	{r3, r4, r5, r6, r7, lr}
- 80002ce:	bf00      	nop
- 80002d0:	bcf8      	pop	{r3, r4, r5, r6, r7}
- 80002d2:	bc08      	pop	{r3}
- 80002d4:	469e      	mov	lr, r3
- 80002d6:	4770      	bx	lr
+080004c8 <__libc_init_array>:
+ 80004c8:	b570      	push	{r4, r5, r6, lr}
+ 80004ca:	4e0d      	ldr	r6, [pc, #52]	; (8000500 <__libc_init_array+0x38>)
+ 80004cc:	4c0d      	ldr	r4, [pc, #52]	; (8000504 <__libc_init_array+0x3c>)
+ 80004ce:	1ba4      	subs	r4, r4, r6
+ 80004d0:	10a4      	asrs	r4, r4, #2
+ 80004d2:	2500      	movs	r5, #0
+ 80004d4:	42a5      	cmp	r5, r4
+ 80004d6:	d109      	bne.n	80004ec <__libc_init_array+0x24>
+ 80004d8:	4e0b      	ldr	r6, [pc, #44]	; (8000508 <__libc_init_array+0x40>)
+ 80004da:	4c0c      	ldr	r4, [pc, #48]	; (800050c <__libc_init_array+0x44>)
+ 80004dc:	f000 f818 	bl	8000510 <_init>
+ 80004e0:	1ba4      	subs	r4, r4, r6
+ 80004e2:	10a4      	asrs	r4, r4, #2
+ 80004e4:	2500      	movs	r5, #0
+ 80004e6:	42a5      	cmp	r5, r4
+ 80004e8:	d105      	bne.n	80004f6 <__libc_init_array+0x2e>
+ 80004ea:	bd70      	pop	{r4, r5, r6, pc}
+ 80004ec:	f856 3025 	ldr.w	r3, [r6, r5, lsl #2]
+ 80004f0:	4798      	blx	r3
+ 80004f2:	3501      	adds	r5, #1
+ 80004f4:	e7ee      	b.n	80004d4 <__libc_init_array+0xc>
+ 80004f6:	f856 3025 	ldr.w	r3, [r6, r5, lsl #2]
+ 80004fa:	4798      	blx	r3
+ 80004fc:	3501      	adds	r5, #1
+ 80004fe:	e7f2      	b.n	80004e6 <__libc_init_array+0x1e>
+ 8000500:	08000540 	.word	0x08000540
+ 8000504:	08000540 	.word	0x08000540
+ 8000508:	08000540 	.word	0x08000540
+ 800050c:	08000544 	.word	0x08000544
 
-080002d8 <_fini>:
- 80002d8:	b5f8      	push	{r3, r4, r5, r6, r7, lr}
- 80002da:	bf00      	nop
- 80002dc:	bcf8      	pop	{r3, r4, r5, r6, r7}
- 80002de:	bc08      	pop	{r3}
- 80002e0:	469e      	mov	lr, r3
- 80002e2:	4770      	bx	lr
+08000510 <_init>:
+ 8000510:	b5f8      	push	{r3, r4, r5, r6, r7, lr}
+ 8000512:	bf00      	nop
+ 8000514:	bcf8      	pop	{r3, r4, r5, r6, r7}
+ 8000516:	bc08      	pop	{r3}
+ 8000518:	469e      	mov	lr, r3
+ 800051a:	4770      	bx	lr
+
+0800051c <_fini>:
+ 800051c:	b5f8      	push	{r3, r4, r5, r6, r7, lr}
+ 800051e:	bf00      	nop
+ 8000520:	bcf8      	pop	{r3, r4, r5, r6, r7}
+ 8000522:	bc08      	pop	{r3}
+ 8000524:	469e      	mov	lr, r3
+ 8000526:	4770      	bx	lr

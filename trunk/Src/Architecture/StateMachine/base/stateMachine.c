@@ -57,7 +57,7 @@ eError initFsm( tFsm * fsm )
 	fsm->currentState = fsm->initState;
 	fsm->tickCounter = 0;
 
-	my_printf(fsm->logEnable,VERBOSE_GENERAL, "FSM : %s num : %d init setToState %s.\n",fsm->name,fsm->numFsm,fsm->state[fsm->currentState].StateName);
+	//my_printf(fsm->logEnable,VERBOSE_GENERAL, "FSM : %s num : %d init setToState %s.\n",fsm->name,fsm->numFsm,fsm->state[fsm->currentState].StateName);
 
 	checkEntryAction(fsm);
 
@@ -117,7 +117,7 @@ eError announceFsmEvent(tFsm * fsm,uint8_t eventId )
 		retValue = RET_FAIL;
 	}
 
-	my_printf(fsm->logEnable,VERBOSE_GENERAL, "FSM %s num : %d announce event %s.\n",fsm->name,fsm->numFsm,fsm->event[eventId].EventName);
+	//my_printf(fsm->logEnable,VERBOSE_GENERAL, "FSM %s num : %d announce event %s.\n",fsm->name,fsm->numFsm,fsm->event[eventId].EventName);
 
 
 	return retValue;
@@ -202,7 +202,7 @@ static tBool checkDestination(tFsm * fsm,uint8_t stateDestination)
 		checkEntryAction(fsm);
 		value = TRUE;
 
-		my_printf(fsm->logEnable,VERBOSE_GENERAL, "FSM %s num : %d change State %s.\n",fsm->name,fsm->numFsm,fsm->state[stateDestination].StateName);
+		//my_printf(fsm->logEnable,VERBOSE_GENERAL, "FSM %s num : %d change State %s.\n",fsm->name,fsm->numFsm,fsm->state[stateDestination].StateName);
 
 	}
 

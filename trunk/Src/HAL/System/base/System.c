@@ -44,8 +44,9 @@ const uint32_t montseny_mark[4] __attribute__((__section__(".montseny_mark"))) =
  *  PRIVATE VARIABLES
  ****************************************************************************/
 tPowerUpReasons powerUpReason = SYSTEM_FIRST_POWER_UP;
+#ifdef MON_RTC_ENABLED
 RTC_HandleTypeDef RTCHandler;
-
+#endif
 #if (WINDOW_WATCHDOG == 1)
 WWDG_HandleTypeDef WWDGHandler;
 uint8_t WWDGCounterValue;
@@ -245,10 +246,6 @@ static void storePowerUpReason( void )
 		else if ( __HAL_RCC_GET_FLAG(RCC_FLAG_BORRST) != RESET )
 		{
 			powerUpReason = SYSTEM_BOR_RESET;
-		}
-		else if ( __HAL_RCC_GET_FLAG(RCC_FLAG_PORRST) != RESET )
-		{
-			powerUpReason = SYSTEM_POR_RESET;
 		}
 		else if ( __HAL_RCC_GET_FLAG(RCC_FLAG_LPWRRST) != RESET )
 		{
@@ -902,7 +899,7 @@ static eError SystemClock_Config(void)
 	RCC_ClkInitStruct.AHBCLKDivider  = SystemMap.AHBCLKDivider;
 	RCC_ClkInitStruct.APB1CLKDivider = SystemMap.APB1CLKDivider;
 	RCC_ClkInitStruct.APB2CLKDivider = SystemMap.APB2CLKDivider;
-	HAL_RCC_ClockConfig(&RCC_ClkInitStruct, FLASH_LATENCY_5);
+	HAL_RCC_ClockConfig(&RCC_ClkInitStruct, FLASH_LATENCY_0);
 
 #if defined(MON_RTC_ENABLED)
 	PeriphClkInit.PeriphClockSelection = RCC_PERIPHCLK_RTC;

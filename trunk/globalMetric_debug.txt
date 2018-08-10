@@ -1,29 +1,35 @@
 COMPONENT                     	 FLASH	   RAM	   DATA
 --------------------------------------------------------------------------------
-MAIN                          	     2	     0	     0
+SCHEDULER                     	   556	    57	    24
+SYSTEM                        	    16	     0	     0
+MAIN                          	    16	     0	     0
 --------------------------------------------------------------------------------
- TOTAL MONTSENY (Bytes)       	     2	     0	     0
- TOTAL ST (Bytes)             	     0	     0	     0
- TOTAL OTHERS (Bytes)         	    76	     0	     0
+ TOTAL MONTSENY (Bytes)       	   588	    57	    24
+ TOTAL ST (Bytes)             	    12	     0	     0
+ TOTAL OTHERS (Bytes)         	    72	    25	     4
 --------------------------------------------------------------------------------
- TOTAL (Bytes)                	   532	     0
+ TOTAL (Bytes)                	   986	    82
 --------------------------------------------------------------------------------
 
 --------------------------------------------------------------------------------
 		 ST LIBRARY 
 --------------------------------------------------------------------------------
+STM32L4XX_HAL_RCC.C           	    12	     0	     0
 
 --------------------------------------------------------------------------------
 		 ARM LIBRARY METRIC COMPONENT WITH debug 
 --------------------------------------------------------------------------------
 FLASH: 
-__libc_init_array                        =     76
+__libc_init_array                        =     72
 
 RAM: 
+object.9800                              =     24
+completed.9795                           =      1
 
 DATA: 
+SystemCoreClock                          =      4
 
 --------------------------------------------------------------------------------
-TOTAL FLASH SIZE OTHER                   =     76
-TOTAL RAM SIZE OTHER                     =      0
-TOTAL DATA SIZE OTHER                    =      0
+TOTAL FLASH SIZE OTHER                   =     72
+TOTAL RAM SIZE OTHER                     =     25
+TOTAL DATA SIZE OTHER                    =      4
