@@ -2,12 +2,20 @@
 		 SWTIMER METRIC COMPONENT WITH debug 
 ------------------------------------------------------------------
 FLASH: 
+SwTimerUpdateTimer                       =    104
+SwTimerStartTimer                        =     44
+SwTimerIrq                               =     32
+SwTimerResetTimer                        =     24
+diffTime                                 =     14
+getTime                                  =     12
 
 RAM: 
+SwTimersArray                            =     16
+timeMs                                   =      4
 
 DATA: 
 ------------------------------------------------------------------
-TOTAL FLASH SIZE SWTIMER                 =      0
-TOTAL RAM SIZE SWTIMER                   =      0
+TOTAL FLASH SIZE SWTIMER                 =    230
+TOTAL RAM SIZE SWTIMER                   =     20
 TOTAL DATA SIZE SWTIMER                  =      0
 ------------------------------------------------------------------

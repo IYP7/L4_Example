@@ -69,11 +69,11 @@ tInterruptsInstanceMap interruptsInstanceMap[MAX_IRQ] =
 		/* IRQ_EXTI0		*/	{EXTI0_IRQn			,	INT_PRIORITY_1   ,	INT_SUBPRIORITY_0,		IRQ_DISABLE	},
 		/* IRQ_EXTI1		*/	{EXTI1_IRQn			,	INT_PRIORITY_1	 ,	INT_SUBPRIORITY_0,	    IRQ_DISABLE	},
 		/* IRQ_EXTI9_5		*/	{EXTI9_5_IRQn		,	INT_PRIORITY_1	 ,	INT_SUBPRIORITY_0,		IRQ_DISABLE	},
-		/* IRQ_ADC1			*/	{ADC_IRQn			,	INT_PRIORITY_1	 ,	INT_SUBPRIORITY_0,		IRQ_DISABLE	},
-		/* IRQ_TIM2			*/ 	{TIM2_IRQn			,	INT_PRIORITY_1	 ,	INT_SUBPRIORITY_0,		IRQ_ENABLE	},
-		/* IRQ_TIM3			*/ 	{TIM3_IRQn			,	INT_PRIORITY_1	 ,	INT_SUBPRIORITY_0,		IRQ_ENABLE	},
+		/* IRQ_ADC1			*/	{ADC1_IRQn			,	INT_PRIORITY_1	 ,	INT_SUBPRIORITY_0,		IRQ_DISABLE	},
+		/* IRQ_TIM2			*/ 	{TIM2_IRQn			,	INT_PRIORITY_1	 ,	INT_SUBPRIORITY_0,		IRQ_DISABLE	},
+		/* IRQ_TIM3			*/ 	{TIM3_IRQn			,	INT_PRIORITY_1	 ,	INT_SUBPRIORITY_0,		IRQ_DISABLE	},
 		/* IRQ_USART1		*/	{USART1_IRQn		,	INT_PRIORITY_1	 ,	INT_SUBPRIORITY_0,		IRQ_DISABLE	},
-		/* IRQ_USART2		*/	{USART2_IRQn		,	INT_PRIORITY_1	 ,	INT_SUBPRIORITY_0,		IRQ_ENABLE	},
+		/* IRQ_USART2		*/	{USART2_IRQn		,	INT_PRIORITY_1	 ,	INT_SUBPRIORITY_0,		IRQ_DISABLE	},
 		/* IRQ_I2c1  		*/	{I2C1_EV_IRQn       ,	INT_PRIORITY_1	 ,	INT_SUBPRIORITY_0,		IRQ_DISABLE },
 		/* IRQ_I2c2  		*/	{I2C2_EV_IRQn       ,	INT_PRIORITY_1	 ,	INT_SUBPRIORITY_0,		IRQ_DISABLE },
 		/* IRQ_SPI1  		*/	{SPI1_IRQn          ,	INT_PRIORITY_1	 ,	INT_SUBPRIORITY_0,		IRQ_DISABLE },
@@ -116,35 +116,35 @@ void HAL_SYSTICK_Callback(void)
   * @param  hrtc: RTC handle
   * @retval None
   */
-void HAL_RTCEx_TimeStampEventCallback(RTC_HandleTypeDef *hrtc)
-{
-	  /* NOTE :the HAL_RTCEx_Tamper2EventCallback could be implemented in the user driver
-	   */
-
-}
+//void HAL_RTCEx_TimeStampEventCallback(RTC_HandleTypeDef *hrtc)
+//{
+//	  /* NOTE :the HAL_RTCEx_Tamper2EventCallback could be implemented in the user driver
+//	   */
+//
+//}
 
 /**
   * @brief  Tamper 1 callback.
   * @param  hrtc: RTC handle
   * @retval None
   */
-void HAL_RTCEx_Tamper1EventCallback(RTC_HandleTypeDef *hrtc)
-{
-	  /* NOTE :the HAL_RTCEx_Tamper2EventCallback could be implemented in the user driver
-	   */
-
-}
+//void HAL_RTCEx_Tamper1EventCallback(RTC_HandleTypeDef *hrtc)
+//{
+//	  /* NOTE :the HAL_RTCEx_Tamper2EventCallback could be implemented in the user driver
+//	   */
+//
+//}
 
 /**
   * @brief  Tamper 2 callback.
   * @param  hrtc: RTC handle
   * @retval None
   */
-void HAL_RTCEx_Tamper2EventCallback(RTC_HandleTypeDef *hrtc)
-{
-  /* NOTE :the HAL_RTCEx_Tamper2EventCallback could be implemented in the user file
-   */
-}
+//void HAL_RTCEx_Tamper2EventCallback(RTC_HandleTypeDef *hrtc)
+//{
+//  /* NOTE :the HAL_RTCEx_Tamper2EventCallback could be implemented in the user file
+//   */
+//}
 
 /**
   * @brief EXTI line detection callbacks
@@ -163,10 +163,10 @@ void HAL_GPIO_EXTI_Callback(uint16_t GPIO_Pin)
   *         you can add your own implementation.
   * @retval None
   */
-void HAL_ADC_ConvCpltCallback(ADC_HandleTypeDef *AdcHandle)
-{
-	/*TODO: "example" call to Driver Function*/
-}
+//void HAL_ADC_ConvCpltCallback(ADC_HandleTypeDef *AdcHandle)
+//{
+//	/*TODO: "example" call to Driver Function*/
+//}
 
 #ifdef TIMER_USES_INTERRUPTS
 
