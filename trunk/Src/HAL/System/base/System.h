@@ -3,12 +3,11 @@
  *
  * @file System.h
  *
- * @brief Microcontroller specific driver Header - stm32F4xx.
+ * @brief Microcontroller specific driver Header - stm32L4xx.
  *
- * @author Jordi Castells
- * @author Albert Serrallo
+ * @author Gabriel Perez
  *
- * @date 10/02/2015
+ * @date 16/08/2018
  *
  ****************************************************************************/
 
@@ -106,6 +105,9 @@ typedef struct sSystemInstanceMap
 	uint32_t HSIState;
 	uint32_t HSICalibrationValue;
 	uint32_t LSIState;
+	uint32_t MSIState;
+	uint32_t MSICalibrationValue;
+	uint32_t MSIClockRange;
 
 	/* RCC OSC: PLL Config */
 	uint32_t PLLState;
@@ -129,12 +131,12 @@ typedef struct sSystemInstanceMap
 /****************************************************************************
  *    PUBLIC FUNCTION DEFINITIONS
  ****************************************************************************/
-eError stm32F4Init( void );
-eError stm32F4Stop( void );
-eError stm32F4Start( void );
-eError stm32F4Sleep( void );
-eError stm32F4Wake( void );
-eError stm32F4SetPowerMode( tSystemPowerModes powerMode );
+eError stm32L4Init( void );
+eError stm32L4Stop( void );
+eError stm32L4Start( void );
+eError stm32L4Sleep( void );
+eError stm32L4Wake( void );
+eError stm32L4SetPowerMode( tSystemPowerModes powerMode );
 tPowerUpReasons checkPowerUpReason( void );
 
 eError RTCSetTime (uint32_t time);

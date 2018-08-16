@@ -31,6 +31,7 @@
 #include "main.h"
 #include "Scheduler.h"
 #include "system.h"
+#include "interrupts.h"
 
 /*************************************************************************//**
  * @brief   Embedded application start routine.
@@ -49,6 +50,10 @@ int  main()
 
 	/* Applications Initialization */
     SchedulerInit();
+
+    stm32L4Init();
+    interruptsInit();
+    interruptsStart();
 
     while (TRUE)
     {

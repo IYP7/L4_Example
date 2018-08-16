@@ -60,7 +60,7 @@ __weak eError initHregSystem( void )
 {
 	eError result = RET_OK;
 
-	result = stm32F4Init();
+	result = stm32L4Init();
 
 	return result;
 }
@@ -75,7 +75,7 @@ __weak eError startHregSystem( void )
 {
 	eError result = RET_OK;
 
-	result = stm32F4Start();
+	result = stm32L4Start();
 
 	return result;
 }
@@ -88,7 +88,7 @@ __weak eError stopHregSystem( void )
 {
 	eError result = RET_OK;
 
-	result = stm32F4Stop();
+	result = stm32L4Stop();
 
 	return result;
 }
@@ -101,7 +101,7 @@ __weak eError sleepHregSystem( void )
 {
 	eError result = RET_OK;
 
-	result = stm32F4Sleep();
+	result = stm32L4Sleep();
 
 	return result;
 }
@@ -114,7 +114,7 @@ __weak eError wakeHregSystem( void )
 {
 	eError result = RET_OK;
 
-	result =  stm32F4Wake();
+	result =  stm32L4Wake();
 
 	return result;
 }
@@ -127,7 +127,7 @@ __weak eError onWriteHregSystemPowerMode( uint8_t instance, const HREG* hregPtr,
 {
 	eError result = RET_OK;
 
-	result = stm32F4SetPowerMode(param1);
+	result = stm32L4SetPowerMode(param1);
 
 	return result;
 }

@@ -1,20 +1,26 @@
 COMPONENT                     	 FLASH	   RAM	   DATA
 --------------------------------------------------------------------------------
-SCHEDULER                     	   556	    57	    24
-SYSTEM                        	    16	     0	     0
-MAIN                          	    16	     0	     0
+SCHEDULER                     	   648	    57	    24
+INTERRUPTS                    	   220	     0	    56
+SYSTEM                        	   408	     1	    84
+SWTIMER                       	   230	    20	     0
+MAIN                          	    28	     0	     0
 --------------------------------------------------------------------------------
- TOTAL MONTSENY (Bytes)       	   588	    57	    24
- TOTAL ST (Bytes)             	    12	     0	     0
- TOTAL OTHERS (Bytes)         	    72	    25	     4
+ TOTAL MONTSENY (Bytes)       	  1534	    78	   164
+ TOTAL ST (Bytes)             	  2792	     4	     0
+ TOTAL OTHERS (Bytes)         	    72	    25	    68
 --------------------------------------------------------------------------------
- TOTAL (Bytes)                	   986	    82
+ TOTAL (Bytes)                	  4876	   107
 --------------------------------------------------------------------------------
 
 --------------------------------------------------------------------------------
 		 ST LIBRARY 
 --------------------------------------------------------------------------------
-STM32L4XX_HAL_RCC.C           	    12	     0	     0
+STM32L4XX_HAL.C               	    72	     4	     0
+STM32L4XX_HAL_CORTEX.C        	   208	     0	     0
+STM32L4XX_HAL_GPIO.C          	    28	     0	     0
+STM32L4XX_HAL_PWR_EX.C        	   160	     0	     0
+STM32L4XX_HAL_RCC.C           	  2324	     0	     0
 
 --------------------------------------------------------------------------------
 		 ARM LIBRARY METRIC COMPONENT WITH debug 
@@ -27,9 +33,11 @@ object.9800                              =     24
 completed.9795                           =      1
 
 DATA: 
+MSIRangeTable                            =     48
+AHBPrescTable                            =     16
 SystemCoreClock                          =      4
 
 --------------------------------------------------------------------------------
 TOTAL FLASH SIZE OTHER                   =     72
 TOTAL RAM SIZE OTHER                     =     25
-TOTAL DATA SIZE OTHER                    =      4
+TOTAL DATA SIZE OTHER                    =     68

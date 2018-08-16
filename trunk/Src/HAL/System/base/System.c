@@ -1,12 +1,11 @@
 /*************************************************************************//**
  * @file System.c
  *
- * @brief Microcontroller specific driver - stm32F4xx.
+ * @brief Microcontroller specific driver - stm32L4xx.
  *
- * @author Gonzalo Serrano
- * @author Albert Serrallo
+ * @author Gabriel Perez
  *
- * @date 10/02/2016
+ * @date 16/08/2018
  *
  ****************************************************************************/
 
@@ -21,7 +20,7 @@
 /****************************************************************************
  *  ARCHITECTURE INCLUDES
  ***************************************************************************/
-#include "hreg_dat.h"
+//#include "hreg_dat.h"
 
 /****************************************************************************
  *  INCLUDES
@@ -88,14 +87,14 @@ static void RTCInit( void );
 static eError RTCSetInitDateTime( void );
 #endif
 /*************************************************************************//**
- * @brief  Init stm32F4 driver.
+ * @brief  Init stm32L4 driver.
  *
  * @param	None.
  *
  * @return  None.
  *
  ****************************************************************************/
-eError stm32F4Init( void )
+eError stm32L4Init( void )
 {
 	eError result = RET_OK;
 	/* If WATCHDOG_TESTMODE is activated window watchdog and independent watchdog	*/
@@ -127,63 +126,63 @@ eError stm32F4Init( void )
 }
 
 /*************************************************************************//**
- * @brief  Starts stm32F4 driver.
+ * @brief  Starts stm32L4 driver.
  *
  * @param	None.
  *
  * @return  eError.
  *
  ****************************************************************************/
-eError stm32F4Start( void )
+eError stm32L4Start( void )
 {
 	eError result = RET_OK;
-	WRITE_HREG(UNIQUE_INSTANCE, HREG_SYSTEM_POWER_UP_REASON, powerUpReason);
+	//WRITE_HREG(UNIQUE_INSTANCE, HREG_SYSTEM_POWER_UP_REASON, powerUpReason);
 
 	return result;
 }
 
 
 /*************************************************************************//**
- * @brief  Stops stm32F4 driver.
+ * @brief  Stops stm32L4 driver.
  *
  * @param	None.
  *
  * @return  eError
  *
  ****************************************************************************/
-eError stm32F4Stop( void )
+eError stm32L4Stop( void )
 {
 	eError result = RET_OK;
-	result = stm32F4SetPowerMode(SYSTEM_EXECUTE_STANDBY);
+	result = stm32L4SetPowerMode(SYSTEM_EXECUTE_STANDBY);
 	return result;
 }
 
 
 /*************************************************************************//**
- * @brief  Sleeps stm32F4 driver.
+ * @brief  Sleeps stm32L4 driver.
  *
  * @param	None.
  *
  * @return  eError
  *
  ****************************************************************************/
-eError stm32F4Sleep( void )
+eError stm32L4Sleep( void )
 {
 	eError result = RET_OK;
-	result = stm32F4SetPowerMode(SYSTEM_EXECUTE_SLEEP);
+	result = stm32L4SetPowerMode(SYSTEM_EXECUTE_SLEEP);
 
 	return result;
 }
 
 /*************************************************************************//**
- * @brief  Wakes up stm32F4 driver.
+ * @brief  Wakes up stm32L4 driver.
  *
  * @param	None.
  *
  * @return  eError.
  *
  ****************************************************************************/
-eError stm32F4Wake( void )
+eError stm32L4Wake( void )
 {
 	eError result = RET_OK;
 	return result;
@@ -792,7 +791,7 @@ eError RTCGetDate (uint32_t *date)
  * @return  result.
  *
  ****************************************************************************/
-eError stm32F4SetPowerMode( tSystemPowerModes powerMode )
+eError stm32L4SetPowerMode( tSystemPowerModes powerMode )
 {
 	eError result = RET_OK;
 	if (IS_POWER_MODE(powerMode))
@@ -868,50 +867,64 @@ static eError SystemClock_Config(void)
 	RCC_PeriphCLKInitTypeDef PeriphClkInit;
 #endif
 
-	RCC_OscInitStruct.OscillatorType = SystemMap.OscillatorType;
-	RCC_OscInitStruct.HSEState	= SystemMap.HSEState;
-	RCC_OscInitStruct.HSICalibrationValue = SystemMap.HSICalibrationValue;
-	RCC_OscInitStruct.HSIState 	= SystemMap.HSIState;
-	RCC_OscInitStruct.LSEState = SystemMap.LSEState;
-	RCC_OscInitStruct.LSIState = SystemMap.LSIState;
+	do
+	{
+		RCC_OscInitStruct.OscillatorType = SystemMap.OscillatorType;
+		RCC_OscInitStruct.HSEState	= SystemMap.HSEState;
+		RCC_OscInitStruct.HSICalibrationValue = SystemMap.HSICalibrationValue;
+		RCC_OscInitStruct.HSIState 	= SystemMap.HSIState;
+		RCC_OscInitStruct.LSEState = SystemMap.LSEState;
+		RCC_OscInitStruct.LSIState = SystemMap.LSIState;
 
-	RCC_OscInitStruct.PLL.PLLState 	= SystemMap.PLLState;
-	RCC_OscInitStruct.PLL.PLLSource = SystemMap.PLLSource;
-	RCC_OscInitStruct.PLL.PLLM 		= SystemMap.PLLM;
-	RCC_OscInitStruct.PLL.PLLN		= SystemMap.PLLN;
-	RCC_OscInitStruct.PLL.PLLP		= SystemMap.PLLP;
-	RCC_OscInitStruct.PLL.PLLQ		= SystemMap.PLLQ;
+		RCC_OscInitStruct.PLL.PLLState 	= SystemMap.PLLState;
+		RCC_OscInitStruct.PLL.PLLSource = SystemMap.PLLSource;
+		RCC_OscInitStruct.PLL.PLLM 		= SystemMap.PLLM;
+		RCC_OscInitStruct.PLL.PLLN		= SystemMap.PLLN;
+		RCC_OscInitStruct.PLL.PLLP		= SystemMap.PLLP;
+		RCC_OscInitStruct.PLL.PLLQ		= SystemMap.PLLQ;
+		RCC_OscInitStruct.PLL.PLLR		= SystemMap.PLLR;
 
-#if defined(STM32F410Tx) || defined(STM32F410Cx) || defined(STM32F410Rx) || defined(STM32F446xx) || defined(STM32F469xx) ||\
-    defined(STM32F479xx) || defined(STM32F412Zx) || defined(STM32F412Vx) || defined(STM32F412Rx) || defined(STM32F412Cx)
-	RCC_OscInitStruct.PLL.PLLR		= SystemMap.PLLR;
-#endif
+	#if (INDEPENDENT_WATCHDOG == 1)//Assure that LSI is configured ON (needed by IWDG)
+		RCC_OscInitStruct.OscillatorType |= RCC_OSCILLATORTYPE_LSI;
+		RCC_OscInitStruct.LSIState |= RCC_LSI_ON;
+	#endif
 
-#if (INDEPENDENT_WATCHDOG == 1)//Assure that LSI is configured ON (needed by IWDG)
-	RCC_OscInitStruct.OscillatorType |= RCC_OSCILLATORTYPE_LSI;
-	RCC_OscInitStruct.LSIState |= RCC_LSI_ON;
-#endif
+		if (HAL_RCC_OscConfig(&RCC_OscInitStruct) != HAL_OK)
+		{
+			result = RET_FAIL;
+			break;
+		}
 
-	HAL_RCC_OscConfig(&RCC_OscInitStruct);
+		RCC_ClkInitStruct.ClockType = RCC_CLOCKTYPE_SYSCLK | RCC_CLOCKTYPE_HCLK | RCC_CLOCKTYPE_PCLK1 | RCC_CLOCKTYPE_PCLK2;
+		RCC_ClkInitStruct.SYSCLKSource 	 = SystemMap.SYSCLKSource;
+		RCC_ClkInitStruct.AHBCLKDivider  = SystemMap.AHBCLKDivider;
+		RCC_ClkInitStruct.APB1CLKDivider = SystemMap.APB1CLKDivider;
+		RCC_ClkInitStruct.APB2CLKDivider = SystemMap.APB2CLKDivider;
 
-	RCC_ClkInitStruct.ClockType = RCC_CLOCKTYPE_SYSCLK | RCC_CLOCKTYPE_HCLK | RCC_CLOCKTYPE_PCLK1 | RCC_CLOCKTYPE_PCLK2;
-	RCC_ClkInitStruct.SYSCLKSource 	 = SystemMap.SYSCLKSource;
-	RCC_ClkInitStruct.AHBCLKDivider  = SystemMap.AHBCLKDivider;
-	RCC_ClkInitStruct.APB1CLKDivider = SystemMap.APB1CLKDivider;
-	RCC_ClkInitStruct.APB2CLKDivider = SystemMap.APB2CLKDivider;
-	HAL_RCC_ClockConfig(&RCC_ClkInitStruct, FLASH_LATENCY_0);
+		if (HAL_RCC_ClockConfig(&RCC_ClkInitStruct, FLASH_LATENCY_0) != HAL_OK)
+		{
+			result = RET_FAIL;
+			break;
+		}
 
-#if defined(MON_RTC_ENABLED)
-	PeriphClkInit.PeriphClockSelection = RCC_PERIPHCLK_RTC;
-	PeriphClkInit.RTCClockSelection = SystemMap.RTCClockSelection;
-	HAL_RCCEx_PeriphCLKConfig(&PeriphClkInit);
-#endif
+		if (HAL_PWREx_ControlVoltageScaling(PWR_REGULATOR_VOLTAGE_SCALE1) != HAL_OK)
+		{
+			result = RET_FAIL;
+			break;
+		}
 
-	HAL_SYSTICK_Config(HAL_RCC_GetHCLKFreq()/1000);
+	#if defined(MON_RTC_ENABLED)
+		PeriphClkInit.PeriphClockSelection = RCC_PERIPHCLK_RTC;
+		PeriphClkInit.RTCClockSelection = SystemMap.RTCClockSelection;
+		HAL_RCCEx_PeriphCLKConfig(&PeriphClkInit);
+	#endif
 
-	HAL_SYSTICK_CLKSourceConfig(SYSTICK_CLKSOURCE_HCLK);
+		HAL_SYSTICK_Config(HAL_RCC_GetHCLKFreq()/1000);
 
-	__HAL_RCC_SYSCFG_CLK_ENABLE();
+		HAL_SYSTICK_CLKSourceConfig(SYSTICK_CLKSOURCE_HCLK);
+
+		__HAL_RCC_SYSCFG_CLK_ENABLE();
+	} while (0);
 
 	return result;
 

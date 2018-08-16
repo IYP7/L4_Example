@@ -2,12 +2,43 @@
 		 INTERRUPTS METRIC COMPONENT WITH debug 
 ------------------------------------------------------------------
 FLASH: 
+interruptsStart                          =     52
+interruptsInit                           =     48
+HAL_SYSTICK_Callback                     =     16
+EXTI9_5_IRQHandler                       =     10
+USART2_IRQHandler                        =      8
+USART1_IRQHandler                        =      8
+SysTick_Handler                          =      8
+SPI2_IRQHandler                          =      8
+SPI1_IRQHandler                          =      8
+I2C2_EV_IRQHandler                       =      8
+I2C1_EV_IRQHandler                       =      8
+UsageFault_Handler                       =      2
+TIM3_IRQHandler                          =      2
+TIM2_IRQHandler                          =      2
+SVC_Handler                              =      2
+RTC_WKUP_IRQHandler                      =      2
+PendSV_Handler                           =      2
+NMI_Handler                              =      2
+MemManage_Handler                        =      2
+HardFault_Handler                        =      2
+HAL_UART2_Callback                       =      2
+HAL_UART1_Callback                       =      2
+HAL_SPI2_Callback                        =      2
+HAL_SPI1_Callback                        =      2
+HAL_I2C2_Callback                        =      2
+HAL_I2C1_Callback                        =      2
+HAL_GPIO_EXTI_Callback                   =      2
+EXTI1_IRQHandler                         =      2
+EXTI0_IRQHandler                         =      2
+BusFault_Handler                         =      2
 
 RAM: 
 
 DATA: 
+interruptsInstanceMap                    =     56
 ------------------------------------------------------------------
-TOTAL FLASH SIZE INTERRUPTS              =      0
+TOTAL FLASH SIZE INTERRUPTS              =    220
 TOTAL RAM SIZE INTERRUPTS                =      0
-TOTAL DATA SIZE INTERRUPTS               =      0
+TOTAL DATA SIZE INTERRUPTS               =     56
 ------------------------------------------------------------------

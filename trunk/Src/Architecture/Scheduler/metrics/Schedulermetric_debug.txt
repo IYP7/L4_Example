@@ -5,6 +5,7 @@ FLASH:
 SchedulerNextSystemProcess               =    192
 SchedulerResetProcessTable               =    108
 SchedulerExecuteSystemProcess            =    100
+SchedulerProcessesAutoEnable             =     92
 SchedulerUpdateTaskTime                  =     84
 SchedulerInit                            =     72
 
@@ -17,7 +18,7 @@ ptrTask                                  =      1
 DATA: 
 SchedulerInstanceMap                     =     24
 ------------------------------------------------------------------
-TOTAL FLASH SIZE SCHEDULER               =    556
+TOTAL FLASH SIZE SCHEDULER               =    648
 TOTAL RAM SIZE SCHEDULER                 =     57
 TOTAL DATA SIZE SCHEDULER                =     24
 ------------------------------------------------------------------

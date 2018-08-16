@@ -32,7 +32,7 @@
 #define UART_TX_BUFFER 100
 
 //#define IS_UART1
-#define IS_UART2
+//#define IS_UART2
 //#define IS_UART3
 //#define IS_UART4
 //#define IS_UART5
