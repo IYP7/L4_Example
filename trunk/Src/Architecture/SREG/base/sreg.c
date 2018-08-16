@@ -252,12 +252,12 @@ eError writeSregTableStd( SREG sreg, uint32_t value)
 	if ( value > sregParam.Max )
 	{
 		value = sregParam.Max;
-		printShellString((int8_t *)"SREG value adjusted to maximum\n", VERBOSE_WARNING);
+		//printShellString((int8_t *)"SREG value adjusted to maximum\n", VERBOSE_WARNING);
 	}
 	else if ( value < sregParam.Min )
 	{
 		value = sregParam.Min;
-		printShellString((int8_t *)"SREG value adjusted to minimum\n", VERBOSE_WARNING);
+		//printShellString((int8_t *)"SREG value adjusted to minimum\n", VERBOSE_WARNING);
 	}
 
 

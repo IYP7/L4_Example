@@ -32,7 +32,7 @@
 #include "Scheduler.h"
 #include "system.h"
 #include "interrupts.h"
-
+#include "swtimer.h"
 /*************************************************************************//**
  * @brief   Embedded application start routine.
  *
@@ -54,7 +54,7 @@ int  main()
     stm32L4Init();
     interruptsInit();
     interruptsStart();
-
+    SwTimerInit();
     while (TRUE)
     {
         SchedulerNextSystemProcess();
