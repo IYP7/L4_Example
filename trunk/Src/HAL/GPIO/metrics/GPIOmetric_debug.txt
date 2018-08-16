@@ -2,12 +2,16 @@
 		 GPIO METRIC COMPONENT WITH debug 
 ------------------------------------------------------------------
 FLASH: 
+InitGPIOClock                            =    272
+GPIOInit                                 =     84
+GPIOWritePort                            =     56
 
 RAM: 
 
 DATA: 
+GPIOInstanceMap                          =    144
 ------------------------------------------------------------------
-TOTAL FLASH SIZE GPIO                    =      0
+TOTAL FLASH SIZE GPIO                    =    412
 TOTAL RAM SIZE GPIO                      =      0
-TOTAL DATA SIZE GPIO                     =      0
+TOTAL DATA SIZE GPIO                     =    144
 ------------------------------------------------------------------
