@@ -5,6 +5,7 @@ FLASH:
 SwTimerUpdateTimer                       =    104
 SwTimerStartTimer                        =     44
 SwTimerIrq                               =     32
+SwTimerInit                              =     28
 SwTimerResetTimer                        =     24
 diffTime                                 =     14
 getTime                                  =     12
@@ -15,7 +16,7 @@ timeMs                                   =      4
 
 DATA: 
 ------------------------------------------------------------------
-TOTAL FLASH SIZE SWTIMER                 =    230
+TOTAL FLASH SIZE SWTIMER                 =    258
 TOTAL RAM SIZE SWTIMER                   =     20
 TOTAL DATA SIZE SWTIMER                  =      0
 ------------------------------------------------------------------

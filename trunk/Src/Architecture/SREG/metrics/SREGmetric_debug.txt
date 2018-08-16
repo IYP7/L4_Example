@@ -2,12 +2,24 @@
 		 SREG METRIC COMPONENT WITH debug 
 ------------------------------------------------------------------
 FLASH: 
+sregReadParam                            =    168
+sregWrite                                =     72
+writeSregTableStd                        =     46
+initSregAll                              =     36
+readSregTableStd                         =     26
+writeSreg                                =      8
+readSreg                                 =      8
 
 RAM: 
+SREG32Context                            =      8
+SREG8Context                             =      7
 
 DATA: 
+SREGInstanceMap                          =     36
+SREG32InstanceMap                        =     24
+SREG8InstanceMap                         =     21
 ------------------------------------------------------------------
-TOTAL FLASH SIZE SREG                    =      0
-TOTAL RAM SIZE SREG                      =      0
-TOTAL DATA SIZE SREG                     =      0
+TOTAL FLASH SIZE SREG                    =    364
+TOTAL RAM SIZE SREG                      =     15
+TOTAL DATA SIZE SREG                     =     81
 ------------------------------------------------------------------

@@ -22,14 +22,14 @@
 /****************************************************************************
 *  ARCHITECTURE INCLUDES
 ****************************************************************************/
-#include "sreg_dat.h"
+//#include "sreg_dat.h"
 
 /****************************************************************************
 *  INCLUDES
 ****************************************************************************/
 #include "System_mw.h"
 #include "System_app.h"
-#include "shell.h"
+//#include "shell.h"
 
 /****************************************************************************
 *  PRIVATE VARIABLES
@@ -74,6 +74,7 @@ void callSystemApp( void )
 
     /* System state machine */
     systemState = READ_SREG(SREG_SYSTEM_STATE);
+    //systemState = SYSTEM_APP_INIT_SHELL;
     switch ( systemState )
     {
 		case SYSTEM_APP_INIT_SHELL:
