@@ -29,6 +29,7 @@
 ****************************************************************************/
 #include "System_mw.h"
 #include "System_app.h"
+#include "GPIO.h"
 //#include "shell.h"
 
 /****************************************************************************
@@ -73,6 +74,7 @@ void callSystemApp( void )
     uint8_t systemState;
 
     /* System state machine */
+    GPIOWritePort(GPIO_LED_1, GPIO_TOGGLE);
     systemState = READ_SREG(SREG_SYSTEM_STATE);
     //systemState = SYSTEM_APP_INIT_SHELL;
     switch ( systemState )

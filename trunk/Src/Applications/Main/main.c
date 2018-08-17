@@ -33,6 +33,7 @@
 #include "system.h"
 #include "interrupts.h"
 #include "swtimer.h"
+#include "GPIO.h"
 /*************************************************************************//**
  * @brief   Embedded application start routine.
  *
@@ -51,6 +52,7 @@ int  main()
 	/* Applications Initialization */
     SchedulerInit();
 
+    GPIOInit();
     stm32L4Init();
     interruptsInit();
     interruptsStart();
