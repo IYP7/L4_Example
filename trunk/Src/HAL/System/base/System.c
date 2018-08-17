@@ -875,6 +875,9 @@ static eError SystemClock_Config(void)
 		RCC_OscInitStruct.HSIState 	= SystemMap.HSIState;
 		RCC_OscInitStruct.LSEState = SystemMap.LSEState;
 		RCC_OscInitStruct.LSIState = SystemMap.LSIState;
+		RCC_OscInitStruct.MSIState = SystemMap.MSIState;
+		RCC_OscInitStruct.MSICalibrationValue = SystemMap.MSICalibrationValue;
+		RCC_OscInitStruct.MSIClockRange= SystemMap.MSIClockRange;
 
 		RCC_OscInitStruct.PLL.PLLState 	= SystemMap.PLLState;
 		RCC_OscInitStruct.PLL.PLLSource = SystemMap.PLLSource;
@@ -901,7 +904,7 @@ static eError SystemClock_Config(void)
 		RCC_ClkInitStruct.APB1CLKDivider = SystemMap.APB1CLKDivider;
 		RCC_ClkInitStruct.APB2CLKDivider = SystemMap.APB2CLKDivider;
 
-		if (HAL_RCC_ClockConfig(&RCC_ClkInitStruct, FLASH_LATENCY_0) != HAL_OK)
+		if (HAL_RCC_ClockConfig(&RCC_ClkInitStruct, FLASH_LATENCY_4) != HAL_OK)
 		{
 			result = RET_FAIL;
 			break;
