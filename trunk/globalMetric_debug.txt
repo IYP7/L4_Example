@@ -2,18 +2,21 @@ COMPONENT                     	 FLASH	   RAM	   DATA
 --------------------------------------------------------------------------------
 SCHEDULER                     	   648	    57	    24
 SREG                          	   364	    15	    81
+TOOLS                         	   118	     0	     0
 GPIO                          	   412	     0	   144
-INTERRUPTS                    	   220	     0	    56
+INTERRUPTS                    	   288	     2	    56
 SYSTEM                        	   420	     1	    84
+UART                          	   614	   507	    44
+PIPEDEVICE                    	    64	     8	     0
 SWTIMER                       	   258	    20	     0
-MAIN                          	    36	     0	     0
+MAIN                          	    44	     0	     0
 SYSTEM_APP                    	   148	     1	     0
 --------------------------------------------------------------------------------
- TOTAL MONTSENY (Bytes)       	  2506	    94	   389
- TOTAL ST (Bytes)             	  3226	     4	     0
- TOTAL OTHERS (Bytes)         	    72	    25	    68
+ TOTAL MONTSENY (Bytes)       	  3378	   611	   433
+ TOTAL ST (Bytes)             	  6042	     4	     0
+ TOTAL OTHERS (Bytes)         	   808	    25	    76
 --------------------------------------------------------------------------------
- TOTAL (Bytes)                	  6507	   123
+ TOTAL (Bytes)                	 10983	   640
 --------------------------------------------------------------------------------
 
 --------------------------------------------------------------------------------
@@ -21,15 +24,21 @@ SYSTEM_APP                    	   148	     1	     0
 --------------------------------------------------------------------------------
 STM32L4XX_HAL.C               	    72	     4	     0
 STM32L4XX_HAL_CORTEX.C        	   208	     0	     0
+STM32L4XX_HAL_DMA.C           	    76	     0	     0
 STM32L4XX_HAL_GPIO.C          	   462	     0	     0
 STM32L4XX_HAL_PWR_EX.C        	   160	     0	     0
-STM32L4XX_HAL_RCC.C           	  2324	     0	     0
+STM32L4XX_HAL_RCC.C           	  2388	     0	     0
+STM32L4XX_HAL_UART.C          	  2674	     0	     0
+STM32L4XX_HAL_UART_EX.C       	     2	     0	     0
 
 --------------------------------------------------------------------------------
 		 ARM LIBRARY METRIC COMPONENT WITH debug 
 --------------------------------------------------------------------------------
 FLASH: 
+__udivmoddi4                             =    732
 __libc_init_array                        =     72
+__aeabi_ldiv0                            =      2
+__aeabi_idiv0                            =      2
 
 RAM: 
 object.9800                              =     24
@@ -38,9 +47,10 @@ completed.9795                           =      1
 DATA: 
 MSIRangeTable                            =     48
 AHBPrescTable                            =     16
+APBPrescTable                            =      8
 SystemCoreClock                          =      4
 
 --------------------------------------------------------------------------------
-TOTAL FLASH SIZE OTHER                   =     72
+TOTAL FLASH SIZE OTHER                   =    808
 TOTAL RAM SIZE OTHER                     =     25
-TOTAL DATA SIZE OTHER                    =     68
+TOTAL DATA SIZE OTHER                    =     76

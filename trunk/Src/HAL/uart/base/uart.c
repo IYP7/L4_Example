@@ -385,7 +385,9 @@ eError uartStart(void)
         {
             return RET_FAIL;
         }
+#if defined(MON_UART_RX_IT) || defined(MON_UART_RX_DMA)
         HAL_UART_Receive_IT(huart, &byteRxBuffer, 1 );
+#endif
     }
 
     return result;

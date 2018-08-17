@@ -2,13 +2,13 @@
 		 MAIN METRIC COMPONENT WITH debug 
 ------------------------------------------------------------------
 FLASH: 
-main                                     =     36
+main                                     =     44
 
 RAM: 
 
 DATA: 
 ------------------------------------------------------------------
-TOTAL FLASH SIZE MAIN                    =     36
+TOTAL FLASH SIZE MAIN                    =     44
 TOTAL RAM SIZE MAIN                      =      0
 TOTAL DATA SIZE MAIN                     =      0
 ------------------------------------------------------------------

@@ -2,12 +2,29 @@
 		 UART METRIC COMPONENT WITH debug 
 ------------------------------------------------------------------
 FLASH: 
+HAL_UART_TxCpltCallback                  =    124
+uartInit                                 =    116
+HAL_UART_RxCpltCallback                  =    116
+HAL_UART_MspInit                         =     88
+uartStart                                =     68
+HAL_UART_MspDeInit                       =     68
+uartDriverMainIRQHandler                 =     32
+HAL_UART_ErrorCallback                   =      2
 
 RAM: 
+uart2TxBuffer                            =    256
+ST_UartHandlers                          =    120
+uart2RxBuffer                            =    100
+uartCBuffers                             =     24
+uartBufferSize                           =      4
+uartStatus                               =      1
+uartPortIrq                              =      1
+byteRxBuffer                             =      1
 
 DATA: 
+UARTInstanceMap                          =     44
 ------------------------------------------------------------------
-TOTAL FLASH SIZE UART                    =      0
-TOTAL RAM SIZE UART                      =      0
-TOTAL DATA SIZE UART                     =      0
+TOTAL FLASH SIZE UART                    =    614
+TOTAL RAM SIZE UART                      =    507
+TOTAL DATA SIZE UART                     =     44
 ------------------------------------------------------------------
