@@ -44,8 +44,8 @@ typedef enum eGPIO
 	
 	GPIO_LED_1,
 
-    GPIO_UART1_TX,
-    GPIO_UART1_RX,
+    GPIO_UART2_TX,
+    GPIO_UART2_RX,
 
 #ifdef JUST_AS_EXAMPLE
     GPIO_SPI1_SCK,

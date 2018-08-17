@@ -2,12 +2,17 @@
 		 TOOLS METRIC COMPONENT WITH debug 
 ------------------------------------------------------------------
 FLASH: 
+AddQueueByte                             =     46
+GetQueueByte                             =     44
+CreateQueue                              =     14
+GetQueueFreeBytes                        =     10
+GetQueuePendingBytes                     =      4
 
 RAM: 
 
 DATA: 
 ------------------------------------------------------------------
-TOTAL FLASH SIZE TOOLS                   =      0
+TOTAL FLASH SIZE TOOLS                   =    118
 TOTAL RAM SIZE TOOLS                     =      0
 TOTAL DATA SIZE TOOLS                    =      0
 ------------------------------------------------------------------

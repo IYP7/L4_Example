@@ -29,8 +29,11 @@
 ****************************************************************************/
 #include "System_mw.h"
 #include "System_app.h"
-#include "GPIO.h"
 //#include "shell.h"
+
+#include "GPIO.h"
+#include "uart.h"
+
 
 /****************************************************************************
 *  PRIVATE VARIABLES
@@ -73,8 +76,12 @@ void callSystemApp( void )
 {
     uint8_t systemState;
 
-    /* System state machine */
+    /* HAL TEST */
+    // GPIO
     GPIOWritePort(GPIO_LED_1, GPIO_TOGGLE);
+    /* END HAL TEST */
+
+    /* System state machine */
     systemState = READ_SREG(SREG_SYSTEM_STATE);
     //systemState = SYSTEM_APP_INIT_SHELL;
     switch ( systemState )
