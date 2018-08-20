@@ -39,18 +39,12 @@ tFlashContext FlashContext[NUM_OF_FLASH];	/* Attributes for each flash area */
 /****************************************************************************
  *  PRIVATE VARIABLES
  ****************************************************************************/
-const uint32_t microFlash[] =
-{
-    /* FLASH_SECTOR_16KB  */  0x4000 ,
-    /* FLASH_SECTOR_64KB  */  0x10000 ,
-    /* FLASH_SECTOR_128KB */  0x20000 ,
-};
-
 
 /****************************************************************************
  *  PRIVATE FUNCTIONS
  ****************************************************************************/
-uint32_t FlashCalcOffset ( uint8_t initSector, uint8_t finalSector );
+uint32_t FlashCalcOffset ( uint32_t initSector, uint32_t finalSector );
+uint8_t FlashGetFirstPage( tFlash flashArea );
 
 /****************************************************************************
  *    PRIVATE DEFINES
@@ -67,7 +61,7 @@ eError FlashInit( void )
 	eError 	success = RET_OK;
 
 	uint8_t 	i = 0;
-	uint8_t 	sectorUsed = 0;
+	uint32_t 	sectorUsed = 0;
 	/* Initializes first element */
 	FlashContext[i].initAddress = FLASH_BASE;
 
@@ -81,7 +75,7 @@ eError FlashInit( void )
 		if ( sectorUsed < FLASH_MAX_SECTORS )
 		{
 			FlashContext[i].initSector = sectorUsed;
-			FlashContext[i].initAddress = FlashContext[i-1].initAddress + FlashContext[i-1].maxOffset;;
+			FlashContext[i].initAddress = FlashContext[i-1].initAddress + FlashContext[i-1].maxOffset;
 			FlashContext[i].maxOffset = FlashCalcOffset(sectorUsed, (sectorUsed + FlashInstanceMap[i].sectors));
 
 			sectorUsed +=  FlashInstanceMap[i].sectors;
@@ -102,29 +96,11 @@ eError FlashInit( void )
  * @param[in]   initSector: inital sector to calculate offset
  * @return  success.
  ****************************************************************************/
-uint32_t FlashCalcOffset ( uint8_t initSector, uint8_t finalSector )
+uint32_t FlashCalcOffset ( uint32_t initSector, uint32_t finalSector )
 {
-	uint8_t sectorOffset;
 	uint32_t offset = 0;
 
-	for ( sectorOffset = initSector; sectorOffset < finalSector; sectorOffset++ )
-	{
-		/* Sectors of 16 Kbytes */
-		if ( sectorOffset < FLASH_NUM_OF_SECTORS_16 )
-		{
-			offset += microFlash[FLASH_SECTOR_16KB];
-		}
-		/* Sectors of 64 Kbytes */
-		else if ( sectorOffset < (FLASH_NUM_OF_SECTORS_16 + FLASH_NUM_OF_SECTORS_64) )
-		{
-			offset += microFlash[FLASH_SECTOR_64KB];
-		}
-		/* All other sectors of the microcontroller are of 128 Kbytes */
-		else
-		{
-			offset += microFlash[FLASH_SECTOR_128KB];
-		}
-	}
+	offset = (finalSector - initSector) * (FLASH_SECTOR_SIZE);
 
 	return offset;
 }
@@ -232,14 +208,12 @@ eError FlashUnlock( void)
 
 /*****************************************************************************
  * @brief	FlashReadData.
- * @note	FlashSeekOffset function should be called before to invoke read
- * 			data to know the Flash address where data is stored.
  * @param	data: value read
  * 			offset: from 0 - to total flash area size
  * 			flashArea: Specifies the flash area.
  * @return 	Success or error status.
  ****************************************************************************/
-eError FlashReadData(tFlash flashArea, uint16_t *data, uint32_t offset)
+eError FlashReadData(tFlash flashArea, uint32_t *data, uint32_t offset)
 {
 	eError 	success = RET_OK;
 
@@ -252,9 +226,8 @@ eError FlashReadData(tFlash flashArea, uint16_t *data, uint32_t offset)
 	else
 	{
 		address = FlashContext[flashArea].initAddress + offset;
-		*data = (*(uint16_t*)(address));
+		*data = (*(uint32_t*)(address));
 	}
-
 
 	return success;
 }
@@ -305,7 +278,7 @@ eError FlashReadDataBuffer(tFlash flashArea, uint8_t *data, uint32_t offset, uin
  * @return 	success or error status.
  *
  ****************************************************************************/
-eError FlashProgramData( tFlash flashArea, uint16_t data, uint32_t offset)
+eError FlashProgramData( tFlash flashArea, uint64_t data, uint32_t offset)
 {
 	eError 	success = RET_OK;
 
@@ -321,7 +294,7 @@ eError FlashProgramData( tFlash flashArea, uint16_t data, uint32_t offset)
 		success = FlashUnlock();
 		if(success == RET_OK)
 		{
-			status =  HAL_FLASH_Program(FLASH_TYPEPROGRAM_HALFWORD, (FlashContext[flashArea].initAddress + offset), data);
+			status =  HAL_FLASH_Program(FLASH_TYPEPROGRAM_DOUBLEWORD, (FlashContext[flashArea].initAddress + offset), data);
 			if(status != HAL_OK)
 			{
 				success = FlashLock();
@@ -390,27 +363,29 @@ eError FlashErase( tFlash flashArea, uint8_t page)
 	eError 	success = RET_OK;
 
 	HAL_StatusTypeDef flashStatus 	= HAL_OK;
-	uint32_t FlashEraseError 			= 0;
+	uint32_t FlashEraseError = 0;
+	uint32_t fPage = FlashGetFirstPage(flashArea);
+	uint32_t totalPages = FlashGetPages(flashArea);
 
 	FLASH_EraseInitTypeDef 	FlashErase;	 /*FLASH Erase structure */
 
-	/* Initializes Flash structure */
-	FlashErase.TypeErase = TYPEERASE_SECTORS;
-	FlashErase.VoltageRange = VOLTAGE_RANGE_3;
+	/* Initializes Flash erase structure */
+	FlashErase.TypeErase = FLASH_TYPEERASE_PAGES;
+	FlashErase.Banks     = FLASH_BANK_1;
 
-	/* all sector to erase */
+	/* all pages to erase */
 	if(page == FLASH_ALL_PAGES)
 	{
-		FlashErase.NbSectors = FlashInstanceMap[flashArea].sectors;
-		FlashErase.Sector = FlashContext[flashArea].initSector;
+		FlashErase.NbPages = FlashGetPages(flashArea);
+		FlashErase.Page = FlashGetFirstPage(flashArea);
 	}
 	/* only a specific page */
 	else
 	{
-		if(page<=FlashInstanceMap[flashArea].sectors)
+		if(page < (fPage + totalPages))
 		{
-			FlashErase.NbSectors = 1;
-			FlashErase.Sector = FlashContext[flashArea].initSector + page;
+			FlashErase.NbPages = 1;
+			FlashErase.Page = page;
 		}
 		else
 		{
@@ -443,7 +418,6 @@ eError FlashErase( tFlash flashArea, uint8_t page)
  ****************************************************************************/
 void FlashGetSize( tFlash flashArea, uint32_t *size)
 {
-
 	*size =   FlashContext[flashArea].maxOffset;
 }
 
@@ -454,11 +428,35 @@ void FlashGetSize( tFlash flashArea, uint32_t *size)
  * @param
  * @return Success or error status.
  ****************************************************************************/
-void FlashGetPages( tFlash flashArea, uint8_t *pages)
+uint8_t FlashGetPages( tFlash flashArea)
 {
-	*pages = FlashInstanceMap[flashArea].sectors;
+	uint8_t pages = FlashInstanceMap[flashArea].sectors / (FLASH_PAGE_SIZE / FLASH_SECTOR_SIZE);
+
+	return pages;
 }
 
+/*****************************************************************************
+ * @brief	FlashGetPages
+ * @param
+ * @return Success or error status.
+ ****************************************************************************/
+uint8_t FlashGetFirstPage( tFlash flashArea )
+{
+	uint8_t fPage = 0;
+
+	if (FlashContext[flashArea].initAddress < (FLASH_BASE + FLASH_BANK_SIZE))
+	{
+		/* Bank 1 */
+		fPage = (FlashContext[flashArea].initAddress - FLASH_BASE) / FLASH_PAGE_SIZE;
+	}
+	else
+	{
+		/* Bank 2 */
+		fPage = (FlashContext[flashArea].initAddress - (FLASH_BASE + FLASH_BANK_SIZE)) / FLASH_PAGE_SIZE;
+	}
+
+	return fPage;
+}
 
 /*****************************************************************************
  * @brief	Returns the start address of a flash Araea

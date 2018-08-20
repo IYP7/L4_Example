@@ -1,7 +1,7 @@
 /*****************************************************************************
  * @file 	Flash.h
  *
- * @brief 	Flash functionality Header for stm32F4.
+ * @brief 	Flash functionality Header for stm32L4.
  *
  * @author 	Albert Serrallo
  *
@@ -29,27 +29,11 @@
 /****************************************************************************
  * DEFINES
  ****************************************************************************/
-#define FLASH_SECTOR_16KB						0
-#define FLASH_SECTOR_64KB						1
-#define FLASH_SECTOR_128KB						2
-
-
-#if defined(STM32F407xx) || defined(STM32F417xx) || defined(STM32F405xx)
-#define FLASH_NUM_OF_SECTORS_16				4
-#define FLASH_NUM_OF_SECTORS_64				1
-#define FLASH_MAX_SECTORS					12
-#endif
-
-#if defined(STM32F401xB) || defined(STM32F401xC)
-#define FLASH_NUM_OF_SECTORS_16				4
-#define FLASH_NUM_OF_SECTORS_64				1
-#define FLASH_MAX_SECTORS					6
-#endif
-
-#if defined(STM32F401xD) || defined(STM32F401xE) || defined(STM32F411xE)
-#define FLASH_NUM_OF_SECTORS_16				4
-#define FLASH_NUM_OF_SECTORS_64				1
-#define FLASH_MAX_SECTORS					8
+#if defined(STM32L452xx)
+//#define STM32L452_FLASH_SIZE				(0x7F800U)
+#define FLASH_MAX_PAGES						(FLASH_SIZE / FLASH_PAGE_SIZE)
+#define FLASH_MAX_SECTORS					(FLASH_MAX_PAGES * (FLASH_PAGE_SIZE / FLASH_SECTOR_SIZE))
+#define FLASH_SECTOR_SIZE					((uint32_t) 8)
 #endif
 
 #define FLASH_ALL_PAGES						0xFF
@@ -64,7 +48,7 @@
  */
 typedef struct sFLASHInstanceMap
 {
-	uint8_t		sectors;				/**< @brief number of sectors */
+	uint32_t		sectors;				/**< @brief number of pages */
 } tFlashInstanceMap;
 
 /**
@@ -73,7 +57,7 @@ typedef struct sFLASHInstanceMap
  */
 typedef struct sFlashContext
 {
-	uint8_t		initSector;		    /**< @brief initial sector */
+	uint32_t	initSector;		    /**< @brief initial sector */
 	uint32_t	initAddress;		/**< @brief initial flash address */
 	uint32_t	maxOffset;			/**< @brief max. number of offsets */
 }tFlashContext;
@@ -89,14 +73,14 @@ eError FlashWake( void );
 
 eError FlashLock( void);
 eError FlashUnlock( void);
-eError FlashReadData(tFlash flashArea, uint16_t *data, uint32_t offset);
-eError FlashProgramData( tFlash flashArea, uint16_t data, uint32_t offset);
+eError FlashReadData(tFlash flashArea, uint32_t *data, uint32_t offset);
+eError FlashProgramData( tFlash flashArea, uint64_t data, uint32_t offset);
 eError FlashErase( tFlash flashArea, uint8_t page);
 uint32_t FlashGetStartAddress( tFlash flashArea);
 eError FlashActualInstance( tFlash *areaFlash );
 
 void FlashGetSize( tFlash flashArea, uint32_t *size);
-void FlashGetPages( tFlash flashArea, uint8_t *pages);
+uint8_t FlashGetPages( tFlash flashArea );
 
 #endif /* FLASH_H_ */
 

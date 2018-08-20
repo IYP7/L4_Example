@@ -37,6 +37,7 @@
 #include "swtimer.h"
 #include "GPIO.h"
 #include "uart.h"
+#include "flash.h"
 /*************************************************************************//**
  * @brief   Embedded application start routine.
  *
@@ -52,17 +53,25 @@ int  main()
 	/* Call to initial specific platform configuration */
     systemPreConfiguration();
 
-	/* Applications Initialization */
-    SchedulerInit();
-
+    /* HAL TEST */
     GPIOInit();
+
     stm32L4Init();
+
     interruptsInit();
     interruptsStart();
+
     uartInit();
     uartStart();
 
+    FlashInit();
+
     SwTimerInit();
+    /*\ HAL TEST */
+
+
+	/* Applications Initialization */
+    SchedulerInit();
 
     while (TRUE)
     {

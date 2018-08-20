@@ -37,13 +37,17 @@
 /***********************************************************************
  * DEFINES
  **********************************************************************/
-#define FLASH_PROGRAM_SECTORS				6
-#define FLASH_EEPROM_IMAGE_NUM_SECTORS		1	// EEPROM_IMAGE_NUM_PAGES * 2
-#define FLASH_DATA_NUM_SECTORS				0
+#define FLASH_PROGRAM_PAGES					(uint32_t) 16
+#define FLASH_EEPROM_IMAGE_PAGES			1
+#define FLASH_DATA_PAGES					5
 
-#if((FLASH_PROGRAM_SECTORS + (FLASH_EEPROM_IMAGE_NUM_SECTORS*2) + FLASH_DATA_NUM_SECTORS) > FLASH_MAX_SECTORS)
-#error "Exceeded Flash size"
-#endif
+#define FLASH_PROGRAM_SECTORS				(FLASH_PROGRAM_PAGES * (FLASH_PAGE_SIZE / FLASH_SECTOR_SIZE)) // 2560
+#define FLASH_EEPROM_IMAGE_NUM_SECTORS		(FLASH_EEPROM_IMAGE_PAGES * (FLASH_PAGE_SIZE / FLASH_SECTOR_SIZE))	// EEPROM_IMAGE_NUM_PAGES * 2
+#define FLASH_DATA_NUM_SECTORS				(FLASH_DATA_PAGES * (FLASH_PAGE_SIZE / FLASH_SECTOR_SIZE)) // 1280
+
+//#if((FLASH_PROGRAM_PAGES + (FLASH_EEPROM_IMAGE_PAGES*2) + FLASH_DATA_PAGES) > FLASH_MAX_PAGES)
+//#error "Exceeded Flash size"
+//#endif
 
 
 const tFlashInstanceMap FlashInstanceMap[NUM_OF_FLASH] =
@@ -52,6 +56,7 @@ const tFlashInstanceMap FlashInstanceMap[NUM_OF_FLASH] =
 		/* FLASH_PROGRAM	 */ 	{ FLASH_PROGRAM_SECTORS 			},
 		/* FLASH_EEPROM_IMG1 */ 	{ FLASH_EEPROM_IMAGE_NUM_SECTORS 	},
 		/* FLASH_EEPROM_IMG2 */ 	{ FLASH_EEPROM_IMAGE_NUM_SECTORS 	},
+		/* FLASH_USER_DATA */ 		{ FLASH_DATA_NUM_SECTORS 	},
 };
 
 

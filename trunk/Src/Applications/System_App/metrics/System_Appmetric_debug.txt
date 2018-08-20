@@ -2,15 +2,15 @@
 		 SYSTEM_APP METRIC COMPONENT WITH debug 
 ------------------------------------------------------------------
 FLASH: 
+initSystemApp                            =    140
 callSystemApp                            =    128
-initSystemApp                            =     20
 
 RAM: 
 requestPowerState                        =      1
 
 DATA: 
 ------------------------------------------------------------------
-TOTAL FLASH SIZE SYSTEM_APP              =    148
+TOTAL FLASH SIZE SYSTEM_APP              =    268
 TOTAL RAM SIZE SYSTEM_APP                =      1
 TOTAL DATA SIZE SYSTEM_APP               =      0
 ------------------------------------------------------------------

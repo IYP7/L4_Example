@@ -2,12 +2,23 @@
 		 FLASH METRIC COMPONENT WITH debug 
 ------------------------------------------------------------------
 FLASH: 
+FlashInit                                =    176
+FlashErase                               =    110
+FlashProgramData                         =     88
+FlashGetFirstPage                        =     72
+FlashReadData                            =     44
+FlashUnlock                              =     16
+FlashLock                                =     16
+FlashGetPages                            =     16
+FlashCalcOffset                          =      6
 
 RAM: 
+FlashContext                             =     48
 
 DATA: 
+FlashInstanceMap                         =     16
 ------------------------------------------------------------------
-TOTAL FLASH SIZE FLASH                   =      0
-TOTAL RAM SIZE FLASH                     =      0
-TOTAL DATA SIZE FLASH                    =      0
+TOTAL FLASH SIZE FLASH                   =    544
+TOTAL RAM SIZE FLASH                     =     48
+TOTAL DATA SIZE FLASH                    =     16
 ------------------------------------------------------------------
