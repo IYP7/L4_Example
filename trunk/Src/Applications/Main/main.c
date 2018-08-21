@@ -62,6 +62,7 @@ int  main()
 
     interruptsInit();
     interruptsStart();
+
     spiInit();
     spiStart();
 
@@ -71,7 +72,6 @@ int  main()
     FlashInit();
     SwTimerInit();
     /*\ HAL TEST */
-
 
 	/* Applications Initialization */
     SchedulerInit();

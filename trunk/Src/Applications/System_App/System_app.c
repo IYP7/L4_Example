@@ -34,7 +34,7 @@
 #include "GPIO.h"
 #include "uart.h"
 #include "Flash.h"
-
+#include "system.h"
 /****************************************************************************
 *  PRIVATE VARIABLES
 ****************************************************************************/
@@ -79,7 +79,6 @@ void callSystemApp( void )
     /* HAL TEST */
     // GPIO
     GPIOWritePort(GPIO_LED_1, GPIO_TOGGLE);
-
     /* END HAL TEST */
 
     /* System state machine */
