@@ -60,6 +60,7 @@ typedef enum eInterrupts
     IRQ_I2C2,
     IRQ_SPI1,
     IRQ_SPI2,
+	IRQ_SPI3,
 	IRQ_ALL,
 	NUM_OF_INT
 
@@ -75,6 +76,8 @@ void HAL_I2C1_Callback(void);
 void HAL_I2C2_Callback(void);
 void HAL_SPI1_Callback(void);
 void HAL_SPI2_Callback(void);
+void HAL_SPI3_Callback(void);
+
 
 #endif	/*_INT_MAP_H_*/
 

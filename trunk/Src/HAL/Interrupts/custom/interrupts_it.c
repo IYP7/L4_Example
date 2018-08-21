@@ -291,6 +291,10 @@ void SPI2_IRQHandler(void)
     HAL_SPI2_Callback();
 }
 
+void SPI3_IRQHandler(void)
+{
+    HAL_SPI3_Callback();
+}
 /**
   * @brief  This function handles TIM interrupt request.
   * @param  None

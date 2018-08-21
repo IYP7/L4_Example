@@ -2,12 +2,28 @@
 		 SPI METRIC COMPONENT WITH debug 
 ------------------------------------------------------------------
 FLASH: 
+spiDriverMainIRQHandler                  =    228
+spiInit                                  =    144
+spiStart                                 =     92
+HAL_SPI_MspInit                          =     80
+HAL_SPI_MspDeInit                        =     72
+spiRestartSlaveMode                      =     60
+HAL_SPI_ErrorCallback                    =      8
 
 RAM: 
+ST_SpiHandlers                           =    200
+spi3WrBuffer                             =    200
+spi3RdBuffer                             =    100
+spi1WrBuffer                             =    100
+spi1RdBuffer                             =    100
+spiCBuffers                              =     48
+halRxSlaveBuffer                         =     10
+spiBufferSize                            =      8
 
 DATA: 
+SPIInstanceMap                           =    160
 ------------------------------------------------------------------
-TOTAL FLASH SIZE SPI                     =      0
-TOTAL RAM SIZE SPI                       =      0
-TOTAL DATA SIZE SPI                      =      0
+TOTAL FLASH SIZE SPI                     =    684
+TOTAL RAM SIZE SPI                       =    766
+TOTAL DATA SIZE SPI                      =    160
 ------------------------------------------------------------------

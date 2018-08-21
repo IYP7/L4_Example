@@ -142,7 +142,7 @@
 						</toolChain>
 					</folderInfo>
 					<sourceEntries>
-						<entry excluding="Src/Architecture/Shell|Src/Architecture/HREG|stm32l4xx_hal_msp.c|Src/HAL/spi|Src/Drivers/VirtualEEPROM|Src/Drivers/Leds|Src/Drivers/Buttons|Src/HAL/Timer/test|Src/HAL/GPIO/test|Src/HAL/Interrupts/test|Src/HAL/spi/test|Src/HAL/i2c/test|Src/HAL/uart/test" flags="VALUE_WORKSPACE_PATH" kind="sourcePath" name=""/>
+						<entry excluding="Src/Architecture/Shell|Src/Architecture/HREG|stm32l4xx_hal_msp.c|Src/Drivers/VirtualEEPROM|Src/Drivers/Leds|Src/Drivers/Buttons|Src/HAL/Timer/test|Src/HAL/GPIO/test|Src/HAL/Interrupts/test|Src/HAL/spi/test|Src/HAL/i2c/test|Src/HAL/uart/test" flags="VALUE_WORKSPACE_PATH" kind="sourcePath" name=""/>
 					</sourceEntries>
 				</configuration>
 			</storageModule>
@@ -289,7 +289,7 @@
 						</toolChain>
 					</folderInfo>
 					<sourceEntries>
-						<entry excluding="Src/Architecture/Shell|Src/Architecture/HREG|stm32l4xx_hal_msp.c|Src/HAL/spi|Src/Drivers/VirtualEEPROM|Src/Drivers/Leds|Src/Drivers/Buttons|Src/HAL/ADC/base/ADC_copy_ok_polling.c|Src/HAL/Timer/test|Src/HAL/GPIO/test|Src/HAL/Interrupts/test|Src/HAL/spi/test|Src/HAL/i2c/test|Src/HAL/uart/test" flags="VALUE_WORKSPACE_PATH|RESOLVED" kind="sourcePath" name=""/>
+						<entry excluding="Src/Architecture/Shell|Src/Architecture/HREG|stm32l4xx_hal_msp.c|Src/Drivers/VirtualEEPROM|Src/Drivers/Leds|Src/Drivers/Buttons|Src/HAL/ADC/base/ADC_copy_ok_polling.c|Src/HAL/Timer/test|Src/HAL/GPIO/test|Src/HAL/Interrupts/test|Src/HAL/spi/test|Src/HAL/i2c/test|Src/HAL/uart/test" flags="VALUE_WORKSPACE_PATH|RESOLVED" kind="sourcePath" name=""/>
 					</sourceEntries>
 				</configuration>
 			</storageModule>

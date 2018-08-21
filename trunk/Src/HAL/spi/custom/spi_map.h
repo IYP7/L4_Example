@@ -25,20 +25,20 @@
  * DEFINES
  **********************************************************************/
 //Define here which driver implementation to use
-#define MON_SPI_TX_IT
-#define MON_SPI_RX_IT
+//#define MON_SPI_TX_IT
+//#define MON_SPI_RX_IT
 //#define MON_SPI_TX_POLL
 //#define MON_SPI_RX_POLL
 
-//#define IS_SPI1
+#define IS_SPI1
 //#define IS_SPI2
 #define IS_SPI3
 
-//#define SPI1_WR_BUFFER          100
+#define SPI1_WR_BUFFER          100
 //#define SPI2_WR_BUFFER          100
 #define SPI3_WR_BUFFER            200
 
-//#define SPI1_RD_BUFFER          100
+#define SPI1_RD_BUFFER          100
 //#define SPI2_RD_BUFFER          100
 #define SPI3_RD_BUFFER            100
 
@@ -52,7 +52,8 @@
  * in spi_map.c
  */
 typedef enum eSpi {
-	SPI_HMI_DISPLAY ,
+	SPI_TEST_1,
+	SPI_TEST_3,
     NUM_OF_SPI_DEVICES,
 } tSpi;
 

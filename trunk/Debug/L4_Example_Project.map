@@ -4,8 +4,6 @@ c:/program files (x86)/atollic/truestudio for stm32 9.0.1/armtools/bin/../lib/gc
                               libraries\CMSIS\Source\startup_stm32l452xx.o (__libc_init_array)
 c:/program files (x86)/atollic/truestudio for stm32 9.0.1/armtools/bin/../lib/gcc/arm-atollic-eabi/6.3.1/../../../../arm-atollic-eabi/lib/armv7e-m/fpu\libc_nano.a(lib_a-memcpy-stub.o)
                               Src\HAL\Flash\base\Flash.o (memcpy)
-c:/program files (x86)/atollic/truestudio for stm32 9.0.1/armtools/bin/../lib/gcc/arm-atollic-eabi/6.3.1/../../../../arm-atollic-eabi/lib/armv7e-m/fpu\libc_nano.a(lib_a-memset.o)
-                              Src\Applications\System_App\System_app.o (memset)
 c:/program files (x86)/atollic/truestudio for stm32 9.0.1/armtools/bin/../lib/gcc/arm-atollic-eabi/6.3.1/armv7e-m/fpu\libgcc.a(_aeabi_uldivmod.o)
                               libraries\ST_HAL\Src\stm32l4xx_hal_uart.o (__aeabi_uldivmod)
 c:/program files (x86)/atollic/truestudio for stm32 9.0.1/armtools/bin/../lib/gcc/arm-atollic-eabi/6.3.1/armv7e-m/fpu\libgcc.a(_udivmoddi4.o)
@@ -17,24 +15,32 @@ Allocating common symbols
 Common symbol       size              file
 
 pipes               0x8               Src\Drivers\pipeDevice\base\PipeDevice.o
+ST_SpiHandlers      0xc8              Src\HAL\spi\base\spi.o
 requestPowerState   0x1               Src\Applications\System_App\System_app.o
 uart2RxBuffer       0x64              Src\HAL\uart\custom\UART_map.o
 SREG8Context        0x7               Src\Architecture\SREG\base\sreg.o
 uartCBuffers        0x18              Src\HAL\uart\base\uart.o
 ticks_per_us        0x4               Src\Architecture\Scheduler\base\Scheduler.o
+spi3WrBuffer        0xc8              Src\HAL\spi\custom\spi_map.o
 uartStatus          0x1               Src\HAL\uart\base\uart.o
 schedulerContext    0x30              Src\Architecture\Scheduler\base\Scheduler.o
 uwTick              0x4               libraries\ST_HAL\Src\stm32l4xx_hal.o
+spiCBuffers         0x30              Src\HAL\spi\base\spi.o
 pFlash              0x20              libraries\ST_HAL\Src\stm32l4xx_hal_flash.o
+spi3RdBuffer        0x64              Src\HAL\spi\custom\spi_map.o
 SREG32Context       0x8               Src\Architecture\SREG\base\sreg.o
+spi1RdBuffer        0x64              Src\HAL\spi\custom\spi_map.o
+halRxSlaveBuffer    0xa               Src\HAL\spi\base\spi.o
 pipe1Buffer         0x96              Src\Drivers\pipeDevice\custom\PipeDevice_map.o
 uartBufferSize      0x4               Src\HAL\uart\base\uart.o
 FlashContext        0x30              Src\HAL\Flash\base\Flash.o
 ptrTask             0x1               Src\Architecture\Scheduler\base\Scheduler.o
 schedulerProcess    0x4               Src\Architecture\Scheduler\base\Scheduler.o
+spiBufferSize       0x8               Src\HAL\spi\base\spi.o
 ST_UartHandlers     0x78              Src\HAL\uart\base\uart.o
 SREG16Context       0x0               Src\Architecture\SREG\base\sreg.o
 uart2TxBuffer       0x100             Src\HAL\uart\custom\UART_map.o
+spi1WrBuffer        0x64              Src\HAL\spi\custom\spi_map.o
 byteRxBuffer        0x1               Src\HAL\uart\base\uart.o
 
 Discarded input sections
@@ -127,8 +133,8 @@ Discarded input sections
  .debug_aranges
                 0x00000000       0x88 Src\Architecture\StateMachine\base\stateMachine.o
  .debug_ranges  0x00000000       0x90 Src\Architecture\StateMachine\base\stateMachine.o
- .debug_line    0x00000000      0x47c Src\Architecture\StateMachine\base\stateMachine.o
- .debug_str     0x00000000      0x985 Src\Architecture\StateMachine\base\stateMachine.o
+ .debug_line    0x00000000      0x45b Src\Architecture\StateMachine\base\stateMachine.o
+ .debug_str     0x00000000      0x97a Src\Architecture\StateMachine\base\stateMachine.o
  .comment       0x00000000       0x7d Src\Architecture\StateMachine\base\stateMachine.o
  .debug_frame   0x00000000      0x140 Src\Architecture\StateMachine\base\stateMachine.o
  .ARM.attributes
@@ -148,8 +154,8 @@ Discarded input sections
  .debug_aranges
                 0x00000000       0x30 Src\Architecture\tools\basic\base\CheckCalc.o
  .debug_ranges  0x00000000       0x20 Src\Architecture\tools\basic\base\CheckCalc.o
- .debug_line    0x00000000      0x295 Src\Architecture\tools\basic\base\CheckCalc.o
- .debug_str     0x00000000      0x70b Src\Architecture\tools\basic\base\CheckCalc.o
+ .debug_line    0x00000000      0x28a Src\Architecture\tools\basic\base\CheckCalc.o
+ .debug_str     0x00000000      0x700 Src\Architecture\tools\basic\base\CheckCalc.o
  .comment       0x00000000       0x7d Src\Architecture\tools\basic\base\CheckCalc.o
  .debug_frame   0x00000000       0x40 Src\Architecture\tools\basic\base\CheckCalc.o
  .ARM.attributes
@@ -180,7 +186,7 @@ Discarded input sections
                 0x00000000       0x20 Src\Architecture\tools\basic\base\crc.o
  .debug_ranges  0x00000000       0x10 Src\Architecture\tools\basic\base\crc.o
  .debug_line    0x00000000      0x169 Src\Architecture\tools\basic\base\crc.o
- .debug_str     0x00000000      0x1e6 Src\Architecture\tools\basic\base\crc.o
+ .debug_str     0x00000000      0x1db Src\Architecture\tools\basic\base\crc.o
  .comment       0x00000000       0x7d Src\Architecture\tools\basic\base\crc.o
  .debug_frame   0x00000000       0x2c Src\Architecture\tools\basic\base\crc.o
  .ARM.attributes
@@ -202,8 +208,8 @@ Discarded input sections
  .debug_aranges
                 0x00000000       0x48 Src\Architecture\tools\basic\base\tools.o
  .debug_ranges  0x00000000       0x38 Src\Architecture\tools\basic\base\tools.o
- .debug_line    0x00000000      0x48c Src\Architecture\tools\basic\base\tools.o
- .debug_str     0x00000000      0x841 Src\Architecture\tools\basic\base\tools.o
+ .debug_line    0x00000000      0x460 Src\Architecture\tools\basic\base\tools.o
+ .debug_str     0x00000000      0x836 Src\Architecture\tools\basic\base\tools.o
  .comment       0x00000000       0x7d Src\Architecture\tools\basic\base\tools.o
  .debug_frame   0x00000000       0xd0 Src\Architecture\tools\basic\base\tools.o
  .ARM.attributes
@@ -268,8 +274,8 @@ Discarded input sections
  .debug_aranges
                 0x00000000       0x70 Src\Drivers\SwTimer\base\SwTimer_api.o
  .debug_ranges  0x00000000       0x60 Src\Drivers\SwTimer\base\SwTimer_api.o
- .debug_line    0x00000000      0x445 Src\Drivers\SwTimer\base\SwTimer_api.o
- .debug_str     0x00000000      0xc3a Src\Drivers\SwTimer\base\SwTimer_api.o
+ .debug_line    0x00000000      0x419 Src\Drivers\SwTimer\base\SwTimer_api.o
+ .debug_str     0x00000000      0xc2f Src\Drivers\SwTimer\base\SwTimer_api.o
  .comment       0x00000000       0x7d Src\Drivers\SwTimer\base\SwTimer_api.o
  .debug_frame   0x00000000      0x118 Src\Drivers\SwTimer\base\SwTimer_api.o
  .ARM.attributes
@@ -304,8 +310,8 @@ Discarded input sections
  .debug_abbrev  0x00000000      0x18e Src\Drivers\pipeDevice\custom\PipeDevice_map.o
  .debug_aranges
                 0x00000000       0x18 Src\Drivers\pipeDevice\custom\PipeDevice_map.o
- .debug_line    0x00000000      0x3f5 Src\Drivers\pipeDevice\custom\PipeDevice_map.o
- .debug_str     0x00000000      0x786 Src\Drivers\pipeDevice\custom\PipeDevice_map.o
+ .debug_line    0x00000000      0x3be Src\Drivers\pipeDevice\custom\PipeDevice_map.o
+ .debug_str     0x00000000      0x77b Src\Drivers\pipeDevice\custom\PipeDevice_map.o
  .comment       0x00000000       0x7d Src\Drivers\pipeDevice\custom\PipeDevice_map.o
  .ARM.attributes
                 0x00000000       0x39 Src\Drivers\pipeDevice\custom\PipeDevice_map.o
@@ -321,12 +327,26 @@ Discarded input sections
                 0x00000000        0x4 Src\HAL\Flash\base\Flash.o
  .text.FlashWake
                 0x00000000        0x4 Src\HAL\Flash\base\Flash.o
+ .text.FlashLock
+                0x00000000       0x10 Src\HAL\Flash\base\Flash.o
+ .text.FlashUnlock
+                0x00000000       0x10 Src\HAL\Flash\base\Flash.o
+ .text.FlashReadData
+                0x00000000       0x2c Src\HAL\Flash\base\Flash.o
  .text.FlashReadDataBuffer
                 0x00000000       0x44 Src\HAL\Flash\base\Flash.o
+ .text.FlashProgramData
+                0x00000000       0x58 Src\HAL\Flash\base\Flash.o
  .text.FlashProgramDataBuffer
                 0x00000000       0x4c Src\HAL\Flash\base\Flash.o
  .text.FlashGetSize
                 0x00000000       0x14 Src\HAL\Flash\base\Flash.o
+ .text.FlashGetPages
+                0x00000000       0x10 Src\HAL\Flash\base\Flash.o
+ .text.FlashGetFirstPage
+                0x00000000       0x48 Src\HAL\Flash\base\Flash.o
+ .text.FlashErase
+                0x00000000       0x6e Src\HAL\Flash\base\Flash.o
  .text.FlashGetStartAddress
                 0x00000000       0x14 Src\HAL\Flash\base\Flash.o
  .text.FlashActualInstance
@@ -362,8 +382,8 @@ Discarded input sections
  .debug_aranges
                 0x00000000       0x60 Src\HAL\Flash\base\Flash_api.o
  .debug_ranges  0x00000000       0x50 Src\HAL\Flash\base\Flash_api.o
- .debug_line    0x00000000      0x47a Src\HAL\Flash\base\Flash_api.o
- .debug_str     0x00000000      0xb76 Src\HAL\Flash\base\Flash_api.o
+ .debug_line    0x00000000      0x443 Src\HAL\Flash\base\Flash_api.o
+ .debug_str     0x00000000      0xb6b Src\HAL\Flash\base\Flash_api.o
  .comment       0x00000000       0x7d Src\HAL\Flash\base\Flash_api.o
  .debug_frame   0x00000000       0xf0 Src\HAL\Flash\base\Flash_api.o
  .ARM.attributes
@@ -401,14 +421,14 @@ Discarded input sections
                 0x00000000        0xa Src\HAL\GPIO\base\GPIO_api.o
  .text.onWriteHregGPIOValue
                 0x00000000        0xa Src\HAL\GPIO\base\GPIO_api.o
- .debug_info    0x00000000     0x1016 Src\HAL\GPIO\base\GPIO_api.o
+ .debug_info    0x00000000     0x103a Src\HAL\GPIO\base\GPIO_api.o
  .debug_abbrev  0x00000000      0x1ff Src\HAL\GPIO\base\GPIO_api.o
  .debug_loc     0x00000000      0x19f Src\HAL\GPIO\base\GPIO_api.o
  .debug_aranges
                 0x00000000       0x50 Src\HAL\GPIO\base\GPIO_api.o
  .debug_ranges  0x00000000       0x40 Src\HAL\GPIO\base\GPIO_api.o
- .debug_line    0x00000000      0x450 Src\HAL\GPIO\base\GPIO_api.o
- .debug_str     0x00000000      0xb41 Src\HAL\GPIO\base\GPIO_api.o
+ .debug_line    0x00000000      0x419 Src\HAL\GPIO\base\GPIO_api.o
+ .debug_str     0x00000000      0xb8e Src\HAL\GPIO\base\GPIO_api.o
  .comment       0x00000000       0x7d Src\HAL\GPIO\base\GPIO_api.o
  .debug_frame   0x00000000       0xb8 Src\HAL\GPIO\base\GPIO_api.o
  .ARM.attributes
@@ -452,8 +472,8 @@ Discarded input sections
  .debug_aranges
                 0x00000000       0x50 Src\HAL\Interrupts\base\interrupts_api.o
  .debug_ranges  0x00000000       0x40 Src\HAL\Interrupts\base\interrupts_api.o
- .debug_line    0x00000000      0x402 Src\HAL\Interrupts\base\interrupts_api.o
- .debug_str     0x00000000      0xb15 Src\HAL\Interrupts\base\interrupts_api.o
+ .debug_line    0x00000000      0x3d6 Src\HAL\Interrupts\base\interrupts_api.o
+ .debug_str     0x00000000      0xb0a Src\HAL\Interrupts\base\interrupts_api.o
  .comment       0x00000000       0x7d Src\HAL\Interrupts\base\interrupts_api.o
  .debug_frame   0x00000000       0xb8 Src\HAL\Interrupts\base\interrupts_api.o
  .ARM.attributes
@@ -522,8 +542,8 @@ Discarded input sections
  .debug_aranges
                 0x00000000       0x68 Src\HAL\System\base\System_api.o
  .debug_ranges  0x00000000       0x58 Src\HAL\System\base\System_api.o
- .debug_line    0x00000000      0x428 Src\HAL\System\base\System_api.o
- .debug_str     0x00000000      0xb14 Src\HAL\System\base\System_api.o
+ .debug_line    0x00000000      0x3fc Src\HAL\System\base\System_api.o
+ .debug_str     0x00000000      0xb09 Src\HAL\System\base\System_api.o
  .comment       0x00000000       0x7d Src\HAL\System\base\System_api.o
  .debug_frame   0x00000000       0xe0 Src\HAL\System\base\System_api.o
  .ARM.attributes
@@ -535,6 +555,73 @@ Discarded input sections
                 0x00000000        0x4 Src\HAL\System\custom\System_map.o
  .rodata.WWDGMap
                 0x00000000        0x4 Src\HAL\System\custom\System_map.o
+ .text          0x00000000        0x0 Src\HAL\spi\base\spi.o
+ .data          0x00000000        0x0 Src\HAL\spi\base\spi.o
+ .bss           0x00000000        0x0 Src\HAL\spi\base\spi.o
+ .text.spiDriverReadITMasterMode
+                0x00000000       0x24 Src\HAL\spi\base\spi.o
+ .text.spiDriverWriteIT
+                0x00000000       0x40 Src\HAL\spi\base\spi.o
+ .text.spiDriverReadITSlaveMode
+                0x00000000       0x40 Src\HAL\spi\base\spi.o
+ .text.HAL_SPI_TxCpltCallback
+                0x00000000        0x8 Src\HAL\spi\base\spi.o
+ .text.spiStop  0x00000000       0x24 Src\HAL\spi\base\spi.o
+ .text.spiSleep
+                0x00000000        0x4 Src\HAL\spi\base\spi.o
+ .text.spiWake  0x00000000        0x4 Src\HAL\spi\base\spi.o
+ .text.spiDriverStatus
+                0x00000000       0x40 Src\HAL\spi\base\spi.o
+ .text.spiDriverWrite
+                0x00000000       0x80 Src\HAL\spi\base\spi.o
+ .text.spiDriverRead
+                0x00000000       0x40 Src\HAL\spi\base\spi.o
+ .text.spiDriverSetBufferSize
+                0x00000000       0x18 Src\HAL\spi\base\spi.o
+ .text.spiDriverGetBufferSize
+                0x00000000       0x20 Src\HAL\spi\base\spi.o
+ .text.spiDriverExtraPulse
+                0x00000000       0x50 Src\HAL\spi\base\spi.o
+ .text          0x00000000        0x0 Src\HAL\spi\base\spi_api.o
+ .data          0x00000000        0x0 Src\HAL\spi\base\spi_api.o
+ .bss           0x00000000        0x0 Src\HAL\spi\base\spi_api.o
+ .text.initHregSpi
+                0x00000000        0xa Src\HAL\spi\base\spi_api.o
+ .text.startHregSpi
+                0x00000000        0xa Src\HAL\spi\base\spi_api.o
+ .text.stopHregSpi
+                0x00000000        0xa Src\HAL\spi\base\spi_api.o
+ .text.sleepHregSpi
+                0x00000000        0xa Src\HAL\spi\base\spi_api.o
+ .text.wakeHregSpi
+                0x00000000        0xa Src\HAL\spi\base\spi_api.o
+ .text.onReadHregSpiBufferSize
+                0x00000000        0xe Src\HAL\spi\base\spi_api.o
+ .text.onWriteHregSpiBufferSize
+                0x00000000        0xa Src\HAL\spi\base\spi_api.o
+ .text.onReadHregSpiData
+                0x00000000        0xa Src\HAL\spi\base\spi_api.o
+ .text.onWriteHregSpiData
+                0x00000000        0xa Src\HAL\spi\base\spi_api.o
+ .text.onReadHregSpiStatus
+                0x00000000        0xe Src\HAL\spi\base\spi_api.o
+ .debug_info    0x00000000     0x111d Src\HAL\spi\base\spi_api.o
+ .debug_abbrev  0x00000000      0x20e Src\HAL\spi\base\spi_api.o
+ .debug_loc     0x00000000      0x246 Src\HAL\spi\base\spi_api.o
+ .debug_aranges
+                0x00000000       0x68 Src\HAL\spi\base\spi_api.o
+ .debug_ranges  0x00000000       0x58 Src\HAL\spi\base\spi_api.o
+ .debug_line    0x00000000      0x44a Src\HAL\spi\base\spi_api.o
+ .debug_str     0x00000000      0xb53 Src\HAL\spi\base\spi_api.o
+ .comment       0x00000000       0x7d Src\HAL\spi\base\spi_api.o
+ .debug_frame   0x00000000      0x100 Src\HAL\spi\base\spi_api.o
+ .ARM.attributes
+                0x00000000       0x39 Src\HAL\spi\base\spi_api.o
+ .text          0x00000000        0x0 Src\HAL\spi\custom\spi_map.o
+ .data          0x00000000        0x0 Src\HAL\spi\custom\spi_map.o
+ .bss           0x00000000        0x0 Src\HAL\spi\custom\spi_map.o
+ .rodata.SPIPeripheralMap
+                0x00000000        0x2 Src\HAL\spi\custom\spi_map.o
  .text          0x00000000        0x0 Src\HAL\uart\base\uart.o
  .data          0x00000000        0x0 Src\HAL\uart\base\uart.o
  .bss           0x00000000        0x0 Src\HAL\uart\base\uart.o
@@ -587,8 +674,8 @@ Discarded input sections
  .debug_aranges
                 0x00000000       0x68 Src\HAL\uart\base\uart_api.o
  .debug_ranges  0x00000000       0x58 Src\HAL\uart\base\uart_api.o
- .debug_line    0x00000000      0x485 Src\HAL\uart\base\uart_api.o
- .debug_str     0x00000000      0xb61 Src\HAL\uart\base\uart_api.o
+ .debug_line    0x00000000      0x44e Src\HAL\uart\base\uart_api.o
+ .debug_str     0x00000000      0xb56 Src\HAL\uart\base\uart_api.o
  .comment       0x00000000       0x7d Src\HAL\uart\base\uart_api.o
  .debug_frame   0x00000000       0xf8 Src\HAL\uart\base\uart_api.o
  .ARM.attributes
@@ -611,8 +698,8 @@ Discarded input sections
  .debug_aranges
                 0x00000000       0x30 Src\Middleware\System_mw\System_mw.o
  .debug_ranges  0x00000000       0x20 Src\Middleware\System_mw\System_mw.o
- .debug_line    0x00000000      0x428 Src\Middleware\System_mw\System_mw.o
- .debug_str     0x00000000      0x9f8 Src\Middleware\System_mw\System_mw.o
+ .debug_line    0x00000000      0x3f1 Src\Middleware\System_mw\System_mw.o
+ .debug_str     0x00000000      0x9ed Src\Middleware\System_mw\System_mw.o
  .comment       0x00000000       0x7d Src\Middleware\System_mw\System_mw.o
  .debug_frame   0x00000000       0x50 Src\Middleware\System_mw\System_mw.o
  .ARM.attributes
@@ -749,14 +836,20 @@ Discarded input sections
  .debug_abbrev  0x00000000      0x15c libraries\ST_HAL\Src\stm32l4xx_hal_dma_ex.o
  .debug_aranges
                 0x00000000       0x18 libraries\ST_HAL\Src\stm32l4xx_hal_dma_ex.o
- .debug_line    0x00000000      0x213 libraries\ST_HAL\Src\stm32l4xx_hal_dma_ex.o
- .debug_str     0x00000000      0x668 libraries\ST_HAL\Src\stm32l4xx_hal_dma_ex.o
+ .debug_line    0x00000000      0x208 libraries\ST_HAL\Src\stm32l4xx_hal_dma_ex.o
+ .debug_str     0x00000000      0x65d libraries\ST_HAL\Src\stm32l4xx_hal_dma_ex.o
  .comment       0x00000000       0x7d libraries\ST_HAL\Src\stm32l4xx_hal_dma_ex.o
  .ARM.attributes
                 0x00000000       0x39 libraries\ST_HAL\Src\stm32l4xx_hal_dma_ex.o
  .text          0x00000000        0x0 libraries\ST_HAL\Src\stm32l4xx_hal_flash.o
  .data          0x00000000        0x0 libraries\ST_HAL\Src\stm32l4xx_hal_flash.o
  .bss           0x00000000        0x0 libraries\ST_HAL\Src\stm32l4xx_hal_flash.o
+ .text.FLASH_SetErrorCode
+                0x00000000      0x114 libraries\ST_HAL\Src\stm32l4xx_hal_flash.o
+ .text.FLASH_Program_DoubleWord
+                0x00000000       0x1c libraries\ST_HAL\Src\stm32l4xx_hal_flash.o
+ .text.FLASH_Program_Fast
+                0x00000000       0x28 libraries\ST_HAL\Src\stm32l4xx_hal_flash.o
  .text.HAL_FLASH_Program_IT
                 0x00000000       0x88 libraries\ST_HAL\Src\stm32l4xx_hal_flash.o
  .text.HAL_FLASH_EndOfOperationCallback
@@ -765,17 +858,40 @@ Discarded input sections
                 0x00000000        0x2 libraries\ST_HAL\Src\stm32l4xx_hal_flash.o
  .text.HAL_FLASH_IRQHandler
                 0x00000000      0x1a4 libraries\ST_HAL\Src\stm32l4xx_hal_flash.o
+ .text.HAL_FLASH_Unlock
+                0x00000000       0x30 libraries\ST_HAL\Src\stm32l4xx_hal_flash.o
+ .text.HAL_FLASH_Lock
+                0x00000000       0x14 libraries\ST_HAL\Src\stm32l4xx_hal_flash.o
  .text.HAL_FLASH_OB_Unlock
                 0x00000000       0x28 libraries\ST_HAL\Src\stm32l4xx_hal_flash.o
  .text.HAL_FLASH_OB_Lock
                 0x00000000       0x14 libraries\ST_HAL\Src\stm32l4xx_hal_flash.o
  .text.HAL_FLASH_GetError
                 0x00000000        0xc libraries\ST_HAL\Src\stm32l4xx_hal_flash.o
+ .text.FLASH_WaitForLastOperation
+                0x00000000       0xc4 libraries\ST_HAL\Src\stm32l4xx_hal_flash.o
+ .text.HAL_FLASH_Program
+                0x00000000       0xb0 libraries\ST_HAL\Src\stm32l4xx_hal_flash.o
  .text.HAL_FLASH_OB_Launch
                 0x00000000       0x1c libraries\ST_HAL\Src\stm32l4xx_hal_flash.o
+ .debug_info    0x00000000      0xfb0 libraries\ST_HAL\Src\stm32l4xx_hal_flash.o
+ .debug_abbrev  0x00000000      0x302 libraries\ST_HAL\Src\stm32l4xx_hal_flash.o
+ .debug_loc     0x00000000      0x3e2 libraries\ST_HAL\Src\stm32l4xx_hal_flash.o
+ .debug_aranges
+                0x00000000       0x90 libraries\ST_HAL\Src\stm32l4xx_hal_flash.o
+ .debug_ranges  0x00000000       0x80 libraries\ST_HAL\Src\stm32l4xx_hal_flash.o
+ .debug_line    0x00000000      0x595 libraries\ST_HAL\Src\stm32l4xx_hal_flash.o
+ .debug_str     0x00000000      0xa98 libraries\ST_HAL\Src\stm32l4xx_hal_flash.o
+ .comment       0x00000000       0x7d libraries\ST_HAL\Src\stm32l4xx_hal_flash.o
+ .debug_frame   0x00000000      0x144 libraries\ST_HAL\Src\stm32l4xx_hal_flash.o
+ .ARM.attributes
+                0x00000000       0x39 libraries\ST_HAL\Src\stm32l4xx_hal_flash.o
+ COMMON         0x00000000       0x20 libraries\ST_HAL\Src\stm32l4xx_hal_flash.o
  .text          0x00000000        0x0 libraries\ST_HAL\Src\stm32l4xx_hal_flash_ex.o
  .data          0x00000000        0x0 libraries\ST_HAL\Src\stm32l4xx_hal_flash_ex.o
  .bss           0x00000000        0x0 libraries\ST_HAL\Src\stm32l4xx_hal_flash_ex.o
+ .text.FLASH_MassErase
+                0x00000000       0x20 libraries\ST_HAL\Src\stm32l4xx_hal_flash_ex.o
  .text.FLASH_OB_GetWRP
                 0x00000000       0x30 libraries\ST_HAL\Src\stm32l4xx_hal_flash_ex.o
  .text.FLASH_OB_GetRDP
@@ -796,8 +912,26 @@ Discarded input sections
                 0x00000000       0x90 libraries\ST_HAL\Src\stm32l4xx_hal_flash_ex.o
  .text.HAL_FLASHEx_OBGetConfig
                 0x00000000       0x4e libraries\ST_HAL\Src\stm32l4xx_hal_flash_ex.o
+ .text.FLASH_PageErase
+                0x00000000       0x30 libraries\ST_HAL\Src\stm32l4xx_hal_flash_ex.o
  .text.HAL_FLASHEx_Erase_IT
                 0x00000000       0xb8 libraries\ST_HAL\Src\stm32l4xx_hal_flash_ex.o
+ .text.FLASH_FlushCaches
+                0x00000000       0x70 libraries\ST_HAL\Src\stm32l4xx_hal_flash_ex.o
+ .text.HAL_FLASHEx_Erase
+                0x00000000       0xf8 libraries\ST_HAL\Src\stm32l4xx_hal_flash_ex.o
+ .debug_info    0x00000000     0x11e9 libraries\ST_HAL\Src\stm32l4xx_hal_flash_ex.o
+ .debug_abbrev  0x00000000      0x340 libraries\ST_HAL\Src\stm32l4xx_hal_flash_ex.o
+ .debug_loc     0x00000000      0x697 libraries\ST_HAL\Src\stm32l4xx_hal_flash_ex.o
+ .debug_aranges
+                0x00000000       0x90 libraries\ST_HAL\Src\stm32l4xx_hal_flash_ex.o
+ .debug_ranges  0x00000000       0x80 libraries\ST_HAL\Src\stm32l4xx_hal_flash_ex.o
+ .debug_line    0x00000000      0x55c libraries\ST_HAL\Src\stm32l4xx_hal_flash_ex.o
+ .debug_str     0x00000000      0xb1b libraries\ST_HAL\Src\stm32l4xx_hal_flash_ex.o
+ .comment       0x00000000       0x7d libraries\ST_HAL\Src\stm32l4xx_hal_flash_ex.o
+ .debug_frame   0x00000000      0x168 libraries\ST_HAL\Src\stm32l4xx_hal_flash_ex.o
+ .ARM.attributes
+                0x00000000       0x39 libraries\ST_HAL\Src\stm32l4xx_hal_flash_ex.o
  .text          0x00000000        0x0 libraries\ST_HAL\Src\stm32l4xx_hal_flash_ramfunc.o
  .data          0x00000000        0x0 libraries\ST_HAL\Src\stm32l4xx_hal_flash_ramfunc.o
  .bss           0x00000000        0x0 libraries\ST_HAL\Src\stm32l4xx_hal_flash_ramfunc.o
@@ -807,8 +941,8 @@ Discarded input sections
  .debug_aranges
                 0x00000000       0x28 libraries\ST_HAL\Src\stm32l4xx_hal_flash_ramfunc.o
  .debug_ranges  0x00000000       0x18 libraries\ST_HAL\Src\stm32l4xx_hal_flash_ramfunc.o
- .debug_line    0x00000000      0x2f5 libraries\ST_HAL\Src\stm32l4xx_hal_flash_ramfunc.o
- .debug_str     0x00000000      0x8d1 libraries\ST_HAL\Src\stm32l4xx_hal_flash_ramfunc.o
+ .debug_line    0x00000000      0x2df libraries\ST_HAL\Src\stm32l4xx_hal_flash_ramfunc.o
+ .debug_str     0x00000000      0x8c6 libraries\ST_HAL\Src\stm32l4xx_hal_flash_ramfunc.o
  .comment       0x00000000       0x7d libraries\ST_HAL\Src\stm32l4xx_hal_flash_ramfunc.o
  .debug_frame   0x00000000       0x30 libraries\ST_HAL\Src\stm32l4xx_hal_flash_ramfunc.o
  .ARM.attributes
@@ -979,8 +1113,8 @@ Discarded input sections
  .debug_aranges
                 0x00000000      0x260 libraries\ST_HAL\Src\stm32l4xx_hal_i2c.o
  .debug_ranges  0x00000000      0x250 libraries\ST_HAL\Src\stm32l4xx_hal_i2c.o
- .debug_line    0x00000000     0x1495 libraries\ST_HAL\Src\stm32l4xx_hal_i2c.o
- .debug_str     0x00000000     0x1310 libraries\ST_HAL\Src\stm32l4xx_hal_i2c.o
+ .debug_line    0x00000000     0x147f libraries\ST_HAL\Src\stm32l4xx_hal_i2c.o
+ .debug_str     0x00000000     0x1305 libraries\ST_HAL\Src\stm32l4xx_hal_i2c.o
  .comment       0x00000000       0x7d libraries\ST_HAL\Src\stm32l4xx_hal_i2c.o
  .debug_frame   0x00000000      0x820 libraries\ST_HAL\Src\stm32l4xx_hal_i2c.o
  .ARM.attributes
@@ -1006,8 +1140,8 @@ Discarded input sections
  .debug_aranges
                 0x00000000       0x48 libraries\ST_HAL\Src\stm32l4xx_hal_i2c_ex.o
  .debug_ranges  0x00000000       0x38 libraries\ST_HAL\Src\stm32l4xx_hal_i2c_ex.o
- .debug_line    0x00000000      0x444 libraries\ST_HAL\Src\stm32l4xx_hal_i2c_ex.o
- .debug_str     0x00000000      0xd93 libraries\ST_HAL\Src\stm32l4xx_hal_i2c_ex.o
+ .debug_line    0x00000000      0x42e libraries\ST_HAL\Src\stm32l4xx_hal_i2c_ex.o
+ .debug_str     0x00000000      0xd88 libraries\ST_HAL\Src\stm32l4xx_hal_i2c_ex.o
  .comment       0x00000000       0x7d libraries\ST_HAL\Src\stm32l4xx_hal_i2c_ex.o
  .debug_frame   0x00000000       0x80 libraries\ST_HAL\Src\stm32l4xx_hal_i2c_ex.o
  .ARM.attributes
@@ -1053,8 +1187,8 @@ Discarded input sections
  .debug_aranges
                 0x00000000       0x98 libraries\ST_HAL\Src\stm32l4xx_hal_pwr.o
  .debug_ranges  0x00000000       0x88 libraries\ST_HAL\Src\stm32l4xx_hal_pwr.o
- .debug_line    0x00000000      0x44f libraries\ST_HAL\Src\stm32l4xx_hal_pwr.o
- .debug_str     0x00000000      0xb38 libraries\ST_HAL\Src\stm32l4xx_hal_pwr.o
+ .debug_line    0x00000000      0x439 libraries\ST_HAL\Src\stm32l4xx_hal_pwr.o
+ .debug_str     0x00000000      0xb2d libraries\ST_HAL\Src\stm32l4xx_hal_pwr.o
  .comment       0x00000000       0x7d libraries\ST_HAL\Src\stm32l4xx_hal_pwr.o
  .debug_frame   0x00000000      0x120 libraries\ST_HAL\Src\stm32l4xx_hal_pwr.o
  .ARM.attributes
@@ -1202,8 +1336,8 @@ Discarded input sections
  .debug_aranges
                 0x00000000       0xe8 libraries\ST_HAL\Src\stm32l4xx_hal_rcc_ex.o
  .debug_ranges  0x00000000       0xf8 libraries\ST_HAL\Src\stm32l4xx_hal_rcc_ex.o
- .debug_line    0x00000000      0x918 libraries\ST_HAL\Src\stm32l4xx_hal_rcc_ex.o
- .debug_str     0x00000000     0x1025 libraries\ST_HAL\Src\stm32l4xx_hal_rcc_ex.o
+ .debug_line    0x00000000      0x902 libraries\ST_HAL\Src\stm32l4xx_hal_rcc_ex.o
+ .debug_str     0x00000000     0x101a libraries\ST_HAL\Src\stm32l4xx_hal_rcc_ex.o
  .comment       0x00000000       0x7d libraries\ST_HAL\Src\stm32l4xx_hal_rcc_ex.o
  .debug_frame   0x00000000      0x238 libraries\ST_HAL\Src\stm32l4xx_hal_rcc_ex.o
  .ARM.attributes
@@ -1211,26 +1345,14 @@ Discarded input sections
  .text          0x00000000        0x0 libraries\ST_HAL\Src\stm32l4xx_hal_spi.o
  .data          0x00000000        0x0 libraries\ST_HAL\Src\stm32l4xx_hal_spi.o
  .bss           0x00000000        0x0 libraries\ST_HAL\Src\stm32l4xx_hal_spi.o
- .text.SPI_WaitFlagStateUntilTimeout
-                0x00000000       0x92 libraries\ST_HAL\Src\stm32l4xx_hal_spi.o
- .text.SPI_WaitFifoStateUntilTimeout
-                0x00000000       0xa4 libraries\ST_HAL\Src\stm32l4xx_hal_spi.o
- .text.SPI_EndRxTxTransaction
-                0x00000000       0x68 libraries\ST_HAL\Src\stm32l4xx_hal_spi.o
- .text.SPI_EndRxTransaction
-                0x00000000       0x86 libraries\ST_HAL\Src\stm32l4xx_hal_spi.o
  .text.SPI_AbortRx_ISR
                 0x00000000       0x90 libraries\ST_HAL\Src\stm32l4xx_hal_spi.o
  .text.SPI_AbortTx_ISR
                 0x00000000       0x8c libraries\ST_HAL\Src\stm32l4xx_hal_spi.o
  .text.HAL_SPI_MspInit
                 0x00000000        0x2 libraries\ST_HAL\Src\stm32l4xx_hal_spi.o
- .text.HAL_SPI_Init
-                0x00000000       0xb0 libraries\ST_HAL\Src\stm32l4xx_hal_spi.o
  .text.HAL_SPI_MspDeInit
                 0x00000000        0x2 libraries\ST_HAL\Src\stm32l4xx_hal_spi.o
- .text.HAL_SPI_DeInit
-                0x00000000       0x2c libraries\ST_HAL\Src\stm32l4xx_hal_spi.o
  .text.HAL_SPI_Transmit
                 0x00000000      0x1cc libraries\ST_HAL\Src\stm32l4xx_hal_spi.o
  .text.HAL_SPI_TransmitReceive
@@ -1239,10 +1361,6 @@ Discarded input sections
                 0x00000000      0x184 libraries\ST_HAL\Src\stm32l4xx_hal_spi.o
  .text.HAL_SPI_Transmit_IT
                 0x00000000       0xa8 libraries\ST_HAL\Src\stm32l4xx_hal_spi.o
- .text.HAL_SPI_TransmitReceive_IT
-                0x00000000       0xf8 libraries\ST_HAL\Src\stm32l4xx_hal_spi.o
- .text.HAL_SPI_Receive_IT
-                0x00000000       0xdc libraries\ST_HAL\Src\stm32l4xx_hal_spi.o
  .text.HAL_SPI_Transmit_DMA
                 0x00000000      0x118 libraries\ST_HAL\Src\stm32l4xx_hal_spi.o
  .text.HAL_SPI_TransmitReceive_DMA
@@ -1258,10 +1376,6 @@ Discarded input sections
  .text.HAL_SPI_DMAStop
                 0x00000000       0x28 libraries\ST_HAL\Src\stm32l4xx_hal_spi.o
  .text.HAL_SPI_TxCpltCallback
-                0x00000000        0x2 libraries\ST_HAL\Src\stm32l4xx_hal_spi.o
- .text.HAL_SPI_RxCpltCallback
-                0x00000000        0x2 libraries\ST_HAL\Src\stm32l4xx_hal_spi.o
- .text.HAL_SPI_TxRxCpltCallback
                 0x00000000        0x2 libraries\ST_HAL\Src\stm32l4xx_hal_spi.o
  .text.HAL_SPI_TxHalfCpltCallback
                 0x00000000        0x2 libraries\ST_HAL\Src\stm32l4xx_hal_spi.o
@@ -1283,22 +1397,6 @@ Discarded input sections
                 0x00000000       0x26 libraries\ST_HAL\Src\stm32l4xx_hal_spi.o
  .text.SPI_TxISR_16BIT
                 0x00000000       0x28 libraries\ST_HAL\Src\stm32l4xx_hal_spi.o
- .text.SPI_CloseRx_ISR
-                0x00000000       0x40 libraries\ST_HAL\Src\stm32l4xx_hal_spi.o
- .text.SPI_RxISR_8BIT
-                0x00000000       0x2c libraries\ST_HAL\Src\stm32l4xx_hal_spi.o
- .text.SPI_RxISR_16BIT
-                0x00000000       0x2e libraries\ST_HAL\Src\stm32l4xx_hal_spi.o
- .text.SPI_CloseRxTx_ISR
-                0x00000000       0x5e libraries\ST_HAL\Src\stm32l4xx_hal_spi.o
- .text.SPI_2linesTxISR_8BIT
-                0x00000000       0x5a libraries\ST_HAL\Src\stm32l4xx_hal_spi.o
- .text.SPI_2linesRxISR_8BIT
-                0x00000000       0x7a libraries\ST_HAL\Src\stm32l4xx_hal_spi.o
- .text.SPI_2linesTxISR_16BIT
-                0x00000000       0x3a libraries\ST_HAL\Src\stm32l4xx_hal_spi.o
- .text.SPI_2linesRxISR_16BIT
-                0x00000000       0x3e libraries\ST_HAL\Src\stm32l4xx_hal_spi.o
  .text.SPI_DMAError
                 0x00000000       0x22 libraries\ST_HAL\Src\stm32l4xx_hal_spi.o
  .text.SPI_DMATransmitCplt
@@ -1307,10 +1405,6 @@ Discarded input sections
                 0x00000000       0x58 libraries\ST_HAL\Src\stm32l4xx_hal_spi.o
  .text.SPI_DMATransmitReceiveCplt
                 0x00000000       0x5e libraries\ST_HAL\Src\stm32l4xx_hal_spi.o
- .text.HAL_SPI_IRQHandler
-                0x00000000      0x104 libraries\ST_HAL\Src\stm32l4xx_hal_spi.o
- .text.SPI_DMAAbortOnError
-                0x00000000       0x12 libraries\ST_HAL\Src\stm32l4xx_hal_spi.o
  .text.HAL_SPI_AbortCpltCallback
                 0x00000000        0x2 libraries\ST_HAL\Src\stm32l4xx_hal_spi.o
  .text.HAL_SPI_Abort_IT
@@ -1323,18 +1417,6 @@ Discarded input sections
                 0x00000000        0x6 libraries\ST_HAL\Src\stm32l4xx_hal_spi.o
  .text.HAL_SPI_GetError
                 0x00000000        0x4 libraries\ST_HAL\Src\stm32l4xx_hal_spi.o
- .debug_info    0x00000000     0x25a6 libraries\ST_HAL\Src\stm32l4xx_hal_spi.o
- .debug_abbrev  0x00000000      0x2a4 libraries\ST_HAL\Src\stm32l4xx_hal_spi.o
- .debug_loc     0x00000000     0x1b6c libraries\ST_HAL\Src\stm32l4xx_hal_spi.o
- .debug_aranges
-                0x00000000      0x1d8 libraries\ST_HAL\Src\stm32l4xx_hal_spi.o
- .debug_ranges  0x00000000      0x1c8 libraries\ST_HAL\Src\stm32l4xx_hal_spi.o
- .debug_line    0x00000000      0xe0c libraries\ST_HAL\Src\stm32l4xx_hal_spi.o
- .debug_str     0x00000000      0xffb libraries\ST_HAL\Src\stm32l4xx_hal_spi.o
- .comment       0x00000000       0x7d libraries\ST_HAL\Src\stm32l4xx_hal_spi.o
- .debug_frame   0x00000000      0x5b8 libraries\ST_HAL\Src\stm32l4xx_hal_spi.o
- .ARM.attributes
-                0x00000000       0x39 libraries\ST_HAL\Src\stm32l4xx_hal_spi.o
  .text          0x00000000        0x0 libraries\ST_HAL\Src\stm32l4xx_hal_spi_ex.o
  .data          0x00000000        0x0 libraries\ST_HAL\Src\stm32l4xx_hal_spi_ex.o
  .bss           0x00000000        0x0 libraries\ST_HAL\Src\stm32l4xx_hal_spi_ex.o
@@ -1346,8 +1428,8 @@ Discarded input sections
  .debug_aranges
                 0x00000000       0x20 libraries\ST_HAL\Src\stm32l4xx_hal_spi_ex.o
  .debug_ranges  0x00000000       0x10 libraries\ST_HAL\Src\stm32l4xx_hal_spi_ex.o
- .debug_line    0x00000000      0x30a libraries\ST_HAL\Src\stm32l4xx_hal_spi_ex.o
- .debug_str     0x00000000      0xaa4 libraries\ST_HAL\Src\stm32l4xx_hal_spi_ex.o
+ .debug_line    0x00000000      0x2f4 libraries\ST_HAL\Src\stm32l4xx_hal_spi_ex.o
+ .debug_str     0x00000000      0xa99 libraries\ST_HAL\Src\stm32l4xx_hal_spi_ex.o
  .comment       0x00000000       0x7d libraries\ST_HAL\Src\stm32l4xx_hal_spi_ex.o
  .debug_frame   0x00000000       0x2c libraries\ST_HAL\Src\stm32l4xx_hal_spi_ex.o
  .ARM.attributes
@@ -1359,8 +1441,8 @@ Discarded input sections
  .debug_abbrev  0x00000000      0x15c libraries\ST_HAL\Src\stm32l4xx_hal_tim.o
  .debug_aranges
                 0x00000000       0x18 libraries\ST_HAL\Src\stm32l4xx_hal_tim.o
- .debug_line    0x00000000      0x213 libraries\ST_HAL\Src\stm32l4xx_hal_tim.o
- .debug_str     0x00000000      0x665 libraries\ST_HAL\Src\stm32l4xx_hal_tim.o
+ .debug_line    0x00000000      0x208 libraries\ST_HAL\Src\stm32l4xx_hal_tim.o
+ .debug_str     0x00000000      0x65a libraries\ST_HAL\Src\stm32l4xx_hal_tim.o
  .comment       0x00000000       0x7d libraries\ST_HAL\Src\stm32l4xx_hal_tim.o
  .ARM.attributes
                 0x00000000       0x39 libraries\ST_HAL\Src\stm32l4xx_hal_tim.o
@@ -1371,8 +1453,8 @@ Discarded input sections
  .debug_abbrev  0x00000000      0x15c libraries\ST_HAL\Src\stm32l4xx_hal_tim_ex.o
  .debug_aranges
                 0x00000000       0x18 libraries\ST_HAL\Src\stm32l4xx_hal_tim_ex.o
- .debug_line    0x00000000      0x213 libraries\ST_HAL\Src\stm32l4xx_hal_tim_ex.o
- .debug_str     0x00000000      0x668 libraries\ST_HAL\Src\stm32l4xx_hal_tim_ex.o
+ .debug_line    0x00000000      0x208 libraries\ST_HAL\Src\stm32l4xx_hal_tim_ex.o
+ .debug_str     0x00000000      0x65d libraries\ST_HAL\Src\stm32l4xx_hal_tim_ex.o
  .comment       0x00000000       0x7d libraries\ST_HAL\Src\stm32l4xx_hal_tim_ex.o
  .ARM.attributes
                 0x00000000       0x39 libraries\ST_HAL\Src\stm32l4xx_hal_tim_ex.o
@@ -1492,9 +1574,6 @@ Discarded input sections
  .debug_frame   0x00000000       0x28 c:/program files (x86)/atollic/truestudio for stm32 9.0.1/armtools/bin/../lib/gcc/arm-atollic-eabi/6.3.1/../../../../arm-atollic-eabi/lib/armv7e-m/fpu\libc_nano.a(lib_a-memcpy-stub.o)
  .ARM.attributes
                 0x00000000       0x34 c:/program files (x86)/atollic/truestudio for stm32 9.0.1/armtools/bin/../lib/gcc/arm-atollic-eabi/6.3.1/../../../../arm-atollic-eabi/lib/armv7e-m/fpu\libc_nano.a(lib_a-memcpy-stub.o)
- .text          0x00000000        0x0 c:/program files (x86)/atollic/truestudio for stm32 9.0.1/armtools/bin/../lib/gcc/arm-atollic-eabi/6.3.1/../../../../arm-atollic-eabi/lib/armv7e-m/fpu\libc_nano.a(lib_a-memset.o)
- .data          0x00000000        0x0 c:/program files (x86)/atollic/truestudio for stm32 9.0.1/armtools/bin/../lib/gcc/arm-atollic-eabi/6.3.1/../../../../arm-atollic-eabi/lib/armv7e-m/fpu\libc_nano.a(lib_a-memset.o)
- .bss           0x00000000        0x0 c:/program files (x86)/atollic/truestudio for stm32 9.0.1/armtools/bin/../lib/gcc/arm-atollic-eabi/6.3.1/../../../../arm-atollic-eabi/lib/armv7e-m/fpu\libc_nano.a(lib_a-memset.o)
  .data          0x00000000        0x0 c:/program files (x86)/atollic/truestudio for stm32 9.0.1/armtools/bin/../lib/gcc/arm-atollic-eabi/6.3.1/armv7e-m/fpu\libgcc.a(_aeabi_uldivmod.o)
  .bss           0x00000000        0x0 c:/program files (x86)/atollic/truestudio for stm32 9.0.1/armtools/bin/../lib/gcc/arm-atollic-eabi/6.3.1/armv7e-m/fpu\libgcc.a(_aeabi_uldivmod.o)
  .data          0x00000000        0x0 c:/program files (x86)/atollic/truestudio for stm32 9.0.1/armtools/bin/../lib/gcc/arm-atollic-eabi/6.3.1/armv7e-m/fpu\libgcc.a(_udivmoddi4.o)
@@ -1553,6 +1632,9 @@ LOAD Src\HAL\Interrupts\custom\interrupts_map.o
 LOAD Src\HAL\System\base\System.o
 LOAD Src\HAL\System\base\System_api.o
 LOAD Src\HAL\System\custom\System_map.o
+LOAD Src\HAL\spi\base\spi.o
+LOAD Src\HAL\spi\base\spi_api.o
+LOAD Src\HAL\spi\custom\spi_map.o
 LOAD Src\HAL\uart\base\uart.o
 LOAD Src\HAL\uart\base\uart_api.o
 LOAD Src\HAL\uart\custom\UART_map.o
@@ -1611,7 +1693,7 @@ LOAD c:/program files (x86)/atollic/truestudio for stm32 9.0.1/armtools/bin/../l
                 0x08000000                g_pfnVectors
                 0x08000194                . = ALIGN (0x4)
 
-.text           0x08000194     0x3094
+.text           0x08000194     0x34dc
                 0x08000194                . = ALIGN (0x4)
  *(.text)
  .text          0x08000194       0x40 c:/program files (x86)/atollic/truestudio for stm32 9.0.1/armtools/bin/../lib/gcc/arm-atollic-eabi/6.3.1/armv7e-m/fpu/crtbegin.o
@@ -1623,597 +1705,620 @@ LOAD c:/program files (x86)/atollic/truestudio for stm32 9.0.1/armtools/bin/../l
                 0x080004e0                __aeabi_idiv0
                 0x080004e0                __aeabi_ldiv0
  *(.text*)
- .text.main     0x080004e4       0x30 Src\Applications\Main\main.o
+ .text.main     0x080004e4       0x38 Src\Applications\Main\main.o
                 0x080004e4                main
  .text.initSystemApp
-                0x08000514       0x8c Src\Applications\System_App\System_app.o
-                0x08000514                initSystemApp
+                0x0800051c       0x14 Src\Applications\System_App\System_app.o
+                0x0800051c                initSystemApp
  .text.callSystemApp
-                0x080005a0       0x80 Src\Applications\System_App\System_app.o
-                0x080005a0                callSystemApp
+                0x08000530       0x80 Src\Applications\System_App\System_app.o
+                0x08000530                callSystemApp
  .text.sregWrite
-                0x08000620       0x48 Src\Architecture\SREG\base\sreg.o
-                0x08000620                sregWrite
+                0x080005b0       0x48 Src\Architecture\SREG\base\sreg.o
+                0x080005b0                sregWrite
  .text.sregReadParam
-                0x08000668       0xa8 Src\Architecture\SREG\base\sreg.o
-                0x08000668                sregReadParam
+                0x080005f8       0xa8 Src\Architecture\SREG\base\sreg.o
+                0x080005f8                sregReadParam
  .text.initSregAll
-                0x08000710       0x24 Src\Architecture\SREG\base\sreg.o
-                0x08000710                initSregAll
+                0x080006a0       0x24 Src\Architecture\SREG\base\sreg.o
+                0x080006a0                initSregAll
  .text.readSregTableStd
-                0x08000734       0x1a Src\Architecture\SREG\base\sreg.o
-                0x08000734                readSregTableStd
+                0x080006c4       0x1a Src\Architecture\SREG\base\sreg.o
+                0x080006c4                readSregTableStd
  .text.readSreg
-                0x0800074e        0x8 Src\Architecture\SREG\base\sreg.o
-                0x0800074e                readSreg
+                0x080006de        0x8 Src\Architecture\SREG\base\sreg.o
+                0x080006de                readSreg
  .text.writeSregTableStd
-                0x08000756       0x2e Src\Architecture\SREG\base\sreg.o
-                0x08000756                writeSregTableStd
+                0x080006e6       0x2e Src\Architecture\SREG\base\sreg.o
+                0x080006e6                writeSregTableStd
  .text.writeSreg
-                0x08000784        0x8 Src\Architecture\SREG\base\sreg.o
-                0x08000784                writeSreg
+                0x08000714        0x8 Src\Architecture\SREG\base\sreg.o
+                0x08000714                writeSreg
  .text.SchedulerResetProcessTable
-                0x0800078c       0x6c Src\Architecture\Scheduler\base\Scheduler.o
-                0x0800078c                SchedulerResetProcessTable
+                0x0800071c       0x6c Src\Architecture\Scheduler\base\Scheduler.o
+                0x0800071c                SchedulerResetProcessTable
  .text.SchedulerInit
-                0x080007f8       0x48 Src\Architecture\Scheduler\base\Scheduler.o
-                0x080007f8                SchedulerInit
+                0x08000788       0x48 Src\Architecture\Scheduler\base\Scheduler.o
+                0x08000788                SchedulerInit
  .text.SchedulerProcessesAutoEnable
-                0x08000840       0x5c Src\Architecture\Scheduler\base\Scheduler.o
-                0x08000840                SchedulerProcessesAutoEnable
+                0x080007d0       0x5c Src\Architecture\Scheduler\base\Scheduler.o
+                0x080007d0                SchedulerProcessesAutoEnable
  .text.SchedulerUpdateTaskTime
-                0x0800089c       0x54 Src\Architecture\Scheduler\base\Scheduler.o
-                0x0800089c                SchedulerUpdateTaskTime
+                0x0800082c       0x54 Src\Architecture\Scheduler\base\Scheduler.o
+                0x0800082c                SchedulerUpdateTaskTime
  .text.SchedulerExecuteSystemProcess
-                0x080008f0       0x64 Src\Architecture\Scheduler\base\Scheduler.o
+                0x08000880       0x64 Src\Architecture\Scheduler\base\Scheduler.o
  .text.SchedulerNextSystemProcess
-                0x08000954       0xc0 Src\Architecture\Scheduler\base\Scheduler.o
-                0x08000954                SchedulerNextSystemProcess
+                0x080008e4       0xc0 Src\Architecture\Scheduler\base\Scheduler.o
+                0x080008e4                SchedulerNextSystemProcess
  .text.CreateQueue
-                0x08000a14        0xe Src\Architecture\tools\basic\base\CircularBuffer.o
-                0x08000a14                CreateQueue
+                0x080009a4        0xe Src\Architecture\tools\basic\base\CircularBuffer.o
+                0x080009a4                CreateQueue
  .text.AddQueueByte
-                0x08000a22       0x2e Src\Architecture\tools\basic\base\CircularBuffer.o
-                0x08000a22                AddQueueByte
+                0x080009b2       0x2e Src\Architecture\tools\basic\base\CircularBuffer.o
+                0x080009b2                AddQueueByte
  .text.GetQueueByte
-                0x08000a50       0x2c Src\Architecture\tools\basic\base\CircularBuffer.o
-                0x08000a50                GetQueueByte
+                0x080009e0       0x2c Src\Architecture\tools\basic\base\CircularBuffer.o
+                0x080009e0                GetQueueByte
  .text.GetQueuePendingBytes
-                0x08000a7c        0x4 Src\Architecture\tools\basic\base\CircularBuffer.o
-                0x08000a7c                GetQueuePendingBytes
+                0x08000a0c        0x4 Src\Architecture\tools\basic\base\CircularBuffer.o
+                0x08000a0c                GetQueuePendingBytes
  .text.GetQueueFreeBytes
-                0x08000a80        0xa Src\Architecture\tools\basic\base\CircularBuffer.o
-                0x08000a80                GetQueueFreeBytes
+                0x08000a10        0xa Src\Architecture\tools\basic\base\CircularBuffer.o
+                0x08000a10                GetQueueFreeBytes
  .text.diffTime
-                0x08000a8a        0xe Src\Drivers\SwTimer\base\SwTimer.o
- .text.getTime  0x08000a98        0xc Src\Drivers\SwTimer\base\SwTimer.o
+                0x08000a1a        0xe Src\Drivers\SwTimer\base\SwTimer.o
+ .text.getTime  0x08000a28        0xc Src\Drivers\SwTimer\base\SwTimer.o
  .text.SwTimerInit
-                0x08000aa4       0x1c Src\Drivers\SwTimer\base\SwTimer.o
-                0x08000aa4                SwTimerInit
+                0x08000a34       0x1c Src\Drivers\SwTimer\base\SwTimer.o
+                0x08000a34                SwTimerInit
  .text.SwTimerResetTimer
-                0x08000ac0       0x18 Src\Drivers\SwTimer\base\SwTimer.o
-                0x08000ac0                SwTimerResetTimer
+                0x08000a50       0x18 Src\Drivers\SwTimer\base\SwTimer.o
+                0x08000a50                SwTimerResetTimer
  .text.SwTimerStartTimer
-                0x08000ad8       0x2c Src\Drivers\SwTimer\base\SwTimer.o
-                0x08000ad8                SwTimerStartTimer
+                0x08000a68       0x2c Src\Drivers\SwTimer\base\SwTimer.o
+                0x08000a68                SwTimerStartTimer
  .text.SwTimerUpdateTimer
-                0x08000b04       0x68 Src\Drivers\SwTimer\base\SwTimer.o
-                0x08000b04                SwTimerUpdateTimer
+                0x08000a94       0x68 Src\Drivers\SwTimer\base\SwTimer.o
+                0x08000a94                SwTimerUpdateTimer
  .text.SwTimerIrq
-                0x08000b6c       0x20 Src\Drivers\SwTimer\base\SwTimer.o
-                0x08000b6c                SwTimerIrq
+                0x08000afc       0x20 Src\Drivers\SwTimer\base\SwTimer.o
+                0x08000afc                SwTimerIrq
  .text.pipeDeviceByteReceived
-                0x08000b8c       0x34 Src\Drivers\pipeDevice\base\PipeDevice.o
-                0x08000b8c                pipeDeviceByteReceived
+                0x08000b1c       0x34 Src\Drivers\pipeDevice\base\PipeDevice.o
+                0x08000b1c                pipeDeviceByteReceived
  .text.pipeDevice1ByteReceived
-                0x08000bc0        0xc Src\Drivers\pipeDevice\base\PipeDevice.o
-                0x08000bc0                pipeDevice1ByteReceived
+                0x08000b50        0xc Src\Drivers\pipeDevice\base\PipeDevice.o
+                0x08000b50                pipeDevice1ByteReceived
  .text.FlashCalcOffset
-                0x08000bcc        0x6 Src\HAL\Flash\base\Flash.o
-                0x08000bcc                FlashCalcOffset
- *fill*         0x08000bd2        0x2 
+                0x08000b5c        0x6 Src\HAL\Flash\base\Flash.o
+                0x08000b5c                FlashCalcOffset
+ *fill*         0x08000b62        0x2 
  .text.FlashInit
-                0x08000bd4       0xb0 Src\HAL\Flash\base\Flash.o
-                0x08000bd4                FlashInit
- .text.FlashLock
-                0x08000c84       0x10 Src\HAL\Flash\base\Flash.o
-                0x08000c84                FlashLock
- .text.FlashUnlock
-                0x08000c94       0x10 Src\HAL\Flash\base\Flash.o
-                0x08000c94                FlashUnlock
- .text.FlashReadData
-                0x08000ca4       0x2c Src\HAL\Flash\base\Flash.o
-                0x08000ca4                FlashReadData
- .text.FlashProgramData
-                0x08000cd0       0x58 Src\HAL\Flash\base\Flash.o
-                0x08000cd0                FlashProgramData
- .text.FlashGetPages
-                0x08000d28       0x10 Src\HAL\Flash\base\Flash.o
-                0x08000d28                FlashGetPages
- .text.FlashGetFirstPage
-                0x08000d38       0x48 Src\HAL\Flash\base\Flash.o
-                0x08000d38                FlashGetFirstPage
- .text.FlashErase
-                0x08000d80       0x6e Src\HAL\Flash\base\Flash.o
-                0x08000d80                FlashErase
- *fill*         0x08000dee        0x2 
+                0x08000b64       0xb0 Src\HAL\Flash\base\Flash.o
+                0x08000b64                FlashInit
  .text.GPIOWritePort
-                0x08000df0       0x38 Src\HAL\GPIO\base\GPIO.o
-                0x08000df0                GPIOWritePort
+                0x08000c14       0x38 Src\HAL\GPIO\base\GPIO.o
+                0x08000c14                GPIOWritePort
  .text.InitGPIOClock
-                0x08000e28      0x110 Src\HAL\GPIO\base\GPIO.o
-                0x08000e28                InitGPIOClock
+                0x08000c4c      0x110 Src\HAL\GPIO\base\GPIO.o
+                0x08000c4c                InitGPIOClock
  .text.GPIOInit
-                0x08000f38       0x54 Src\HAL\GPIO\base\GPIO.o
-                0x08000f38                GPIOInit
+                0x08000d5c       0x54 Src\HAL\GPIO\base\GPIO.o
+                0x08000d5c                GPIOInit
  .text.interruptsInit
-                0x08000f8c       0x30 Src\HAL\Interrupts\base\interrupts.o
-                0x08000f8c                interruptsInit
+                0x08000db0       0x30 Src\HAL\Interrupts\base\interrupts.o
+                0x08000db0                interruptsInit
  .text.interruptsStart
-                0x08000fbc       0x34 Src\HAL\Interrupts\base\interrupts.o
-                0x08000fbc                interruptsStart
+                0x08000de0       0x34 Src\HAL\Interrupts\base\interrupts.o
+                0x08000de0                interruptsStart
  .text.interruptsEnable
-                0x08000ff0       0x28 Src\HAL\Interrupts\base\interrupts.o
-                0x08000ff0                interruptsEnable
+                0x08000e14       0x28 Src\HAL\Interrupts\base\interrupts.o
+                0x08000e14                interruptsEnable
  .text.interruptsDisable
-                0x08001018       0x14 Src\HAL\Interrupts\base\interrupts.o
-                0x08001018                interruptsDisable
+                0x08000e3c       0x14 Src\HAL\Interrupts\base\interrupts.o
+                0x08000e3c                interruptsDisable
  .text.NMI_Handler
-                0x0800102c        0x2 Src\HAL\Interrupts\custom\interrupts_it.o
-                0x0800102c                NMI_Handler
+                0x08000e50        0x2 Src\HAL\Interrupts\custom\interrupts_it.o
+                0x08000e50                NMI_Handler
  .text.HardFault_Handler
-                0x0800102e        0x2 Src\HAL\Interrupts\custom\interrupts_it.o
-                0x0800102e                HardFault_Handler
+                0x08000e52        0x2 Src\HAL\Interrupts\custom\interrupts_it.o
+                0x08000e52                HardFault_Handler
  .text.MemManage_Handler
-                0x08001030        0x2 Src\HAL\Interrupts\custom\interrupts_it.o
-                0x08001030                MemManage_Handler
+                0x08000e54        0x2 Src\HAL\Interrupts\custom\interrupts_it.o
+                0x08000e54                MemManage_Handler
  .text.BusFault_Handler
-                0x08001032        0x2 Src\HAL\Interrupts\custom\interrupts_it.o
-                0x08001032                BusFault_Handler
+                0x08000e56        0x2 Src\HAL\Interrupts\custom\interrupts_it.o
+                0x08000e56                BusFault_Handler
  .text.UsageFault_Handler
-                0x08001034        0x2 Src\HAL\Interrupts\custom\interrupts_it.o
-                0x08001034                UsageFault_Handler
+                0x08000e58        0x2 Src\HAL\Interrupts\custom\interrupts_it.o
+                0x08000e58                UsageFault_Handler
  .text.SVC_Handler
-                0x08001036        0x2 Src\HAL\Interrupts\custom\interrupts_it.o
-                0x08001036                SVC_Handler
+                0x08000e5a        0x2 Src\HAL\Interrupts\custom\interrupts_it.o
+                0x08000e5a                SVC_Handler
  .text.PendSV_Handler
-                0x08001038        0x2 Src\HAL\Interrupts\custom\interrupts_it.o
-                0x08001038                PendSV_Handler
+                0x08000e5c        0x2 Src\HAL\Interrupts\custom\interrupts_it.o
+                0x08000e5c                PendSV_Handler
  .text.SysTick_Handler
-                0x0800103a        0x8 Src\HAL\Interrupts\custom\interrupts_it.o
-                0x0800103a                SysTick_Handler
+                0x08000e5e        0x8 Src\HAL\Interrupts\custom\interrupts_it.o
+                0x08000e5e                SysTick_Handler
  .text.RTC_WKUP_IRQHandler
-                0x08001042        0x2 Src\HAL\Interrupts\custom\interrupts_it.o
-                0x08001042                RTC_WKUP_IRQHandler
+                0x08000e66        0x2 Src\HAL\Interrupts\custom\interrupts_it.o
+                0x08000e66                RTC_WKUP_IRQHandler
  .text.EXTI0_IRQHandler
-                0x08001044        0x2 Src\HAL\Interrupts\custom\interrupts_it.o
-                0x08001044                EXTI0_IRQHandler
+                0x08000e68        0x2 Src\HAL\Interrupts\custom\interrupts_it.o
+                0x08000e68                EXTI0_IRQHandler
  .text.EXTI1_IRQHandler
-                0x08001046        0x2 Src\HAL\Interrupts\custom\interrupts_it.o
-                0x08001046                EXTI1_IRQHandler
+                0x08000e6a        0x2 Src\HAL\Interrupts\custom\interrupts_it.o
+                0x08000e6a                EXTI1_IRQHandler
  .text.EXTI9_5_IRQHandler
-                0x08001048        0xa Src\HAL\Interrupts\custom\interrupts_it.o
-                0x08001048                EXTI9_5_IRQHandler
+                0x08000e6c        0xa Src\HAL\Interrupts\custom\interrupts_it.o
+                0x08000e6c                EXTI9_5_IRQHandler
  .text.USART1_IRQHandler
-                0x08001052        0x8 Src\HAL\Interrupts\custom\interrupts_it.o
-                0x08001052                USART1_IRQHandler
+                0x08000e76        0x8 Src\HAL\Interrupts\custom\interrupts_it.o
+                0x08000e76                USART1_IRQHandler
  .text.USART2_IRQHandler
-                0x0800105a        0x8 Src\HAL\Interrupts\custom\interrupts_it.o
-                0x0800105a                USART2_IRQHandler
+                0x08000e7e        0x8 Src\HAL\Interrupts\custom\interrupts_it.o
+                0x08000e7e                USART2_IRQHandler
  .text.I2C1_EV_IRQHandler
-                0x08001062        0x8 Src\HAL\Interrupts\custom\interrupts_it.o
-                0x08001062                I2C1_EV_IRQHandler
+                0x08000e86        0x8 Src\HAL\Interrupts\custom\interrupts_it.o
+                0x08000e86                I2C1_EV_IRQHandler
  .text.I2C2_EV_IRQHandler
-                0x0800106a        0x8 Src\HAL\Interrupts\custom\interrupts_it.o
-                0x0800106a                I2C2_EV_IRQHandler
+                0x08000e8e        0x8 Src\HAL\Interrupts\custom\interrupts_it.o
+                0x08000e8e                I2C2_EV_IRQHandler
  .text.SPI1_IRQHandler
-                0x08001072        0x8 Src\HAL\Interrupts\custom\interrupts_it.o
-                0x08001072                SPI1_IRQHandler
+                0x08000e96        0x8 Src\HAL\Interrupts\custom\interrupts_it.o
+                0x08000e96                SPI1_IRQHandler
  .text.SPI2_IRQHandler
-                0x0800107a        0x8 Src\HAL\Interrupts\custom\interrupts_it.o
-                0x0800107a                SPI2_IRQHandler
+                0x08000e9e        0x8 Src\HAL\Interrupts\custom\interrupts_it.o
+                0x08000e9e                SPI2_IRQHandler
+ .text.SPI3_IRQHandler
+                0x08000ea6        0x8 Src\HAL\Interrupts\custom\interrupts_it.o
+                0x08000ea6                SPI3_IRQHandler
  .text.TIM2_IRQHandler
-                0x08001082        0x2 Src\HAL\Interrupts\custom\interrupts_it.o
-                0x08001082                TIM2_IRQHandler
+                0x08000eae        0x2 Src\HAL\Interrupts\custom\interrupts_it.o
+                0x08000eae                TIM2_IRQHandler
  .text.TIM3_IRQHandler
-                0x08001084        0x2 Src\HAL\Interrupts\custom\interrupts_it.o
-                0x08001084                TIM3_IRQHandler
+                0x08000eb0        0x2 Src\HAL\Interrupts\custom\interrupts_it.o
+                0x08000eb0                TIM3_IRQHandler
  .text.HAL_SYSTICK_Callback
-                0x08001086       0x10 Src\HAL\Interrupts\custom\interrupts_map.o
-                0x08001086                HAL_SYSTICK_Callback
+                0x08000eb2       0x10 Src\HAL\Interrupts\custom\interrupts_map.o
+                0x08000eb2                HAL_SYSTICK_Callback
  .text.HAL_GPIO_EXTI_Callback
-                0x08001096        0x2 Src\HAL\Interrupts\custom\interrupts_map.o
-                0x08001096                HAL_GPIO_EXTI_Callback
+                0x08000ec2        0x2 Src\HAL\Interrupts\custom\interrupts_map.o
+                0x08000ec2                HAL_GPIO_EXTI_Callback
  .text.HAL_UART1_Callback
-                0x08001098        0x2 Src\HAL\Interrupts\custom\interrupts_map.o
-                0x08001098                HAL_UART1_Callback
+                0x08000ec4        0x2 Src\HAL\Interrupts\custom\interrupts_map.o
+                0x08000ec4                HAL_UART1_Callback
  .text.HAL_UART2_Callback
-                0x0800109a        0xa Src\HAL\Interrupts\custom\interrupts_map.o
-                0x0800109a                HAL_UART2_Callback
+                0x08000ec6        0xa Src\HAL\Interrupts\custom\interrupts_map.o
+                0x08000ec6                HAL_UART2_Callback
  .text.HAL_I2C1_Callback
-                0x080010a4        0x2 Src\HAL\Interrupts\custom\interrupts_map.o
-                0x080010a4                HAL_I2C1_Callback
+                0x08000ed0        0x2 Src\HAL\Interrupts\custom\interrupts_map.o
+                0x08000ed0                HAL_I2C1_Callback
  .text.HAL_I2C2_Callback
-                0x080010a6        0x2 Src\HAL\Interrupts\custom\interrupts_map.o
-                0x080010a6                HAL_I2C2_Callback
+                0x08000ed2        0x2 Src\HAL\Interrupts\custom\interrupts_map.o
+                0x08000ed2                HAL_I2C2_Callback
  .text.HAL_SPI1_Callback
-                0x080010a8        0x2 Src\HAL\Interrupts\custom\interrupts_map.o
-                0x080010a8                HAL_SPI1_Callback
+                0x08000ed4        0xa Src\HAL\Interrupts\custom\interrupts_map.o
+                0x08000ed4                HAL_SPI1_Callback
  .text.HAL_SPI2_Callback
-                0x080010aa        0x2 Src\HAL\Interrupts\custom\interrupts_map.o
-                0x080010aa                HAL_SPI2_Callback
+                0x08000ede        0x2 Src\HAL\Interrupts\custom\interrupts_map.o
+                0x08000ede                HAL_SPI2_Callback
+ .text.HAL_SPI3_Callback
+                0x08000ee0        0xa Src\HAL\Interrupts\custom\interrupts_map.o
+                0x08000ee0                HAL_SPI3_Callback
+ *fill*         0x08000eea        0x2 
  .text.storePowerUpReason
-                0x080010ac       0xb4 Src\HAL\System\base\System.o
+                0x08000eec       0xb4 Src\HAL\System\base\System.o
  .text.watchdogInit
-                0x08001160        0x4 Src\HAL\System\base\System.o
+                0x08000fa0        0x4 Src\HAL\System\base\System.o
  .text.SystemClock_Config
-                0x08001164       0xc4 Src\HAL\System\base\System.o
+                0x08000fa4       0xc4 Src\HAL\System\base\System.o
  .text.stm32L4Init
-                0x08001228       0x18 Src\HAL\System\base\System.o
-                0x08001228                stm32L4Init
+                0x08001068       0x18 Src\HAL\System\base\System.o
+                0x08001068                stm32L4Init
  .text.systemGetCLkFreq
-                0x08001240        0xe Src\HAL\System\base\System.o
-                0x08001240                systemGetCLkFreq
+                0x08001080        0xe Src\HAL\System\base\System.o
+                0x08001080                systemGetCLkFreq
  .text.systemPreConfiguration
-                0x0800124e        0x2 Src\HAL\System\base\System.o
-                0x0800124e                systemPreConfiguration
+                0x0800108e        0x2 Src\HAL\System\base\System.o
+                0x0800108e                systemPreConfiguration
+ .text.spiRestartSlaveMode
+                0x08001090       0x3c Src\HAL\spi\base\spi.o
+ .text.HAL_SPI_ErrorCallback
+                0x080010cc        0x8 Src\HAL\spi\base\spi.o
+                0x080010cc                HAL_SPI_ErrorCallback
+ .text.HAL_SPI_MspInit
+                0x080010d4       0x50 Src\HAL\spi\base\spi.o
+                0x080010d4                HAL_SPI_MspInit
+ .text.HAL_SPI_MspDeInit
+                0x08001124       0x48 Src\HAL\spi\base\spi.o
+                0x08001124                HAL_SPI_MspDeInit
+ .text.spiDriverMainIRQHandler
+                0x0800116c       0xe4 Src\HAL\spi\base\spi.o
+                0x0800116c                spiDriverMainIRQHandler
+ .text.spiInit  0x08001250       0x90 Src\HAL\spi\base\spi.o
+                0x08001250                spiInit
+ .text.spiStart
+                0x080012e0       0x5c Src\HAL\spi\base\spi.o
+                0x080012e0                spiStart
  .text.HAL_UART_MspInit
-                0x08001250       0x58 Src\HAL\uart\base\uart.o
-                0x08001250                HAL_UART_MspInit
+                0x0800133c       0x58 Src\HAL\uart\base\uart.o
+                0x0800133c                HAL_UART_MspInit
  .text.HAL_UART_MspDeInit
-                0x080012a8       0x44 Src\HAL\uart\base\uart.o
-                0x080012a8                HAL_UART_MspDeInit
+                0x08001394       0x44 Src\HAL\uart\base\uart.o
+                0x08001394                HAL_UART_MspDeInit
  .text.HAL_UART_TxCpltCallback
-                0x080012ec       0x7c Src\HAL\uart\base\uart.o
-                0x080012ec                HAL_UART_TxCpltCallback
+                0x080013d8       0x7c Src\HAL\uart\base\uart.o
+                0x080013d8                HAL_UART_TxCpltCallback
  .text.HAL_UART_RxCpltCallback
-                0x08001368       0x74 Src\HAL\uart\base\uart.o
-                0x08001368                HAL_UART_RxCpltCallback
+                0x08001454       0x74 Src\HAL\uart\base\uart.o
+                0x08001454                HAL_UART_RxCpltCallback
  .text.uartDriverMainIRQHandler
-                0x080013dc       0x20 Src\HAL\uart\base\uart.o
-                0x080013dc                uartDriverMainIRQHandler
+                0x080014c8       0x20 Src\HAL\uart\base\uart.o
+                0x080014c8                uartDriverMainIRQHandler
  .text.HAL_UART_ErrorCallback
-                0x080013fc        0x2 Src\HAL\uart\base\uart.o
-                0x080013fc                HAL_UART_ErrorCallback
- *fill*         0x080013fe        0x2 
+                0x080014e8        0x2 Src\HAL\uart\base\uart.o
+                0x080014e8                HAL_UART_ErrorCallback
+ *fill*         0x080014ea        0x2 
  .text.uartInit
-                0x08001400       0x74 Src\HAL\uart\base\uart.o
-                0x08001400                uartInit
+                0x080014ec       0x74 Src\HAL\uart\base\uart.o
+                0x080014ec                uartInit
  .text.uartStart
-                0x08001474       0x44 Src\HAL\uart\base\uart.o
-                0x08001474                uartStart
+                0x08001560       0x44 Src\HAL\uart\base\uart.o
+                0x08001560                uartStart
  .text.Reset_Handler
-                0x080014b8       0x50 libraries\CMSIS\Source\startup_stm32l452xx.o
-                0x080014b8                Reset_Handler
+                0x080015a4       0x50 libraries\CMSIS\Source\startup_stm32l452xx.o
+                0x080015a4                Reset_Handler
  .text.Default_Handler
-                0x08001508        0x2 libraries\CMSIS\Source\startup_stm32l452xx.o
-                0x08001508                RTC_Alarm_IRQHandler
-                0x08001508                EXTI2_IRQHandler
-                0x08001508                DebugMon_Handler
-                0x08001508                TIM1_CC_IRQHandler
-                0x08001508                TSC_IRQHandler
-                0x08001508                TAMP_STAMP_IRQHandler
-                0x08001508                EXTI3_IRQHandler
-                0x08001508                LPTIM2_IRQHandler
-                0x08001508                DFSDM1_FLT1_IRQHandler
-                0x08001508                I2C3_ER_IRQHandler
-                0x08001508                CAN1_RX0_IRQHandler
-                0x08001508                FPU_IRQHandler
-                0x08001508                TIM1_UP_TIM16_IRQHandler
-                0x08001508                TIM6_DAC_IRQHandler
-                0x08001508                DMA2_Channel2_IRQHandler
-                0x08001508                DMA1_Channel4_IRQHandler
-                0x08001508                ADC1_IRQHandler
-                0x08001508                USART3_IRQHandler
-                0x08001508                DMA1_Channel7_IRQHandler
-                0x08001508                CAN1_RX1_IRQHandler
-                0x08001508                DMA2_Channel1_IRQHandler
-                0x08001508                QUADSPI_IRQHandler
-                0x08001508                DMA1_Channel6_IRQHandler
-                0x08001508                UART4_IRQHandler
-                0x08001508                DMA2_Channel4_IRQHandler
-                0x08001508                RCC_IRQHandler
-                0x08001508                TIM1_TRG_COM_IRQHandler
-                0x08001508                DMA1_Channel1_IRQHandler
-                0x08001508                Default_Handler
-                0x08001508                DMA2_Channel7_IRQHandler
-                0x08001508                EXTI15_10_IRQHandler
-                0x08001508                SDMMC1_IRQHandler
-                0x08001508                I2C3_EV_IRQHandler
-                0x08001508                USB_IRQHandler
-                0x08001508                PVD_PVM_IRQHandler
-                0x08001508                CAN1_TX_IRQHandler
-                0x08001508                DMA2_Channel5_IRQHandler
-                0x08001508                CRS_IRQHandler
-                0x08001508                DMA1_Channel5_IRQHandler
-                0x08001508                EXTI4_IRQHandler
-                0x08001508                RNG_IRQHandler
-                0x08001508                DMA1_Channel3_IRQHandler
-                0x08001508                COMP_IRQHandler
-                0x08001508                WWDG_IRQHandler
-                0x08001508                I2C4_EV_IRQHandler
-                0x08001508                LPUART1_IRQHandler
-                0x08001508                DMA2_Channel6_IRQHandler
-                0x08001508                DFSDM1_FLT0_IRQHandler
-                0x08001508                I2C2_ER_IRQHandler
-                0x08001508                DMA1_Channel2_IRQHandler
-                0x08001508                CAN1_SCE_IRQHandler
-                0x08001508                FLASH_IRQHandler
-                0x08001508                SPI3_IRQHandler
-                0x08001508                I2C1_ER_IRQHandler
-                0x08001508                LPTIM1_IRQHandler
-                0x08001508                I2C4_ER_IRQHandler
-                0x08001508                SAI1_IRQHandler
-                0x08001508                DMA2_Channel3_IRQHandler
-                0x08001508                TIM1_BRK_TIM15_IRQHandler
- *fill*         0x0800150a        0x2 
+                0x080015f4        0x2 libraries\CMSIS\Source\startup_stm32l452xx.o
+                0x080015f4                RTC_Alarm_IRQHandler
+                0x080015f4                EXTI2_IRQHandler
+                0x080015f4                DebugMon_Handler
+                0x080015f4                TIM1_CC_IRQHandler
+                0x080015f4                TSC_IRQHandler
+                0x080015f4                TAMP_STAMP_IRQHandler
+                0x080015f4                EXTI3_IRQHandler
+                0x080015f4                LPTIM2_IRQHandler
+                0x080015f4                DFSDM1_FLT1_IRQHandler
+                0x080015f4                I2C3_ER_IRQHandler
+                0x080015f4                CAN1_RX0_IRQHandler
+                0x080015f4                FPU_IRQHandler
+                0x080015f4                TIM1_UP_TIM16_IRQHandler
+                0x080015f4                TIM6_DAC_IRQHandler
+                0x080015f4                DMA2_Channel2_IRQHandler
+                0x080015f4                DMA1_Channel4_IRQHandler
+                0x080015f4                ADC1_IRQHandler
+                0x080015f4                USART3_IRQHandler
+                0x080015f4                DMA1_Channel7_IRQHandler
+                0x080015f4                CAN1_RX1_IRQHandler
+                0x080015f4                DMA2_Channel1_IRQHandler
+                0x080015f4                QUADSPI_IRQHandler
+                0x080015f4                DMA1_Channel6_IRQHandler
+                0x080015f4                UART4_IRQHandler
+                0x080015f4                DMA2_Channel4_IRQHandler
+                0x080015f4                RCC_IRQHandler
+                0x080015f4                TIM1_TRG_COM_IRQHandler
+                0x080015f4                DMA1_Channel1_IRQHandler
+                0x080015f4                Default_Handler
+                0x080015f4                DMA2_Channel7_IRQHandler
+                0x080015f4                EXTI15_10_IRQHandler
+                0x080015f4                SDMMC1_IRQHandler
+                0x080015f4                I2C3_EV_IRQHandler
+                0x080015f4                USB_IRQHandler
+                0x080015f4                PVD_PVM_IRQHandler
+                0x080015f4                CAN1_TX_IRQHandler
+                0x080015f4                DMA2_Channel5_IRQHandler
+                0x080015f4                CRS_IRQHandler
+                0x080015f4                DMA1_Channel5_IRQHandler
+                0x080015f4                EXTI4_IRQHandler
+                0x080015f4                RNG_IRQHandler
+                0x080015f4                DMA1_Channel3_IRQHandler
+                0x080015f4                COMP_IRQHandler
+                0x080015f4                WWDG_IRQHandler
+                0x080015f4                I2C4_EV_IRQHandler
+                0x080015f4                LPUART1_IRQHandler
+                0x080015f4                DMA2_Channel6_IRQHandler
+                0x080015f4                DFSDM1_FLT0_IRQHandler
+                0x080015f4                I2C2_ER_IRQHandler
+                0x080015f4                DMA1_Channel2_IRQHandler
+                0x080015f4                CAN1_SCE_IRQHandler
+                0x080015f4                FLASH_IRQHandler
+                0x080015f4                I2C1_ER_IRQHandler
+                0x080015f4                LPTIM1_IRQHandler
+                0x080015f4                I2C4_ER_IRQHandler
+                0x080015f4                SAI1_IRQHandler
+                0x080015f4                DMA2_Channel3_IRQHandler
+                0x080015f4                TIM1_BRK_TIM15_IRQHandler
+ *fill*         0x080015f6        0x2 
  .text.SystemInit
-                0x0800150c       0x48 libraries\CMSIS\Source\system_stm32l4xx.o
-                0x0800150c                SystemInit
+                0x080015f8       0x48 libraries\CMSIS\Source\system_stm32l4xx.o
+                0x080015f8                SystemInit
  .text.HAL_InitTick
-                0x08001554       0x2c libraries\ST_HAL\Src\stm32l4xx_hal.o
-                0x08001554                HAL_InitTick
+                0x08001640       0x2c libraries\ST_HAL\Src\stm32l4xx_hal.o
+                0x08001640                HAL_InitTick
  .text.HAL_IncTick
-                0x08001580       0x10 libraries\ST_HAL\Src\stm32l4xx_hal.o
-                0x08001580                HAL_IncTick
+                0x0800166c       0x10 libraries\ST_HAL\Src\stm32l4xx_hal.o
+                0x0800166c                HAL_IncTick
  .text.HAL_GetTick
-                0x08001590        0xc libraries\ST_HAL\Src\stm32l4xx_hal.o
-                0x08001590                HAL_GetTick
+                0x0800167c        0xc libraries\ST_HAL\Src\stm32l4xx_hal.o
+                0x0800167c                HAL_GetTick
  .text.HAL_NVIC_SetPriority
-                0x0800159c       0x64 libraries\ST_HAL\Src\stm32l4xx_hal_cortex.o
-                0x0800159c                HAL_NVIC_SetPriority
+                0x08001688       0x64 libraries\ST_HAL\Src\stm32l4xx_hal_cortex.o
+                0x08001688                HAL_NVIC_SetPriority
  .text.HAL_NVIC_EnableIRQ
-                0x08001600       0x18 libraries\ST_HAL\Src\stm32l4xx_hal_cortex.o
-                0x08001600                HAL_NVIC_EnableIRQ
+                0x080016ec       0x18 libraries\ST_HAL\Src\stm32l4xx_hal_cortex.o
+                0x080016ec                HAL_NVIC_EnableIRQ
  .text.HAL_SYSTICK_Config
-                0x08001618       0x2c libraries\ST_HAL\Src\stm32l4xx_hal_cortex.o
-                0x08001618                HAL_SYSTICK_Config
+                0x08001704       0x2c libraries\ST_HAL\Src\stm32l4xx_hal_cortex.o
+                0x08001704                HAL_SYSTICK_Config
  .text.HAL_SYSTICK_CLKSourceConfig
-                0x08001644       0x20 libraries\ST_HAL\Src\stm32l4xx_hal_cortex.o
-                0x08001644                HAL_SYSTICK_CLKSourceConfig
+                0x08001730       0x20 libraries\ST_HAL\Src\stm32l4xx_hal_cortex.o
+                0x08001730                HAL_SYSTICK_CLKSourceConfig
  .text.HAL_SYSTICK_IRQHandler
-                0x08001664        0x8 libraries\ST_HAL\Src\stm32l4xx_hal_cortex.o
-                0x08001664                HAL_SYSTICK_IRQHandler
+                0x08001750        0x8 libraries\ST_HAL\Src\stm32l4xx_hal_cortex.o
+                0x08001750                HAL_SYSTICK_IRQHandler
  .text.HAL_DMA_Abort_IT
-                0x0800166c       0x4c libraries\ST_HAL\Src\stm32l4xx_hal_dma.o
-                0x0800166c                HAL_DMA_Abort_IT
- .text.FLASH_SetErrorCode
-                0x080016b8      0x114 libraries\ST_HAL\Src\stm32l4xx_hal_flash.o
- .text.FLASH_Program_DoubleWord
-                0x080017cc       0x1c libraries\ST_HAL\Src\stm32l4xx_hal_flash.o
- .text.FLASH_Program_Fast
-                0x080017e8       0x28 libraries\ST_HAL\Src\stm32l4xx_hal_flash.o
- .text.HAL_FLASH_Unlock
-                0x08001810       0x30 libraries\ST_HAL\Src\stm32l4xx_hal_flash.o
-                0x08001810                HAL_FLASH_Unlock
- .text.HAL_FLASH_Lock
-                0x08001840       0x14 libraries\ST_HAL\Src\stm32l4xx_hal_flash.o
-                0x08001840                HAL_FLASH_Lock
- .text.FLASH_WaitForLastOperation
-                0x08001854       0xc4 libraries\ST_HAL\Src\stm32l4xx_hal_flash.o
-                0x08001854                FLASH_WaitForLastOperation
- .text.HAL_FLASH_Program
-                0x08001918       0xb0 libraries\ST_HAL\Src\stm32l4xx_hal_flash.o
-                0x08001918                HAL_FLASH_Program
- .text.FLASH_MassErase
-                0x080019c8       0x20 libraries\ST_HAL\Src\stm32l4xx_hal_flash_ex.o
- .text.FLASH_PageErase
-                0x080019e8       0x30 libraries\ST_HAL\Src\stm32l4xx_hal_flash_ex.o
-                0x080019e8                FLASH_PageErase
- .text.FLASH_FlushCaches
-                0x08001a18       0x70 libraries\ST_HAL\Src\stm32l4xx_hal_flash_ex.o
-                0x08001a18                FLASH_FlushCaches
- .text.HAL_FLASHEx_Erase
-                0x08001a88       0xf8 libraries\ST_HAL\Src\stm32l4xx_hal_flash_ex.o
-                0x08001a88                HAL_FLASHEx_Erase
+                0x08001758       0x4c libraries\ST_HAL\Src\stm32l4xx_hal_dma.o
+                0x08001758                HAL_DMA_Abort_IT
  .text.HAL_GPIO_Init
-                0x08001b80      0x1a0 libraries\ST_HAL\Src\stm32l4xx_hal_gpio.o
-                0x08001b80                HAL_GPIO_Init
+                0x080017a4      0x1a0 libraries\ST_HAL\Src\stm32l4xx_hal_gpio.o
+                0x080017a4                HAL_GPIO_Init
  .text.HAL_GPIO_WritePin
-                0x08001d20        0xa libraries\ST_HAL\Src\stm32l4xx_hal_gpio.o
-                0x08001d20                HAL_GPIO_WritePin
+                0x08001944        0xa libraries\ST_HAL\Src\stm32l4xx_hal_gpio.o
+                0x08001944                HAL_GPIO_WritePin
  .text.HAL_GPIO_TogglePin
-                0x08001d2a        0x8 libraries\ST_HAL\Src\stm32l4xx_hal_gpio.o
-                0x08001d2a                HAL_GPIO_TogglePin
- *fill*         0x08001d32        0x2 
+                0x0800194e        0x8 libraries\ST_HAL\Src\stm32l4xx_hal_gpio.o
+                0x0800194e                HAL_GPIO_TogglePin
+ *fill*         0x08001956        0x2 
  .text.HAL_GPIO_EXTI_IRQHandler
-                0x08001d34       0x1c libraries\ST_HAL\Src\stm32l4xx_hal_gpio.o
-                0x08001d34                HAL_GPIO_EXTI_IRQHandler
+                0x08001958       0x1c libraries\ST_HAL\Src\stm32l4xx_hal_gpio.o
+                0x08001958                HAL_GPIO_EXTI_IRQHandler
  .text.HAL_PWREx_GetVoltageRange
-                0x08001d50       0x10 libraries\ST_HAL\Src\stm32l4xx_hal_pwr_ex.o
-                0x08001d50                HAL_PWREx_GetVoltageRange
+                0x08001974       0x10 libraries\ST_HAL\Src\stm32l4xx_hal_pwr_ex.o
+                0x08001974                HAL_PWREx_GetVoltageRange
  .text.HAL_PWREx_ControlVoltageScaling
-                0x08001d60       0x90 libraries\ST_HAL\Src\stm32l4xx_hal_pwr_ex.o
-                0x08001d60                HAL_PWREx_ControlVoltageScaling
+                0x08001984       0x90 libraries\ST_HAL\Src\stm32l4xx_hal_pwr_ex.o
+                0x08001984                HAL_PWREx_ControlVoltageScaling
  .text.RCC_SetFlashLatencyFromMSIRange
-                0x08001df0       0x90 libraries\ST_HAL\Src\stm32l4xx_hal_rcc.o
+                0x08001a14       0x90 libraries\ST_HAL\Src\stm32l4xx_hal_rcc.o
  .text.HAL_RCC_GetSysClockFreq
-                0x08001e80      0x100 libraries\ST_HAL\Src\stm32l4xx_hal_rcc.o
-                0x08001e80                HAL_RCC_GetSysClockFreq
+                0x08001aa4      0x100 libraries\ST_HAL\Src\stm32l4xx_hal_rcc.o
+                0x08001aa4                HAL_RCC_GetSysClockFreq
  .text.HAL_RCC_OscConfig
-                0x08001f80      0x5cc libraries\ST_HAL\Src\stm32l4xx_hal_rcc.o
-                0x08001f80                HAL_RCC_OscConfig
+                0x08001ba4      0x5cc libraries\ST_HAL\Src\stm32l4xx_hal_rcc.o
+                0x08001ba4                HAL_RCC_OscConfig
  .text.HAL_RCC_ClockConfig
-                0x0800254c      0x1ac libraries\ST_HAL\Src\stm32l4xx_hal_rcc.o
-                0x0800254c                HAL_RCC_ClockConfig
+                0x08002170      0x1ac libraries\ST_HAL\Src\stm32l4xx_hal_rcc.o
+                0x08002170                HAL_RCC_ClockConfig
  .text.HAL_RCC_GetHCLKFreq
-                0x080026f8        0xc libraries\ST_HAL\Src\stm32l4xx_hal_rcc.o
-                0x080026f8                HAL_RCC_GetHCLKFreq
+                0x0800231c        0xc libraries\ST_HAL\Src\stm32l4xx_hal_rcc.o
+                0x0800231c                HAL_RCC_GetHCLKFreq
  .text.HAL_RCC_GetPCLK1Freq
-                0x08002704       0x20 libraries\ST_HAL\Src\stm32l4xx_hal_rcc.o
-                0x08002704                HAL_RCC_GetPCLK1Freq
+                0x08002328       0x20 libraries\ST_HAL\Src\stm32l4xx_hal_rcc.o
+                0x08002328                HAL_RCC_GetPCLK1Freq
  .text.HAL_RCC_GetPCLK2Freq
-                0x08002724       0x20 libraries\ST_HAL\Src\stm32l4xx_hal_rcc.o
-                0x08002724                HAL_RCC_GetPCLK2Freq
+                0x08002348       0x20 libraries\ST_HAL\Src\stm32l4xx_hal_rcc.o
+                0x08002348                HAL_RCC_GetPCLK2Freq
+ .text.SPI_WaitFlagStateUntilTimeout
+                0x08002368       0x92 libraries\ST_HAL\Src\stm32l4xx_hal_spi.o
+ .text.SPI_WaitFifoStateUntilTimeout
+                0x080023fa       0xa4 libraries\ST_HAL\Src\stm32l4xx_hal_spi.o
+ .text.SPI_EndRxTxTransaction
+                0x0800249e       0x68 libraries\ST_HAL\Src\stm32l4xx_hal_spi.o
+ .text.SPI_EndRxTransaction
+                0x08002506       0x86 libraries\ST_HAL\Src\stm32l4xx_hal_spi.o
+ .text.HAL_SPI_Init
+                0x0800258c       0xb0 libraries\ST_HAL\Src\stm32l4xx_hal_spi.o
+                0x0800258c                HAL_SPI_Init
+ .text.HAL_SPI_DeInit
+                0x0800263c       0x2c libraries\ST_HAL\Src\stm32l4xx_hal_spi.o
+                0x0800263c                HAL_SPI_DeInit
+ .text.HAL_SPI_TransmitReceive_IT
+                0x08002668       0xf8 libraries\ST_HAL\Src\stm32l4xx_hal_spi.o
+                0x08002668                HAL_SPI_TransmitReceive_IT
+ .text.HAL_SPI_Receive_IT
+                0x08002760       0xdc libraries\ST_HAL\Src\stm32l4xx_hal_spi.o
+                0x08002760                HAL_SPI_Receive_IT
+ .text.HAL_SPI_RxCpltCallback
+                0x0800283c        0x2 libraries\ST_HAL\Src\stm32l4xx_hal_spi.o
+                0x0800283c                HAL_SPI_RxCpltCallback
+ .text.HAL_SPI_TxRxCpltCallback
+                0x0800283e        0x2 libraries\ST_HAL\Src\stm32l4xx_hal_spi.o
+                0x0800283e                HAL_SPI_TxRxCpltCallback
+ .text.SPI_CloseRx_ISR
+                0x08002840       0x40 libraries\ST_HAL\Src\stm32l4xx_hal_spi.o
+ .text.SPI_RxISR_8BIT
+                0x08002880       0x2c libraries\ST_HAL\Src\stm32l4xx_hal_spi.o
+ .text.SPI_RxISR_16BIT
+                0x080028ac       0x2e libraries\ST_HAL\Src\stm32l4xx_hal_spi.o
+ .text.SPI_CloseRxTx_ISR
+                0x080028da       0x5e libraries\ST_HAL\Src\stm32l4xx_hal_spi.o
+ .text.SPI_2linesTxISR_8BIT
+                0x08002938       0x5a libraries\ST_HAL\Src\stm32l4xx_hal_spi.o
+ .text.SPI_2linesRxISR_8BIT
+                0x08002992       0x7a libraries\ST_HAL\Src\stm32l4xx_hal_spi.o
+ .text.SPI_2linesTxISR_16BIT
+                0x08002a0c       0x3a libraries\ST_HAL\Src\stm32l4xx_hal_spi.o
+ .text.SPI_2linesRxISR_16BIT
+                0x08002a46       0x3e libraries\ST_HAL\Src\stm32l4xx_hal_spi.o
+ .text.HAL_SPI_IRQHandler
+                0x08002a84      0x104 libraries\ST_HAL\Src\stm32l4xx_hal_spi.o
+                0x08002a84                HAL_SPI_IRQHandler
+ .text.SPI_DMAAbortOnError
+                0x08002b88       0x12 libraries\ST_HAL\Src\stm32l4xx_hal_spi.o
  .text.UART_EndRxTransfer
-                0x08002744       0x20 libraries\ST_HAL\Src\stm32l4xx_hal_uart.o
+                0x08002b9a       0x20 libraries\ST_HAL\Src\stm32l4xx_hal_uart.o
  .text.UART_TxISR_8BIT
-                0x08002764       0x46 libraries\ST_HAL\Src\stm32l4xx_hal_uart.o
+                0x08002bba       0x46 libraries\ST_HAL\Src\stm32l4xx_hal_uart.o
  .text.UART_TxISR_16BIT
-                0x080027aa       0x4c libraries\ST_HAL\Src\stm32l4xx_hal_uart.o
+                0x08002c00       0x4c libraries\ST_HAL\Src\stm32l4xx_hal_uart.o
  .text.HAL_UART_DeInit
-                0x080027f6       0x3e libraries\ST_HAL\Src\stm32l4xx_hal_uart.o
-                0x080027f6                HAL_UART_DeInit
+                0x08002c4c       0x3e libraries\ST_HAL\Src\stm32l4xx_hal_uart.o
+                0x08002c4c                HAL_UART_DeInit
+ *fill*         0x08002c8a        0x2 
  .text.HAL_UART_Transmit_IT
-                0x08002834       0x78 libraries\ST_HAL\Src\stm32l4xx_hal_uart.o
-                0x08002834                HAL_UART_Transmit_IT
+                0x08002c8c       0x78 libraries\ST_HAL\Src\stm32l4xx_hal_uart.o
+                0x08002c8c                HAL_UART_Transmit_IT
  .text.HAL_UART_Receive_IT
-                0x080028ac       0xd4 libraries\ST_HAL\Src\stm32l4xx_hal_uart.o
-                0x080028ac                HAL_UART_Receive_IT
+                0x08002d04       0xd4 libraries\ST_HAL\Src\stm32l4xx_hal_uart.o
+                0x08002d04                HAL_UART_Receive_IT
  .text.UART_EndTransmit_IT
-                0x08002980       0x1c libraries\ST_HAL\Src\stm32l4xx_hal_uart.o
+                0x08002dd8       0x1c libraries\ST_HAL\Src\stm32l4xx_hal_uart.o
  .text.UART_RxISR_8BIT
-                0x0800299c       0x64 libraries\ST_HAL\Src\stm32l4xx_hal_uart.o
+                0x08002df4       0x64 libraries\ST_HAL\Src\stm32l4xx_hal_uart.o
  .text.UART_RxISR_16BIT
-                0x08002a00       0x64 libraries\ST_HAL\Src\stm32l4xx_hal_uart.o
+                0x08002e58       0x64 libraries\ST_HAL\Src\stm32l4xx_hal_uart.o
  .text.HAL_UART_IRQHandler
-                0x08002a64      0x168 libraries\ST_HAL\Src\stm32l4xx_hal_uart.o
-                0x08002a64                HAL_UART_IRQHandler
+                0x08002ebc      0x168 libraries\ST_HAL\Src\stm32l4xx_hal_uart.o
+                0x08002ebc                HAL_UART_IRQHandler
  .text.UART_DMAAbortOnError
-                0x08002bcc       0x14 libraries\ST_HAL\Src\stm32l4xx_hal_uart.o
+                0x08003024       0x14 libraries\ST_HAL\Src\stm32l4xx_hal_uart.o
  .text.UART_SetConfig
-                0x08002be0      0x3d0 libraries\ST_HAL\Src\stm32l4xx_hal_uart.o
-                0x08002be0                UART_SetConfig
+                0x08003038      0x3d0 libraries\ST_HAL\Src\stm32l4xx_hal_uart.o
+                0x08003038                UART_SetConfig
  .text.UART_AdvFeatureConfig
-                0x08002fb0       0xca libraries\ST_HAL\Src\stm32l4xx_hal_uart.o
-                0x08002fb0                UART_AdvFeatureConfig
+                0x08003408       0xca libraries\ST_HAL\Src\stm32l4xx_hal_uart.o
+                0x08003408                UART_AdvFeatureConfig
  .text.UART_WaitOnFlagUntilTimeout
-                0x0800307a       0x64 libraries\ST_HAL\Src\stm32l4xx_hal_uart.o
-                0x0800307a                UART_WaitOnFlagUntilTimeout
+                0x080034d2       0x64 libraries\ST_HAL\Src\stm32l4xx_hal_uart.o
+                0x080034d2                UART_WaitOnFlagUntilTimeout
  .text.UART_CheckIdleState
-                0x080030de       0x70 libraries\ST_HAL\Src\stm32l4xx_hal_uart.o
-                0x080030de                UART_CheckIdleState
+                0x08003536       0x70 libraries\ST_HAL\Src\stm32l4xx_hal_uart.o
+                0x08003536                UART_CheckIdleState
  .text.HAL_UART_Init
-                0x0800314e       0x68 libraries\ST_HAL\Src\stm32l4xx_hal_uart.o
-                0x0800314e                HAL_UART_Init
+                0x080035a6       0x68 libraries\ST_HAL\Src\stm32l4xx_hal_uart.o
+                0x080035a6                HAL_UART_Init
  .text.HAL_UARTEx_WakeupCallback
-                0x080031b6        0x2 libraries\ST_HAL\Src\stm32l4xx_hal_uart_ex.o
-                0x080031b6                HAL_UARTEx_WakeupCallback
+                0x0800360e        0x2 libraries\ST_HAL\Src\stm32l4xx_hal_uart_ex.o
+                0x0800360e                HAL_UARTEx_WakeupCallback
  .text.__libc_init_array
-                0x080031b8       0x48 c:/program files (x86)/atollic/truestudio for stm32 9.0.1/armtools/bin/../lib/gcc/arm-atollic-eabi/6.3.1/../../../../arm-atollic-eabi/lib/armv7e-m/fpu\libc_nano.a(lib_a-init.o)
-                0x080031b8                __libc_init_array
- .text.memset   0x08003200       0x10 c:/program files (x86)/atollic/truestudio for stm32 9.0.1/armtools/bin/../lib/gcc/arm-atollic-eabi/6.3.1/../../../../arm-atollic-eabi/lib/armv7e-m/fpu\libc_nano.a(lib_a-memset.o)
-                0x08003200                memset
+                0x08003610       0x48 c:/program files (x86)/atollic/truestudio for stm32 9.0.1/armtools/bin/../lib/gcc/arm-atollic-eabi/6.3.1/../../../../arm-atollic-eabi/lib/armv7e-m/fpu\libc_nano.a(lib_a-init.o)
+                0x08003610                __libc_init_array
  *(.glue_7)
- .glue_7        0x08003210        0x0 linker stubs
+ .glue_7        0x08003658        0x0 linker stubs
  *(.glue_7t)
- .glue_7t       0x08003210        0x0 linker stubs
+ .glue_7t       0x08003658        0x0 linker stubs
  *(.eh_frame)
- .eh_frame      0x08003210        0x0 c:/program files (x86)/atollic/truestudio for stm32 9.0.1/armtools/bin/../lib/gcc/arm-atollic-eabi/6.3.1/armv7e-m/fpu/crtbegin.o
+ .eh_frame      0x08003658        0x0 c:/program files (x86)/atollic/truestudio for stm32 9.0.1/armtools/bin/../lib/gcc/arm-atollic-eabi/6.3.1/armv7e-m/fpu/crtbegin.o
  *(.init)
- .init          0x08003210        0x4 c:/program files (x86)/atollic/truestudio for stm32 9.0.1/armtools/bin/../lib/gcc/arm-atollic-eabi/6.3.1/armv7e-m/fpu/crti.o
-                0x08003210                _init
- .init          0x08003214        0x8 c:/program files (x86)/atollic/truestudio for stm32 9.0.1/armtools/bin/../lib/gcc/arm-atollic-eabi/6.3.1/armv7e-m/fpu/crtn.o
+ .init          0x08003658        0x4 c:/program files (x86)/atollic/truestudio for stm32 9.0.1/armtools/bin/../lib/gcc/arm-atollic-eabi/6.3.1/armv7e-m/fpu/crti.o
+                0x08003658                _init
+ .init          0x0800365c        0x8 c:/program files (x86)/atollic/truestudio for stm32 9.0.1/armtools/bin/../lib/gcc/arm-atollic-eabi/6.3.1/armv7e-m/fpu/crtn.o
  *(.fini)
- .fini          0x0800321c        0x4 c:/program files (x86)/atollic/truestudio for stm32 9.0.1/armtools/bin/../lib/gcc/arm-atollic-eabi/6.3.1/armv7e-m/fpu/crti.o
-                0x0800321c                _fini
- .fini          0x08003220        0x8 c:/program files (x86)/atollic/truestudio for stm32 9.0.1/armtools/bin/../lib/gcc/arm-atollic-eabi/6.3.1/armv7e-m/fpu/crtn.o
-                0x08003228                . = ALIGN (0x4)
-                0x08003228                _etext = .
+ .fini          0x08003664        0x4 c:/program files (x86)/atollic/truestudio for stm32 9.0.1/armtools/bin/../lib/gcc/arm-atollic-eabi/6.3.1/armv7e-m/fpu/crti.o
+                0x08003664                _fini
+ .fini          0x08003668        0x8 c:/program files (x86)/atollic/truestudio for stm32 9.0.1/armtools/bin/../lib/gcc/arm-atollic-eabi/6.3.1/armv7e-m/fpu/crtn.o
+                0x08003670                . = ALIGN (0x4)
+                0x08003670                _etext = .
 
-.vfp11_veneer   0x08003228        0x0
- .vfp11_veneer  0x08003228        0x0 linker stubs
+.vfp11_veneer   0x08003670        0x0
+ .vfp11_veneer  0x08003670        0x0 linker stubs
 
-.v4_bx          0x08003228        0x0
- .v4_bx         0x08003228        0x0 linker stubs
+.v4_bx          0x08003670        0x0
+ .v4_bx         0x08003670        0x0 linker stubs
 
-.iplt           0x08003228        0x0
- .iplt          0x08003228        0x0 c:/program files (x86)/atollic/truestudio for stm32 9.0.1/armtools/bin/../lib/gcc/arm-atollic-eabi/6.3.1/armv7e-m/fpu/crtbegin.o
+.iplt           0x08003670        0x0
+ .iplt          0x08003670        0x0 c:/program files (x86)/atollic/truestudio for stm32 9.0.1/armtools/bin/../lib/gcc/arm-atollic-eabi/6.3.1/armv7e-m/fpu/crtbegin.o
 
-.rodata         0x08003228      0x1d4
-                0x08003228                . = ALIGN (0x4)
+.rodata         0x08003670      0x2d4
+                0x08003670                . = ALIGN (0x4)
  *(.rodata)
  *(.rodata*)
  .rodata.SREG16InstanceMap
-                0x08003228        0x0 Src\Architecture\SREG\custom\sreg_dat.o
-                0x08003228                SREG16InstanceMap
+                0x08003670        0x0 Src\Architecture\SREG\custom\sreg_dat.o
+                0x08003670                SREG16InstanceMap
  .rodata.SREG32InstanceMap
-                0x08003228       0x18 Src\Architecture\SREG\custom\sreg_dat.o
-                0x08003228                SREG32InstanceMap
+                0x08003670       0x18 Src\Architecture\SREG\custom\sreg_dat.o
+                0x08003670                SREG32InstanceMap
  .rodata.SREG8InstanceMap
-                0x08003240       0x15 Src\Architecture\SREG\custom\sreg_dat.o
-                0x08003240                SREG8InstanceMap
- *fill*         0x08003255        0x3 
+                0x08003688       0x15 Src\Architecture\SREG\custom\sreg_dat.o
+                0x08003688                SREG8InstanceMap
+ *fill*         0x0800369d        0x3 
  .rodata.SREGInstanceMap
-                0x08003258       0x24 Src\Architecture\SREG\custom\sreg_dat.o
-                0x08003258                SREGInstanceMap
+                0x080036a0       0x24 Src\Architecture\SREG\custom\sreg_dat.o
+                0x080036a0                SREGInstanceMap
  .rodata.SchedulerInstanceMap
-                0x0800327c       0x18 Src\Architecture\Scheduler\custom\Scheduler_map.o
-                0x0800327c                SchedulerInstanceMap
+                0x080036c4       0x18 Src\Architecture\Scheduler\custom\Scheduler_map.o
+                0x080036c4                SchedulerInstanceMap
  .rodata.FlashInstanceMap
-                0x08003294       0x10 Src\HAL\Flash\custom\Flash_map.o
-                0x08003294                FlashInstanceMap
+                0x080036dc       0x10 Src\HAL\Flash\custom\Flash_map.o
+                0x080036dc                FlashInstanceMap
  .rodata.GPIOInstanceMap
-                0x080032a4       0x90 Src\HAL\GPIO\custom\GPIO_map.o
-                0x080032a4                GPIOInstanceMap
+                0x080036ec       0xf0 Src\HAL\GPIO\custom\GPIO_map.o
+                0x080036ec                GPIOInstanceMap
  .rodata.SystemMap
-                0x08003334       0x54 Src\HAL\System\custom\System_map.o
-                0x08003334                SystemMap
+                0x080037dc       0x54 Src\HAL\System\custom\System_map.o
+                0x080037dc                SystemMap
+ .rodata.SPIInstanceMap
+                0x08003830       0xa0 Src\HAL\spi\custom\spi_map.o
+                0x08003830                SPIInstanceMap
  .rodata.UARTInstanceMap
-                0x08003388       0x2c Src\HAL\uart\custom\UART_map.o
-                0x08003388                UARTInstanceMap
+                0x080038d0       0x2c Src\HAL\uart\custom\UART_map.o
+                0x080038d0                UARTInstanceMap
  .rodata.AHBPrescTable
-                0x080033b4       0x10 libraries\CMSIS\Source\system_stm32l4xx.o
-                0x080033b4                AHBPrescTable
+                0x080038fc       0x10 libraries\CMSIS\Source\system_stm32l4xx.o
+                0x080038fc                AHBPrescTable
  .rodata.APBPrescTable
-                0x080033c4        0x8 libraries\CMSIS\Source\system_stm32l4xx.o
-                0x080033c4                APBPrescTable
+                0x0800390c        0x8 libraries\CMSIS\Source\system_stm32l4xx.o
+                0x0800390c                APBPrescTable
  .rodata.MSIRangeTable
-                0x080033cc       0x30 libraries\CMSIS\Source\system_stm32l4xx.o
-                0x080033cc                MSIRangeTable
-                0x080033fc                . = ALIGN (0x4)
+                0x08003914       0x30 libraries\CMSIS\Source\system_stm32l4xx.o
+                0x08003914                MSIRangeTable
+                0x08003944                . = ALIGN (0x4)
 
 .ARM.extab
  *(.ARM.extab* .gnu.linkonce.armextab.*)
 
-.ARM            0x080033fc        0x8
-                0x080033fc                __exidx_start = .
+.ARM            0x08003944        0x8
+                0x08003944                __exidx_start = .
  *(.ARM.exidx*)
- .ARM.exidx     0x080033fc        0x8 c:/program files (x86)/atollic/truestudio for stm32 9.0.1/armtools/bin/../lib/gcc/arm-atollic-eabi/6.3.1/armv7e-m/fpu\libgcc.a(_udivmoddi4.o)
-                0x08003404                __exidx_end = .
+ .ARM.exidx     0x08003944        0x8 c:/program files (x86)/atollic/truestudio for stm32 9.0.1/armtools/bin/../lib/gcc/arm-atollic-eabi/6.3.1/armv7e-m/fpu\libgcc.a(_udivmoddi4.o)
+                0x0800394c                __exidx_end = .
 
-.rel.dyn        0x08003404        0x0
- .rel.iplt      0x08003404        0x0 c:/program files (x86)/atollic/truestudio for stm32 9.0.1/armtools/bin/../lib/gcc/arm-atollic-eabi/6.3.1/armv7e-m/fpu/crtbegin.o
+.rel.dyn        0x0800394c        0x0
+ .rel.iplt      0x0800394c        0x0 c:/program files (x86)/atollic/truestudio for stm32 9.0.1/armtools/bin/../lib/gcc/arm-atollic-eabi/6.3.1/armv7e-m/fpu/crtbegin.o
 
-.preinit_array  0x08003404        0x0
-                0x08003404                PROVIDE (__preinit_array_start, .)
+.preinit_array  0x0800394c        0x0
+                0x0800394c                PROVIDE (__preinit_array_start, .)
  *(.preinit_array*)
-                0x08003404                PROVIDE (__preinit_array_end, .)
+                0x0800394c                PROVIDE (__preinit_array_end, .)
 
-.init_array     0x08003404        0x4
-                0x08003404                PROVIDE (__init_array_start, .)
+.init_array     0x0800394c        0x4
+                0x0800394c                PROVIDE (__init_array_start, .)
  *(SORT(.init_array.*))
  *(.init_array*)
- .init_array    0x08003404        0x4 c:/program files (x86)/atollic/truestudio for stm32 9.0.1/armtools/bin/../lib/gcc/arm-atollic-eabi/6.3.1/armv7e-m/fpu/crtbegin.o
-                0x08003408                PROVIDE (__init_array_end, .)
+ .init_array    0x0800394c        0x4 c:/program files (x86)/atollic/truestudio for stm32 9.0.1/armtools/bin/../lib/gcc/arm-atollic-eabi/6.3.1/armv7e-m/fpu/crtbegin.o
+                0x08003950                PROVIDE (__init_array_end, .)
 
-.fini_array     0x08003408        0x4
+.fini_array     0x08003950        0x4
                 [!provide]                PROVIDE (__fini_array_start, .)
  *(SORT(.fini_array.*))
  *(.fini_array*)
- .fini_array    0x08003408        0x4 c:/program files (x86)/atollic/truestudio for stm32 9.0.1/armtools/bin/../lib/gcc/arm-atollic-eabi/6.3.1/armv7e-m/fpu/crtbegin.o
+ .fini_array    0x08003950        0x4 c:/program files (x86)/atollic/truestudio for stm32 9.0.1/armtools/bin/../lib/gcc/arm-atollic-eabi/6.3.1/armv7e-m/fpu/crtbegin.o
                 [!provide]                PROVIDE (__fini_array_end, .)
-                0x0800340c                _sidata = LOADADDR (.data)
+                0x08003954                _sidata = LOADADDR (.data)
 
-.data           0x20000000       0x3c load address 0x0800340c
+.data           0x20000000       0x40 load address 0x08003954
                 0x20000000                . = ALIGN (0x4)
                 0x20000000                _sdata = .
  *(.data)
  *(.data*)
  .data.interruptsInstanceMap
-                0x20000000       0x38 Src\HAL\Interrupts\custom\interrupts_map.o
+                0x20000000       0x3c Src\HAL\Interrupts\custom\interrupts_map.o
                 0x20000000                interruptsInstanceMap
  .data.SystemCoreClock
-                0x20000038        0x4 libraries\CMSIS\Source\system_stm32l4xx.o
-                0x20000038                SystemCoreClock
-                0x2000003c                . = ALIGN (0x4)
-                0x2000003c                _edata = .
-                0x08003448                _siram2 = LOADADDR (.ram2)
+                0x2000003c        0x4 libraries\CMSIS\Source\system_stm32l4xx.o
+                0x2000003c                SystemCoreClock
+                0x20000040                . = ALIGN (0x4)
+                0x20000040                _edata = .
+                0x08003994                _siram2 = LOADADDR (.ram2)
 
-.igot.plt       0x2000003c        0x0 load address 0x08003448
- .igot.plt      0x2000003c        0x0 c:/program files (x86)/atollic/truestudio for stm32 9.0.1/armtools/bin/../lib/gcc/arm-atollic-eabi/6.3.1/armv7e-m/fpu/crtbegin.o
+.igot.plt       0x20000040        0x0 load address 0x08003994
+ .igot.plt      0x20000040        0x0 c:/program files (x86)/atollic/truestudio for stm32 9.0.1/armtools/bin/../lib/gcc/arm-atollic-eabi/6.3.1/armv7e-m/fpu/crtbegin.o
 
-.ram2           0x10000000        0x0 load address 0x08003448
+.ram2           0x10000000        0x0 load address 0x08003994
                 0x10000000                . = ALIGN (0x4)
                 0x10000000                _sram2 = .
  *(.ram2)
@@ -2222,66 +2327,74 @@ LOAD c:/program files (x86)/atollic/truestudio for stm32 9.0.1/armtools/bin/../l
                 0x10000000                _eram2 = .
                 0x10000000                . = ALIGN (0x4)
 
-.bss            0x2000003c      0x2e0
-                0x2000003c                _sbss = .
-                0x2000003c                __bss_start__ = _sbss
+.bss            0x20000040      0x5c0
+                0x20000040                _sbss = .
+                0x20000040                __bss_start__ = _sbss
  *(.bss)
- .bss           0x2000003c       0x1c c:/program files (x86)/atollic/truestudio for stm32 9.0.1/armtools/bin/../lib/gcc/arm-atollic-eabi/6.3.1/armv7e-m/fpu/crtbegin.o
+ .bss           0x20000040       0x1c c:/program files (x86)/atollic/truestudio for stm32 9.0.1/armtools/bin/../lib/gcc/arm-atollic-eabi/6.3.1/armv7e-m/fpu/crtbegin.o
  *(.bss*)
  .bss.SwTimersArray
-                0x20000058       0x10 Src\Drivers\SwTimer\base\SwTimer.o
- .bss.timeMs    0x20000068        0x4 Src\Drivers\SwTimer\base\SwTimer.o
+                0x2000005c       0x10 Src\Drivers\SwTimer\base\SwTimer.o
+ .bss.timeMs    0x2000006c        0x4 Src\Drivers\SwTimer\base\SwTimer.o
  .bss.countIrqAllDisable
-                0x2000006c        0x2 Src\HAL\Interrupts\base\interrupts.o
+                0x20000070        0x2 Src\HAL\Interrupts\base\interrupts.o
  .bss.powerUpReason
-                0x2000006e        0x1 Src\HAL\System\base\System.o
-                0x2000006e                powerUpReason
+                0x20000072        0x1 Src\HAL\System\base\System.o
+                0x20000072                powerUpReason
  .bss.uartPortIrq
-                0x2000006f        0x1 Src\HAL\uart\base\uart.o
+                0x20000073        0x1 Src\HAL\uart\base\uart.o
  *(COMMON)
- COMMON         0x20000070        0x1 Src\Applications\System_App\System_app.o
-                0x20000070                requestPowerState
- *fill*         0x20000071        0x3 
- COMMON         0x20000074       0x10 Src\Architecture\SREG\base\sreg.o
-                0x20000074                SREG8Context
-                0x2000007c                SREG32Context
-                0x20000084                SREG16Context
- COMMON         0x20000084       0x3c Src\Architecture\Scheduler\base\Scheduler.o
-                0x20000084                ticks_per_us
-                0x20000088                schedulerContext
-                0x200000b8                ptrTask
-                0x200000bc                schedulerProcess
- COMMON         0x200000c0        0x8 Src\Drivers\pipeDevice\base\PipeDevice.o
-                0x200000c0                pipes
- COMMON         0x200000c8       0x30 Src\HAL\Flash\base\Flash.o
-                0x200000c8                FlashContext
- COMMON         0x200000f8       0x99 Src\HAL\uart\base\uart.o
-                0x200000f8                uartCBuffers
-                0x20000110                uartStatus
-                0x20000114                uartBufferSize
-                0x20000118                ST_UartHandlers
-                0x20000190                byteRxBuffer
- *fill*         0x20000191        0x3 
- COMMON         0x20000194      0x164 Src\HAL\uart\custom\UART_map.o
-                0x20000194                uart2RxBuffer
-                0x200001f8                uart2TxBuffer
- COMMON         0x200002f8        0x4 libraries\ST_HAL\Src\stm32l4xx_hal.o
-                0x200002f8                uwTick
- COMMON         0x200002fc       0x20 libraries\ST_HAL\Src\stm32l4xx_hal_flash.o
-                0x200002fc                pFlash
-                0x2000031c                . = ALIGN (0x4)
-                0x2000031c                _ebss = .
-                0x2000031c                __bss_end__ = _ebss
+ COMMON         0x20000074        0x1 Src\Applications\System_App\System_app.o
+                0x20000074                requestPowerState
+ *fill*         0x20000075        0x3 
+ COMMON         0x20000078       0x10 Src\Architecture\SREG\base\sreg.o
+                0x20000078                SREG8Context
+                0x20000080                SREG32Context
+                0x20000088                SREG16Context
+ COMMON         0x20000088       0x3c Src\Architecture\Scheduler\base\Scheduler.o
+                0x20000088                ticks_per_us
+                0x2000008c                schedulerContext
+                0x200000bc                ptrTask
+                0x200000c0                schedulerProcess
+ COMMON         0x200000c4        0x8 Src\Drivers\pipeDevice\base\PipeDevice.o
+                0x200000c4                pipes
+ COMMON         0x200000cc       0x30 Src\HAL\Flash\base\Flash.o
+                0x200000cc                FlashContext
+ COMMON         0x200000fc      0x10c Src\HAL\spi\base\spi.o
+                0x200000fc                ST_SpiHandlers
+                0x200001c4                spiCBuffers
+                0x200001f4                halRxSlaveBuffer
+                0x20000200                spiBufferSize
+ COMMON         0x20000208      0x1f4 Src\HAL\spi\custom\spi_map.o
+                0x20000208                spi3WrBuffer
+                0x200002d0                spi3RdBuffer
+                0x20000334                spi1RdBuffer
+                0x20000398                spi1WrBuffer
+ COMMON         0x200003fc       0x99 Src\HAL\uart\base\uart.o
+                0x200003fc                uartCBuffers
+                0x20000414                uartStatus
+                0x20000418                uartBufferSize
+                0x2000041c                ST_UartHandlers
+                0x20000494                byteRxBuffer
+ *fill*         0x20000495        0x3 
+ COMMON         0x20000498      0x164 Src\HAL\uart\custom\UART_map.o
+                0x20000498                uart2RxBuffer
+                0x200004fc                uart2TxBuffer
+ COMMON         0x200005fc        0x4 libraries\ST_HAL\Src\stm32l4xx_hal.o
+                0x200005fc                uwTick
+                0x20000600                . = ALIGN (0x4)
+                0x20000600                _ebss = .
+                0x20000600                __bss_end__ = _ebss
 
 ._user_heap_stack
-                0x2000031c      0x400
-                0x2000031c                . = ALIGN (0x4)
+                0x20000600      0x400
+                0x20000600                . = ALIGN (0x4)
                 [!provide]                PROVIDE (end, .)
                 [!provide]                PROVIDE (_end, .)
-                0x2000031c                . = (. + _Min_Heap_Size)
-                0x2000071c                . = (. + _Min_Stack_Size)
- *fill*         0x2000031c      0x400 
-                0x2000071c                . = ALIGN (0x4)
+                0x20000600                . = (. + _Min_Heap_Size)
+                0x20000a00                . = (. + _Min_Stack_Size)
+ *fill*         0x20000600      0x400 
+                0x20000a00                . = ALIGN (0x4)
 
 .memory_b1_text
  *(.mb1text)
@@ -2338,23 +2451,23 @@ LOAD c:/program files (x86)/atollic/truestudio for stm32 9.0.1/armtools/bin/../l
  .ARM.attributes
                 0x0000041f       0x39 Src\HAL\System\custom\System_map.o
  .ARM.attributes
-                0x00000458       0x39 Src\HAL\uart\base\uart.o
+                0x00000458       0x39 Src\HAL\spi\base\spi.o
  .ARM.attributes
-                0x00000491       0x39 Src\HAL\uart\custom\UART_map.o
+                0x00000491       0x39 Src\HAL\spi\custom\spi_map.o
  .ARM.attributes
-                0x000004ca       0x21 libraries\CMSIS\Source\startup_stm32l452xx.o
+                0x000004ca       0x39 Src\HAL\uart\base\uart.o
  .ARM.attributes
-                0x000004eb       0x39 libraries\CMSIS\Source\system_stm32l4xx.o
+                0x00000503       0x39 Src\HAL\uart\custom\UART_map.o
  .ARM.attributes
-                0x00000524       0x39 libraries\ST_HAL\Src\stm32l4xx_hal.o
+                0x0000053c       0x21 libraries\CMSIS\Source\startup_stm32l452xx.o
  .ARM.attributes
-                0x0000055d       0x39 libraries\ST_HAL\Src\stm32l4xx_hal_cortex.o
+                0x0000055d       0x39 libraries\CMSIS\Source\system_stm32l4xx.o
  .ARM.attributes
-                0x00000596       0x39 libraries\ST_HAL\Src\stm32l4xx_hal_dma.o
+                0x00000596       0x39 libraries\ST_HAL\Src\stm32l4xx_hal.o
  .ARM.attributes
-                0x000005cf       0x39 libraries\ST_HAL\Src\stm32l4xx_hal_flash.o
+                0x000005cf       0x39 libraries\ST_HAL\Src\stm32l4xx_hal_cortex.o
  .ARM.attributes
-                0x00000608       0x39 libraries\ST_HAL\Src\stm32l4xx_hal_flash_ex.o
+                0x00000608       0x39 libraries\ST_HAL\Src\stm32l4xx_hal_dma.o
  .ARM.attributes
                 0x00000641       0x39 libraries\ST_HAL\Src\stm32l4xx_hal_gpio.o
  .ARM.attributes
@@ -2362,92 +2475,94 @@ LOAD c:/program files (x86)/atollic/truestudio for stm32 9.0.1/armtools/bin/../l
  .ARM.attributes
                 0x000006b3       0x39 libraries\ST_HAL\Src\stm32l4xx_hal_rcc.o
  .ARM.attributes
-                0x000006ec       0x39 libraries\ST_HAL\Src\stm32l4xx_hal_uart.o
+                0x000006ec       0x39 libraries\ST_HAL\Src\stm32l4xx_hal_spi.o
  .ARM.attributes
-                0x00000725       0x39 libraries\ST_HAL\Src\stm32l4xx_hal_uart_ex.o
+                0x00000725       0x39 libraries\ST_HAL\Src\stm32l4xx_hal_uart.o
  .ARM.attributes
-                0x0000075e       0x34 c:/program files (x86)/atollic/truestudio for stm32 9.0.1/armtools/bin/../lib/gcc/arm-atollic-eabi/6.3.1/../../../../arm-atollic-eabi/lib/armv7e-m/fpu\libc_nano.a(lib_a-init.o)
+                0x0000075e       0x39 libraries\ST_HAL\Src\stm32l4xx_hal_uart_ex.o
  .ARM.attributes
-                0x00000792       0x34 c:/program files (x86)/atollic/truestudio for stm32 9.0.1/armtools/bin/../lib/gcc/arm-atollic-eabi/6.3.1/../../../../arm-atollic-eabi/lib/armv7e-m/fpu\libc_nano.a(lib_a-memset.o)
+                0x00000797       0x34 c:/program files (x86)/atollic/truestudio for stm32 9.0.1/armtools/bin/../lib/gcc/arm-atollic-eabi/6.3.1/../../../../arm-atollic-eabi/lib/armv7e-m/fpu\libc_nano.a(lib_a-init.o)
  .ARM.attributes
-                0x000007c6       0x22 c:/program files (x86)/atollic/truestudio for stm32 9.0.1/armtools/bin/../lib/gcc/arm-atollic-eabi/6.3.1/armv7e-m/fpu\libgcc.a(_aeabi_uldivmod.o)
+                0x000007cb       0x22 c:/program files (x86)/atollic/truestudio for stm32 9.0.1/armtools/bin/../lib/gcc/arm-atollic-eabi/6.3.1/armv7e-m/fpu\libgcc.a(_aeabi_uldivmod.o)
  .ARM.attributes
-                0x000007e8       0x34 c:/program files (x86)/atollic/truestudio for stm32 9.0.1/armtools/bin/../lib/gcc/arm-atollic-eabi/6.3.1/armv7e-m/fpu\libgcc.a(_udivmoddi4.o)
+                0x000007ed       0x34 c:/program files (x86)/atollic/truestudio for stm32 9.0.1/armtools/bin/../lib/gcc/arm-atollic-eabi/6.3.1/armv7e-m/fpu\libgcc.a(_udivmoddi4.o)
  .ARM.attributes
-                0x0000081c       0x22 c:/program files (x86)/atollic/truestudio for stm32 9.0.1/armtools/bin/../lib/gcc/arm-atollic-eabi/6.3.1/armv7e-m/fpu\libgcc.a(_dvmd_tls.o)
+                0x00000821       0x22 c:/program files (x86)/atollic/truestudio for stm32 9.0.1/armtools/bin/../lib/gcc/arm-atollic-eabi/6.3.1/armv7e-m/fpu\libgcc.a(_dvmd_tls.o)
  .ARM.attributes
-                0x0000083e       0x22 c:/program files (x86)/atollic/truestudio for stm32 9.0.1/armtools/bin/../lib/gcc/arm-atollic-eabi/6.3.1/armv7e-m/fpu/crtn.o
+                0x00000843       0x22 c:/program files (x86)/atollic/truestudio for stm32 9.0.1/armtools/bin/../lib/gcc/arm-atollic-eabi/6.3.1/armv7e-m/fpu/crtn.o
 OUTPUT(L4_Example_Project.elf elf32-littlearm)
 
-.debug_info     0x00000000    0x20d12
- .debug_info    0x00000000      0xa67 Src\Applications\Main\main.o
- .debug_info    0x00000a67      0xe28 Src\Applications\System_App\System_app.o
- .debug_info    0x0000188f     0x10d1 Src\Architecture\SREG\base\sreg.o
- .debug_info    0x00002960      0xc5b Src\Architecture\SREG\custom\sreg_dat.o
- .debug_info    0x000035bb      0xe53 Src\Architecture\Scheduler\base\Scheduler.o
- .debug_info    0x0000440e      0xa28 Src\Architecture\Scheduler\custom\Scheduler_map.o
- .debug_info    0x00004e36      0xcc9 Src\Architecture\tools\basic\base\CircularBuffer.o
- .debug_info    0x00005aff      0xf88 Src\Drivers\SwTimer\base\SwTimer.o
- .debug_info    0x00006a87      0xe54 Src\Drivers\pipeDevice\base\PipeDevice.o
- .debug_info    0x000078db     0x12eb Src\HAL\Flash\base\Flash.o
- .debug_info    0x00008bc6      0x9c3 Src\HAL\Flash\custom\Flash_map.o
- .debug_info    0x00009589     0x10c6 Src\HAL\GPIO\base\GPIO.o
- .debug_info    0x0000a64f      0xb2b Src\HAL\GPIO\custom\GPIO_map.o
- .debug_info    0x0000b17a     0x1363 Src\HAL\Interrupts\base\interrupts.o
- .debug_info    0x0000c4dd      0xffb Src\HAL\Interrupts\custom\interrupts_it.o
- .debug_info    0x0000d4d8     0x11d2 Src\HAL\Interrupts\custom\interrupts_map.o
- .debug_info    0x0000e6aa     0x17a5 Src\HAL\System\base\System.o
- .debug_info    0x0000fe4f      0xadc Src\HAL\System\custom\System_map.o
- .debug_info    0x0001092b     0x1ec8 Src\HAL\uart\base\uart.o
- .debug_info    0x000127f3      0xc25 Src\HAL\uart\custom\UART_map.o
- .debug_info    0x00013418       0x99 libraries\CMSIS\Source\startup_stm32l452xx.o
- .debug_info    0x000134b1      0xde8 libraries\CMSIS\Source\system_stm32l4xx.o
- .debug_info    0x00014299     0x12d0 libraries\ST_HAL\Src\stm32l4xx_hal.o
- .debug_info    0x00015569     0x1726 libraries\ST_HAL\Src\stm32l4xx_hal_cortex.o
- .debug_info    0x00016c8f     0x1060 libraries\ST_HAL\Src\stm32l4xx_hal_dma.o
- .debug_info    0x00017cef      0xfb0 libraries\ST_HAL\Src\stm32l4xx_hal_flash.o
- .debug_info    0x00018c9f     0x11e9 libraries\ST_HAL\Src\stm32l4xx_hal_flash_ex.o
- .debug_info    0x00019e88     0x1082 libraries\ST_HAL\Src\stm32l4xx_hal_gpio.o
- .debug_info    0x0001af0a     0x124f libraries\ST_HAL\Src\stm32l4xx_hal_pwr_ex.o
- .debug_info    0x0001c159     0x15b0 libraries\ST_HAL\Src\stm32l4xx_hal_rcc.o
- .debug_info    0x0001d709     0x242c libraries\ST_HAL\Src\stm32l4xx_hal_uart.o
- .debug_info    0x0001fb35     0x11dd libraries\ST_HAL\Src\stm32l4xx_hal_uart_ex.o
+.debug_info     0x00000000    0x23d93
+ .debug_info    0x00000000      0xa8f Src\Applications\Main\main.o
+ .debug_info    0x00000a8f      0xcb3 Src\Applications\System_App\System_app.o
+ .debug_info    0x00001742     0x10d1 Src\Architecture\SREG\base\sreg.o
+ .debug_info    0x00002813      0xc5b Src\Architecture\SREG\custom\sreg_dat.o
+ .debug_info    0x0000346e      0xe53 Src\Architecture\Scheduler\base\Scheduler.o
+ .debug_info    0x000042c1      0xa28 Src\Architecture\Scheduler\custom\Scheduler_map.o
+ .debug_info    0x00004ce9      0xcc9 Src\Architecture\tools\basic\base\CircularBuffer.o
+ .debug_info    0x000059b2      0xf88 Src\Drivers\SwTimer\base\SwTimer.o
+ .debug_info    0x0000693a      0xe54 Src\Drivers\pipeDevice\base\PipeDevice.o
+ .debug_info    0x0000778e     0x12eb Src\HAL\Flash\base\Flash.o
+ .debug_info    0x00008a79      0x9c3 Src\HAL\Flash\custom\Flash_map.o
+ .debug_info    0x0000943c     0x10ea Src\HAL\GPIO\base\GPIO.o
+ .debug_info    0x0000a526      0xb4f Src\HAL\GPIO\custom\GPIO_map.o
+ .debug_info    0x0000b075     0x1369 Src\HAL\Interrupts\base\interrupts.o
+ .debug_info    0x0000c3de     0x1026 Src\HAL\Interrupts\custom\interrupts_it.o
+ .debug_info    0x0000d404     0x1245 Src\HAL\Interrupts\custom\interrupts_map.o
+ .debug_info    0x0000e649     0x17a5 Src\HAL\System\base\System.o
+ .debug_info    0x0000fdee      0xadc Src\HAL\System\custom\System_map.o
+ .debug_info    0x000108ca     0x2043 Src\HAL\spi\base\spi.o
+ .debug_info    0x0001290d      0xc9d Src\HAL\spi\custom\spi_map.o
+ .debug_info    0x000135aa     0x1ec8 Src\HAL\uart\base\uart.o
+ .debug_info    0x00015472      0xc25 Src\HAL\uart\custom\UART_map.o
+ .debug_info    0x00016097       0x8e libraries\CMSIS\Source\startup_stm32l452xx.o
+ .debug_info    0x00016125      0xde8 libraries\CMSIS\Source\system_stm32l4xx.o
+ .debug_info    0x00016f0d     0x12d0 libraries\ST_HAL\Src\stm32l4xx_hal.o
+ .debug_info    0x000181dd     0x1726 libraries\ST_HAL\Src\stm32l4xx_hal_cortex.o
+ .debug_info    0x00019903     0x1060 libraries\ST_HAL\Src\stm32l4xx_hal_dma.o
+ .debug_info    0x0001a963     0x1082 libraries\ST_HAL\Src\stm32l4xx_hal_gpio.o
+ .debug_info    0x0001b9e5     0x124f libraries\ST_HAL\Src\stm32l4xx_hal_pwr_ex.o
+ .debug_info    0x0001cc34     0x15b0 libraries\ST_HAL\Src\stm32l4xx_hal_rcc.o
+ .debug_info    0x0001e1e4     0x25a6 libraries\ST_HAL\Src\stm32l4xx_hal_spi.o
+ .debug_info    0x0002078a     0x242c libraries\ST_HAL\Src\stm32l4xx_hal_uart.o
+ .debug_info    0x00022bb6     0x11dd libraries\ST_HAL\Src\stm32l4xx_hal_uart_ex.o
 
-.debug_abbrev   0x00000000     0x4c7b
+.debug_abbrev   0x00000000     0x4e26
  .debug_abbrev  0x00000000      0x1b0 Src\Applications\Main\main.o
- .debug_abbrev  0x000001b0      0x24c Src\Applications\System_App\System_app.o
- .debug_abbrev  0x000003fc      0x2a8 Src\Architecture\SREG\base\sreg.o
- .debug_abbrev  0x000006a4      0x19f Src\Architecture\SREG\custom\sreg_dat.o
- .debug_abbrev  0x00000843      0x2f0 Src\Architecture\Scheduler\base\Scheduler.o
- .debug_abbrev  0x00000b33      0x19c Src\Architecture\Scheduler\custom\Scheduler_map.o
- .debug_abbrev  0x00000ccf      0x207 Src\Architecture\tools\basic\base\CircularBuffer.o
- .debug_abbrev  0x00000ed6      0x2c1 Src\Drivers\SwTimer\base\SwTimer.o
- .debug_abbrev  0x00001197      0x2a9 Src\Drivers\pipeDevice\base\PipeDevice.o
- .debug_abbrev  0x00001440      0x35b Src\HAL\Flash\base\Flash.o
- .debug_abbrev  0x0000179b      0x187 Src\HAL\Flash\custom\Flash_map.o
- .debug_abbrev  0x00001922      0x25c Src\HAL\GPIO\base\GPIO.o
- .debug_abbrev  0x00001b7e      0x194 Src\HAL\GPIO\custom\GPIO_map.o
- .debug_abbrev  0x00001d12      0x2af Src\HAL\Interrupts\base\interrupts.o
- .debug_abbrev  0x00001fc1      0x23a Src\HAL\Interrupts\custom\interrupts_it.o
- .debug_abbrev  0x000021fb      0x231 Src\HAL\Interrupts\custom\interrupts_map.o
- .debug_abbrev  0x0000242c      0x3b4 Src\HAL\System\base\System.o
- .debug_abbrev  0x000027e0      0x16d Src\HAL\System\custom\System_map.o
- .debug_abbrev  0x0000294d      0x347 Src\HAL\uart\base\uart.o
- .debug_abbrev  0x00002c94      0x1ac Src\HAL\uart\custom\UART_map.o
- .debug_abbrev  0x00002e40       0x12 libraries\CMSIS\Source\startup_stm32l452xx.o
- .debug_abbrev  0x00002e52      0x1eb libraries\CMSIS\Source\system_stm32l4xx.o
- .debug_abbrev  0x0000303d      0x2b1 libraries\ST_HAL\Src\stm32l4xx_hal.o
- .debug_abbrev  0x000032ee      0x38c libraries\ST_HAL\Src\stm32l4xx_hal_cortex.o
- .debug_abbrev  0x0000367a      0x2a8 libraries\ST_HAL\Src\stm32l4xx_hal_dma.o
- .debug_abbrev  0x00003922      0x302 libraries\ST_HAL\Src\stm32l4xx_hal_flash.o
- .debug_abbrev  0x00003c24      0x340 libraries\ST_HAL\Src\stm32l4xx_hal_flash_ex.o
- .debug_abbrev  0x00003f64      0x26a libraries\ST_HAL\Src\stm32l4xx_hal_gpio.o
- .debug_abbrev  0x000041ce      0x297 libraries\ST_HAL\Src\stm32l4xx_hal_pwr_ex.o
- .debug_abbrev  0x00004465      0x2af libraries\ST_HAL\Src\stm32l4xx_hal_rcc.o
- .debug_abbrev  0x00004714      0x2e4 libraries\ST_HAL\Src\stm32l4xx_hal_uart.o
- .debug_abbrev  0x000049f8      0x283 libraries\ST_HAL\Src\stm32l4xx_hal_uart_ex.o
+ .debug_abbrev  0x000001b0      0x221 Src\Applications\System_App\System_app.o
+ .debug_abbrev  0x000003d1      0x2a8 Src\Architecture\SREG\base\sreg.o
+ .debug_abbrev  0x00000679      0x19f Src\Architecture\SREG\custom\sreg_dat.o
+ .debug_abbrev  0x00000818      0x2f0 Src\Architecture\Scheduler\base\Scheduler.o
+ .debug_abbrev  0x00000b08      0x19c Src\Architecture\Scheduler\custom\Scheduler_map.o
+ .debug_abbrev  0x00000ca4      0x207 Src\Architecture\tools\basic\base\CircularBuffer.o
+ .debug_abbrev  0x00000eab      0x2c1 Src\Drivers\SwTimer\base\SwTimer.o
+ .debug_abbrev  0x0000116c      0x2a9 Src\Drivers\pipeDevice\base\PipeDevice.o
+ .debug_abbrev  0x00001415      0x35b Src\HAL\Flash\base\Flash.o
+ .debug_abbrev  0x00001770      0x187 Src\HAL\Flash\custom\Flash_map.o
+ .debug_abbrev  0x000018f7      0x25c Src\HAL\GPIO\base\GPIO.o
+ .debug_abbrev  0x00001b53      0x194 Src\HAL\GPIO\custom\GPIO_map.o
+ .debug_abbrev  0x00001ce7      0x2af Src\HAL\Interrupts\base\interrupts.o
+ .debug_abbrev  0x00001f96      0x23a Src\HAL\Interrupts\custom\interrupts_it.o
+ .debug_abbrev  0x000021d0      0x231 Src\HAL\Interrupts\custom\interrupts_map.o
+ .debug_abbrev  0x00002401      0x3b4 Src\HAL\System\base\System.o
+ .debug_abbrev  0x000027b5      0x16d Src\HAL\System\custom\System_map.o
+ .debug_abbrev  0x00002922      0x3c8 Src\HAL\spi\base\spi.o
+ .debug_abbrev  0x00002cea      0x1ac Src\HAL\spi\custom\spi_map.o
+ .debug_abbrev  0x00002e96      0x347 Src\HAL\uart\base\uart.o
+ .debug_abbrev  0x000031dd      0x1ac Src\HAL\uart\custom\UART_map.o
+ .debug_abbrev  0x00003389       0x12 libraries\CMSIS\Source\startup_stm32l452xx.o
+ .debug_abbrev  0x0000339b      0x1eb libraries\CMSIS\Source\system_stm32l4xx.o
+ .debug_abbrev  0x00003586      0x2b1 libraries\ST_HAL\Src\stm32l4xx_hal.o
+ .debug_abbrev  0x00003837      0x38c libraries\ST_HAL\Src\stm32l4xx_hal_cortex.o
+ .debug_abbrev  0x00003bc3      0x2a8 libraries\ST_HAL\Src\stm32l4xx_hal_dma.o
+ .debug_abbrev  0x00003e6b      0x26a libraries\ST_HAL\Src\stm32l4xx_hal_gpio.o
+ .debug_abbrev  0x000040d5      0x297 libraries\ST_HAL\Src\stm32l4xx_hal_pwr_ex.o
+ .debug_abbrev  0x0000436c      0x2af libraries\ST_HAL\Src\stm32l4xx_hal_rcc.o
+ .debug_abbrev  0x0000461b      0x2a4 libraries\ST_HAL\Src\stm32l4xx_hal_spi.o
+ .debug_abbrev  0x000048bf      0x2e4 libraries\ST_HAL\Src\stm32l4xx_hal_uart.o
+ .debug_abbrev  0x00004ba3      0x283 libraries\ST_HAL\Src\stm32l4xx_hal_uart_ex.o
 
-.debug_aranges  0x00000000      0xf50
+.debug_aranges  0x00000000     0x10e8
  .debug_aranges
                 0x00000000       0x20 Src\Applications\Main\main.o
  .debug_aranges
@@ -2477,43 +2592,45 @@ OUTPUT(L4_Example_Project.elf elf32-littlearm)
  .debug_aranges
                 0x00000460       0x60 Src\HAL\Interrupts\base\interrupts.o
  .debug_aranges
-                0x000004c0       0xc0 Src\HAL\Interrupts\custom\interrupts_it.o
+                0x000004c0       0xc8 Src\HAL\Interrupts\custom\interrupts_it.o
  .debug_aranges
-                0x00000580       0x58 Src\HAL\Interrupts\custom\interrupts_map.o
+                0x00000588       0x60 Src\HAL\Interrupts\custom\interrupts_map.o
  .debug_aranges
-                0x000005d8       0xa8 Src\HAL\System\base\System.o
+                0x000005e8       0xa8 Src\HAL\System\base\System.o
  .debug_aranges
-                0x00000680       0x18 Src\HAL\System\custom\System_map.o
+                0x00000690       0x18 Src\HAL\System\custom\System_map.o
  .debug_aranges
-                0x00000698       0xa8 Src\HAL\uart\base\uart.o
+                0x000006a8       0xb8 Src\HAL\spi\base\spi.o
  .debug_aranges
-                0x00000740       0x18 Src\HAL\uart\custom\UART_map.o
+                0x00000760       0x18 Src\HAL\spi\custom\spi_map.o
  .debug_aranges
-                0x00000758       0x28 libraries\CMSIS\Source\startup_stm32l452xx.o
+                0x00000778       0xa8 Src\HAL\uart\base\uart.o
  .debug_aranges
-                0x00000780       0x28 libraries\CMSIS\Source\system_stm32l4xx.o
+                0x00000820       0x18 Src\HAL\uart\custom\UART_map.o
  .debug_aranges
-                0x000007a8      0x118 libraries\ST_HAL\Src\stm32l4xx_hal.o
+                0x00000838       0x28 libraries\CMSIS\Source\startup_stm32l452xx.o
  .debug_aranges
-                0x000008c0       0xa8 libraries\ST_HAL\Src\stm32l4xx_hal_cortex.o
+                0x00000860       0x28 libraries\CMSIS\Source\system_stm32l4xx.o
  .debug_aranges
-                0x00000968       0x80 libraries\ST_HAL\Src\stm32l4xx_hal_dma.o
+                0x00000888      0x118 libraries\ST_HAL\Src\stm32l4xx_hal.o
  .debug_aranges
-                0x000009e8       0x90 libraries\ST_HAL\Src\stm32l4xx_hal_flash.o
+                0x000009a0       0xa8 libraries\ST_HAL\Src\stm32l4xx_hal_cortex.o
  .debug_aranges
-                0x00000a78       0x90 libraries\ST_HAL\Src\stm32l4xx_hal_flash_ex.o
+                0x00000a48       0x80 libraries\ST_HAL\Src\stm32l4xx_hal_dma.o
  .debug_aranges
-                0x00000b08       0x58 libraries\ST_HAL\Src\stm32l4xx_hal_gpio.o
+                0x00000ac8       0x58 libraries\ST_HAL\Src\stm32l4xx_hal_gpio.o
  .debug_aranges
-                0x00000b60      0x120 libraries\ST_HAL\Src\stm32l4xx_hal_pwr_ex.o
+                0x00000b20      0x120 libraries\ST_HAL\Src\stm32l4xx_hal_pwr_ex.o
  .debug_aranges
-                0x00000c80       0x88 libraries\ST_HAL\Src\stm32l4xx_hal_rcc.o
+                0x00000c40       0x88 libraries\ST_HAL\Src\stm32l4xx_hal_rcc.o
  .debug_aranges
-                0x00000d08      0x1f8 libraries\ST_HAL\Src\stm32l4xx_hal_uart.o
+                0x00000cc8      0x1d8 libraries\ST_HAL\Src\stm32l4xx_hal_spi.o
  .debug_aranges
-                0x00000f00       0x50 libraries\ST_HAL\Src\stm32l4xx_hal_uart_ex.o
+                0x00000ea0      0x1f8 libraries\ST_HAL\Src\stm32l4xx_hal_uart.o
+ .debug_aranges
+                0x00001098       0x50 libraries\ST_HAL\Src\stm32l4xx_hal_uart_ex.o
 
-.debug_ranges   0x00000000      0xe00
+.debug_ranges   0x00000000      0xf98
  .debug_ranges  0x00000000       0x10 Src\Applications\Main\main.o
  .debug_ranges  0x00000010       0x30 Src\Applications\System_App\System_app.o
  .debug_ranges  0x00000040       0x60 Src\Architecture\SREG\base\sreg.o
@@ -2524,120 +2641,123 @@ OUTPUT(L4_Example_Project.elf elf32-littlearm)
  .debug_ranges  0x00000280       0xa8 Src\HAL\Flash\base\Flash.o
  .debug_ranges  0x00000328       0x48 Src\HAL\GPIO\base\GPIO.o
  .debug_ranges  0x00000370       0x50 Src\HAL\Interrupts\base\interrupts.o
- .debug_ranges  0x000003c0       0xb0 Src\HAL\Interrupts\custom\interrupts_it.o
- .debug_ranges  0x00000470       0x48 Src\HAL\Interrupts\custom\interrupts_map.o
- .debug_ranges  0x000004b8       0xf8 Src\HAL\System\base\System.o
- .debug_ranges  0x000005b0       0x98 Src\HAL\uart\base\uart.o
- .debug_ranges  0x00000648       0x20 libraries\CMSIS\Source\startup_stm32l452xx.o
- .debug_ranges  0x00000668       0x18 libraries\CMSIS\Source\system_stm32l4xx.o
- .debug_ranges  0x00000680      0x108 libraries\ST_HAL\Src\stm32l4xx_hal.o
- .debug_ranges  0x00000788       0xf8 libraries\ST_HAL\Src\stm32l4xx_hal_cortex.o
- .debug_ranges  0x00000880       0x70 libraries\ST_HAL\Src\stm32l4xx_hal_dma.o
- .debug_ranges  0x000008f0       0x80 libraries\ST_HAL\Src\stm32l4xx_hal_flash.o
- .debug_ranges  0x00000970       0x80 libraries\ST_HAL\Src\stm32l4xx_hal_flash_ex.o
- .debug_ranges  0x000009f0       0x48 libraries\ST_HAL\Src\stm32l4xx_hal_gpio.o
- .debug_ranges  0x00000a38      0x110 libraries\ST_HAL\Src\stm32l4xx_hal_pwr_ex.o
- .debug_ranges  0x00000b48       0x90 libraries\ST_HAL\Src\stm32l4xx_hal_rcc.o
- .debug_ranges  0x00000bd8      0x1e8 libraries\ST_HAL\Src\stm32l4xx_hal_uart.o
- .debug_ranges  0x00000dc0       0x40 libraries\ST_HAL\Src\stm32l4xx_hal_uart_ex.o
+ .debug_ranges  0x000003c0       0xb8 Src\HAL\Interrupts\custom\interrupts_it.o
+ .debug_ranges  0x00000478       0x50 Src\HAL\Interrupts\custom\interrupts_map.o
+ .debug_ranges  0x000004c8       0xf8 Src\HAL\System\base\System.o
+ .debug_ranges  0x000005c0       0xc0 Src\HAL\spi\base\spi.o
+ .debug_ranges  0x00000680       0x98 Src\HAL\uart\base\uart.o
+ .debug_ranges  0x00000718       0x20 libraries\CMSIS\Source\startup_stm32l452xx.o
+ .debug_ranges  0x00000738       0x18 libraries\CMSIS\Source\system_stm32l4xx.o
+ .debug_ranges  0x00000750      0x108 libraries\ST_HAL\Src\stm32l4xx_hal.o
+ .debug_ranges  0x00000858       0xf8 libraries\ST_HAL\Src\stm32l4xx_hal_cortex.o
+ .debug_ranges  0x00000950       0x70 libraries\ST_HAL\Src\stm32l4xx_hal_dma.o
+ .debug_ranges  0x000009c0       0x48 libraries\ST_HAL\Src\stm32l4xx_hal_gpio.o
+ .debug_ranges  0x00000a08      0x110 libraries\ST_HAL\Src\stm32l4xx_hal_pwr_ex.o
+ .debug_ranges  0x00000b18       0x90 libraries\ST_HAL\Src\stm32l4xx_hal_rcc.o
+ .debug_ranges  0x00000ba8      0x1c8 libraries\ST_HAL\Src\stm32l4xx_hal_spi.o
+ .debug_ranges  0x00000d70      0x1e8 libraries\ST_HAL\Src\stm32l4xx_hal_uart.o
+ .debug_ranges  0x00000f58       0x40 libraries\ST_HAL\Src\stm32l4xx_hal_uart_ex.o
 
-.debug_line     0x00000000     0xa3f5
- .debug_line    0x00000000      0x565 Src\Applications\Main\main.o
- .debug_line    0x00000565      0x60d Src\Applications\System_App\System_app.o
- .debug_line    0x00000b72      0x4b5 Src\Architecture\SREG\base\sreg.o
- .debug_line    0x00001027      0x3dd Src\Architecture\SREG\custom\sreg_dat.o
- .debug_line    0x00001404      0x587 Src\Architecture\Scheduler\base\Scheduler.o
- .debug_line    0x0000198b      0x397 Src\Architecture\Scheduler\custom\Scheduler_map.o
- .debug_line    0x00001d22      0x40c Src\Architecture\tools\basic\base\CircularBuffer.o
- .debug_line    0x0000212e      0x544 Src\Drivers\SwTimer\base\SwTimer.o
- .debug_line    0x00002672      0x511 Src\Drivers\pipeDevice\base\PipeDevice.o
- .debug_line    0x00002b83      0x5f4 Src\HAL\Flash\base\Flash.o
- .debug_line    0x00003177      0x2f8 Src\HAL\Flash\custom\Flash_map.o
- .debug_line    0x0000346f      0x441 Src\HAL\GPIO\base\GPIO.o
- .debug_line    0x000038b0      0x303 Src\HAL\GPIO\custom\GPIO_map.o
- .debug_line    0x00003bb3      0x605 Src\HAL\Interrupts\base\interrupts.o
- .debug_line    0x000041b8      0x5c2 Src\HAL\Interrupts\custom\interrupts_it.o
- .debug_line    0x0000477a      0x6d0 Src\HAL\Interrupts\custom\interrupts_map.o
- .debug_line    0x00004e4a      0x5fd Src\HAL\System\base\System.o
- .debug_line    0x00005447      0x29a Src\HAL\System\custom\System_map.o
- .debug_line    0x000056e1      0x752 Src\HAL\uart\base\uart.o
- .debug_line    0x00005e33      0x36a Src\HAL\uart\custom\UART_map.o
- .debug_line    0x0000619d       0x8e libraries\CMSIS\Source\startup_stm32l452xx.o
- .debug_line    0x0000622b      0x2b7 libraries\CMSIS\Source\system_stm32l4xx.o
- .debug_line    0x000064e2      0x526 libraries\ST_HAL\Src\stm32l4xx_hal.o
- .debug_line    0x00006a08      0x4e8 libraries\ST_HAL\Src\stm32l4xx_hal_cortex.o
- .debug_line    0x00006ef0      0x55b libraries\ST_HAL\Src\stm32l4xx_hal_dma.o
- .debug_line    0x0000744b      0x5ab libraries\ST_HAL\Src\stm32l4xx_hal_flash.o
- .debug_line    0x000079f6      0x572 libraries\ST_HAL\Src\stm32l4xx_hal_flash_ex.o
- .debug_line    0x00007f68      0x444 libraries\ST_HAL\Src\stm32l4xx_hal_gpio.o
- .debug_line    0x000083ac      0x6cf libraries\ST_HAL\Src\stm32l4xx_hal_pwr_ex.o
- .debug_line    0x00008a7b      0x67e libraries\ST_HAL\Src\stm32l4xx_hal_rcc.o
- .debug_line    0x000090f9      0xeb7 libraries\ST_HAL\Src\stm32l4xx_hal_uart.o
- .debug_line    0x00009fb0      0x445 libraries\ST_HAL\Src\stm32l4xx_hal_uart_ex.o
+.debug_line     0x00000000     0xabfa
+ .debug_line    0x00000000      0x551 Src\Applications\Main\main.o
+ .debug_line    0x00000551      0x476 Src\Applications\System_App\System_app.o
+ .debug_line    0x000009c7      0x489 Src\Architecture\SREG\base\sreg.o
+ .debug_line    0x00000e50      0x3a6 Src\Architecture\SREG\custom\sreg_dat.o
+ .debug_line    0x000011f6      0x550 Src\Architecture\Scheduler\base\Scheduler.o
+ .debug_line    0x00001746      0x36b Src\Architecture\Scheduler\custom\Scheduler_map.o
+ .debug_line    0x00001ab1      0x3eb Src\Architecture\tools\basic\base\CircularBuffer.o
+ .debug_line    0x00001e9c      0x518 Src\Drivers\SwTimer\base\SwTimer.o
+ .debug_line    0x000023b4      0x4e5 Src\Drivers\pipeDevice\base\PipeDevice.o
+ .debug_line    0x00002899      0x5c8 Src\HAL\Flash\base\Flash.o
+ .debug_line    0x00002e61      0x2d7 Src\HAL\Flash\custom\Flash_map.o
+ .debug_line    0x00003138      0x415 Src\HAL\GPIO\base\GPIO.o
+ .debug_line    0x0000354d      0x2e2 Src\HAL\GPIO\custom\GPIO_map.o
+ .debug_line    0x0000382f      0x5b8 Src\HAL\Interrupts\base\interrupts.o
+ .debug_line    0x00003de7      0x591 Src\HAL\Interrupts\custom\interrupts_it.o
+ .debug_line    0x00004378      0x6b8 Src\HAL\Interrupts\custom\interrupts_map.o
+ .debug_line    0x00004a30      0x5dc Src\HAL\System\base\System.o
+ .debug_line    0x0000500c      0x284 Src\HAL\System\custom\System_map.o
+ .debug_line    0x00005290      0x784 Src\HAL\spi\base\spi.o
+ .debug_line    0x00005a14      0x338 Src\HAL\spi\custom\spi_map.o
+ .debug_line    0x00005d4c      0x6fa Src\HAL\uart\base\uart.o
+ .debug_line    0x00006446      0x33e Src\HAL\uart\custom\UART_map.o
+ .debug_line    0x00006784       0x8e libraries\CMSIS\Source\startup_stm32l452xx.o
+ .debug_line    0x00006812      0x2ac libraries\CMSIS\Source\system_stm32l4xx.o
+ .debug_line    0x00006abe      0x510 libraries\ST_HAL\Src\stm32l4xx_hal.o
+ .debug_line    0x00006fce      0x4d2 libraries\ST_HAL\Src\stm32l4xx_hal_cortex.o
+ .debug_line    0x000074a0      0x545 libraries\ST_HAL\Src\stm32l4xx_hal_dma.o
+ .debug_line    0x000079e5      0x42e libraries\ST_HAL\Src\stm32l4xx_hal_gpio.o
+ .debug_line    0x00007e13      0x6b9 libraries\ST_HAL\Src\stm32l4xx_hal_pwr_ex.o
+ .debug_line    0x000084cc      0x668 libraries\ST_HAL\Src\stm32l4xx_hal_rcc.o
+ .debug_line    0x00008b34      0xdf6 libraries\ST_HAL\Src\stm32l4xx_hal_spi.o
+ .debug_line    0x0000992a      0xea1 libraries\ST_HAL\Src\stm32l4xx_hal_uart.o
+ .debug_line    0x0000a7cb      0x42f libraries\ST_HAL\Src\stm32l4xx_hal_uart_ex.o
 
-.debug_str      0x00000000     0x56b1
- .debug_str     0x00000000      0x679 Src\Applications\Main\main.o
-                                0x712 (size before relaxing)
- .debug_str     0x00000679      0x608 Src\Applications\System_App\System_app.o
-                                0xc4f (size before relaxing)
- .debug_str     0x00000c81      0x34d Src\Architecture\SREG\base\sreg.o
-                                0xb93 (size before relaxing)
- .debug_str     0x00000fce       0x35 Src\Architecture\SREG\custom\sreg_dat.o
-                                0xa9b (size before relaxing)
- .debug_str     0x00001003      0x3bf Src\Architecture\Scheduler\base\Scheduler.o
-                                0xa7b (size before relaxing)
- .debug_str     0x000013c2       0x35 Src\Architecture\Scheduler\custom\Scheduler_map.o
-                                0x754 (size before relaxing)
- .debug_str     0x000013f7      0x176 Src\Architecture\tools\basic\base\CircularBuffer.o
-                                0x7e5 (size before relaxing)
- .debug_str     0x0000156d      0x292 Src\Drivers\SwTimer\base\SwTimer.o
-                                0x9b9 (size before relaxing)
- .debug_str     0x000017ff      0x25f Src\Drivers\pipeDevice\base\PipeDevice.o
-                                0x985 (size before relaxing)
- .debug_str     0x00001a5e      0x2f0 Src\HAL\Flash\base\Flash.o
-                                0xaeb (size before relaxing)
- .debug_str     0x00001d4e       0x24 Src\HAL\Flash\custom\Flash_map.o
-                                0x6e7 (size before relaxing)
- .debug_str     0x00001d72      0x2c0 Src\HAL\GPIO\base\GPIO.o
-                                0xabf (size before relaxing)
- .debug_str     0x00002032       0x22 Src\HAL\GPIO\custom\GPIO_map.o
-                                0x7c6 (size before relaxing)
- .debug_str     0x00002054      0x8ca Src\HAL\Interrupts\base\interrupts.o
-                               0x10d6 (size before relaxing)
- .debug_str     0x0000291e      0x22c Src\HAL\Interrupts\custom\interrupts_it.o
-                                0xc01 (size before relaxing)
- .debug_str     0x00002b4a       0xab Src\HAL\Interrupts\custom\interrupts_map.o
-                               0x10a6 (size before relaxing)
- .debug_str     0x00002bf5      0x67c Src\HAL\System\base\System.o
-                                0xf6b (size before relaxing)
- .debug_str     0x00003271       0x26 Src\HAL\System\custom\System_map.o
-                                0x7dd (size before relaxing)
- .debug_str     0x00003297      0x711 Src\HAL\uart\base\uart.o
-                               0x13cb (size before relaxing)
- .debug_str     0x000039a8       0x3e Src\HAL\uart\custom\UART_map.o
-                                0x87c (size before relaxing)
- .debug_str     0x000039e6       0x72 libraries\CMSIS\Source\system_stm32l4xx.o
-                                0x858 (size before relaxing)
- .debug_str     0x00003a58      0x397 libraries\ST_HAL\Src\stm32l4xx_hal.o
-                               0x103c (size before relaxing)
- .debug_str     0x00003def      0x2d9 libraries\ST_HAL\Src\stm32l4xx_hal_cortex.o
-                                0xfed (size before relaxing)
- .debug_str     0x000040c8      0x260 libraries\ST_HAL\Src\stm32l4xx_hal_dma.o
-                                0xaea (size before relaxing)
- .debug_str     0x00004328      0x349 libraries\ST_HAL\Src\stm32l4xx_hal_flash.o
-                                0xaa3 (size before relaxing)
- .debug_str     0x00004671      0x211 libraries\ST_HAL\Src\stm32l4xx_hal_flash_ex.o
-                                0xb26 (size before relaxing)
- .debug_str     0x00004882       0xe2 libraries\ST_HAL\Src\stm32l4xx_hal_gpio.o
-                                0x9ec (size before relaxing)
- .debug_str     0x00004964      0x428 libraries\ST_HAL\Src\stm32l4xx_hal_pwr_ex.o
-                                0xc02 (size before relaxing)
- .debug_str     0x00004d8c      0x182 libraries\ST_HAL\Src\stm32l4xx_hal_rcc.o
-                                0xc5f (size before relaxing)
- .debug_str     0x00004f0e      0x660 libraries\ST_HAL\Src\stm32l4xx_hal_uart.o
-                               0x1446 (size before relaxing)
- .debug_str     0x0000556e      0x143 libraries\ST_HAL\Src\stm32l4xx_hal_uart_ex.o
-                                0xd13 (size before relaxing)
+.debug_str      0x00000000     0x5bdd
+ .debug_str     0x00000000      0x67f Src\Applications\Main\main.o
+                                0x718 (size before relaxing)
+ .debug_str     0x0000067f      0x51f Src\Applications\System_App\System_app.o
+                                0xb4d (size before relaxing)
+ .debug_str     0x00000b9e      0x3fd Src\Architecture\SREG\base\sreg.o
+                                0xb88 (size before relaxing)
+ .debug_str     0x00000f9b       0x35 Src\Architecture\SREG\custom\sreg_dat.o
+                                0xa90 (size before relaxing)
+ .debug_str     0x00000fd0      0x3ca Src\Architecture\Scheduler\base\Scheduler.o
+                                0xa70 (size before relaxing)
+ .debug_str     0x0000139a       0x35 Src\Architecture\Scheduler\custom\Scheduler_map.o
+                                0x749 (size before relaxing)
+ .debug_str     0x000013cf      0x176 Src\Architecture\tools\basic\base\CircularBuffer.o
+                                0x7da (size before relaxing)
+ .debug_str     0x00001545      0x292 Src\Drivers\SwTimer\base\SwTimer.o
+                                0x9ae (size before relaxing)
+ .debug_str     0x000017d7      0x25f Src\Drivers\pipeDevice\base\PipeDevice.o
+                                0x97a (size before relaxing)
+ .debug_str     0x00001a36      0x374 Src\HAL\Flash\base\Flash.o
+                                0xae0 (size before relaxing)
+ .debug_str     0x00001daa       0x24 Src\HAL\Flash\custom\Flash_map.o
+                                0x6dc (size before relaxing)
+ .debug_str     0x00001dce      0x2c0 Src\HAL\GPIO\base\GPIO.o
+                                0xb0c (size before relaxing)
+ .debug_str     0x0000208e       0x22 Src\HAL\GPIO\custom\GPIO_map.o
+                                0x813 (size before relaxing)
+ .debug_str     0x000020b0      0x8d3 Src\HAL\Interrupts\base\interrupts.o
+                               0x10d4 (size before relaxing)
+ .debug_str     0x00002983      0x24e Src\HAL\Interrupts\custom\interrupts_it.o
+                                0xc18 (size before relaxing)
+ .debug_str     0x00002bd1       0xec Src\HAL\Interrupts\custom\interrupts_map.o
+                               0x10f7 (size before relaxing)
+ .debug_str     0x00002cbd      0x67c Src\HAL\System\base\System.o
+                                0xf60 (size before relaxing)
+ .debug_str     0x00003339       0x26 Src\HAL\System\custom\System_map.o
+                                0x7d2 (size before relaxing)
+ .debug_str     0x0000335f      0x745 Src\HAL\spi\base\spi.o
+                               0x1405 (size before relaxing)
+ .debug_str     0x00003aa4       0x54 Src\HAL\spi\custom\spi_map.o
+                                0x8ff (size before relaxing)
+ .debug_str     0x00003af8      0x49f Src\HAL\uart\base\uart.o
+                               0x13c0 (size before relaxing)
+ .debug_str     0x00003f97       0x3e Src\HAL\uart\custom\UART_map.o
+                                0x871 (size before relaxing)
+ .debug_str     0x00003fd5       0x72 libraries\CMSIS\Source\system_stm32l4xx.o
+                                0x84d (size before relaxing)
+ .debug_str     0x00004047      0x397 libraries\ST_HAL\Src\stm32l4xx_hal.o
+                               0x1031 (size before relaxing)
+ .debug_str     0x000043de      0x2d9 libraries\ST_HAL\Src\stm32l4xx_hal_cortex.o
+                                0xfe2 (size before relaxing)
+ .debug_str     0x000046b7      0x260 libraries\ST_HAL\Src\stm32l4xx_hal_dma.o
+                                0xadf (size before relaxing)
+ .debug_str     0x00004917       0xe2 libraries\ST_HAL\Src\stm32l4xx_hal_gpio.o
+                                0x9e1 (size before relaxing)
+ .debug_str     0x000049f9      0x428 libraries\ST_HAL\Src\stm32l4xx_hal_pwr_ex.o
+                                0xbf7 (size before relaxing)
+ .debug_str     0x00004e21      0x1c9 libraries\ST_HAL\Src\stm32l4xx_hal_rcc.o
+                                0xc54 (size before relaxing)
+ .debug_str     0x00004fea      0x478 libraries\ST_HAL\Src\stm32l4xx_hal_spi.o
+                                0xff0 (size before relaxing)
+ .debug_str     0x00005462      0x641 libraries\ST_HAL\Src\stm32l4xx_hal_uart.o
+                               0x143b (size before relaxing)
+ .debug_str     0x00005aa3      0x13a libraries\ST_HAL\Src\stm32l4xx_hal_uart_ex.o
+                                0xd08 (size before relaxing)
 
 .comment        0x00000000       0x7c
  .comment       0x00000000       0x7c Src\Applications\Main\main.o
@@ -2659,74 +2779,74 @@ OUTPUT(L4_Example_Project.elf elf32-littlearm)
  .comment       0x0000007c       0x7d Src\HAL\Interrupts\custom\interrupts_map.o
  .comment       0x0000007c       0x7d Src\HAL\System\base\System.o
  .comment       0x0000007c       0x7d Src\HAL\System\custom\System_map.o
+ .comment       0x0000007c       0x7d Src\HAL\spi\base\spi.o
+ .comment       0x0000007c       0x7d Src\HAL\spi\custom\spi_map.o
  .comment       0x0000007c       0x7d Src\HAL\uart\base\uart.o
  .comment       0x0000007c       0x7d Src\HAL\uart\custom\UART_map.o
  .comment       0x0000007c       0x7d libraries\CMSIS\Source\system_stm32l4xx.o
  .comment       0x0000007c       0x7d libraries\ST_HAL\Src\stm32l4xx_hal.o
  .comment       0x0000007c       0x7d libraries\ST_HAL\Src\stm32l4xx_hal_cortex.o
  .comment       0x0000007c       0x7d libraries\ST_HAL\Src\stm32l4xx_hal_dma.o
- .comment       0x0000007c       0x7d libraries\ST_HAL\Src\stm32l4xx_hal_flash.o
- .comment       0x0000007c       0x7d libraries\ST_HAL\Src\stm32l4xx_hal_flash_ex.o
  .comment       0x0000007c       0x7d libraries\ST_HAL\Src\stm32l4xx_hal_gpio.o
  .comment       0x0000007c       0x7d libraries\ST_HAL\Src\stm32l4xx_hal_pwr_ex.o
  .comment       0x0000007c       0x7d libraries\ST_HAL\Src\stm32l4xx_hal_rcc.o
+ .comment       0x0000007c       0x7d libraries\ST_HAL\Src\stm32l4xx_hal_spi.o
  .comment       0x0000007c       0x7d libraries\ST_HAL\Src\stm32l4xx_hal_uart.o
  .comment       0x0000007c       0x7d libraries\ST_HAL\Src\stm32l4xx_hal_uart_ex.o
 
-.debug_frame    0x00000000     0x2348
+.debug_frame    0x00000000     0x285c
  .debug_frame   0x00000000       0x28 Src\Applications\Main\main.o
- .debug_frame   0x00000028       0x8c Src\Applications\System_App\System_app.o
- .debug_frame   0x000000b4      0x138 Src\Architecture\SREG\base\sreg.o
- .debug_frame   0x000001ec      0x140 Src\Architecture\Scheduler\base\Scheduler.o
- .debug_frame   0x0000032c      0x108 Src\Architecture\tools\basic\base\CircularBuffer.o
- .debug_frame   0x00000434      0x194 Src\Drivers\SwTimer\base\SwTimer.o
- .debug_frame   0x000005c8      0x118 Src\Drivers\pipeDevice\base\PipeDevice.o
- .debug_frame   0x000006e0      0x208 Src\HAL\Flash\base\Flash.o
- .debug_frame   0x000008e8       0xc4 Src\HAL\GPIO\base\GPIO.o
- .debug_frame   0x000009ac       0xd4 Src\HAL\Interrupts\base\interrupts.o
- .debug_frame   0x00000a80      0x1a0 Src\HAL\Interrupts\custom\interrupts_it.o
- .debug_frame   0x00000c20       0xa0 Src\HAL\Interrupts\custom\interrupts_map.o
- .debug_frame   0x00000cc0      0x19c Src\HAL\System\base\System.o
- .debug_frame   0x00000e5c      0x1c8 Src\HAL\uart\base\uart.o
- .debug_frame   0x00001024       0x30 libraries\CMSIS\Source\system_stm32l4xx.o
- .debug_frame   0x00001054      0x23c libraries\ST_HAL\Src\stm32l4xx_hal.o
- .debug_frame   0x00001290      0x15c libraries\ST_HAL\Src\stm32l4xx_hal_cortex.o
- .debug_frame   0x000013ec      0x158 libraries\ST_HAL\Src\stm32l4xx_hal_dma.o
- .debug_frame   0x00001544      0x144 libraries\ST_HAL\Src\stm32l4xx_hal_flash.o
- .debug_frame   0x00001688      0x168 libraries\ST_HAL\Src\stm32l4xx_hal_flash_ex.o
- .debug_frame   0x000017f0       0xd0 libraries\ST_HAL\Src\stm32l4xx_hal_gpio.o
- .debug_frame   0x000018c0      0x228 libraries\ST_HAL\Src\stm32l4xx_hal_pwr_ex.o
- .debug_frame   0x00001ae8      0x160 libraries\ST_HAL\Src\stm32l4xx_hal_rcc.o
- .debug_frame   0x00001c48      0x588 libraries\ST_HAL\Src\stm32l4xx_hal_uart.o
- .debug_frame   0x000021d0       0xcc libraries\ST_HAL\Src\stm32l4xx_hal_uart_ex.o
- .debug_frame   0x0000229c       0x2c c:/program files (x86)/atollic/truestudio for stm32 9.0.1/armtools/bin/../lib/gcc/arm-atollic-eabi/6.3.1/../../../../arm-atollic-eabi/lib/armv7e-m/fpu\libc_nano.a(lib_a-init.o)
- .debug_frame   0x000022c8       0x20 c:/program files (x86)/atollic/truestudio for stm32 9.0.1/armtools/bin/../lib/gcc/arm-atollic-eabi/6.3.1/../../../../arm-atollic-eabi/lib/armv7e-m/fpu\libc_nano.a(lib_a-memset.o)
- .debug_frame   0x000022e8       0x2c c:/program files (x86)/atollic/truestudio for stm32 9.0.1/armtools/bin/../lib/gcc/arm-atollic-eabi/6.3.1/armv7e-m/fpu\libgcc.a(_aeabi_uldivmod.o)
- .debug_frame   0x00002314       0x34 c:/program files (x86)/atollic/truestudio for stm32 9.0.1/armtools/bin/../lib/gcc/arm-atollic-eabi/6.3.1/armv7e-m/fpu\libgcc.a(_udivmoddi4.o)
+ .debug_frame   0x00000028       0x80 Src\Applications\System_App\System_app.o
+ .debug_frame   0x000000a8      0x138 Src\Architecture\SREG\base\sreg.o
+ .debug_frame   0x000001e0      0x140 Src\Architecture\Scheduler\base\Scheduler.o
+ .debug_frame   0x00000320      0x108 Src\Architecture\tools\basic\base\CircularBuffer.o
+ .debug_frame   0x00000428      0x194 Src\Drivers\SwTimer\base\SwTimer.o
+ .debug_frame   0x000005bc      0x118 Src\Drivers\pipeDevice\base\PipeDevice.o
+ .debug_frame   0x000006d4      0x208 Src\HAL\Flash\base\Flash.o
+ .debug_frame   0x000008dc       0xc4 Src\HAL\GPIO\base\GPIO.o
+ .debug_frame   0x000009a0       0xd4 Src\HAL\Interrupts\base\interrupts.o
+ .debug_frame   0x00000a74      0x1b8 Src\HAL\Interrupts\custom\interrupts_it.o
+ .debug_frame   0x00000c2c       0xc0 Src\HAL\Interrupts\custom\interrupts_map.o
+ .debug_frame   0x00000cec      0x19c Src\HAL\System\base\System.o
+ .debug_frame   0x00000e88      0x1fc Src\HAL\spi\base\spi.o
+ .debug_frame   0x00001084      0x1c8 Src\HAL\uart\base\uart.o
+ .debug_frame   0x0000124c       0x30 libraries\CMSIS\Source\system_stm32l4xx.o
+ .debug_frame   0x0000127c      0x23c libraries\ST_HAL\Src\stm32l4xx_hal.o
+ .debug_frame   0x000014b8      0x15c libraries\ST_HAL\Src\stm32l4xx_hal_cortex.o
+ .debug_frame   0x00001614      0x158 libraries\ST_HAL\Src\stm32l4xx_hal_dma.o
+ .debug_frame   0x0000176c       0xd0 libraries\ST_HAL\Src\stm32l4xx_hal_gpio.o
+ .debug_frame   0x0000183c      0x228 libraries\ST_HAL\Src\stm32l4xx_hal_pwr_ex.o
+ .debug_frame   0x00001a64      0x160 libraries\ST_HAL\Src\stm32l4xx_hal_rcc.o
+ .debug_frame   0x00001bc4      0x5b8 libraries\ST_HAL\Src\stm32l4xx_hal_spi.o
+ .debug_frame   0x0000217c      0x588 libraries\ST_HAL\Src\stm32l4xx_hal_uart.o
+ .debug_frame   0x00002704       0xcc libraries\ST_HAL\Src\stm32l4xx_hal_uart_ex.o
+ .debug_frame   0x000027d0       0x2c c:/program files (x86)/atollic/truestudio for stm32 9.0.1/armtools/bin/../lib/gcc/arm-atollic-eabi/6.3.1/../../../../arm-atollic-eabi/lib/armv7e-m/fpu\libc_nano.a(lib_a-init.o)
+ .debug_frame   0x000027fc       0x2c c:/program files (x86)/atollic/truestudio for stm32 9.0.1/armtools/bin/../lib/gcc/arm-atollic-eabi/6.3.1/armv7e-m/fpu\libgcc.a(_aeabi_uldivmod.o)
+ .debug_frame   0x00002828       0x34 c:/program files (x86)/atollic/truestudio for stm32 9.0.1/armtools/bin/../lib/gcc/arm-atollic-eabi/6.3.1/armv7e-m/fpu\libgcc.a(_udivmoddi4.o)
 
-.debug_loc      0x00000000     0x70c9
- .debug_loc     0x00000000      0x113 Src\Applications\System_App\System_app.o
- .debug_loc     0x00000113      0x3f1 Src\Architecture\SREG\base\sreg.o
- .debug_loc     0x00000504      0x273 Src\Architecture\Scheduler\base\Scheduler.o
- .debug_loc     0x00000777      0x245 Src\Architecture\tools\basic\base\CircularBuffer.o
- .debug_loc     0x000009bc      0x4b0 Src\Drivers\SwTimer\base\SwTimer.o
- .debug_loc     0x00000e6c      0x723 Src\Drivers\pipeDevice\base\PipeDevice.o
- .debug_loc     0x0000158f      0x97e Src\HAL\Flash\base\Flash.o
- .debug_loc     0x00001f0d      0x168 Src\HAL\GPIO\base\GPIO.o
- .debug_loc     0x00002075      0x255 Src\HAL\Interrupts\base\interrupts.o
- .debug_loc     0x000022ca      0x34a Src\HAL\System\base\System.o
- .debug_loc     0x00002614      0x473 Src\HAL\uart\base\uart.o
- .debug_loc     0x00002a87      0x1e4 libraries\CMSIS\Source\system_stm32l4xx.o
- .debug_loc     0x00002c6b       0xf8 libraries\ST_HAL\Src\stm32l4xx_hal.o
- .debug_loc     0x00002d63      0x5ce libraries\ST_HAL\Src\stm32l4xx_hal_cortex.o
- .debug_loc     0x00003331      0x774 libraries\ST_HAL\Src\stm32l4xx_hal_dma.o
- .debug_loc     0x00003aa5      0x3e2 libraries\ST_HAL\Src\stm32l4xx_hal_flash.o
- .debug_loc     0x00003e87      0x697 libraries\ST_HAL\Src\stm32l4xx_hal_flash_ex.o
- .debug_loc     0x0000451e      0x331 libraries\ST_HAL\Src\stm32l4xx_hal_gpio.o
- .debug_loc     0x0000484f      0x733 libraries\ST_HAL\Src\stm32l4xx_hal_pwr_ex.o
- .debug_loc     0x00004f82      0x623 libraries\ST_HAL\Src\stm32l4xx_hal_rcc.o
- .debug_loc     0x000055a5     0x1808 libraries\ST_HAL\Src\stm32l4xx_hal_uart.o
- .debug_loc     0x00006dad      0x31c libraries\ST_HAL\Src\stm32l4xx_hal_uart_ex.o
+.debug_loc      0x00000000     0x897d
+ .debug_loc     0x00000000       0x91 Src\Applications\System_App\System_app.o
+ .debug_loc     0x00000091      0x3f1 Src\Architecture\SREG\base\sreg.o
+ .debug_loc     0x00000482      0x273 Src\Architecture\Scheduler\base\Scheduler.o
+ .debug_loc     0x000006f5      0x245 Src\Architecture\tools\basic\base\CircularBuffer.o
+ .debug_loc     0x0000093a      0x4b0 Src\Drivers\SwTimer\base\SwTimer.o
+ .debug_loc     0x00000dea      0x723 Src\Drivers\pipeDevice\base\PipeDevice.o
+ .debug_loc     0x0000150d      0x97e Src\HAL\Flash\base\Flash.o
+ .debug_loc     0x00001e8b      0x168 Src\HAL\GPIO\base\GPIO.o
+ .debug_loc     0x00001ff3      0x255 Src\HAL\Interrupts\base\interrupts.o
+ .debug_loc     0x00002248      0x34a Src\HAL\System\base\System.o
+ .debug_loc     0x00002592      0x843 Src\HAL\spi\base\spi.o
+ .debug_loc     0x00002dd5      0x473 Src\HAL\uart\base\uart.o
+ .debug_loc     0x00003248      0x1e4 libraries\CMSIS\Source\system_stm32l4xx.o
+ .debug_loc     0x0000342c       0xf8 libraries\ST_HAL\Src\stm32l4xx_hal.o
+ .debug_loc     0x00003524      0x5ce libraries\ST_HAL\Src\stm32l4xx_hal_cortex.o
+ .debug_loc     0x00003af2      0x774 libraries\ST_HAL\Src\stm32l4xx_hal_dma.o
+ .debug_loc     0x00004266      0x331 libraries\ST_HAL\Src\stm32l4xx_hal_gpio.o
+ .debug_loc     0x00004597      0x733 libraries\ST_HAL\Src\stm32l4xx_hal_pwr_ex.o
+ .debug_loc     0x00004cca      0x623 libraries\ST_HAL\Src\stm32l4xx_hal_rcc.o
+ .debug_loc     0x000052ed     0x1b6c libraries\ST_HAL\Src\stm32l4xx_hal_spi.o
+ .debug_loc     0x00006e59     0x1808 libraries\ST_HAL\Src\stm32l4xx_hal_uart.o
+ .debug_loc     0x00008661      0x31c libraries\ST_HAL\Src\stm32l4xx_hal_uart_ex.o
 
 Cross Reference Table
 
@@ -2740,6 +2860,7 @@ APBPrescTable                                     libraries\CMSIS\Source\system_
 AddCheckCalc                                      Src\Architecture\tools\basic\base\CheckCalc.o
 AddQueueByte                                      Src\Architecture\tools\basic\base\CircularBuffer.o
                                                   Src\HAL\uart\base\uart.o
+                                                  Src\HAL\spi\base\spi.o
 BusFault_Handler                                  Src\HAL\Interrupts\custom\interrupts_it.o
 CAN1_RX0_IRQHandler                               libraries\CMSIS\Source\startup_stm32l452xx.o
 CAN1_RX1_IRQHandler                               libraries\CMSIS\Source\startup_stm32l452xx.o
@@ -2751,6 +2872,7 @@ ClearQueue                                        Src\Architecture\tools\basic\b
 Crc8                                              Src\Architecture\tools\basic\base\crc.o
 CreateQueue                                       Src\Architecture\tools\basic\base\CircularBuffer.o
                                                   Src\HAL\uart\base\uart.o
+                                                  Src\HAL\spi\base\spi.o
 DFSDM1_FLT0_IRQHandler                            libraries\CMSIS\Source\startup_stm32l452xx.o
 DFSDM1_FLT1_IRQHandler                            libraries\CMSIS\Source\startup_stm32l452xx.o
 DMA1_Channel1_IRQHandler                          libraries\CMSIS\Source\startup_stm32l452xx.o
@@ -2789,7 +2911,6 @@ FlashActualInstance                               Src\HAL\Flash\base\Flash.o
 FlashCalcOffset                                   Src\HAL\Flash\base\Flash.o
 FlashContext                                      Src\HAL\Flash\base\Flash.o
 FlashErase                                        Src\HAL\Flash\base\Flash.o
-                                                  Src\Applications\System_App\System_app.o
 FlashGetFirstPage                                 Src\HAL\Flash\base\Flash.o
 FlashGetPages                                     Src\HAL\Flash\base\Flash.o
 FlashGetSize                                      Src\HAL\Flash\base\Flash.o
@@ -2804,12 +2925,10 @@ FlashLock                                         Src\HAL\Flash\base\Flash.o
 FlashProgramConfBytes                             Src\HAL\Flash\base\Flash.o
 FlashProgramData                                  Src\HAL\Flash\base\Flash.o
                                                   Src\HAL\Flash\base\Flash_api.o
-                                                  Src\Applications\System_App\System_app.o
 FlashProgramDataBuffer                            Src\HAL\Flash\base\Flash.o
 FlashReadConfBytes                                Src\HAL\Flash\base\Flash.o
 FlashReadData                                     Src\HAL\Flash\base\Flash.o
                                                   Src\HAL\Flash\base\Flash_api.o
-                                                  Src\Applications\System_App\System_app.o
 FlashReadDataBuffer                               Src\HAL\Flash\base\Flash.o
 FlashSleep                                        Src\HAL\Flash\base\Flash.o
                                                   Src\HAL\Flash\base\Flash_api.o
@@ -2841,10 +2960,13 @@ GPIOWritePort                                     Src\HAL\GPIO\base\GPIO.o
 GetCheckCalc                                      Src\Architecture\tools\basic\base\CheckCalc.o
 GetQueueByte                                      Src\Architecture\tools\basic\base\CircularBuffer.o
                                                   Src\HAL\uart\base\uart.o
+                                                  Src\HAL\spi\base\spi.o
 GetQueueFreeBytes                                 Src\Architecture\tools\basic\base\CircularBuffer.o
                                                   Src\HAL\uart\base\uart.o
+                                                  Src\HAL\spi\base\spi.o
 GetQueuePendingBytes                              Src\Architecture\tools\basic\base\CircularBuffer.o
                                                   Src\HAL\uart\base\uart.o
+                                                  Src\HAL\spi\base\spi.o
 HAL_DBGMCU_DisableDBGSleepMode                    libraries\ST_HAL\Src\stm32l4xx_hal.o
 HAL_DBGMCU_DisableDBGStandbyMode                  libraries\ST_HAL\Src\stm32l4xx_hal.o
 HAL_DBGMCU_DisableDBGStopMode                     libraries\ST_HAL\Src\stm32l4xx_hal.o
@@ -3129,6 +3251,8 @@ HAL_SPI1_Callback                                 Src\HAL\Interrupts\custom\inte
                                                   Src\HAL\Interrupts\custom\interrupts_it.o
 HAL_SPI2_Callback                                 Src\HAL\Interrupts\custom\interrupts_map.o
                                                   Src\HAL\Interrupts\custom\interrupts_it.o
+HAL_SPI3_Callback                                 Src\HAL\Interrupts\custom\interrupts_map.o
+                                                  Src\HAL\Interrupts\custom\interrupts_it.o
 HAL_SPIEx_FlushRxFifo                             libraries\ST_HAL\Src\stm32l4xx_hal_spi_ex.o
 HAL_SPI_Abort                                     libraries\ST_HAL\Src\stm32l4xx_hal_spi.o
 HAL_SPI_AbortCpltCallback                         libraries\ST_HAL\Src\stm32l4xx_hal_spi.o
@@ -3137,16 +3261,21 @@ HAL_SPI_DMAPause                                  libraries\ST_HAL\Src\stm32l4xx
 HAL_SPI_DMAResume                                 libraries\ST_HAL\Src\stm32l4xx_hal_spi.o
 HAL_SPI_DMAStop                                   libraries\ST_HAL\Src\stm32l4xx_hal_spi.o
 HAL_SPI_DeInit                                    libraries\ST_HAL\Src\stm32l4xx_hal_spi.o
-HAL_SPI_ErrorCallback                             libraries\ST_HAL\Src\stm32l4xx_hal_spi.o
+                                                  Src\HAL\spi\base\spi.o
+HAL_SPI_ErrorCallback                             Src\HAL\spi\base\spi.o
 HAL_SPI_GetError                                  libraries\ST_HAL\Src\stm32l4xx_hal_spi.o
 HAL_SPI_GetState                                  libraries\ST_HAL\Src\stm32l4xx_hal_spi.o
+                                                  Src\HAL\spi\base\spi.o
 HAL_SPI_IRQHandler                                libraries\ST_HAL\Src\stm32l4xx_hal_spi.o
+                                                  Src\HAL\spi\base\spi.o
 HAL_SPI_Init                                      libraries\ST_HAL\Src\stm32l4xx_hal_spi.o
-HAL_SPI_MspDeInit                                 libraries\ST_HAL\Src\stm32l4xx_hal_spi.o
-HAL_SPI_MspInit                                   libraries\ST_HAL\Src\stm32l4xx_hal_spi.o
+                                                  Src\HAL\spi\base\spi.o
+HAL_SPI_MspDeInit                                 Src\HAL\spi\base\spi.o
+HAL_SPI_MspInit                                   Src\HAL\spi\base\spi.o
 HAL_SPI_Receive                                   libraries\ST_HAL\Src\stm32l4xx_hal_spi.o
 HAL_SPI_Receive_DMA                               libraries\ST_HAL\Src\stm32l4xx_hal_spi.o
 HAL_SPI_Receive_IT                                libraries\ST_HAL\Src\stm32l4xx_hal_spi.o
+                                                  Src\HAL\spi\base\spi.o
 HAL_SPI_RxCpltCallback                            libraries\ST_HAL\Src\stm32l4xx_hal_spi.o
 HAL_SPI_RxHalfCpltCallback                        libraries\ST_HAL\Src\stm32l4xx_hal_spi.o
 HAL_SPI_Transmit                                  libraries\ST_HAL\Src\stm32l4xx_hal_spi.o
@@ -3155,7 +3284,8 @@ HAL_SPI_TransmitReceive_DMA                       libraries\ST_HAL\Src\stm32l4xx
 HAL_SPI_TransmitReceive_IT                        libraries\ST_HAL\Src\stm32l4xx_hal_spi.o
 HAL_SPI_Transmit_DMA                              libraries\ST_HAL\Src\stm32l4xx_hal_spi.o
 HAL_SPI_Transmit_IT                               libraries\ST_HAL\Src\stm32l4xx_hal_spi.o
-HAL_SPI_TxCpltCallback                            libraries\ST_HAL\Src\stm32l4xx_hal_spi.o
+                                                  Src\HAL\spi\base\spi.o
+HAL_SPI_TxCpltCallback                            Src\HAL\spi\base\spi.o
 HAL_SPI_TxHalfCpltCallback                        libraries\ST_HAL\Src\stm32l4xx_hal_spi.o
 HAL_SPI_TxRxCpltCallback                          libraries\ST_HAL\Src\stm32l4xx_hal_spi.o
 HAL_SPI_TxRxHalfCpltCallback                      libraries\ST_HAL\Src\stm32l4xx_hal_spi.o
@@ -3258,7 +3388,11 @@ SAI1_IRQHandler                                   libraries\CMSIS\Source\startup
 SDMMC1_IRQHandler                                 libraries\CMSIS\Source\startup_stm32l452xx.o
 SPI1_IRQHandler                                   Src\HAL\Interrupts\custom\interrupts_it.o
 SPI2_IRQHandler                                   Src\HAL\Interrupts\custom\interrupts_it.o
-SPI3_IRQHandler                                   libraries\CMSIS\Source\startup_stm32l452xx.o
+SPI3_IRQHandler                                   Src\HAL\Interrupts\custom\interrupts_it.o
+SPIInstanceMap                                    Src\HAL\spi\custom\spi_map.o
+                                                  Src\HAL\spi\base\spi.o
+SPIPeripheralMap                                  Src\HAL\spi\custom\spi_map.o
+                                                  Src\HAL\spi\base\spi.o
 SREG16Context                                     Src\Architecture\SREG\base\sreg.o
 SREG16InstanceMap                                 Src\Architecture\SREG\custom\sreg_dat.o
                                                   Src\Architecture\SREG\base\sreg.o
@@ -3270,6 +3404,7 @@ SREG8InstanceMap                                  Src\Architecture\SREG\custom\s
                                                   Src\Architecture\SREG\base\sreg.o
 SREGInstanceMap                                   Src\Architecture\SREG\custom\sreg_dat.o
                                                   Src\Architecture\SREG\base\sreg.o
+ST_SpiHandlers                                    Src\HAL\spi\base\spi.o
 ST_UartHandlers                                   Src\HAL\uart\base\uart.o
 SVC_Handler                                       Src\HAL\Interrupts\custom\interrupts_it.o
 SchedSetTaskTime                                  Src\Architecture\Scheduler\base\Scheduler.o
@@ -3403,11 +3538,13 @@ g_pfnVectors                                      libraries\CMSIS\Source\startup
 getAPB1Clock                                      Src\HAL\System\base\System.o
 getFsmState                                       Src\Architecture\StateMachine\base\stateMachine.o
 getNumOfSregs                                     Src\Architecture\SREG\base\sreg.o
+halRxSlaveBuffer                                  Src\HAL\spi\base\spi.o
 htod                                              Src\Architecture\tools\basic\base\tools.o
 initFsm                                           Src\Architecture\StateMachine\base\stateMachine.o
 initHregFlash                                     Src\HAL\Flash\base\Flash_api.o
 initHregGPIO                                      Src\HAL\GPIO\base\GPIO_api.o
 initHregInterrupts                                Src\HAL\Interrupts\base\interrupts_api.o
+initHregSpi                                       Src\HAL\spi\base\spi_api.o
 initHregSwTimer                                   Src\Drivers\SwTimer\base\SwTimer_api.o
 initHregSystem                                    Src\HAL\System\base\System_api.o
 initHregUart                                      Src\HAL\uart\base\uart_api.o
@@ -3443,13 +3580,15 @@ main                                              Src\Applications\Main\main.o
                                                   libraries\CMSIS\Source\startup_stm32l452xx.o
 memCompare                                        Src\Architecture\tools\basic\base\tools.o
 memcpy                                            c:/program files (x86)/atollic/truestudio for stm32 9.0.1/armtools/bin/../lib/gcc/arm-atollic-eabi/6.3.1/../../../../arm-atollic-eabi/lib/armv7e-m/fpu\libc_nano.a(lib_a-memcpy-stub.o)
+                                                  Src\HAL\spi\base\spi.o
                                                   Src\HAL\Flash\base\Flash.o
-memset                                            c:/program files (x86)/atollic/truestudio for stm32 9.0.1/armtools/bin/../lib/gcc/arm-atollic-eabi/6.3.1/../../../../arm-atollic-eabi/lib/armv7e-m/fpu\libc_nano.a(lib_a-memset.o)
-                                                  Src\Applications\System_App\System_app.o
 onReadHregFlashData                               Src\HAL\Flash\base\Flash_api.o
 onReadHregFlashSize                               Src\HAL\Flash\base\Flash_api.o
 onReadHregGPIOValue                               Src\HAL\GPIO\base\GPIO_api.o
 onReadHregInterruptsState                         Src\HAL\Interrupts\base\interrupts_api.o
+onReadHregSpiBufferSize                           Src\HAL\spi\base\spi_api.o
+onReadHregSpiData                                 Src\HAL\spi\base\spi_api.o
+onReadHregSpiStatus                               Src\HAL\spi\base\spi_api.o
 onReadHregSwTimerGetElapsed                       Src\Drivers\SwTimer\base\SwTimer_api.o
 onReadHregSwTimerGetPending                       Src\Drivers\SwTimer\base\SwTimer_api.o
 onReadHregSwTimerState                            Src\Drivers\SwTimer\base\SwTimer_api.o
@@ -3462,6 +3601,8 @@ onWriteHregFlashData                              Src\HAL\Flash\base\Flash_api.o
 onWriteHregFlashOffset                            Src\HAL\Flash\base\Flash_api.o
 onWriteHregGPIOValue                              Src\HAL\GPIO\base\GPIO_api.o
 onWriteHregInterruptsState                        Src\HAL\Interrupts\base\interrupts_api.o
+onWriteHregSpiBufferSize                          Src\HAL\spi\base\spi_api.o
+onWriteHregSpiData                                Src\HAL\spi\base\spi_api.o
 onWriteHregSwTimerCallbackFunction                Src\Drivers\SwTimer\base\SwTimer_api.o
 onWriteHregSwTimerSet                             Src\Drivers\SwTimer\base\SwTimer_api.o
 onWriteHregSwTimerState                           Src\Drivers\SwTimer\base\SwTimer_api.o
@@ -3511,15 +3652,48 @@ setLogFsm                                         Src\Architecture\StateMachine\
 sleepHregFlash                                    Src\HAL\Flash\base\Flash_api.o
 sleepHregGPIO                                     Src\HAL\GPIO\base\GPIO_api.o
 sleepHregInterrupts                               Src\HAL\Interrupts\base\interrupts_api.o
+sleepHregSpi                                      Src\HAL\spi\base\spi_api.o
 sleepHregSwTimer                                  Src\Drivers\SwTimer\base\SwTimer_api.o
 sleepHregSystem                                   Src\HAL\System\base\System_api.o
 sleepHregUart                                     Src\HAL\uart\base\uart_api.o
+spi1RdBuffer                                      Src\HAL\spi\custom\spi_map.o
+spi1WrBuffer                                      Src\HAL\spi\custom\spi_map.o
+spi3RdBuffer                                      Src\HAL\spi\custom\spi_map.o
+spi3WrBuffer                                      Src\HAL\spi\custom\spi_map.o
+spiBufferSize                                     Src\HAL\spi\base\spi.o
+spiCBuffers                                       Src\HAL\spi\base\spi.o
+spiDriverExtraPulse                               Src\HAL\spi\base\spi.o
+spiDriverGetBufferSize                            Src\HAL\spi\base\spi.o
+                                                  Src\HAL\spi\base\spi_api.o
+spiDriverMainIRQHandler                           Src\HAL\spi\base\spi.o
+                                                  Src\HAL\Interrupts\custom\interrupts_map.o
+spiDriverRead                                     Src\HAL\spi\base\spi.o
+                                                  Src\HAL\spi\base\spi_api.o
+spiDriverSetBufferSize                            Src\HAL\spi\base\spi.o
+                                                  Src\HAL\spi\base\spi_api.o
+spiDriverStatus                                   Src\HAL\spi\base\spi.o
+                                                  Src\HAL\spi\base\spi_api.o
+spiDriverWrite                                    Src\HAL\spi\base\spi.o
+                                                  Src\HAL\spi\base\spi_api.o
+spiInit                                           Src\HAL\spi\base\spi.o
+                                                  Src\HAL\spi\base\spi_api.o
+                                                  Src\Applications\Main\main.o
+spiSleep                                          Src\HAL\spi\base\spi.o
+                                                  Src\HAL\spi\base\spi_api.o
+spiStart                                          Src\HAL\spi\base\spi.o
+                                                  Src\HAL\spi\base\spi_api.o
+                                                  Src\Applications\Main\main.o
+spiStop                                           Src\HAL\spi\base\spi.o
+                                                  Src\HAL\spi\base\spi_api.o
+spiWake                                           Src\HAL\spi\base\spi.o
+                                                  Src\HAL\spi\base\spi_api.o
 sregReadParam                                     Src\Architecture\SREG\base\sreg.o
 sregResetNVMValues                                Src\Architecture\SREG\base\sreg.o
 sregWrite                                         Src\Architecture\SREG\base\sreg.o
 startHregFlash                                    Src\HAL\Flash\base\Flash_api.o
 startHregGPIO                                     Src\HAL\GPIO\base\GPIO_api.o
 startHregInterrupts                               Src\HAL\Interrupts\base\interrupts_api.o
+startHregSpi                                      Src\HAL\spi\base\spi_api.o
 startHregSwTimer                                  Src\Drivers\SwTimer\base\SwTimer_api.o
 startHregSystem                                   Src\HAL\System\base\System_api.o
 startHregUart                                     Src\HAL\uart\base\uart_api.o
@@ -3539,6 +3713,7 @@ stm32L4Wake                                       Src\HAL\System\base\System.o
 stopHregFlash                                     Src\HAL\Flash\base\Flash_api.o
 stopHregGPIO                                      Src\HAL\GPIO\base\GPIO_api.o
 stopHregInterrupts                                Src\HAL\Interrupts\base\interrupts_api.o
+stopHregSpi                                       Src\HAL\spi\base\spi_api.o
 stopHregSwTimer                                   Src\Drivers\SwTimer\base\SwTimer_api.o
 stopHregSystem                                    Src\HAL\System\base\System_api.o
 stopHregUart                                      Src\HAL\uart\base\uart_api.o
@@ -3582,6 +3757,7 @@ uwTick                                            libraries\ST_HAL\Src\stm32l4xx
 wakeHregFlash                                     Src\HAL\Flash\base\Flash_api.o
 wakeHregGPIO                                      Src\HAL\GPIO\base\GPIO_api.o
 wakeHregInterrupts                                Src\HAL\Interrupts\base\interrupts_api.o
+wakeHregSpi                                       Src\HAL\spi\base\spi_api.o
 wakeHregSwTimer                                   Src\Drivers\SwTimer\base\SwTimer_api.o
 wakeHregSystem                                    Src\HAL\System\base\System_api.o
 wakeHregUart                                      Src\HAL\uart\base\uart_api.o

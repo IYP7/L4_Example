@@ -56,22 +56,23 @@ const tSpiInstanceMap SPIInstanceMap[NUM_OF_SPI] =  {
 #ifdef IS_SPI1
     {
         SPI1,                       //port
-        SPI_MODE_MASTER,            //mode
-        SPI_BAUDRATEPRESCALER_256,  //brate
+        SPI_MODE_SLAVE,            //mode
+        SPI_BAUDRATEPRESCALER_128,  //brate
         SPI_DIRECTION_2LINES,       //direction
         SPI_PHASE_1EDGE,            //clkPhase
         SPI_POLARITY_LOW,           //clkPol
         SPI_DATASIZE_8BIT,          //dataSize
         SPI_FIRSTBIT_MSB,           //firstBit
         SPI_NSS_SOFT,               //NSS
+		SPI_NSS_PULSE_DISABLE,
         SPI_TIMODE_DISABLE,         //TIMMode
         SPI_CRCCALCULATION_DISABLE, //crcCal
         7,                          //crcPol
         SPI_CRC_LENGTH_8BIT,        //crcLen
-        SPI1_RD_BUFFER,             //WrBufferSize
-        spi1RdBuffer,               //WdBufferPtr
-        SPI1_WR_BUFFER,             //RdBufferSize
-        spi1WrBuffer,               //RdBufferPtr
+        SPI1_WR_BUFFER,             //WrBufferSize
+        spi1WrBuffer,               //WdBufferPtr
+		SPI1_RD_BUFFER,             //RdBufferSize
+		spi1RdBuffer,               //RdBufferPtr
         NULL,                       //callback1
         NULL,                       //example TX callback
     },
@@ -111,9 +112,11 @@ const tSpiInstanceMap SPIInstanceMap[NUM_OF_SPI] =  {
         SPI_DATASIZE_8BIT,
         SPI_FIRSTBIT_MSB,
         SPI_NSS_SOFT,
+		SPI_NSS_PULSE_DISABLE,
         SPI_TIMODE_DISABLE,
         SPI_CRCCALCULATION_DISABLE,
         7,
+		SPI_CRC_LENGTH_8BIT,
 
         SPI3_WR_BUFFER,
         spi3WrBuffer,
@@ -132,7 +135,8 @@ const tSpiInstanceMap SPIInstanceMap[NUM_OF_SPI] =  {
  */
 const tSpiPeripheralMap SPIPeripheralMap[NUM_OF_SPI_DEVICES] =
 {
-    {SPI_3},  /* SPI_HMI_DISPLAY */
+	{SPI_1},	/* SPI_TEST_1 */
+    {SPI_3},	/* SPI_TEST_3 */
 };
 /***********************************************************************
  * TYPE DEFINITIONS

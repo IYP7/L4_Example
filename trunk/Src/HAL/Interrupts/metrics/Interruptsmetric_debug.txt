@@ -8,10 +8,13 @@ interruptsEnable                         =     40
 interruptsDisable                        =     20
 HAL_SYSTICK_Callback                     =     16
 HAL_UART2_Callback                       =     10
+HAL_SPI3_Callback                        =     10
+HAL_SPI1_Callback                        =     10
 EXTI9_5_IRQHandler                       =     10
 USART2_IRQHandler                        =      8
 USART1_IRQHandler                        =      8
 SysTick_Handler                          =      8
+SPI3_IRQHandler                          =      8
 SPI2_IRQHandler                          =      8
 SPI1_IRQHandler                          =      8
 I2C2_EV_IRQHandler                       =      8
@@ -27,7 +30,6 @@ MemManage_Handler                        =      2
 HardFault_Handler                        =      2
 HAL_UART1_Callback                       =      2
 HAL_SPI2_Callback                        =      2
-HAL_SPI1_Callback                        =      2
 HAL_I2C2_Callback                        =      2
 HAL_I2C1_Callback                        =      2
 HAL_GPIO_EXTI_Callback                   =      2
@@ -39,9 +41,9 @@ RAM:
 countIrqAllDisable                       =      2
 
 DATA: 
-interruptsInstanceMap                    =     56
+interruptsInstanceMap                    =     60
 ------------------------------------------------------------------
-TOTAL FLASH SIZE INTERRUPTS              =    288
+TOTAL FLASH SIZE INTERRUPTS              =    314
 TOTAL RAM SIZE INTERRUPTS                =      2
-TOTAL DATA SIZE INTERRUPTS               =     56
+TOTAL DATA SIZE INTERRUPTS               =     60
 ------------------------------------------------------------------

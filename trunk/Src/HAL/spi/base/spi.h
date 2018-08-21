@@ -81,10 +81,12 @@ typedef struct sSpiPortMap
     uint32_t        firstBit;           /**< Most/Least significant bit*/
 
     uint32_t        NSS;                /**< */
+    uint32_t 		NSSPMode;			/**< */
     uint32_t        TIMMode;            /**< */
 
     uint32_t        crcCal;             /**< */
     uint32_t        crcPol;             /**< */
+    uint32_t 		crcLength;			/**< */
 
     //Read/Write Buffers
     uint16_t        txBufferSize;       /**< Size of the Write buffer    */

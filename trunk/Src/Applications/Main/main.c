@@ -36,8 +36,11 @@
 #include "interrupts.h"
 #include "swtimer.h"
 #include "GPIO.h"
+
 #include "uart.h"
 #include "flash.h"
+#include "spi.h"
+
 /*************************************************************************//**
  * @brief   Embedded application start routine.
  *
@@ -55,17 +58,17 @@ int  main()
 
     /* HAL TEST */
     GPIOInit();
-
     stm32L4Init();
 
     interruptsInit();
     interruptsStart();
+    spiInit();
+    spiStart();
 
     uartInit();
     uartStart();
 
     FlashInit();
-
     SwTimerInit();
     /*\ HAL TEST */
 
