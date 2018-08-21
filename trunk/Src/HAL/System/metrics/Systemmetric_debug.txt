@@ -2,20 +2,25 @@
 		 SYSTEM METRIC COMPONENT WITH debug 
 ------------------------------------------------------------------
 FLASH: 
-SystemClock_Config                       =    196
+SystemClock_Config                       =    212
 storePowerUpReason                       =    180
-stm32L4Init                              =     24
+RTCSetInitDateTime                       =    112
+RTCInit                                  =     92
+RTCGetTime                               =     92
+RTCGetDate                               =     76
+stm32L4Init                              =     30
 systemGetCLkFreq                         =     14
 watchdogInit                             =      4
 systemPreConfiguration                   =      2
 
 RAM: 
+RTCHandler                               =     36
 powerUpReason                            =      1
 
 DATA: 
 SystemMap                                =     84
 ------------------------------------------------------------------
-TOTAL FLASH SIZE SYSTEM                  =    420
-TOTAL RAM SIZE SYSTEM                    =      1
+TOTAL FLASH SIZE SYSTEM                  =    814
+TOTAL RAM SIZE SYSTEM                    =     37
 TOTAL DATA SIZE SYSTEM                   =     84
 ------------------------------------------------------------------

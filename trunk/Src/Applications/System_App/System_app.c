@@ -34,7 +34,7 @@
 #include "GPIO.h"
 #include "uart.h"
 #include "Flash.h"
-
+#include "system.h"
 /****************************************************************************
 *  PRIVATE VARIABLES
 ****************************************************************************/
@@ -80,6 +80,83 @@ void callSystemApp( void )
     // GPIO
     GPIOWritePort(GPIO_LED_1, GPIO_TOGGLE);
 
+    uint32_t time, date;
+	uint8_t hours, min, sec, year, month, day;
+
+	RTCGetTime(&time);
+	RTCGetDate(&date);
+	uint8_t tmp = ':';
+
+	hours = (time >> 24) & 0xFF;
+	min = (time >> 16) & 0xFF;
+	sec = (time >> 8) & 0xFF;
+	year = (date >> 24) & 0xFF;
+	year += '0';
+	month = (date >> 16) & 0xFF;
+	month += '0';
+	day = (date >> 8) & 0xFF;
+	day += '0';
+
+	uartDriverSetBufferSize(UART_2, 1);
+	if(hours<10)
+	{
+		hours+= '0';
+		uartDriverWrite(UART_2, &hours);
+	}
+	else
+	{
+		tmp = hours/10;
+		tmp += '0';
+		uartDriverWrite(UART_2, &tmp);
+		tmp = hours%10;
+		tmp += '0';
+		uartDriverWrite(UART_2, &tmp);
+	}
+	tmp = ':';
+	uartDriverWrite(UART_2, &tmp);
+
+	if(min<10)
+	{
+		min+= '0';
+		uartDriverWrite(UART_2, &min);
+	}
+	else
+	{
+		tmp = min/10;
+		tmp += '0';
+		uartDriverWrite(UART_2, &tmp);
+		tmp = min%10;
+		tmp += '0';
+		uartDriverWrite(UART_2, &tmp);
+	}
+	tmp = ':';
+	uartDriverWrite(UART_2, &tmp);
+
+	if(sec<10)
+	{
+		sec+= '0';
+		uartDriverWrite(UART_2, &sec);
+	}
+	else
+	{
+		tmp = sec/10;
+		tmp += '0';
+		uartDriverWrite(UART_2, &tmp);
+		tmp = sec%10;
+		tmp += '0';
+		uartDriverWrite(UART_2, &tmp);
+	}
+	tmp = '\n';
+	uartDriverWrite(UART_2, &tmp);
+	uartDriverWrite(UART_2, &day);
+	tmp = '/';
+	uartDriverWrite(UART_2, &tmp);
+	uartDriverWrite(UART_2, &month);
+	uartDriverWrite(UART_2, &tmp);
+	uartDriverWrite(UART_2, &year);
+	tmp = '\n';
+	uartDriverWrite(UART_2, &tmp);
+	uartDriverWrite(UART_2, &tmp);
     /* END HAL TEST */
 
     /* System state machine */

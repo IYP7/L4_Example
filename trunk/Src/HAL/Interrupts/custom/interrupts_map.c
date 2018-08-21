@@ -116,35 +116,35 @@ void HAL_SYSTICK_Callback(void)
   * @param  hrtc: RTC handle
   * @retval None
   */
-//void HAL_RTCEx_TimeStampEventCallback(RTC_HandleTypeDef *hrtc)
-//{
-//	  /* NOTE :the HAL_RTCEx_Tamper2EventCallback could be implemented in the user driver
-//	   */
-//
-//}
+void HAL_RTCEx_TimeStampEventCallback(RTC_HandleTypeDef *hrtc)
+{
+	  /* NOTE :the HAL_RTCEx_Tamper2EventCallback could be implemented in the user driver
+	   */
+
+}
 
 /**
   * @brief  Tamper 1 callback.
   * @param  hrtc: RTC handle
   * @retval None
   */
-//void HAL_RTCEx_Tamper1EventCallback(RTC_HandleTypeDef *hrtc)
-//{
-//	  /* NOTE :the HAL_RTCEx_Tamper2EventCallback could be implemented in the user driver
-//	   */
-//
-//}
+void HAL_RTCEx_Tamper1EventCallback(RTC_HandleTypeDef *hrtc)
+{
+	  /* NOTE :the HAL_RTCEx_Tamper2EventCallback could be implemented in the user driver
+	   */
+
+}
 
 /**
   * @brief  Tamper 2 callback.
   * @param  hrtc: RTC handle
   * @retval None
   */
-//void HAL_RTCEx_Tamper2EventCallback(RTC_HandleTypeDef *hrtc)
-//{
-//  /* NOTE :the HAL_RTCEx_Tamper2EventCallback could be implemented in the user file
-//   */
-//}
+void HAL_RTCEx_Tamper2EventCallback(RTC_HandleTypeDef *hrtc)
+{
+  /* NOTE :the HAL_RTCEx_Tamper2EventCallback could be implemented in the user file
+   */
+}
 
 /**
   * @brief EXTI line detection callbacks

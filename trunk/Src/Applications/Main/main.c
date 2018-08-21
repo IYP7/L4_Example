@@ -58,17 +58,16 @@ int  main()
 
     stm32L4Init();
 
-    interruptsInit();
-    interruptsStart();
-
     uartInit();
     uartStart();
 
     FlashInit();
 
     SwTimerInit();
-    /*\ HAL TEST */
 
+    interruptsInit();
+    interruptsStart();
+    /*\ HAL TEST */
 
 	/* Applications Initialization */
     SchedulerInit();

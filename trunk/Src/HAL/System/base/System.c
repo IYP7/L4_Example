@@ -564,13 +564,10 @@ static void RTCInit( void )
 	/* Enable PWR clock */
 	__HAL_RCC_PWR_CLK_ENABLE();
 
-	/* Enable RTC peripheral */
+	/* Enable RTC Clock */
 	__HAL_RCC_RTC_ENABLE();
 
-	/* Enables access to the backup domain (RTC registers, 		*/
-	/* RTC backup data registers when present). 				*/
-	HAL_PWR_EnableBkUpAccess();
-
+	__HAL_RTC_RESET_HANDLE_STATE(&RTCHandler);
 	RTCHandler.Instance = RTC;
 	RTCHandler.Init.HourFormat = RTC_HOURFORMAT_24;
 	RTCHandler.Init.AsynchPrediv = 127;
@@ -593,16 +590,13 @@ static void RTCInit( void )
 
 	aux /= (RTCHandler.Init.AsynchPrediv + 1);
 
-	RTCHandler.Init.SynchPrediv = aux;
+	RTCHandler.Init.SynchPrediv = 0xF9;//aux;
 	RTCHandler.Init.OutPut = RTC_OUTPUT_DISABLE;
 	RTCHandler.Init.OutPutPolarity = RTC_OUTPUT_POLARITY_HIGH;
 	RTCHandler.Init.OutPutType = RTC_OUTPUT_TYPE_OPENDRAIN;
 	HAL_RTC_Init(&RTCHandler);
 
-	HAL_RTC_WaitForSynchro(&RTCHandler);
-
 	RTCSetInitDateTime();
-
 }
 
 /*************************************************************************//**
@@ -621,14 +615,15 @@ eError RTCSetInitDateTime( void )
 	RTC_TimeTypeDef sTime;
 	RTC_DateTypeDef sDate;
 
-	sTime.Hours = 0x0;
-	sTime.Minutes = 0x0;
-	sTime.Seconds = 0x0;
+	sTime.Hours = 0x23;
+	sTime.Minutes = 0x59;
+	sTime.Seconds = 0x55;
+	sTime.TimeFormat = RTC_HOURFORMAT12_PM;
 	sTime.DayLightSaving = RTC_DAYLIGHTSAVING_NONE;
 	sTime.StoreOperation = RTC_STOREOPERATION_RESET;
 	if (RTCHandler.Instance != NULL) //RTC initialized
 	{
-		if (HAL_RTC_SetTime(&RTCHandler, &sTime, FORMAT_BCD) != HAL_OK)
+		if (HAL_RTC_SetTime(&RTCHandler, &sTime, RTC_FORMAT_BCD) != HAL_OK)
 		{
 			result = RET_FAIL;
 		}
@@ -638,7 +633,7 @@ eError RTCSetInitDateTime( void )
 			sDate.Month = RTC_MONTH_JANUARY;
 			sDate.Date = 0x1;
 			sDate.Year = 0x0;
-			if (HAL_RTC_SetDate(&RTCHandler, &sDate, FORMAT_BCD) != HAL_OK)
+			if (HAL_RTC_SetDate(&RTCHandler, &sDate, RTC_FORMAT_BCD) != HAL_OK)
 			{
 				result = RET_FAIL;
 			}
@@ -675,7 +670,7 @@ eError RTCSetTime (uint32_t time)
 		sTime.Seconds	= (uint8_t)(time >> 8);
 		sTime.SubSeconds = (uint8_t)(time);
 
-		if (HAL_RTC_SetTime(&RTCHandler, &sTime, FORMAT_BIN) != HAL_OK)
+		if (HAL_RTC_SetTime(&RTCHandler, &sTime, RTC_FORMAT_BIN) != HAL_OK)
 		{
 			result = RET_FAIL;
 		}
@@ -698,22 +693,27 @@ eError RTCSetTime (uint32_t time)
  ****************************************************************************/
 eError RTCGetTime (uint32_t* time)
 {
-	eError result = RET_OK;
+	eError result = RET_FAIL;
 
 	RTC_TimeTypeDef sTime;
+
+	/* You must call HAL_RTC_GetDate() after HAL_RTC_GetTime() to unlock the values
+	*  in the higher-order calendar shadow registers.*/
+	RTC_DateTypeDef sDate;
 
 	if ((RTCHandler.Instance != NULL) && (time != NULL))
 		//RTC is initialized and time pointer is valid
 	{
-		if (HAL_RTC_GetTime(&RTCHandler, &sTime, FORMAT_BIN) == HAL_OK)
+		if (HAL_RTC_GetTime(&RTCHandler, &sTime, RTC_FORMAT_BIN) == HAL_OK)
 		{
-			*time = MON_MAKELONG_Byte(sTime.Hours, sTime.Minutes, sTime.Seconds, (uint8_t)sTime.SubSeconds);
-		}
-		else
-		{
-			result = RET_FAIL;
+			if (HAL_RTC_GetDate(&RTCHandler, &sDate, RTC_FORMAT_BIN) == HAL_OK)
+			{
+				*time = MON_MAKELONG_Byte(sTime.Hours, sTime.Minutes, sTime.Seconds, (uint8_t)sTime.SubSeconds);
+				result = RET_OK;
+			}
 		}
 	}
+
 	return result;
 }
 
@@ -738,7 +738,7 @@ eError RTCSetDate (uint32_t date)
 		sDate.Date	= (uint8_t)(date >> 8);
 		sDate.WeekDay = (uint8_t)(date);
 
-		if (HAL_RTC_SetDate(&RTCHandler, &sDate, FORMAT_BIN) != HAL_OK)
+		if (HAL_RTC_SetDate(&RTCHandler, &sDate, RTC_FORMAT_BIN) != HAL_OK)
 		{
 			result = RET_FAIL;
 		}
@@ -764,7 +764,7 @@ eError RTCGetDate (uint32_t *date)
 	if ((RTCHandler.Instance != NULL) && (date != NULL))
 		//RTC is initialized and time pointer is valid
 	{
-		if (HAL_RTC_GetDate(&RTCHandler, &sDate, FORMAT_BIN) == HAL_OK)
+		if (HAL_RTC_GetDate(&RTCHandler, &sDate, RTC_FORMAT_BIN) == HAL_OK)
 		{
 			*date = MON_MAKELONG_Byte(sDate.Year, sDate.Month, sDate.Date, sDate.WeekDay);
 		}

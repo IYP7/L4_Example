@@ -4,11 +4,14 @@
 FLASH: 
 HAL_UART_TxCpltCallback                  =    124
 uartInit                                 =    116
+uartDriverWriteIT                        =    116
 HAL_UART_RxCpltCallback                  =    116
 HAL_UART_MspInit                         =     88
 uartStart                                =     68
 HAL_UART_MspDeInit                       =     68
 uartDriverMainIRQHandler                 =     32
+uartDriverWrite                          =     24
+uartDriverSetBufferSize                  =     16
 HAL_UART_ErrorCallback                   =      2
 
 RAM: 
@@ -24,7 +27,7 @@ byteRxBuffer                             =      1
 DATA: 
 UARTInstanceMap                          =     44
 ------------------------------------------------------------------
-TOTAL FLASH SIZE UART                    =    614
+TOTAL FLASH SIZE UART                    =    770
 TOTAL RAM SIZE UART                      =    507
 TOTAL DATA SIZE UART                     =     44
 ------------------------------------------------------------------
