@@ -78,6 +78,7 @@ tInterruptsInstanceMap interruptsInstanceMap[MAX_IRQ] =
 		/* IRQ_I2c2  		*/	{I2C2_EV_IRQn       ,	INT_PRIORITY_1	 ,	INT_SUBPRIORITY_0,		IRQ_DISABLE },
 		/* IRQ_SPI1  		*/	{SPI1_IRQn          ,	INT_PRIORITY_1	 ,	INT_SUBPRIORITY_0,		IRQ_DISABLE },
 		/* IRQ_SPI2  		*/	{SPI2_IRQn          ,	INT_PRIORITY_1	 ,	INT_SUBPRIORITY_0,		IRQ_DISABLE },
+		/* IRQ_SPI3  		*/	{SPI3_IRQn          ,	INT_PRIORITY_1	 ,	INT_SUBPRIORITY_0,		IRQ_ENABLE},
 };
 
 
@@ -242,6 +243,13 @@ void HAL_SPI2_Callback(void)
 {
 #ifdef IS_SPI2
     spiDriverMainIRQHandler(SPI_2);
+#endif
+}
+
+void HAL_SPI3_Callback(void)
+{
+#ifdef IS_SPI3
+    spiDriverMainIRQHandler(SPI_3);
 #endif
 }
 

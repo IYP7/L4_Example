@@ -400,11 +400,15 @@ eError spiInit(void)
         hspi->Init.CLKPolarity       = mspi->clkPol;
         hspi->Init.CRCCalculation    = mspi->crcCal;
         hspi->Init.CRCPolynomial     = mspi->crcPol;
+        hspi->Init.CRCLength		 = mspi->crcLength;
         hspi->Init.DataSize          = mspi->dataSize;
         hspi->Init.FirstBit          = mspi->firstBit;
         hspi->Init.NSS               = mspi->NSS;
+        hspi->Init.NSSPMode			 = mspi->NSSPMode;
         hspi->Init.TIMode            = mspi->TIMMode;
         hspi->Init.Mode              = mspi->mode;
+
+
 
 #if defined(MON_SPI_TX_IT) || defined(MON_SPI_RX_IT)
 		CreateQueue(&spiCBuffers[i].rxBuffer,
@@ -505,6 +509,7 @@ eError spiDriverStatus(tSpi spiDevice)
         case HAL_SPI_STATE_BUSY_TX_RX:
             return RET_BUSY;
         case HAL_SPI_STATE_ERROR:
+        case HAL_SPI_STATE_ABORT:
             return RET_FAIL;
     }
 
@@ -659,7 +664,7 @@ static eError spiDriverReadPolling(tSpi spiDevice, uint8_t* rdBuffer, uint32_t r
     hspi = &ST_SpiHandlers[spiPort];
 
     //timeout = (rdSize* 8) * SPIMap[spiPort].baudRate;
-    timeout = 50000; /**@todo Timeout of polling should be calculated*/
+    timeout = 500; /**@todo Timeout of polling should be calculated*/
 
     if(HAL_SPI_Receive(hspi, (uint8_t *)rdBuffer, rdSize, timeout) != HAL_OK){
         result = RET_FAIL;

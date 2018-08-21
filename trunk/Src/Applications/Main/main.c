@@ -34,6 +34,7 @@
 #include "interrupts.h"
 #include "swtimer.h"
 #include "GPIO.h"
+#include "spi.h"
 /*************************************************************************//**
  * @brief   Embedded application start routine.
  *
@@ -56,6 +57,8 @@ int  main()
     stm32L4Init();
     interruptsInit();
     interruptsStart();
+    spiInit();
+    spiStart();
     SwTimerInit();
     while (TRUE)
     {
