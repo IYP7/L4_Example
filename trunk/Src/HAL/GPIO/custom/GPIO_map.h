@@ -15,6 +15,7 @@
  *  COMMON INCLUDE
  ***************************************************************************/
 #include "common.h"
+#include "hreg_dat.h"
 
 /****************************************************************************
  *  ARCHITECTURE INCLUDE
@@ -37,23 +38,22 @@ typedef enum eGPIO
 	GPIO_LED_1,
 	GPIO_BUTTON_B1,
 
-
+#ifdef IS_UART2
     GPIO_UART2_TX,
     GPIO_UART2_RX,
+#endif
 
-
+#ifdef IS_SPI1
     GPIO_SPI1_MISO,
     GPIO_SPI1_MOSI,
     GPIO_SPI1_SCK,
+#endif
 
-
+#ifdef IS_SPI3
 	GPIO_SPI3_MISO,
 	GPIO_SPI3_MOSI,
 	GPIO_SPI3_SCK,
-
-
-
-
+#endif
 
     NUM_OF_GPIO
 } tGPIO;

@@ -7,18 +7,18 @@ FLASH                         	   182	    48	    16
 GPIO                          	   412	     0	   160
 INTERRUPTS                    	   314	     2	    60
 SPI                           	   684	   766	   160
-SYSTEM                        	   420	     1	    84
+SYSTEM                        	   638	    37	    84
 UART                          	   614	   507	    44
 PIPEDEVICE                    	    64	     8	     0
 SWTIMER                       	   258	    20	     0
 MAIN                          	    56	     0	     0
 SYSTEM_APP                    	   148	     1	     0
 --------------------------------------------------------------------------------
- TOTAL MONTSENY (Bytes)       	  4282	  1425	   629
- TOTAL ST (Bytes)             	  8140	     4	     0
+ TOTAL MONTSENY (Bytes)       	  4500	  1461	   629
+ TOTAL ST (Bytes)             	 10206	     4	     0
  TOTAL OTHERS (Bytes)         	   808	    25	    76
 --------------------------------------------------------------------------------
- TOTAL (Bytes)                	 14179	  1454
+ TOTAL (Bytes)                	 16463	  1490
 --------------------------------------------------------------------------------
 
 --------------------------------------------------------------------------------
@@ -26,12 +26,14 @@ SYSTEM_APP                    	   148	     1	     0
 --------------------------------------------------------------------------------
 STM32L4XX_HAL.C               	    72	     4	     0
 STM32L4XX_HAL_CORTEX.C        	   208	     0	     0
-STM32L4XX_HAL_DMA.C           	    76	     0	     0
+STM32L4XX_HAL_DMA.C           	    80	     0	     0
 STM32L4XX_HAL_GPIO.C          	   462	     0	     0
 STM32L4XX_HAL_PWR_EX.C        	   160	     0	     0
-STM32L4XX_HAL_RCC.C           	  2388	     0	     0
+STM32L4XX_HAL_RCC.C           	  2308	     0	     0
+STM32L4XX_HAL_RCC_EX.C        	  1300	     0	     0
+STM32L4XX_HAL_RTC.C           	   854	     0	     0
 STM32L4XX_HAL_SPI.C           	  2098	     0	     0
-STM32L4XX_HAL_UART.C          	  2674	     0	     0
+STM32L4XX_HAL_UART.C          	  2662	     0	     0
 STM32L4XX_HAL_UART_EX.C       	     2	     0	     0
 
 --------------------------------------------------------------------------------
