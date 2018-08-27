@@ -1,25 +1,17 @@
 /***********************************************************************
- * @file interrupts_map.h
- * @addtogroup HAL
- * @{
- * @addtogroup INTERRUPTS
- * @{
- *
- * @brief HAL interrupts_map Header.
- *
- * @author Dario Davide
- *
- * @date 25/01/2016
- *
+ * @file	sdio_map.h
+ * @brief	Serial SDIO map declaration
+ * @author	...
+ * @date	2013-10-29
  **********************************************************************/
 
-#ifndef	_INT_MAP_H_
-#define	_INT_MAP_H_
+#ifndef	_SD_MAP_H_
+#define	_SD_MAP_H_
 
 /***********************************************************************
  * COMMON INCLUDES
  **********************************************************************/
-#include "Common.h"
+#include "common.h"
 
 /***********************************************************************
  * COMMON ARCHITECTURE INCLUDES
@@ -32,58 +24,29 @@
 /***********************************************************************
  * DEFINES
  **********************************************************************/
-#define MAX_IRQ IRQ_ALL
-/**********************************************************************/
+#define IS_SDIO_1
+#define SDIO_FIFO_ADDRESS             ((uint32_t)0x40012C80)
+#define SD_SDIO_DMA_STREAM3
 
-
-/***********************************************************************/
-
+#ifdef DMA_AVAILABLE
+#define SD_RX_CHANNEL					DMA2_S3
+#define SD_TX_CHANNEL					DMA2_S6
+#endif
 
 /***********************************************************************
  * TYPE DEFINITIONS
  **********************************************************************/
-
-
-typedef enum eInterrupts
+typedef enum eSd
 {
-	IRQ_SYSTICK = 0,
-	IRQ_RTC,
-	IRQ_EXTI0,
-	IRQ_EXTI1,
-	IRQ_EXTI9_5,
-	IRQ_ADC1,
-	IRQ_TIM2,
-	IRQ_TIM3,
-	IRQ_USART1,
-	IRQ_USART2,
-    IRQ_I2C1,
-    IRQ_I2C2,
-    IRQ_SPI1,
-    IRQ_SPI2,
-	IRQ_SPI3,
-	IRQ_DMA2_CH3,
-	IRQ_DMA2_CH6,
-	IRQ_ALL,
-	NUM_OF_INT
-
-} tInterrupts;
+	SD_1,
+	NUM_OF_SD
+}tSd;
 
 /***********************************************************************
- * PUBLIC FUCNTION PROTOTYPES
+ * PUBLIC FUNCTION PROTOTYPES
  **********************************************************************/
 
-void HAL_UART1_Callback(void);
-void HAL_UART2_Callback(void);
-void HAL_I2C1_Callback(void);
-void HAL_I2C2_Callback(void);
-void HAL_SPI1_Callback(void);
-void HAL_SPI2_Callback(void);
-void HAL_SPI3_Callback(void);
-void HAL_DMA3_Callback(void);
-void HAL_DMA6_Callback(void);
-
-
-#endif	/*_INT_MAP_H_*/
+#endif	/*_SD_MAP_H_*/
 
 /***********************************************************************
  * End of file

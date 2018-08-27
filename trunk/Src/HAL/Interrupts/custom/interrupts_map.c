@@ -78,7 +78,9 @@ tInterruptsInstanceMap interruptsInstanceMap[MAX_IRQ] =
 		/* IRQ_I2c2  		*/	{I2C2_EV_IRQn       ,	INT_PRIORITY_1	 ,	INT_SUBPRIORITY_0,		IRQ_DISABLE },
 		/* IRQ_SPI1  		*/	{SPI1_IRQn          ,	INT_PRIORITY_1	 ,	INT_SUBPRIORITY_0,		IRQ_DISABLE },
 		/* IRQ_SPI2  		*/	{SPI2_IRQn          ,	INT_PRIORITY_1	 ,	INT_SUBPRIORITY_0,		IRQ_DISABLE },
-		/* IRQ_SPI3  		*/	{SPI3_IRQn          ,	INT_PRIORITY_1	 ,	INT_SUBPRIORITY_0,		IRQ_ENABLE},
+		/* IRQ_SPI3  		*/	{SPI3_IRQn          ,	INT_PRIORITY_1	 ,	INT_SUBPRIORITY_0,		IRQ_ENABLE	},
+		/* IRQ_DMA2_CH3		*/	{DMA2_Channel3_IRQn	,	INT_PRIORITY_2	 ,	INT_SUBPRIORITY_0,		IRQ_ENABLE  },
+		/* IRQ_DMA2_CH6		*/	{DMA2_Channel6_IRQn	,	INT_PRIORITY_2	 ,	INT_SUBPRIORITY_0,		IRQ_ENABLE  },
 };
 
 
@@ -250,6 +252,30 @@ void HAL_SPI3_Callback(void)
 {
 #ifdef IS_SPI3
     spiDriverMainIRQHandler(SPI_3);
+#endif
+}
+
+/**
+  * @brief DMA 3 callback
+  * @param None
+  * @retval None
+  */
+void HAL_DMA3_Callback(void)
+{
+#ifdef IS_DMA2_Stream3
+	dmaDriverMainIRQHandler(DMA2_S3);
+#endif
+}
+
+/**
+  * @brief DMA 6 callback
+  * @param None
+  * @retval None
+  */
+void HAL_DMA6_Callback(void)
+{
+#ifdef IS_DMA2_Stream6
+	dmaDriverMainIRQHandler(DMA2_S6);
 #endif
 }
 
