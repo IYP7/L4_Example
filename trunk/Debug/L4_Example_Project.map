@@ -421,14 +421,14 @@ Discarded input sections
                 0x00000000        0xa Src\HAL\GPIO\base\GPIO_api.o
  .text.onWriteHregGPIOValue
                 0x00000000        0xa Src\HAL\GPIO\base\GPIO_api.o
- .debug_info    0x00000000     0x103a Src\HAL\GPIO\base\GPIO_api.o
+ .debug_info    0x00000000     0x101c Src\HAL\GPIO\base\GPIO_api.o
  .debug_abbrev  0x00000000      0x1ff Src\HAL\GPIO\base\GPIO_api.o
  .debug_loc     0x00000000      0x19f Src\HAL\GPIO\base\GPIO_api.o
  .debug_aranges
                 0x00000000       0x50 Src\HAL\GPIO\base\GPIO_api.o
  .debug_ranges  0x00000000       0x40 Src\HAL\GPIO\base\GPIO_api.o
  .debug_line    0x00000000      0x419 Src\HAL\GPIO\base\GPIO_api.o
- .debug_str     0x00000000      0xb8e Src\HAL\GPIO\base\GPIO_api.o
+ .debug_str     0x00000000      0xb51 Src\HAL\GPIO\base\GPIO_api.o
  .comment       0x00000000       0x7d Src\HAL\GPIO\base\GPIO_api.o
  .debug_frame   0x00000000       0xb8 Src\HAL\GPIO\base\GPIO_api.o
  .ARM.attributes
@@ -2222,7 +2222,7 @@ LOAD c:/program files (x86)/atollic/truestudio for stm32 9.0.1/armtools/bin/../l
 .iplt           0x08003670        0x0
  .iplt          0x08003670        0x0 c:/program files (x86)/atollic/truestudio for stm32 9.0.1/armtools/bin/../lib/gcc/arm-atollic-eabi/6.3.1/armv7e-m/fpu/crtbegin.o
 
-.rodata         0x08003670      0x2d4
+.rodata         0x08003670      0x284
                 0x08003670                . = ALIGN (0x4)
  *(.rodata)
  *(.rodata*)
@@ -2246,61 +2246,61 @@ LOAD c:/program files (x86)/atollic/truestudio for stm32 9.0.1/armtools/bin/../l
                 0x080036dc       0x10 Src\HAL\Flash\custom\Flash_map.o
                 0x080036dc                FlashInstanceMap
  .rodata.GPIOInstanceMap
-                0x080036ec       0xf0 Src\HAL\GPIO\custom\GPIO_map.o
+                0x080036ec       0xa0 Src\HAL\GPIO\custom\GPIO_map.o
                 0x080036ec                GPIOInstanceMap
  .rodata.SystemMap
-                0x080037dc       0x54 Src\HAL\System\custom\System_map.o
-                0x080037dc                SystemMap
+                0x0800378c       0x54 Src\HAL\System\custom\System_map.o
+                0x0800378c                SystemMap
  .rodata.SPIInstanceMap
-                0x08003830       0xa0 Src\HAL\spi\custom\spi_map.o
-                0x08003830                SPIInstanceMap
+                0x080037e0       0xa0 Src\HAL\spi\custom\spi_map.o
+                0x080037e0                SPIInstanceMap
  .rodata.UARTInstanceMap
-                0x080038d0       0x2c Src\HAL\uart\custom\UART_map.o
-                0x080038d0                UARTInstanceMap
+                0x08003880       0x2c Src\HAL\uart\custom\UART_map.o
+                0x08003880                UARTInstanceMap
  .rodata.AHBPrescTable
-                0x080038fc       0x10 libraries\CMSIS\Source\system_stm32l4xx.o
-                0x080038fc                AHBPrescTable
+                0x080038ac       0x10 libraries\CMSIS\Source\system_stm32l4xx.o
+                0x080038ac                AHBPrescTable
  .rodata.APBPrescTable
-                0x0800390c        0x8 libraries\CMSIS\Source\system_stm32l4xx.o
-                0x0800390c                APBPrescTable
+                0x080038bc        0x8 libraries\CMSIS\Source\system_stm32l4xx.o
+                0x080038bc                APBPrescTable
  .rodata.MSIRangeTable
-                0x08003914       0x30 libraries\CMSIS\Source\system_stm32l4xx.o
-                0x08003914                MSIRangeTable
-                0x08003944                . = ALIGN (0x4)
+                0x080038c4       0x30 libraries\CMSIS\Source\system_stm32l4xx.o
+                0x080038c4                MSIRangeTable
+                0x080038f4                . = ALIGN (0x4)
 
 .ARM.extab
  *(.ARM.extab* .gnu.linkonce.armextab.*)
 
-.ARM            0x08003944        0x8
-                0x08003944                __exidx_start = .
+.ARM            0x080038f4        0x8
+                0x080038f4                __exidx_start = .
  *(.ARM.exidx*)
- .ARM.exidx     0x08003944        0x8 c:/program files (x86)/atollic/truestudio for stm32 9.0.1/armtools/bin/../lib/gcc/arm-atollic-eabi/6.3.1/armv7e-m/fpu\libgcc.a(_udivmoddi4.o)
-                0x0800394c                __exidx_end = .
+ .ARM.exidx     0x080038f4        0x8 c:/program files (x86)/atollic/truestudio for stm32 9.0.1/armtools/bin/../lib/gcc/arm-atollic-eabi/6.3.1/armv7e-m/fpu\libgcc.a(_udivmoddi4.o)
+                0x080038fc                __exidx_end = .
 
-.rel.dyn        0x0800394c        0x0
- .rel.iplt      0x0800394c        0x0 c:/program files (x86)/atollic/truestudio for stm32 9.0.1/armtools/bin/../lib/gcc/arm-atollic-eabi/6.3.1/armv7e-m/fpu/crtbegin.o
+.rel.dyn        0x080038fc        0x0
+ .rel.iplt      0x080038fc        0x0 c:/program files (x86)/atollic/truestudio for stm32 9.0.1/armtools/bin/../lib/gcc/arm-atollic-eabi/6.3.1/armv7e-m/fpu/crtbegin.o
 
-.preinit_array  0x0800394c        0x0
-                0x0800394c                PROVIDE (__preinit_array_start, .)
+.preinit_array  0x080038fc        0x0
+                0x080038fc                PROVIDE (__preinit_array_start, .)
  *(.preinit_array*)
-                0x0800394c                PROVIDE (__preinit_array_end, .)
+                0x080038fc                PROVIDE (__preinit_array_end, .)
 
-.init_array     0x0800394c        0x4
-                0x0800394c                PROVIDE (__init_array_start, .)
+.init_array     0x080038fc        0x4
+                0x080038fc                PROVIDE (__init_array_start, .)
  *(SORT(.init_array.*))
  *(.init_array*)
- .init_array    0x0800394c        0x4 c:/program files (x86)/atollic/truestudio for stm32 9.0.1/armtools/bin/../lib/gcc/arm-atollic-eabi/6.3.1/armv7e-m/fpu/crtbegin.o
-                0x08003950                PROVIDE (__init_array_end, .)
+ .init_array    0x080038fc        0x4 c:/program files (x86)/atollic/truestudio for stm32 9.0.1/armtools/bin/../lib/gcc/arm-atollic-eabi/6.3.1/armv7e-m/fpu/crtbegin.o
+                0x08003900                PROVIDE (__init_array_end, .)
 
-.fini_array     0x08003950        0x4
+.fini_array     0x08003900        0x4
                 [!provide]                PROVIDE (__fini_array_start, .)
  *(SORT(.fini_array.*))
  *(.fini_array*)
- .fini_array    0x08003950        0x4 c:/program files (x86)/atollic/truestudio for stm32 9.0.1/armtools/bin/../lib/gcc/arm-atollic-eabi/6.3.1/armv7e-m/fpu/crtbegin.o
+ .fini_array    0x08003900        0x4 c:/program files (x86)/atollic/truestudio for stm32 9.0.1/armtools/bin/../lib/gcc/arm-atollic-eabi/6.3.1/armv7e-m/fpu/crtbegin.o
                 [!provide]                PROVIDE (__fini_array_end, .)
-                0x08003954                _sidata = LOADADDR (.data)
+                0x08003904                _sidata = LOADADDR (.data)
 
-.data           0x20000000       0x40 load address 0x08003954
+.data           0x20000000       0x40 load address 0x08003904
                 0x20000000                . = ALIGN (0x4)
                 0x20000000                _sdata = .
  *(.data)
@@ -2313,12 +2313,12 @@ LOAD c:/program files (x86)/atollic/truestudio for stm32 9.0.1/armtools/bin/../l
                 0x2000003c                SystemCoreClock
                 0x20000040                . = ALIGN (0x4)
                 0x20000040                _edata = .
-                0x08003994                _siram2 = LOADADDR (.ram2)
+                0x08003944                _siram2 = LOADADDR (.ram2)
 
-.igot.plt       0x20000040        0x0 load address 0x08003994
+.igot.plt       0x20000040        0x0 load address 0x08003944
  .igot.plt      0x20000040        0x0 c:/program files (x86)/atollic/truestudio for stm32 9.0.1/armtools/bin/../lib/gcc/arm-atollic-eabi/6.3.1/armv7e-m/fpu/crtbegin.o
 
-.ram2           0x10000000        0x0 load address 0x08003994
+.ram2           0x10000000        0x0 load address 0x08003944
                 0x10000000                . = ALIGN (0x4)
                 0x10000000                _sram2 = .
  *(.ram2)
@@ -2492,40 +2492,40 @@ LOAD c:/program files (x86)/atollic/truestudio for stm32 9.0.1/armtools/bin/../l
                 0x00000843       0x22 c:/program files (x86)/atollic/truestudio for stm32 9.0.1/armtools/bin/../lib/gcc/arm-atollic-eabi/6.3.1/armv7e-m/fpu/crtn.o
 OUTPUT(L4_Example_Project.elf elf32-littlearm)
 
-.debug_info     0x00000000    0x23d93
+.debug_info     0x00000000    0x23d39
  .debug_info    0x00000000      0xa8f Src\Applications\Main\main.o
- .debug_info    0x00000a8f      0xcb3 Src\Applications\System_App\System_app.o
- .debug_info    0x00001742     0x10d1 Src\Architecture\SREG\base\sreg.o
- .debug_info    0x00002813      0xc5b Src\Architecture\SREG\custom\sreg_dat.o
- .debug_info    0x0000346e      0xe53 Src\Architecture\Scheduler\base\Scheduler.o
- .debug_info    0x000042c1      0xa28 Src\Architecture\Scheduler\custom\Scheduler_map.o
- .debug_info    0x00004ce9      0xcc9 Src\Architecture\tools\basic\base\CircularBuffer.o
- .debug_info    0x000059b2      0xf88 Src\Drivers\SwTimer\base\SwTimer.o
- .debug_info    0x0000693a      0xe54 Src\Drivers\pipeDevice\base\PipeDevice.o
- .debug_info    0x0000778e     0x12eb Src\HAL\Flash\base\Flash.o
- .debug_info    0x00008a79      0x9c3 Src\HAL\Flash\custom\Flash_map.o
- .debug_info    0x0000943c     0x10ea Src\HAL\GPIO\base\GPIO.o
- .debug_info    0x0000a526      0xb4f Src\HAL\GPIO\custom\GPIO_map.o
- .debug_info    0x0000b075     0x1369 Src\HAL\Interrupts\base\interrupts.o
- .debug_info    0x0000c3de     0x1026 Src\HAL\Interrupts\custom\interrupts_it.o
- .debug_info    0x0000d404     0x1245 Src\HAL\Interrupts\custom\interrupts_map.o
- .debug_info    0x0000e649     0x17a5 Src\HAL\System\base\System.o
- .debug_info    0x0000fdee      0xadc Src\HAL\System\custom\System_map.o
- .debug_info    0x000108ca     0x2043 Src\HAL\spi\base\spi.o
- .debug_info    0x0001290d      0xc9d Src\HAL\spi\custom\spi_map.o
- .debug_info    0x000135aa     0x1ec8 Src\HAL\uart\base\uart.o
- .debug_info    0x00015472      0xc25 Src\HAL\uart\custom\UART_map.o
- .debug_info    0x00016097       0x8e libraries\CMSIS\Source\startup_stm32l452xx.o
- .debug_info    0x00016125      0xde8 libraries\CMSIS\Source\system_stm32l4xx.o
- .debug_info    0x00016f0d     0x12d0 libraries\ST_HAL\Src\stm32l4xx_hal.o
- .debug_info    0x000181dd     0x1726 libraries\ST_HAL\Src\stm32l4xx_hal_cortex.o
- .debug_info    0x00019903     0x1060 libraries\ST_HAL\Src\stm32l4xx_hal_dma.o
- .debug_info    0x0001a963     0x1082 libraries\ST_HAL\Src\stm32l4xx_hal_gpio.o
- .debug_info    0x0001b9e5     0x124f libraries\ST_HAL\Src\stm32l4xx_hal_pwr_ex.o
- .debug_info    0x0001cc34     0x15b0 libraries\ST_HAL\Src\stm32l4xx_hal_rcc.o
- .debug_info    0x0001e1e4     0x25a6 libraries\ST_HAL\Src\stm32l4xx_hal_spi.o
- .debug_info    0x0002078a     0x242c libraries\ST_HAL\Src\stm32l4xx_hal_uart.o
- .debug_info    0x00022bb6     0x11dd libraries\ST_HAL\Src\stm32l4xx_hal_uart_ex.o
+ .debug_info    0x00000a8f      0xc95 Src\Applications\System_App\System_app.o
+ .debug_info    0x00001724     0x10d1 Src\Architecture\SREG\base\sreg.o
+ .debug_info    0x000027f5      0xc5b Src\Architecture\SREG\custom\sreg_dat.o
+ .debug_info    0x00003450      0xe53 Src\Architecture\Scheduler\base\Scheduler.o
+ .debug_info    0x000042a3      0xa28 Src\Architecture\Scheduler\custom\Scheduler_map.o
+ .debug_info    0x00004ccb      0xcc9 Src\Architecture\tools\basic\base\CircularBuffer.o
+ .debug_info    0x00005994      0xf88 Src\Drivers\SwTimer\base\SwTimer.o
+ .debug_info    0x0000691c      0xe54 Src\Drivers\pipeDevice\base\PipeDevice.o
+ .debug_info    0x00007770     0x12eb Src\HAL\Flash\base\Flash.o
+ .debug_info    0x00008a5b      0x9c3 Src\HAL\Flash\custom\Flash_map.o
+ .debug_info    0x0000941e     0x10cc Src\HAL\GPIO\base\GPIO.o
+ .debug_info    0x0000a4ea      0xb31 Src\HAL\GPIO\custom\GPIO_map.o
+ .debug_info    0x0000b01b     0x1369 Src\HAL\Interrupts\base\interrupts.o
+ .debug_info    0x0000c384     0x1026 Src\HAL\Interrupts\custom\interrupts_it.o
+ .debug_info    0x0000d3aa     0x1245 Src\HAL\Interrupts\custom\interrupts_map.o
+ .debug_info    0x0000e5ef     0x17a5 Src\HAL\System\base\System.o
+ .debug_info    0x0000fd94      0xadc Src\HAL\System\custom\System_map.o
+ .debug_info    0x00010870     0x2043 Src\HAL\spi\base\spi.o
+ .debug_info    0x000128b3      0xc9d Src\HAL\spi\custom\spi_map.o
+ .debug_info    0x00013550     0x1ec8 Src\HAL\uart\base\uart.o
+ .debug_info    0x00015418      0xc25 Src\HAL\uart\custom\UART_map.o
+ .debug_info    0x0001603d       0x8e libraries\CMSIS\Source\startup_stm32l452xx.o
+ .debug_info    0x000160cb      0xde8 libraries\CMSIS\Source\system_stm32l4xx.o
+ .debug_info    0x00016eb3     0x12d0 libraries\ST_HAL\Src\stm32l4xx_hal.o
+ .debug_info    0x00018183     0x1726 libraries\ST_HAL\Src\stm32l4xx_hal_cortex.o
+ .debug_info    0x000198a9     0x1060 libraries\ST_HAL\Src\stm32l4xx_hal_dma.o
+ .debug_info    0x0001a909     0x1082 libraries\ST_HAL\Src\stm32l4xx_hal_gpio.o
+ .debug_info    0x0001b98b     0x124f libraries\ST_HAL\Src\stm32l4xx_hal_pwr_ex.o
+ .debug_info    0x0001cbda     0x15b0 libraries\ST_HAL\Src\stm32l4xx_hal_rcc.o
+ .debug_info    0x0001e18a     0x25a6 libraries\ST_HAL\Src\stm32l4xx_hal_spi.o
+ .debug_info    0x00020730     0x242c libraries\ST_HAL\Src\stm32l4xx_hal_uart.o
+ .debug_info    0x00022b5c     0x11dd libraries\ST_HAL\Src\stm32l4xx_hal_uart_ex.o
 
 .debug_abbrev   0x00000000     0x4e26
  .debug_abbrev  0x00000000      0x1b0 Src\Applications\Main\main.o
@@ -2693,70 +2693,70 @@ OUTPUT(L4_Example_Project.elf elf32-littlearm)
  .debug_line    0x0000992a      0xea1 libraries\ST_HAL\Src\stm32l4xx_hal_uart.o
  .debug_line    0x0000a7cb      0x42f libraries\ST_HAL\Src\stm32l4xx_hal_uart_ex.o
 
-.debug_str      0x00000000     0x5bdd
+.debug_str      0x00000000     0x5ba0
  .debug_str     0x00000000      0x67f Src\Applications\Main\main.o
                                 0x718 (size before relaxing)
- .debug_str     0x0000067f      0x51f Src\Applications\System_App\System_app.o
-                                0xb4d (size before relaxing)
- .debug_str     0x00000b9e      0x3fd Src\Architecture\SREG\base\sreg.o
+ .debug_str     0x0000067f      0x4e2 Src\Applications\System_App\System_app.o
+                                0xb10 (size before relaxing)
+ .debug_str     0x00000b61      0x3fd Src\Architecture\SREG\base\sreg.o
                                 0xb88 (size before relaxing)
- .debug_str     0x00000f9b       0x35 Src\Architecture\SREG\custom\sreg_dat.o
+ .debug_str     0x00000f5e       0x35 Src\Architecture\SREG\custom\sreg_dat.o
                                 0xa90 (size before relaxing)
- .debug_str     0x00000fd0      0x3ca Src\Architecture\Scheduler\base\Scheduler.o
+ .debug_str     0x00000f93      0x3ca Src\Architecture\Scheduler\base\Scheduler.o
                                 0xa70 (size before relaxing)
- .debug_str     0x0000139a       0x35 Src\Architecture\Scheduler\custom\Scheduler_map.o
+ .debug_str     0x0000135d       0x35 Src\Architecture\Scheduler\custom\Scheduler_map.o
                                 0x749 (size before relaxing)
- .debug_str     0x000013cf      0x176 Src\Architecture\tools\basic\base\CircularBuffer.o
+ .debug_str     0x00001392      0x176 Src\Architecture\tools\basic\base\CircularBuffer.o
                                 0x7da (size before relaxing)
- .debug_str     0x00001545      0x292 Src\Drivers\SwTimer\base\SwTimer.o
+ .debug_str     0x00001508      0x292 Src\Drivers\SwTimer\base\SwTimer.o
                                 0x9ae (size before relaxing)
- .debug_str     0x000017d7      0x25f Src\Drivers\pipeDevice\base\PipeDevice.o
+ .debug_str     0x0000179a      0x25f Src\Drivers\pipeDevice\base\PipeDevice.o
                                 0x97a (size before relaxing)
- .debug_str     0x00001a36      0x374 Src\HAL\Flash\base\Flash.o
+ .debug_str     0x000019f9      0x374 Src\HAL\Flash\base\Flash.o
                                 0xae0 (size before relaxing)
- .debug_str     0x00001daa       0x24 Src\HAL\Flash\custom\Flash_map.o
+ .debug_str     0x00001d6d       0x24 Src\HAL\Flash\custom\Flash_map.o
                                 0x6dc (size before relaxing)
- .debug_str     0x00001dce      0x2c0 Src\HAL\GPIO\base\GPIO.o
-                                0xb0c (size before relaxing)
- .debug_str     0x0000208e       0x22 Src\HAL\GPIO\custom\GPIO_map.o
-                                0x813 (size before relaxing)
- .debug_str     0x000020b0      0x8d3 Src\HAL\Interrupts\base\interrupts.o
+ .debug_str     0x00001d91      0x2c0 Src\HAL\GPIO\base\GPIO.o
+                                0xacf (size before relaxing)
+ .debug_str     0x00002051       0x22 Src\HAL\GPIO\custom\GPIO_map.o
+                                0x7d6 (size before relaxing)
+ .debug_str     0x00002073      0x8d3 Src\HAL\Interrupts\base\interrupts.o
                                0x10d4 (size before relaxing)
- .debug_str     0x00002983      0x24e Src\HAL\Interrupts\custom\interrupts_it.o
+ .debug_str     0x00002946      0x24e Src\HAL\Interrupts\custom\interrupts_it.o
                                 0xc18 (size before relaxing)
- .debug_str     0x00002bd1       0xec Src\HAL\Interrupts\custom\interrupts_map.o
+ .debug_str     0x00002b94       0xec Src\HAL\Interrupts\custom\interrupts_map.o
                                0x10f7 (size before relaxing)
- .debug_str     0x00002cbd      0x67c Src\HAL\System\base\System.o
+ .debug_str     0x00002c80      0x67c Src\HAL\System\base\System.o
                                 0xf60 (size before relaxing)
- .debug_str     0x00003339       0x26 Src\HAL\System\custom\System_map.o
+ .debug_str     0x000032fc       0x26 Src\HAL\System\custom\System_map.o
                                 0x7d2 (size before relaxing)
- .debug_str     0x0000335f      0x745 Src\HAL\spi\base\spi.o
+ .debug_str     0x00003322      0x745 Src\HAL\spi\base\spi.o
                                0x1405 (size before relaxing)
- .debug_str     0x00003aa4       0x54 Src\HAL\spi\custom\spi_map.o
+ .debug_str     0x00003a67       0x54 Src\HAL\spi\custom\spi_map.o
                                 0x8ff (size before relaxing)
- .debug_str     0x00003af8      0x49f Src\HAL\uart\base\uart.o
+ .debug_str     0x00003abb      0x49f Src\HAL\uart\base\uart.o
                                0x13c0 (size before relaxing)
- .debug_str     0x00003f97       0x3e Src\HAL\uart\custom\UART_map.o
+ .debug_str     0x00003f5a       0x3e Src\HAL\uart\custom\UART_map.o
                                 0x871 (size before relaxing)
- .debug_str     0x00003fd5       0x72 libraries\CMSIS\Source\system_stm32l4xx.o
+ .debug_str     0x00003f98       0x72 libraries\CMSIS\Source\system_stm32l4xx.o
                                 0x84d (size before relaxing)
- .debug_str     0x00004047      0x397 libraries\ST_HAL\Src\stm32l4xx_hal.o
+ .debug_str     0x0000400a      0x397 libraries\ST_HAL\Src\stm32l4xx_hal.o
                                0x1031 (size before relaxing)
- .debug_str     0x000043de      0x2d9 libraries\ST_HAL\Src\stm32l4xx_hal_cortex.o
+ .debug_str     0x000043a1      0x2d9 libraries\ST_HAL\Src\stm32l4xx_hal_cortex.o
                                 0xfe2 (size before relaxing)
- .debug_str     0x000046b7      0x260 libraries\ST_HAL\Src\stm32l4xx_hal_dma.o
+ .debug_str     0x0000467a      0x260 libraries\ST_HAL\Src\stm32l4xx_hal_dma.o
                                 0xadf (size before relaxing)
- .debug_str     0x00004917       0xe2 libraries\ST_HAL\Src\stm32l4xx_hal_gpio.o
+ .debug_str     0x000048da       0xe2 libraries\ST_HAL\Src\stm32l4xx_hal_gpio.o
                                 0x9e1 (size before relaxing)
- .debug_str     0x000049f9      0x428 libraries\ST_HAL\Src\stm32l4xx_hal_pwr_ex.o
+ .debug_str     0x000049bc      0x428 libraries\ST_HAL\Src\stm32l4xx_hal_pwr_ex.o
                                 0xbf7 (size before relaxing)
- .debug_str     0x00004e21      0x1c9 libraries\ST_HAL\Src\stm32l4xx_hal_rcc.o
+ .debug_str     0x00004de4      0x1c9 libraries\ST_HAL\Src\stm32l4xx_hal_rcc.o
                                 0xc54 (size before relaxing)
- .debug_str     0x00004fea      0x478 libraries\ST_HAL\Src\stm32l4xx_hal_spi.o
+ .debug_str     0x00004fad      0x478 libraries\ST_HAL\Src\stm32l4xx_hal_spi.o
                                 0xff0 (size before relaxing)
- .debug_str     0x00005462      0x641 libraries\ST_HAL\Src\stm32l4xx_hal_uart.o
+ .debug_str     0x00005425      0x641 libraries\ST_HAL\Src\stm32l4xx_hal_uart.o
                                0x143b (size before relaxing)
- .debug_str     0x00005aa3      0x13a libraries\ST_HAL\Src\stm32l4xx_hal_uart_ex.o
+ .debug_str     0x00005a66      0x13a libraries\ST_HAL\Src\stm32l4xx_hal_uart_ex.o
                                 0xd08 (size before relaxing)
 
 .comment        0x00000000       0x7c

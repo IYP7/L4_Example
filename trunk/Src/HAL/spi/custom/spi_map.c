@@ -135,8 +135,15 @@ const tSpiInstanceMap SPIInstanceMap[NUM_OF_SPI] =  {
  */
 const tSpiPeripheralMap SPIPeripheralMap[NUM_OF_SPI_DEVICES] =
 {
+#ifdef IS_SPI1
 	{SPI_1},	/* SPI_TEST_1 */
+#endif
+#ifdef IS_SPI2
+	{SPI_2},	/* SPI_TEST_2 */
+#endif
+#ifdef IS_SPI3
     {SPI_3},	/* SPI_TEST_3 */
+#endif
 };
 /***********************************************************************
  * TYPE DEFINITIONS

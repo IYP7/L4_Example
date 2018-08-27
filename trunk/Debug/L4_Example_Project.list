@@ -7,15 +7,15 @@ Idx Name          Size      VMA       LMA       File off  Algn
                   CONTENTS, ALLOC, LOAD, READONLY, DATA
   1 .text         000034dc  08000194  08000194  00010194  2**2
                   CONTENTS, ALLOC, LOAD, READONLY, CODE
-  2 .rodata       000002d4  08003670  08003670  00013670  2**2
+  2 .rodata       00000284  08003670  08003670  00013670  2**2
                   CONTENTS, ALLOC, LOAD, READONLY, DATA
-  3 .ARM          00000008  08003944  08003944  00013944  2**2
+  3 .ARM          00000008  080038f4  080038f4  000138f4  2**2
                   CONTENTS, ALLOC, LOAD, READONLY, DATA
-  4 .init_array   00000004  0800394c  0800394c  0001394c  2**2
+  4 .init_array   00000004  080038fc  080038fc  000138fc  2**2
                   CONTENTS, ALLOC, LOAD, DATA
-  5 .fini_array   00000004  08003950  08003950  00013950  2**2
+  5 .fini_array   00000004  08003900  08003900  00013900  2**2
                   CONTENTS, ALLOC, LOAD, DATA
-  6 .data         00000040  20000000  08003954  00020000  2**2
+  6 .data         00000040  20000000  08003904  00020000  2**2
                   CONTENTS, ALLOC, LOAD, DATA
   7 .ram2         00000000  10000000  10000000  00020040  2**0
                   CONTENTS
@@ -25,23 +25,23 @@ Idx Name          Size      VMA       LMA       File off  Algn
                   ALLOC
  10 .ARM.attributes 00000030  00000000  00000000  00020040  2**0
                   CONTENTS, READONLY
- 11 .debug_info   00023d93  00000000  00000000  00020070  2**0
+ 11 .debug_info   00023d39  00000000  00000000  00020070  2**0
                   CONTENTS, READONLY, DEBUGGING
- 12 .debug_abbrev 00004e26  00000000  00000000  00043e03  2**0
+ 12 .debug_abbrev 00004e26  00000000  00000000  00043da9  2**0
                   CONTENTS, READONLY, DEBUGGING
- 13 .debug_aranges 000010e8  00000000  00000000  00048c30  2**3
+ 13 .debug_aranges 000010e8  00000000  00000000  00048bd0  2**3
                   CONTENTS, READONLY, DEBUGGING
- 14 .debug_ranges 00000f98  00000000  00000000  00049d18  2**3
+ 14 .debug_ranges 00000f98  00000000  00000000  00049cb8  2**3
                   CONTENTS, READONLY, DEBUGGING
- 15 .debug_line   0000abfa  00000000  00000000  0004acb0  2**0
+ 15 .debug_line   0000abfa  00000000  00000000  0004ac50  2**0
                   CONTENTS, READONLY, DEBUGGING
- 16 .debug_str    00005bdd  00000000  00000000  000558aa  2**0
+ 16 .debug_str    00005ba0  00000000  00000000  0005584a  2**0
                   CONTENTS, READONLY, DEBUGGING
- 17 .comment      0000007c  00000000  00000000  0005b487  2**0
+ 17 .comment      0000007c  00000000  00000000  0005b3ea  2**0
                   CONTENTS, READONLY
- 18 .debug_frame  0000285c  00000000  00000000  0005b504  2**2
+ 18 .debug_frame  0000285c  00000000  00000000  0005b468  2**2
                   CONTENTS, READONLY, DEBUGGING
- 19 .debug_loc    0000897d  00000000  00000000  0005dd60  2**0
+ 19 .debug_loc    0000897d  00000000  00000000  0005dcc4  2**0
                   CONTENTS, READONLY, DEBUGGING
 
 Disassembly of section .text:
@@ -433,7 +433,7 @@ void callSystemApp( void )
     // GPIO
     GPIOWritePort(GPIO_LED_1, GPIO_TOGGLE);
  8000532:	2102      	movs	r1, #2
- 8000534:	2006      	movs	r0, #6
+ 8000534:	2000      	movs	r0, #0
  8000536:	f000 fb6d 	bl	8000c14 <GPIOWritePort>
 
     /* END HAL TEST */
@@ -1907,7 +1907,7 @@ void InitGPIOClock(tGPIO port)
  8000d64:	e001      	b.n	8000d6a <GPIOInit+0xe>
  8000d66:	3401      	adds	r4, #1
  8000d68:	b2e4      	uxtb	r4, r4
- 8000d6a:	2c0e      	cmp	r4, #14
+ 8000d6a:	2c09      	cmp	r4, #9
  8000d6c:	d81b      	bhi.n	8000da6 <GPIOInit+0x4a>
 		InitGPIOClock(port);
  8000d6e:	4620      	mov	r0, r4
@@ -2689,7 +2689,7 @@ static eError SystemClock_Config(void)
  8001056:	2000      	movs	r0, #0
  8001058:	e7cc      	b.n	8000ff4 <SystemClock_Config+0x50>
  800105a:	bf00      	nop
- 800105c:	080037dc 	.word	0x080037dc
+ 800105c:	0800378c 	.word	0x0800378c
  8001060:	10624dd3 	.word	0x10624dd3
  8001064:	40021000 	.word	0x40021000
 
@@ -2786,7 +2786,7 @@ static void spiRestartSlaveMode(SPI_HandleTypeDef *hspi)
  80010bc:	e7f0      	b.n	80010a0 <spiRestartSlaveMode+0x10>
  80010be:	bf00      	nop
  80010c0:	40003c00 	.word	0x40003c00
- 80010c4:	08003830 	.word	0x08003830
+ 80010c4:	080037e0 	.word	0x080037e0
  80010c8:	200001f4 	.word	0x200001f4
 
 080010cc <HAL_SPI_ErrorCallback>:
@@ -3048,7 +3048,7 @@ void spiDriverMainIRQHandler(tSpiPort spiPort)
  800123a:	f7ff fbba 	bl	80009b2 <AddQueueByte>
  800123e:	e7c8      	b.n	80011d2 <spiDriverMainIRQHandler+0x66>
  8001240:	200000fc 	.word	0x200000fc
- 8001244:	08003830 	.word	0x08003830
+ 8001244:	080037e0 	.word	0x080037e0
  8001248:	200001f4 	.word	0x200001f4
  800124c:	200001c4 	.word	0x200001c4
 
@@ -3159,7 +3159,7 @@ eError spiInit(void)
 }
  80012d0:	2000      	movs	r0, #0
  80012d2:	bdf8      	pop	{r3, r4, r5, r6, r7, pc}
- 80012d4:	08003830 	.word	0x08003830
+ 80012d4:	080037e0 	.word	0x080037e0
  80012d8:	200000fc 	.word	0x200000fc
  80012dc:	200001c4 	.word	0x200001c4
 
@@ -3222,7 +3222,7 @@ eError spiStart(void)
  800132c:	2000      	movs	r0, #0
  800132e:	bd38      	pop	{r3, r4, r5, pc}
  8001330:	200000fc 	.word	0x200000fc
- 8001334:	08003830 	.word	0x08003830
+ 8001334:	080037e0 	.word	0x080037e0
  8001338:	200001f4 	.word	0x200001f4
 
 0800133c <HAL_UART_MspInit>:
@@ -3460,7 +3460,7 @@ void HAL_UART_RxCpltCallback(UART_HandleTypeDef *huart)
  80014ae:	f7ff fa80 	bl	80009b2 <AddQueueByte>
  80014b2:	e7dd      	b.n	8001470 <HAL_UART_RxCpltCallback+0x1c>
  80014b4:	20000073 	.word	0x20000073
- 80014b8:	080038d0 	.word	0x080038d0
+ 80014b8:	08003880 	.word	0x08003880
  80014bc:	20000494 	.word	0x20000494
  80014c0:	200003fc 	.word	0x200003fc
  80014c4:	20000414 	.word	0x20000414
@@ -3579,7 +3579,7 @@ eError uartInit(void)
  800154e:	b2e4      	uxtb	r4, r4
  8001550:	e7ce      	b.n	80014f0 <uartInit+0x4>
  8001552:	bf00      	nop
- 8001554:	080038d0 	.word	0x080038d0
+ 8001554:	08003880 	.word	0x08003880
  8001558:	2000041c 	.word	0x2000041c
  800155c:	200003fc 	.word	0x200003fc
 
@@ -3719,7 +3719,7 @@ LoopForever:
   ldr   sp, =_estack    /* Atollic update: set stack pointer */
  80015dc:	20020000 	.word	0x20020000
 	ldr	r3, =_sidata
- 80015e0:	08003954 	.word	0x08003954
+ 80015e0:	08003904 	.word	0x08003904
 	ldr	r0, =_sdata
  80015e4:	20000000 	.word	0x20000000
 	ldr	r3, =_edata
@@ -4798,7 +4798,7 @@ static HAL_StatusTypeDef RCC_SetFlashLatencyFromMSIRange(uint32_t msirange)
       break;
  8001b92:	e7ec      	b.n	8001b6e <HAL_RCC_GetSysClockFreq+0xca>
  8001b94:	40021000 	.word	0x40021000
- 8001b98:	08003914 	.word	0x08003914
+ 8001b98:	080038c4 	.word	0x080038c4
  8001b9c:	00f42400 	.word	0x00f42400
  8001ba0:	007a1200 	.word	0x007a1200
 
@@ -5098,7 +5098,7 @@ static HAL_StatusTypeDef RCC_SetFlashLatencyFromMSIRange(uint32_t msirange)
  8001e0c:	2003      	movs	r0, #3
  8001e0e:	e1a8      	b.n	8002162 <HAL_RCC_OscConfig+0x5be>
  8001e10:	40021000 	.word	0x40021000
- 8001e14:	080038fc 	.word	0x080038fc
+ 8001e14:	080038ac 	.word	0x080038ac
  8001e18:	2000003c 	.word	0x2000003c
        ((__HAL_RCC_GET_SYSCLK_SOURCE() == RCC_CFGR_SWS_PLL) && (__HAL_RCC_GET_PLL_OSCSOURCE() == RCC_PLLSOURCE_HSI)))
  8001e1c:	4bb1      	ldr	r3, [pc, #708]	; (80020e4 <HAL_RCC_OscConfig+0x540>)
@@ -5735,7 +5735,7 @@ static HAL_StatusTypeDef RCC_SetFlashLatencyFromMSIRange(uint32_t msirange)
  800230a:	bd70      	pop	{r4, r5, r6, pc}
  800230c:	40022000 	.word	0x40022000
  8002310:	40021000 	.word	0x40021000
- 8002314:	080038fc 	.word	0x080038fc
+ 8002314:	080038ac 	.word	0x080038ac
  8002318:	2000003c 	.word	0x2000003c
 
 0800231c <HAL_RCC_GetHCLKFreq>:
@@ -5761,7 +5761,7 @@ static HAL_StatusTypeDef RCC_SetFlashLatencyFromMSIRange(uint32_t msirange)
  800233c:	bd08      	pop	{r3, pc}
  800233e:	bf00      	nop
  8002340:	40021000 	.word	0x40021000
- 8002344:	0800390c 	.word	0x0800390c
+ 8002344:	080038bc 	.word	0x080038bc
 
 08002348 <HAL_RCC_GetPCLK2Freq>:
 {
@@ -5778,7 +5778,7 @@ static HAL_StatusTypeDef RCC_SetFlashLatencyFromMSIRange(uint32_t msirange)
  800235c:	bd08      	pop	{r3, pc}
  800235e:	bf00      	nop
  8002360:	40021000 	.word	0x40021000
- 8002364:	0800390c 	.word	0x0800390c
+ 8002364:	080038bc 	.word	0x080038bc
 
 08002368 <SPI_WaitFlagStateUntilTimeout>:
   * @param  Tickstart tick start value
@@ -8593,10 +8593,10 @@ static void UART_RxISR_16BIT(UART_HandleTypeDef *huart)
  8003642:	4798      	blx	r3
  8003644:	3501      	adds	r5, #1
  8003646:	e7f2      	b.n	800362e <__libc_init_array+0x1e>
- 8003648:	0800394c 	.word	0x0800394c
- 800364c:	0800394c 	.word	0x0800394c
- 8003650:	0800394c 	.word	0x0800394c
- 8003654:	08003950 	.word	0x08003950
+ 8003648:	080038fc 	.word	0x080038fc
+ 800364c:	080038fc 	.word	0x080038fc
+ 8003650:	080038fc 	.word	0x080038fc
+ 8003654:	08003900 	.word	0x08003900
 
 08003658 <_init>:
  8003658:	b5f8      	push	{r3, r4, r5, r6, r7, lr}

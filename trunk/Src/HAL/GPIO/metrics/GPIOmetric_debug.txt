@@ -9,9 +9,9 @@ GPIOWritePort                            =     56
 RAM: 
 
 DATA: 
-GPIOInstanceMap                          =    240
+GPIOInstanceMap                          =    160
 ------------------------------------------------------------------
 TOTAL FLASH SIZE GPIO                    =    412
 TOTAL RAM SIZE GPIO                      =      0
-TOTAL DATA SIZE GPIO                     =    240
+TOTAL DATA SIZE GPIO                     =    160
 ------------------------------------------------------------------
