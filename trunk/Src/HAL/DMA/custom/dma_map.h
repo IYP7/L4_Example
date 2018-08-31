@@ -1,25 +1,17 @@
 /***********************************************************************
- * @file interrupts_map.h
- * @addtogroup HAL
- * @{
- * @addtogroup INTERRUPTS
- * @{
- *
- * @brief HAL interrupts_map Header.
- *
- * @author Dario Davide
- *
- * @date 25/01/2016
- *
+ * @file	DMA_map.h
+ * @brief	DMA map declaration
+ * @author	...
+ * @date	28/10/2014
  **********************************************************************/
 
-#ifndef	_INT_MAP_H_
-#define	_INT_MAP_H_
+#ifndef DMA_MAP_H_
+#define DMA_MAP_H_
 
 /***********************************************************************
  * COMMON INCLUDES
  **********************************************************************/
-#include "Common.h"
+#include "common.h"
 
 /***********************************************************************
  * COMMON ARCHITECTURE INCLUDES
@@ -28,63 +20,42 @@
 /***********************************************************************
  * INCLUDES
  **********************************************************************/
-
+#include "DMA.h"
 /***********************************************************************
  * DEFINES
  **********************************************************************/
-#define MAX_IRQ IRQ_ALL
-/**********************************************************************/
+//#define INTERRUPT_TX_UART
 
 
-/***********************************************************************/
 
+//#define IS_DMA1_Stream0
+//#define IS_DMA1_Stream1
+//#define IS_DMA1_Stream2
+//#define IS_DMA1_Stream3
+//#define IS_DMA1_Stream4
+//#define IS_DMA1_Stream5
+//#define IS_DMA1_Stream6
+//#define IS_DMA1_Stream7
 
+//#define IS_DMA2_Stream0
+//#define IS_DMA2_Stream1
+//#define IS_DMA2_Stream2
+#define IS_DMA2_Stream3
+//#define IS_DMA2_Stream4
+//#define IS_DMA2_Stream5
+#define IS_DMA2_Stream6
+//#define IS_DMA2_Stream7
 /***********************************************************************
  * TYPE DEFINITIONS
  **********************************************************************/
 
 
-typedef enum eInterrupts
-{
-	IRQ_SYSTICK = 0,
-	IRQ_RTC,
-	IRQ_EXTI0,
-	IRQ_EXTI1,
-	IRQ_EXTI9_5,
-	IRQ_ADC1,
-	IRQ_TIM2,
-	IRQ_TIM3,
-	IRQ_USART1,
-	IRQ_USART2,
-    IRQ_I2C1,
-    IRQ_I2C2,
-    IRQ_SPI1,
-    IRQ_SPI2,
-	IRQ_SPI3,
-	IRQ_DMA2_CH3,
-	IRQ_DMA2_CH6,
-	IRQ_ALL,
-	NUM_OF_INT
-
-} tInterrupts;
-
 /***********************************************************************
  * PUBLIC FUCNTION PROTOTYPES
  **********************************************************************/
 
-void HAL_UART1_Callback(void);
-void HAL_UART2_Callback(void);
-void HAL_I2C1_Callback(void);
-void HAL_I2C2_Callback(void);
-void HAL_SPI1_Callback(void);
-void HAL_SPI2_Callback(void);
-void HAL_SPI3_Callback(void);
-void HAL_DMA3_Callback(void);
-void HAL_DMA6_Callback(void);
 
-
-#endif	/*_INT_MAP_H_*/
-
+#endif /* DMA_MAP_H_ */
 /***********************************************************************
  * End of file
  **********************************************************************/

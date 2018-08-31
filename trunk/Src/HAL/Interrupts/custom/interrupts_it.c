@@ -319,6 +319,26 @@ void TIM3_IRQHandler(void)
 #endif
 }
 
+/**
+  * @brief  This function handles DMA global interrupt request.
+  * @param  None
+  * @retval None
+  */
+void DMA2_Stream3_IRQHandler(void)
+{
+	HAL_DMA3_Callback();
+}
+
+/**
+  * @brief  This function handles DMA global interrupt request.
+  * @param  None
+  * @retval None
+  */
+void DMA2_Stream6_IRQHandler(void)
+{
+	HAL_DMA6_Callback();
+}
+
 /****************************************************************************
  *    End of file
  *    }@}@

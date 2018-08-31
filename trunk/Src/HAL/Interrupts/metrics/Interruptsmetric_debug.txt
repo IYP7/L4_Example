@@ -41,9 +41,9 @@ RAM:
 countIrqAllDisable                       =      2
 
 DATA: 
-interruptsInstanceMap                    =     60
+interruptsInstanceMap                    =     68
 ------------------------------------------------------------------
 TOTAL FLASH SIZE INTERRUPTS              =    314
 TOTAL RAM SIZE INTERRUPTS                =      2
-TOTAL DATA SIZE INTERRUPTS               =     60
+TOTAL DATA SIZE INTERRUPTS               =     68
 ------------------------------------------------------------------

@@ -21,7 +21,7 @@
 							<option id="com.atollic.truestudio.toolchain_options.mcu.590719707" name="Microcontroller" superClass="com.atollic.truestudio.toolchain_options.mcu" useByScannerDiscovery="false" value="STM32L452RE" valueType="string"/>
 							<option id="com.atollic.truestudio.toolchain_options.vendor.36569188" name="Vendor name" superClass="com.atollic.truestudio.toolchain_options.vendor" useByScannerDiscovery="false" value="STMicroelectronics" valueType="string"/>
 							<targetPlatform archList="all" binaryParser="org.eclipse.cdt.core.ELF" id="com.atollic.truestudio.exe.debug.toolchain.platform.1483346559" isAbstract="false" name="Debug platform" superClass="com.atollic.truestudio.exe.debug.toolchain.platform"/>
-							<builder autoBuildTarget="all" buildPath="${workspace_loc:/MonF4Test}/Debug" cleanBuildTarget="clean" customBuilderProperties="toolChainpathString=C:\\Program Files (x86)\\Atollic\\TrueSTUDIO for STM32 9.0.1\\ARMTools\\bin|com.atollic.truestudio.common_options.target.mcu=STM32L452RE|toolChainpathType=1|com.atollic.truestudio.common_options.target.vendor=STMicroelectronics|" id="org.eclipse.cdt.build.core.internal.builder.1889435610" incrementalBuildTarget="all" keepEnvironmentInBuildfile="false" managedBuildOn="true" name="CDT Internal Builder" parallelBuildOn="false" superClass="org.eclipse.cdt.build.core.internal.builder"/>
+							<builder autoBuildTarget="all" buildPath="${workspace_loc:/MonF4Test}/Debug" cleanBuildTarget="clean" customBuilderProperties="toolChainpathString=C:\\Program Files (x86)\\Atollic\\TrueSTUDIO for STM32 9.0.1\\ARMTools\\bin|toolChainpathType=1|com.atollic.truestudio.common_options.target.vendor=STMicroelectronics|com.atollic.truestudio.common_options.target.mcu=STM32L452RE|" id="org.eclipse.cdt.build.core.internal.builder.1889435610" incrementalBuildTarget="all" keepEnvironmentInBuildfile="false" managedBuildOn="true" name="CDT Internal Builder" parallelBuildOn="false" superClass="org.eclipse.cdt.build.core.internal.builder"/>
 							<tool command="arm-atollic-eabi-gcc -c" commandLinePattern="${COMMAND} ${FLAGS} ${OUTPUT_FLAG}${OUTPUT_PREFIX} ${OUTPUT} ${INPUTS}" errorParsers="org.eclipse.cdt.core.GASErrorParser" id="com.atollic.truestudio.exe.debug.toolchain.as.2108167001" name="Assembler" superClass="com.atollic.truestudio.exe.debug.toolchain.as">
 								<option id="com.atollic.truestudio.common_options.target.mcpu.1055222887" name="Microcontroller" superClass="com.atollic.truestudio.common_options.target.mcpu" useByScannerDiscovery="false" value="STM32L452RE" valueType="enumerated"/>
 								<option id="com.atollic.truestudio.common_options.target.endianess.941900258" name="Endianess" superClass="com.atollic.truestudio.common_options.target.endianess" useByScannerDiscovery="false" value="com.atollic.truestudio.common_options.target.endianess.little" valueType="enumerated"/>
@@ -29,7 +29,7 @@
 								<option id="com.atollic.truestudio.common_options.target.fpu.2113300839" name="Floating point" superClass="com.atollic.truestudio.common_options.target.fpu" useByScannerDiscovery="false" value="com.atollic.truestudio.common_options.target.fpu.hard" valueType="enumerated"/>
 								<option id="com.atollic.truestudio.common_options.target.instr_set.391459004" name="Instruction set" superClass="com.atollic.truestudio.common_options.target.instr_set" useByScannerDiscovery="false" value="com.atollic.truestudio.common_options.target.instr_set.thumb2" valueType="enumerated"/>
 								<option id="com.atollic.truestudio.common_options.target.interwork.1732016528" name="Mix ARM/Thumb" superClass="com.atollic.truestudio.common_options.target.interwork" useByScannerDiscovery="false"/>
-								<option id="com.atollic.truestudio.as.general.incpath.1324991903" superClass="com.atollic.truestudio.as.general.incpath" valueType="includePath">
+								<option id="com.atollic.truestudio.as.general.incpath.1324991903" name="Include path" superClass="com.atollic.truestudio.as.general.incpath" useByScannerDiscovery="false" valueType="includePath">
 									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/${ProjName}/Src/HAL/spi}&quot;"/>
 								</option>
 								<inputType id="com.atollic.truestudio.as.input.1582553107" name="Input" superClass="com.atollic.truestudio.as.input"/>
@@ -49,6 +49,10 @@
 								</option>
 								<option id="com.atollic.truestudio.gcc.directories.select.1872165063" name="Include path" superClass="com.atollic.truestudio.gcc.directories.select" useByScannerDiscovery="false" valueType="includePath">
 									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/${ProjName}/Src/Applications/Main}&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/${ProjName}/Src/Drivers/SD/base}&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/${ProjName}/Src/Drivers/SD/custom}&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/${ProjName}/Src/HAL/DMA/base}&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/${ProjName}/Src/HAL/DMA/custom}&quot;"/>
 									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/${ProjName}/Src/Applications/System_App}&quot;"/>
 									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/${ProjName}/Src/Architecture/Generic/base}&quot;"/>
 									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/${ProjName}/Src/Architecture/Generic/custom}&quot;"/>
@@ -146,7 +150,7 @@
 						</toolChain>
 					</folderInfo>
 					<sourceEntries>
-						<entry excluding="Src/Architecture/Shell|Src/Architecture/HREG|stm32l4xx_hal_msp.c|Src/Drivers/VirtualEEPROM|Src/Drivers/Leds|Src/Drivers/Buttons|Src/HAL/Timer/test|Src/HAL/GPIO/test|Src/HAL/Interrupts/test|Src/HAL/spi/test|Src/HAL/i2c/test|Src/HAL/uart/test" flags="VALUE_WORKSPACE_PATH" kind="sourcePath" name=""/>
+						<entry excluding="Src/Drivers/SD/base/sd_api.c|Src/Architecture/Shell|Src/Architecture/HREG|stm32l4xx_hal_msp.c|Src/Drivers/VirtualEEPROM|Src/Drivers/Leds|Src/Drivers/Buttons|Src/HAL/Timer/test|Src/HAL/GPIO/test|Src/HAL/Interrupts/test|Src/HAL/spi/test|Src/HAL/i2c/test|Src/HAL/uart/test" flags="VALUE_WORKSPACE_PATH" kind="sourcePath" name=""/>
 					</sourceEntries>
 				</configuration>
 			</storageModule>
@@ -172,7 +176,7 @@
 							<option id="com.atollic.truestudio.toolchain_options.mcu.1870789171" name="Microcontroller" superClass="com.atollic.truestudio.toolchain_options.mcu" value="STM32L452RE" valueType="string"/>
 							<option id="com.atollic.truestudio.toolchain_options.vendor.442027868" name="Vendor name" superClass="com.atollic.truestudio.toolchain_options.vendor" value="STMicroelectronics" valueType="string"/>
 							<targetPlatform archList="all" binaryParser="org.eclipse.cdt.core.ELF" id="com.atollic.truestudio.exe.debug.toolchain.platform.872788841" isAbstract="false" name="Debug platform" superClass="com.atollic.truestudio.exe.debug.toolchain.platform"/>
-							<builder buildPath="${workspace_loc:/MontsenyBaseRework}/Debug" customBuilderProperties="toolChainpathString=C:/Program Files (x86)/Atollic/TrueSTUDIO for ARM 5.4.1/ARMTools/bin|com.atollic.truestudio.common_options.target.mcu=STM32L452RE|toolChainpathType=1|com.atollic.truestudio.common_options.target.vendor=STMicroelectronics|" id="org.eclipse.cdt.build.core.settings.default.builder.2048029628" keepEnvironmentInBuildfile="false" name="Gnu Make Builder" superClass="org.eclipse.cdt.build.core.settings.default.builder"/>
+							<builder buildPath="${workspace_loc:/MontsenyBaseRework}/Debug" customBuilderProperties="toolChainpathString=C:/Program Files (x86)/Atollic/TrueSTUDIO for ARM 5.4.1/ARMTools/bin|toolChainpathType=1|com.atollic.truestudio.common_options.target.vendor=STMicroelectronics|com.atollic.truestudio.common_options.target.mcu=STM32L452RE|" id="org.eclipse.cdt.build.core.settings.default.builder.2048029628" keepEnvironmentInBuildfile="false" name="Gnu Make Builder" superClass="org.eclipse.cdt.build.core.settings.default.builder"/>
 							<tool command="arm-atollic-eabi-gcc -c" commandLinePattern="${COMMAND} ${FLAGS} ${OUTPUT_FLAG}${OUTPUT_PREFIX} ${OUTPUT} ${INPUTS}" errorParsers="org.eclipse.cdt.core.GASErrorParser" id="com.atollic.truestudio.exe.debug.toolchain.as.1956308147" name="Assembler" superClass="com.atollic.truestudio.exe.debug.toolchain.as">
 								<option id="com.atollic.truestudio.common_options.target.mcpu.1840545867" name="Microcontroller" superClass="com.atollic.truestudio.common_options.target.mcpu" value="STM32L452RE" valueType="enumerated"/>
 								<option id="com.atollic.truestudio.common_options.target.endianess.399489912" name="Endianess" superClass="com.atollic.truestudio.common_options.target.endianess" value="com.atollic.truestudio.common_options.target.endianess.little" valueType="enumerated"/>
@@ -180,7 +184,7 @@
 								<option id="com.atollic.truestudio.common_options.target.fpu.702898718" name="Floating point" superClass="com.atollic.truestudio.common_options.target.fpu" value="com.atollic.truestudio.common_options.target.fpu.hard" valueType="enumerated"/>
 								<option id="com.atollic.truestudio.common_options.target.instr_set.121264269" name="Instruction set" superClass="com.atollic.truestudio.common_options.target.instr_set" value="com.atollic.truestudio.common_options.target.instr_set.thumb2" valueType="enumerated"/>
 								<option id="com.atollic.truestudio.common_options.target.interwork.1308345310" name="Mix ARM/Thumb" superClass="com.atollic.truestudio.common_options.target.interwork"/>
-								<option id="com.atollic.truestudio.as.general.incpath.2070885720" superClass="com.atollic.truestudio.as.general.incpath" valueType="includePath">
+								<option id="com.atollic.truestudio.as.general.incpath.2070885720" name="Include path" superClass="com.atollic.truestudio.as.general.incpath" valueType="includePath">
 									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/${ProjName}/Src/HAL/spi}&quot;"/>
 								</option>
 								<inputType id="com.atollic.truestudio.as.input.1279666376" name="Input" superClass="com.atollic.truestudio.as.input"/>
@@ -297,7 +301,7 @@
 						</toolChain>
 					</folderInfo>
 					<sourceEntries>
-						<entry excluding="Src/Architecture/Shell|Src/Architecture/HREG|stm32l4xx_hal_msp.c|Src/Drivers/VirtualEEPROM|Src/Drivers/Leds|Src/Drivers/Buttons|Src/HAL/ADC/base/ADC_copy_ok_polling.c|Src/HAL/Timer/test|Src/HAL/GPIO/test|Src/HAL/Interrupts/test|Src/HAL/spi/test|Src/HAL/i2c/test|Src/HAL/uart/test" flags="VALUE_WORKSPACE_PATH|RESOLVED" kind="sourcePath" name=""/>
+						<entry excluding="Src/Drivers/SD/base/sd_api.c|Src/Architecture/Shell|Src/Architecture/HREG|stm32l4xx_hal_msp.c|Src/Drivers/VirtualEEPROM|Src/Drivers/Leds|Src/Drivers/Buttons|Src/HAL/ADC/base/ADC_copy_ok_polling.c|Src/HAL/Timer/test|Src/HAL/GPIO/test|Src/HAL/Interrupts/test|Src/HAL/spi/test|Src/HAL/i2c/test|Src/HAL/uart/test" flags="VALUE_WORKSPACE_PATH|RESOLVED" kind="sourcePath" name=""/>
 					</sourceEntries>
 				</configuration>
 			</storageModule>

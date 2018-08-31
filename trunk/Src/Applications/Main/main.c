@@ -40,7 +40,8 @@
 #include "uart.h"
 #include "flash.h"
 #include "spi.h"
-
+#include "DMA.h"
+#include "sd.h"
 /*************************************************************************//**
  * @brief   Embedded application start routine.
  *
@@ -71,6 +72,11 @@ int  main()
 
     FlashInit();
     SwTimerInit();
+
+    dmaInit();
+    dmaStart();
+    sdInit();
+    sdStart();
     /*\ HAL TEST */
 
 	/* Applications Initialization */
