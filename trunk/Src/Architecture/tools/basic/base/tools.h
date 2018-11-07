@@ -17,6 +17,7 @@
  *  COMMON INCLUDE
  ***************************************************************************/
 #include "common.h"
+#include "shell.h"
 
 /****************************************************************************
  *  ARCHITECTURE INCLUDES
@@ -25,6 +26,10 @@
 /****************************************************************************
  *  INCLUDES
  ***************************************************************************/
+#include "stdarg.h"
+#ifdef DIAGNOSTICS_AVAILABLE
+ #include "Diagnostics.h"
+#endif
 
 /****************************************************************************
  *  DEFINES
@@ -37,11 +42,26 @@
 #define DBG( cond ) cond
 #endif
 
+
 #define CLAMP( x, low, high )	(((x) > (high)) ? (high) : (((x) < (low)) ? (low) : (x)))
 #define	MAX(a, b)  				(((a) > (b)) ? (a) : (b))
 #define	MIN(a, b)  				(((a) < (b)) ? (a) : (b))
 
 #define COUNTOF(a)              (sizeof(a)/sizeof(a[0]))
+
+#define BufferSetData8(pf, i, v) 		(pf)[(i)] = (uint8_t)(v)
+#define BufferSetData16(pf, i, v) 	\
+    do { BufferSetData8(pf, i, (v)); BufferSetData8(pf, (i)+1, (v) >> 8); } while(0)
+#define BufferSetData32(pf, i, v) 	\
+    do { BufferSetData16(pf, i, (v)); BufferSetData16(pf, (i)+2, (v) >> 16); } while(0)
+
+
+#ifdef DIAGNOSTICS_AVAILABLE
+ #define DIAGNOSTICS_SET_EVENT(a, i, v) DiagnosticsSetEvent(a, i, v);
+#else
+ #define DIAGNOSTICS_SET_EVENT(a, i, v)
+#endif
+
 
 /****************************************************************************
  *  TYPES DEFINITIONS
@@ -67,6 +87,11 @@ void itos( int32_t value, uint8_t type, int8_t* buffer );
 void _atoi(const void *buf, uint32_t *result, uint8_t *length);
 uint8_t memCompare(const void *buf1, const void *buf2, uint8_t count);
 void myAssertFail(const char *sFile, const char *sFunction, uint16_t line,const char *sCond );
+
+
+void my_printf(tBool enable,uint8_t level,const char *fmt, ...); // custom printf() function
+void my_printTrace(uint8_t channel,const char *fmt, ...); // custom printf() function;
+void my_printTraceBin(uint8_t channel,uint8_t *buffer,uint8_t size);
 
 #endif /* _TOOLS_H_ */
 

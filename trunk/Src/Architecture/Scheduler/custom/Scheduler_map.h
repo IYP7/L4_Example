@@ -34,7 +34,7 @@
 typedef enum eScheduler
 {
     SCHED_INIT  = -1        ,
-
+	SCHED_FSM,
     SCHED_SYSTEM_APP        ,
     SCHED_SYSTEM_MW         ,
 #ifdef  SHELL_AVAILABLE

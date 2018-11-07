@@ -4,15 +4,18 @@
 FLASH: 
 AddQueueByte                             =     46
 GetQueueByte                             =     44
+my_printf                                =     34
+vprint                                   =     16
 CreateQueue                              =     14
 GetQueueFreeBytes                        =     10
 GetQueuePendingBytes                     =      4
+my_printTraceBin                         =      2
 
 RAM: 
 
 DATA: 
 ------------------------------------------------------------------
-TOTAL FLASH SIZE TOOLS                   =    118
+TOTAL FLASH SIZE TOOLS                   =    170
 TOTAL RAM SIZE TOOLS                     =      0
 TOTAL DATA SIZE TOOLS                    =      0
 ------------------------------------------------------------------

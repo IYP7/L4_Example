@@ -63,6 +63,10 @@
 /* RTC Test Config */
 #define RTC_CALIBRATION_TEST 	FALSE
 
+/* State machine Config */
+#define PROTOCOL_DEVICE_INSTANCE 	0
+#define FSM_PARAMETERS 				0
+
 #define PIPE_LOG                PIPE_1
 //#define UART_LOG                UART_1
 

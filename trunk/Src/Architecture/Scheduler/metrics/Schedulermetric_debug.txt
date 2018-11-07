@@ -2,7 +2,7 @@
 		 SCHEDULER METRIC COMPONENT WITH debug 
 ------------------------------------------------------------------
 FLASH: 
-SchedulerNextSystemProcess               =    192
+SchedulerNextSystemProcess               =    212
 SchedulerResetProcessTable               =    108
 SchedulerExecuteSystemProcess            =    100
 SchedulerProcessesAutoEnable             =     92
@@ -10,15 +10,15 @@ SchedulerUpdateTaskTime                  =     84
 SchedulerInit                            =     72
 
 RAM: 
-schedulerContext                         =     48
+schedulerContext                         =     72
+schedulerProcess                         =      6
 ticks_per_us                             =      4
-schedulerProcess                         =      4
 ptrTask                                  =      1
 
 DATA: 
-SchedulerInstanceMap                     =     24
+SchedulerInstanceMap                     =     36
 ------------------------------------------------------------------
-TOTAL FLASH SIZE SCHEDULER               =    648
-TOTAL RAM SIZE SCHEDULER                 =     57
-TOTAL DATA SIZE SCHEDULER                =     24
+TOTAL FLASH SIZE SCHEDULER               =    668
+TOTAL RAM SIZE SCHEDULER                 =     83
+TOTAL DATA SIZE SCHEDULER                =     36
 ------------------------------------------------------------------

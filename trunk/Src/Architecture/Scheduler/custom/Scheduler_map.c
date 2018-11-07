@@ -28,7 +28,7 @@
 
 #include "System_App.h"
 #include "System_mw.h"
-
+#include "statemachine.h"
 /****************************************************************************
 *  DEFINES
 ***************************************************************************/
@@ -55,6 +55,7 @@
 const tSchedulerInstanceMap  SchedulerInstanceMap[NUM_OF_SCHED_TASKS] =
 {
 	//------------------------- Arquitecture ------------------------//
+	{initFsm			,   callFsmTask					,   TIME_TO_TICKS(1)	,	TRUE	},
 	//{initSystemMw		,   callSystemMwTask			,   TIME_TO_TICKS(1000) ,	TRUE	},
     {initSystemApp		,   callSystemApp				,   TIME_TO_TICKS(1000) ,	TRUE	},
 #ifdef SHELL_AVAILABLE

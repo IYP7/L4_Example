@@ -42,6 +42,7 @@
 #include "spi.h"
 #include "DMA.h"
 #include "sd.h"
+#include "PipeDevice.h"
 /*************************************************************************//**
  * @brief   Embedded application start routine.
  *
@@ -72,11 +73,11 @@ int  main()
 
     FlashInit();
     SwTimerInit();
-
-    dmaInit();
-    dmaStart();
+    pipeDeviceInit();
+/*    dmaInit();
+    dmaStart()
     sdInit();
-    sdStart();
+    sdStart();*/
     /*\ HAL TEST */
 
 	/* Applications Initialization */

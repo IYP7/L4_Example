@@ -35,11 +35,12 @@
 #include "uart.h"
 #include "Flash.h"
 #include "system.h"
+#include "ATCommand.h"
 /****************************************************************************
 *  PRIVATE VARIABLES
 ****************************************************************************/
 uint8_t requestPowerState;  /**< keeps power state request to be analized during system app task */
-
+uint8_t x = 0;
 /****************************************************************************
 *  PUBLIC FUCNTIONS
 ****************************************************************************/
@@ -79,6 +80,14 @@ void callSystemApp( void )
     /* HAL TEST */
     // GPIO
     GPIOWritePort(GPIO_LED_1, GPIO_TOGGLE);
+//    uint8_t cmd[9] = "AT+CGREG";
+    //uint8_t cmd[32] = "AT+CGCLASS=1,0,0,\"movistar.com\"";
+	tAtRequest req;/* = {0, 0, 0, 0, cmd};*/
+	req.delay = 0;
+	req.errorRetries = 0;
+	req.timeout = 0;
+	req.timeoutRetries = 0;
+	req.command = (uint8_t *)"AT+CGCLASS=1,0,0,\"movistar.com\"";
     /* END HAL TEST */
 
     /* System state machine */
@@ -93,7 +102,7 @@ void callSystemApp( void )
         
 		case SYSTEM_APP_INIT:
 			/* Application init dispather */
-			
+			AtCommandStart();
 			systemState = SYSTEM_APP_ON;
             break;
 		
@@ -120,7 +129,20 @@ void callSystemApp( void )
 
         case SYSTEM_APP_ON:
 			/* Application dispatcher */
-
+        	if(x)
+        	{
+        		if(ATCommandSetRequest(AT_CLIENT_GPS, req)==RET_OK)
+        		{
+        			x=0;
+        		}
+        	}
+        	else
+        	{
+        		if(ATCommandSetRequest(AT_CLIENT_LTE, req)==RET_OK)
+        		{
+        			x=1;
+        		}
+        	}
 			/* Power Sequence control */
             if ( requestPowerState == POWER_STATE_START_SHUTDOWN )
             {
@@ -205,6 +227,22 @@ void requestSystemAppReset( void )
 
 	/* Update system state */
     WRITE_SREG(SREG_SYSTEM_STATE, systemState);
+}
+
+void ATLTECallback(tAtResponseID eventID, uint8_t *buffer, uint16_t length)
+{
+	uartDriverSetBufferSize((tUart)UART_2, 6);
+	uartDriverWrite((tUart)UART_2, (uint8_t*)"LTE: ");
+	uartDriverSetBufferSize((tUart)UART_2, length);
+	uartDriverWrite((tUart)UART_2, (uint8_t*)buffer);
+}
+
+void ATGPSCallback(tAtResponseID eventID, uint8_t *buffer, uint16_t length)
+{
+	uartDriverSetBufferSize((tUart)UART_2, 6);
+	uartDriverWrite((tUart)UART_2, (uint8_t*)"GPS: ");
+	uartDriverSetBufferSize((tUart)UART_2, length);
+	uartDriverWrite((tUart)UART_2, (uint8_t*)buffer);
 }
 
 #endif /* _SYSTEM_APP_C_ */

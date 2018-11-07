@@ -28,9 +28,6 @@ static uint32_t   hregSpiBufferSize[NUM_OF_SPI];
 static uint32_t   hregSpiData[NUM_OF_SPI];
 static uint8_t    hregSpiStatus[NUM_OF_SPI];
 static uint8_t    hregInterruptsState[NUM_OF_INT];
-static uint16_t   hregButtonsState[NUM_OF_BUTTONS];
-static uint16_t   hregLedsEffect[NUMBER_OF_LEDS];
-static uint16_t   hregLedsState[NUMBER_OF_LEDS];
 static uint32_t   hregSwTimerCallbackFunction[NUM_OF_SW_TIMER];
 static uint32_t   hregSwTimerGetPending[NUM_OF_SW_TIMER];
 static uint8_t    hregSwTimerState[NUM_OF_SW_TIMER];
@@ -43,7 +40,7 @@ static uint32_t   hregVirtualEEPROMData[NUM_OF_VIRTUAL_EEPROMS];
 /***********************************************************************
 * HREG FUNCTION TABLES. READ AND WRITE
 ***********************************************************************/
-const HREG_FUNC_READ_CALL onReadHregFunc[19] = 
+const HREG_FUNC_READ_CALL onReadHregFunc[16] =
 {
 	{ onReadHregSystemDate },
 	{ onReadHregSystemTime },
@@ -57,16 +54,13 @@ const HREG_FUNC_READ_CALL onReadHregFunc[19] =
 	{ onReadHregSpiData },
 	{ onReadHregSpiStatus },
 	{ onReadHregInterruptsState },
-	{ onReadHregButtonsState },
-	{ onReadHregLedsEffect },
-	{ onReadHregLedsState },
 	{ onReadHregSwTimerGetPending },
 	{ onReadHregSwTimerState },
 	{ onReadHregSwTimerGetElapsed },
 	{ onReadHregVirtualEEPROMData },
 };
 
-const HREG_FUNC_WRITE_CALL onWriteHregFunc[16] = 
+const HREG_FUNC_WRITE_CALL onWriteHregFunc[14] =
 {
 	{ onWriteHregSystemPowerMode },
 	{ onWriteHregSystemDate },
@@ -78,8 +72,6 @@ const HREG_FUNC_WRITE_CALL onWriteHregFunc[16] =
 	{ onWriteHregSpiBufferSize },
 	{ onWriteHregSpiData },
 	{ onWriteHregInterruptsState },
-	{ onWriteHregLedsEffect },
-	{ onWriteHregLedsState },
 	{ onWriteHregSwTimerCallbackFunction },
 	{ onWriteHregSwTimerState },
 	{ onWriteHregSwTimerSet },
@@ -90,7 +82,7 @@ const HREG_FUNC_WRITE_CALL onWriteHregFunc[16] =
 /***********************************************************************
 * HREG GROUP TABLES
 ***********************************************************************/
-const HREG_GROUP_INT_CALL apiFuncHregGroup[10] = 
+const HREG_GROUP_INT_CALL apiFuncHregGroup[8] =
 {
 	{ initHregSystem , stopHregSystem , startHregSystem , sleepHregSystem , wakeHregSystem},
 	{ initHregFlash , stopHregFlash , startHregFlash , sleepHregFlash , wakeHregFlash},
@@ -98,8 +90,6 @@ const HREG_GROUP_INT_CALL apiFuncHregGroup[10] =
 	{ initHregUart , stopHregUart , startHregUart , sleepHregUart , wakeHregUart},
 	{ initHregSpi , stopHregSpi , startHregSpi , sleepHregSpi , wakeHregSpi},
 	{ initHregInterrupts , stopHregInterrupts , startHregInterrupts , sleepHregInterrupts , wakeHregInterrupts},
-	{ initHregButtons , stopHregButtons , startHregButtons , sleepHregButtons , wakeHregButtons},
-	{ initHregLeds , stopHregLeds , startHregLeds , sleepHregLeds , wakeHregLeds},
 	{ initHregSwTimer , stopHregSwTimer , startHregSwTimer , sleepHregSwTimer , wakeHregSwTimer},
 	{ initHregVirtualEEPROM , stopHregVirtualEEPROM , startHregVirtualEEPROM , sleepHregVirtualEEPROM , wakeHregVirtualEEPROM},
 };
@@ -108,10 +98,8 @@ const HREG_GROUP_INT_CALL apiFuncHregGroup[10] =
 /***********************************************************************
 * HREG STATES TABLES
 ***********************************************************************/
-HREG_GROUP_STATE hregGroupsState[10] = 
+HREG_GROUP_STATE hregGroupsState[8] =
 {
-	{ HREG_GROUP_DECLARED },
-	{ HREG_GROUP_DECLARED },
 	{ HREG_GROUP_DECLARED },
 	{ HREG_GROUP_DECLARED },
 	{ HREG_GROUP_DECLARED },
@@ -300,44 +288,6 @@ const HREG tableHregInterrupts[1] =
 	},
 };
 
-const HREG tableHregButtons[1] = 
-{
-	{
-		/*Data*/	&hregButtonsState,
-		/*MaxVal*/	0XFFFF,
-		/*MinVal*/	0,
-		/*Init*/	0,
-		/*onRead*/	ON_READ_HREG_INDEX_BUTTONS_STATE,
-		/*onWrite*/	HREG_NOP,
-		/*GroupId*/	HREG_GROUP_INDEX_BUTTONS,
-		/*NVMId*/	NVM_NOP,
-	},
-};
-
-const HREG tableHregLeds[2] = 
-{
-	{
-		/*Data*/	&hregLedsEffect,
-		/*MaxVal*/	NUM_OF_LED_EFFECT,
-		/*MinVal*/	0,
-		/*Init*/	0,
-		/*onRead*/	ON_READ_HREG_INDEX_LEDS_EFFECT,
-		/*onWrite*/	ON_WRITE_HREG_INDEX_LEDS_EFFECT,
-		/*GroupId*/	HREG_GROUP_INDEX_LEDS,
-		/*NVMId*/	NVM_NOP,
-	},
-	{
-		/*Data*/	&hregLedsState,
-		/*MaxVal*/	LED_NUM_OF_STATES,
-		/*MinVal*/	0,
-		/*Init*/	0,
-		/*onRead*/	ON_READ_HREG_INDEX_LEDS_STATE,
-		/*onWrite*/	ON_WRITE_HREG_INDEX_LEDS_STATE,
-		/*GroupId*/	HREG_GROUP_INDEX_LEDS,
-		/*NVMId*/	NVM_NOP,
-	},
-};
-
 const HREG tableHregSwTimer[5] = 
 {
 	{
@@ -426,15 +376,13 @@ const HREG tableHregVirtualEEPROM[3] =
 	},
 };
 
-const HREG_TABLE_INFO hregTableList[10]= {
+const HREG_TABLE_INFO hregTableList[8]= {
 	{ tableHregSystem       , sizeof(tableHregSystem)/sizeof(HREG)         , 1                   , HREG_GROUP_TYPE_HAL },
 	{ tableHregFlash        , sizeof(tableHregFlash)/sizeof(HREG)          , NUM_OF_FLASH        , HREG_GROUP_TYPE_HAL },
 	{ tableHregGPIO         , sizeof(tableHregGPIO)/sizeof(HREG)           , NUM_OF_GPIO         , HREG_GROUP_TYPE_HAL },
 	{ tableHregUart         , sizeof(tableHregUart)/sizeof(HREG)           , NUM_OF_UART         , HREG_GROUP_TYPE_HAL },
 	{ tableHregSpi          , sizeof(tableHregSpi)/sizeof(HREG)            , NUM_OF_SPI          , HREG_GROUP_TYPE_HAL },
 	{ tableHregInterrupts   , sizeof(tableHregInterrupts)/sizeof(HREG)     , NUM_OF_INT          , HREG_GROUP_TYPE_HAL },
-	{ tableHregButtons      , sizeof(tableHregButtons)/sizeof(HREG)        , NUM_OF_BUTTONS      , HREG_GROUP_TYPE_DEVICE_DRIVER },
-	{ tableHregLeds         , sizeof(tableHregLeds)/sizeof(HREG)           , NUMBER_OF_LEDS      , HREG_GROUP_TYPE_DEVICE_DRIVER },
 	{ tableHregSwTimer      , sizeof(tableHregSwTimer)/sizeof(HREG)        , NUM_OF_SW_TIMER     , HREG_GROUP_TYPE_DEVICE_DRIVER },
 	{ tableHregVirtualEEPROM, sizeof(tableHregVirtualEEPROM)/sizeof(HREG)  , NUM_OF_VIRTUAL_EEPROMS, HREG_GROUP_TYPE_EEPROM },
 };
