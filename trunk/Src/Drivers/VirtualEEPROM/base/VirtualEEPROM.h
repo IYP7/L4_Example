@@ -34,8 +34,15 @@
 #define EEPROM_SIZE_MAP			1
 #define UNIQUE_EEPROM_INSTANCE 	1
 
-//#define SIZE_OF_VIRTUAL_EEPROM_CACHE 80
 #define EEPROM_REVERSE_CACHE
+
+#define EEPROM_HEADER           3
+#define EEPROM_LENGTH_ID   	    0
+#define EEPROM_CRC_ID			1
+#define EEPROM_MAP_ID			2
+
+#define EEPROM_SIZE_LENGTH      2
+#define EEPROM_SIZE_CRC         1
 /****************************************************************************
  *  TYPE DEFINITIONS
  ****************************************************************************/
@@ -57,22 +64,37 @@ const typedef struct sVirtualEEPROMDeviceMap
 
 const typedef struct SVirtualEEPROMAreaMap
 {
-    uint8_t	numOfInstances;
-    uint8_t	sizeOfInstance;
+    uint16_t	sizeOfInstance;
 }tVirtualEEPROMAreaMap;
 
-
-const typedef struct sVirtualEEPROMInstanceMap
+const typedef struct sVirtualEEPROMAreaInstMap
 {
-    uint16_t                offsetArea;
-    tVirtualEEPROMAreaMap*	regTable;
+    uint8_t	numOfInstances;
+    uint8_t sizeOfInstance;
+}tVirtualEEPROMAreaInstMap;
+
+
+typedef enum eVirtualEEPROMAreaType {
+    EEPROM_AREA_NO_INST,
+    EEPROM_AREA_INST,
+} tVirtualEEPROMAreaType;
+
+
+typedef struct sVirtualEEPROMInstanceMap
+{
+    uint16_t offsetArea;
+    tVirtualEEPROMAreaType typeArea;
+    union{
+    	const tVirtualEEPROMAreaMap* noInst;
+    	const tVirtualEEPROMAreaInstMap* withInst;
+    }regTable;
 }tVirtualEEPROMInstanceMap;
 
 
 typedef struct sVirtualEEPROMContext
 {
 	uint16_t 	virtualOffset;
-	uint8_t		size;
+	uint16_t		size;
 }tVirtualEEPROMContext;
 
 
@@ -85,7 +107,7 @@ const typedef struct sVirtualEEPROMareaContext
 typedef struct sVirtualEEPROMCache
 {
 	uint16_t virtualAddress;
-	uint32_t value;
+	uint16_t value;
 } tVirtualEEPROMCache;
 
 /****************************************************************************
@@ -98,7 +120,7 @@ eError VirtualEEPROMSleep( void );
 eError VirtualEEPROMWake( void );
 eError VirtualEEPROMWriteRegister(tVirtualEEPROM eeprom, uint16_t reg, uint16_t instanceReg, uint32_t value);
 eError VirtualEEPROMReadRegister(tVirtualEEPROM eeprom, uint16_t reg,  uint16_t instanceReg, uint32_t *value);
-
+eError VirtualEEPROMMarkPageAs(tFlash flashArea, uint16_t Value);
 
 
 #endif /* _EEPROM_H_ */

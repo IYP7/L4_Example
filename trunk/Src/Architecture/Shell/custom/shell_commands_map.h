@@ -21,7 +21,7 @@
  * INCLUDE
  ***************************************************************************/
 #include "shell.h"
-
+#include "ATCommand.h"
 /****************************************************************************
  *  DEFINES
  ****************************************************************************/
@@ -39,7 +39,7 @@
 //#define MON_SHELL_I2C_COMMANDS
 
 /* PROJECT SPECIFIC COMMAND PACKAGES */
-//#define MON_SHELL_PROJECT_SPECIFIC_COMMANDS
+#define MON_SHELL_PROJECT_SPECIFIC_COMMANDS
 
 /****************************************************************************
  *  EXTERNAL VARIABLES

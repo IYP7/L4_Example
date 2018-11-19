@@ -297,7 +297,7 @@ tShellStringId parseShellParamToken(const tShellToken* token, tShellParam* sPara
 
         sParam->type  = PARAM_DATA;
         sParam->value = (uint32_t) wrBuffer; //Integer from pointer
-
+        sParam->size = token->size;
         //Update shellDataBufferPointer
         *bufferWrSize = token->size - 2;
     }

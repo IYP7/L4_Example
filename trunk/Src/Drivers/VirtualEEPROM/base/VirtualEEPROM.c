@@ -49,8 +49,8 @@
 #define STATUS2_NORMAL			((uint16_t)0xFFFF)
 
 /* Valid pages in read and write defines */
-#define TRANSFER_STATE_RESTART  	((uint8_t)0x00)
-#define TRANSFER_STATE_NO   	   ((uint8_t)0x01)
+#define READ_FROM_VALID_AREA  	((uint8_t)0x00)
+#define WRITE_IN_VALID_PAGE   	((uint8_t)0x01)
 
 /* Page full define */
 #define PAGE_FULL             	((uint8_t)0x80)
@@ -63,37 +63,30 @@
 #define EEPROM_BYTES_TRANSFER_PAGE 20
 #define EEPROM_BYTES_SWAP 8
 
-#define INITIAL_DATA_AREA 4
+#define INITIAL_DATA_AREA 8
 
 /****************************************************************************
  *  EXTERN VARIABLES
  ****************************************************************************/
-extern const tVirtualEEPROMDeviceMap	EEPROMDeviceMap[NUM_OF_VIRTUAL_EEPROMS];
-
-extern const tVirtualEEPROMInstanceMap virtualEEPROMInstanceMap[NUM_OF_TABLE_EEPROMS];
-extern const tVirtualEEPROMAreaMap virtualEEPROMhregMap[EEPROM_NUM_OF_HREG];
-extern const tVirtualEEPROMAreaMap virtualEEPROMsregFactoryMap[EEPROM_NUM_OF_FACTORY_SREG];
-extern const tVirtualEEPROMAreaMap virtualEEPROMsregCalibrationMap[EEPROM_NUM_OF_CALIBRATION_SREG];
-extern const tVirtualEEPROMAreaMap virtualEEPROMsregUserMap[EEPROM_NUM_OF_USER_SREG];
-extern const tVirtualEEPROMAreaMap virtualEEPROMdataTableMap[EEPROM_NUM_OF_DATA];
-
+extern const tVirtualEEPROMDeviceMap EEPROMDeviceMap[NUM_OF_VIRTUAL_EEPROMS];
+extern const tVirtualEEPROMInstanceMap VirtualEEPROMInstanceMap[NUM_OF_TABLE_EEPROM];
 /****************************************************************************
  *  PRIVATE VARIABLES
  ****************************************************************************/
 tVirtualEEPROMRegister virtualEEPROMRegister;
 
 tVirtualEEPROMContext virtualEEPROMhregContext[EEPROM_NUM_OF_HREG];
-tVirtualEEPROMContext virtualEEPROMsregFactoryContext[EEPROM_NUM_OF_FACTORY_SREG];
-tVirtualEEPROMContext virtualEEPROMsregCalibrationContext[EEPROM_NUM_OF_CALIBRATION_SREG];
-tVirtualEEPROMContext virtualEEPROMsregUserContext[EEPROM_NUM_OF_USER_SREG];
+tVirtualEEPROMContext virtualEEPROMsregFactoryContext[EEPROM_NUM_OF_SREG_FACTORY];
+tVirtualEEPROMContext virtualEEPROMsregCalibrationContext[EEPROM_NUM_OF_SREG_CALIBRATION];
+tVirtualEEPROMContext virtualEEPROMsregUserContext[EEPROM_NUM_OF_SREG_USER];
 tVirtualEEPROMContext virtualEEPROMdataContext[EEPROM_NUM_OF_DATA];
 
-const tVirtualEEPROMareaContext virtualEEPROMareaContext [NUM_OF_TABLE_EEPROMS] =
+const tVirtualEEPROMareaContext virtualEEPROMareaContext [NUM_OF_TABLE_EEPROM] =
 {
 		{ EEPROM_NUM_OF_HREG,				(tVirtualEEPROMContext*)&virtualEEPROMhregContext			},
-		{ EEPROM_NUM_OF_FACTORY_SREG,		(tVirtualEEPROMContext*)&virtualEEPROMsregFactoryContext	},
-		{ EEPROM_NUM_OF_CALIBRATION_SREG,	(tVirtualEEPROMContext*)&virtualEEPROMsregCalibrationContext},
-		{ EEPROM_NUM_OF_USER_SREG,			(tVirtualEEPROMContext*)&virtualEEPROMsregUserContext		},
+		{ EEPROM_NUM_OF_SREG_FACTORY,		(tVirtualEEPROMContext*)&virtualEEPROMsregFactoryContext	},
+		{ EEPROM_NUM_OF_SREG_CALIBRATION,	(tVirtualEEPROMContext*)&virtualEEPROMsregCalibrationContext},
+		{ EEPROM_NUM_OF_SREG_USER,			    (tVirtualEEPROMContext*)&virtualEEPROMsregUserContext		},
 		{ EEPROM_NUM_OF_DATA,				(tVirtualEEPROMContext*)&virtualEEPROMdataContext			},
 };
 
@@ -105,7 +98,7 @@ uint8_t	VirtualEEPROMCacheUsed = 0;
  *  PRIVATE FUNCTIONS
  ****************************************************************************/
 eError VirtualEEPROMinitVirtual (tVirtualEEPROMDevice eepromDevice );
-eError VirtualEEPROMSearchPointer(tVirtualEEPROMDevice eepromDevice, tFlash flashArea);
+eError VirtualEEPROMSearchPointer(tVirtualEEPROMDevice eepromDevice);
 
 uint16_t VirtualEEPROMWriteVariable(tVirtualEEPROMDevice eepromDevice , uint16_t VirtOffset, uint16_t Data);
 uint16_t VirtualEEPROMReadVariable(tFlash areaNumber, uint16_t virtualOffset, uint16_t* Data, uint32_t offsetStartAddr );
@@ -115,17 +108,16 @@ tFlash VirtualEEPROMFindValidArea(tVirtualEEPROMDevice eepromDevice , uint8_t Op
 eError VirtualEEPROMPageTransfer(tVirtualEEPROMDevice eepromDevice , uint16_t VirtOffset, uint16_t Data);
 uint16_t VirtualEEPROMVerifyPageFullWriteVariable(tFlash areaNumber , uint16_t VirtOffset, uint16_t Data);
 
-static eError VirtualEEPROMMarkPageAs(tFlash flashArea, uint16_t Value);
-static uint16_t VirtualEEPROMReadStatus( tFlash flashArea );
-static eError VirtualEEPROMAdressExist( tFlash areaNumber, uint16_t VirtOffset ,uint8_t transferState);
-
 eError VirtualEEPROMTransferPage( tVirtualEEPROMDevice eepromDevice );
 eError VirtualEEPROMEraseOldPage( tVirtualEEPROMDevice eepromDevice );
-eError VirtualEEPROMTransferDataFrom(tFlash flashAreaOld, tFlash flashAreaNew, uint8_t transferState);
+eError VirtualEEPROMTransferDataFrom(tFlash flashAreaNew, tFlash flashAreaOld);
 
 eError findInCache( uint16_t virtualAdress, uint16_t *value );
 eError updateCache( uint16_t virtualAdress, uint16_t value );
 eError addToCache( uint16_t virtualAdress, uint16_t value );
+
+static uint8_t EEPROMGetNumOfInstances(tVirtualEEPROM eeprom, uint16_t reg);
+static uint16_t EEPROMGetAreaSize(tVirtualEEPROM eeprom, uint16_t reg);
 
 /**************************************************************************//**
  * @brief  	Initializes Virtual Address for VirtualEEPROM table
@@ -142,28 +134,28 @@ eError VirtualEEPROMinit(void)
 	uint16_t nextVirtOffset = 0;
 	uint16_t lastOffsetArea = 0;
 
-	for (eeprom = 0; eeprom < NUM_OF_TABLE_EEPROMS; eeprom++)
+	for (eeprom = 0; eeprom < NUM_OF_TABLE_EEPROM; eeprom++)
 	{
 		/* if offsetArea is 0, ignore this Area */
-		if ( virtualEEPROMInstanceMap[eeprom].offsetArea != 0 )
+		if ( VirtualEEPROMInstanceMap[eeprom].offsetArea != 0 )
 		{
 			areaSize = virtualEEPROMareaContext[eeprom].areaSize;
 			for (reg = 0; reg < areaSize; reg++ )
 			{
 				virtualEEPROMareaContext[eeprom].areaEEPROM[reg].virtualOffset = nextVirtOffset;
-				virtualEEPROMareaContext[eeprom].areaEEPROM[reg].size = virtualEEPROMInstanceMap[eeprom].regTable[reg].sizeOfInstance;
-				nextNumInst = virtualEEPROMInstanceMap[eeprom].regTable[reg].numOfInstances;
+				virtualEEPROMareaContext[eeprom].areaEEPROM[reg].size = EEPROMGetAreaSize(eeprom,reg);
+				nextNumInst = EEPROMGetNumOfInstances(eeprom,reg);
 				nextVirtOffset = virtualEEPROMareaContext[eeprom].areaEEPROM[reg].virtualOffset + nextNumInst * virtualEEPROMareaContext[eeprom].areaEEPROM[reg].size;
 			}
 
 			/* Check that offset is between the reserved offset area */
-			if ( nextVirtOffset > (virtualEEPROMInstanceMap[eeprom].offsetArea + lastOffsetArea))
+			if ( nextVirtOffset > (VirtualEEPROMInstanceMap[eeprom].offsetArea + lastOffsetArea))
 			{
 				return RET_NOT_INITIALIZED;
 			}
 			else
 			{
-				nextVirtOffset = virtualEEPROMInstanceMap[eeprom].offsetArea + lastOffsetArea;
+				nextVirtOffset = VirtualEEPROMInstanceMap[eeprom].offsetArea + lastOffsetArea;
 				lastOffsetArea = nextVirtOffset;
 			}
 		}
@@ -187,8 +179,8 @@ eError VirtualEEPROMStart(void)
 {
 	eError 	success = RET_OK;
 
-	VirtualEEPROMinitVirtual(VIRTUAL_EEPROM);
-	VirtualEEPROMSearchPointer(VIRTUAL_EEPROM, virtualEEPROMRegister.actualPage);
+//	VirtualEEPROMinitVirtual(VIRTUAL_EEPROM);
+//	VirtualEEPROMSearchPointer(VIRTUAL_EEPROM);
 
 	return success;
 }
@@ -236,11 +228,25 @@ eError VirtualEEPROMWake( void )
 eError VirtualEEPROMWriteRegister(tVirtualEEPROM eeprom, uint16_t reg, uint16_t instanceReg, uint32_t value)
 {
 	eError result = RET_OK;
-	uint16_t offset;
+	uint16_t offset = 0;
+	uint8_t size = 0;
 
-	offset = virtualEEPROMareaContext[eeprom].areaEEPROM[reg].virtualOffset + (instanceReg * virtualEEPROMareaContext[eeprom].areaEEPROM[reg].size);
+	if (eeprom != EEPROM_DATA || reg < EEPROM_HEADER)
+	{
+		offset = virtualEEPROMareaContext[eeprom].areaEEPROM[reg].virtualOffset +
+				(instanceReg * virtualEEPROMareaContext[eeprom].areaEEPROM[reg].size);
+		size = virtualEEPROMareaContext[eeprom].areaEEPROM[reg].size;
+	}
+	else
+	{
+		if ( instanceReg < virtualEEPROMareaContext[eeprom].areaEEPROM[reg].size )
+		{
+			offset = virtualEEPROMareaContext[eeprom].areaEEPROM[reg].virtualOffset + instanceReg;
+			size = 2;
+		}
+	}
 
-	switch( virtualEEPROMareaContext[eeprom].areaEEPROM[reg].size )
+	switch( size )
 	{
 		case 1:
 		case 2:
@@ -271,14 +277,28 @@ eError VirtualEEPROMWriteRegister(tVirtualEEPROM eeprom, uint16_t reg, uint16_t 
 eError VirtualEEPROMReadRegister(tVirtualEEPROM eeprom, uint16_t reg,  uint16_t instanceReg, uint32_t *value)
 {
 	eError 	result = RET_OK;
-	uint16_t offset;
+	uint16_t offset = 0;
 	uint32_t doubleWord = 0;
 	uint16_t word = 0;
     uint16_t varExist = 0;
+    uint8_t size = 0;
 
-	offset = virtualEEPROMareaContext[eeprom].areaEEPROM[reg].virtualOffset + (instanceReg*virtualEEPROMareaContext[eeprom].areaEEPROM[reg].size);
+	if (eeprom != EEPROM_DATA || reg < EEPROM_HEADER)
+	{
+		offset = virtualEEPROMareaContext[eeprom].areaEEPROM[reg].virtualOffset +
+				(instanceReg * virtualEEPROMareaContext[eeprom].areaEEPROM[reg].size);
+		size = virtualEEPROMareaContext[eeprom].areaEEPROM[reg].size;
+	}
+	else
+	{
+		if ( instanceReg < virtualEEPROMareaContext[eeprom].areaEEPROM[reg].size )
+		{
+			offset = virtualEEPROMareaContext[eeprom].areaEEPROM[reg].virtualOffset + instanceReg;
+			size = 2;
+		}
+	}
 
-	switch( virtualEEPROMareaContext[eeprom].areaEEPROM[reg].size  )
+	switch( size )
 	{
 		case 1:
 		case 2:
@@ -319,13 +339,30 @@ eError VirtualEEPROMinitVirtual (tVirtualEEPROMDevice eepromDevice )
 {
 	uint16_t FlashAreaStatus1 	= 0;
 	uint16_t FlashAreaStatus2 	= 0;
-	uint32_t MaxOffset;
+
 	eError 	success = RET_OK;
 
 	/* Get Page0 status */
-	FlashAreaStatus1 = VirtualEEPROMReadStatus( EEPROMDeviceMap[eepromDevice].flashArea1);
+	FlashReadData(EEPROMDeviceMap[eepromDevice].flashArea1, &FlashAreaStatus1, PAGE_STATUS2);
+	if (FlashAreaStatus1 == STATUS2_OBSOLETE )
+	{
+		FlashAreaStatus1 = ERASED;
+	}
+	else
+	{
+		FlashReadData(EEPROMDeviceMap[eepromDevice].flashArea1, &FlashAreaStatus1, PAGE_STATUS);
+	}
+
 	/* Get Page1 status */
-	FlashAreaStatus2 = VirtualEEPROMReadStatus( EEPROMDeviceMap[eepromDevice].flashArea2);
+	FlashReadData(EEPROMDeviceMap[eepromDevice].flashArea2, &FlashAreaStatus2, PAGE_STATUS2);
+	if (FlashAreaStatus2 == STATUS2_OBSOLETE )
+	{
+		FlashAreaStatus2 = ERASED;
+	}
+	else
+	{
+		FlashReadData(EEPROMDeviceMap[eepromDevice].flashArea2, &FlashAreaStatus2, PAGE_STATUS);
+	}
 
 	/* Check for invalid header states and repair if necessary */
 	switch (FlashAreaStatus1)
@@ -333,13 +370,13 @@ eError VirtualEEPROMinitVirtual (tVirtualEEPROMDevice eepromDevice )
 	case ERASED:
 		if (FlashAreaStatus2 == VALID_AREA) /* FlashAreaStatus1 erased, FlashAreaStatus2 valid */
 		{
-			/* Erase FlashAreaStatus1 */
+            virtualEEPROMRegister.actualPage = EEPROMDeviceMap[eepromDevice].flashArea2;
+			/* Erase Page0 */
 			success = FlashErase( EEPROMDeviceMap[eepromDevice].flashArea1, FLASH_ALL_PAGES);
 			if (success != RET_OK)
 			{
 				return success;
 			}
-            virtualEEPROMRegister.actualPage = EEPROMDeviceMap[eepromDevice].flashArea2;
 		}
 		else if (FlashAreaStatus2 == RECEIVE_DATA) /* FlashAreaStatus1 erased, FlashAreaStatus2 receive */
 		{
@@ -350,13 +387,12 @@ eError VirtualEEPROMinitVirtual (tVirtualEEPROMDevice eepromDevice )
 				return success;
 			}
 			/* Mark FlashAreaStatus2 as valid */
+            virtualEEPROMRegister.actualPage = EEPROMDeviceMap[eepromDevice].flashArea2;
 			success = VirtualEEPROMMarkPageAs(EEPROMDeviceMap[eepromDevice].flashArea2, VALID_AREA);
 			if (success != RET_OK)
 			{
 				return success;
 			}
-
-            virtualEEPROMRegister.actualPage = EEPROMDeviceMap[eepromDevice].flashArea2;
 		}
 		else /* First EEPROM access (FlashAreaStatus1&FlashAreaStatus2 are erased) or invalid state -> format EEPROM */
 		{
@@ -375,8 +411,7 @@ eError VirtualEEPROMinitVirtual (tVirtualEEPROMDevice eepromDevice )
 		if (FlashAreaStatus2 == VALID_AREA) /* FlashAreaStatus1 receive, FlashAreaStatus2 valid */
 		{
 			/* Transfer data from FlashAreaStatus2 to FlashAreaStatus1 */
-			VirtualEEPROMSearchPointer(eepromDevice, EEPROMDeviceMap[eepromDevice].flashArea1);
-			success = VirtualEEPROMTransferDataFrom(EEPROMDeviceMap[eepromDevice].flashArea2, EEPROMDeviceMap[eepromDevice].flashArea1, TRANSFER_STATE_RESTART);
+			success = VirtualEEPROMTransferDataFrom(EEPROMDeviceMap[eepromDevice].flashArea2, EEPROMDeviceMap[eepromDevice].flashArea1);
 			if (success != RET_OK)
 			{
 				return success;
@@ -450,9 +485,8 @@ eError VirtualEEPROMinitVirtual (tVirtualEEPROMDevice eepromDevice )
 		}
 		else /* FlashAreaStatus1 valid, FlashAreaStatus2 receive */
 		{
-			VirtualEEPROMSearchPointer(eepromDevice, EEPROMDeviceMap[eepromDevice].flashArea2);
 			/* Transfer data from FlashAreaStatus1 to FlashAreaStatus2 */
-			success = VirtualEEPROMTransferDataFrom(EEPROMDeviceMap[eepromDevice].flashArea1, EEPROMDeviceMap[eepromDevice].flashArea2, TRANSFER_STATE_RESTART);
+			success = VirtualEEPROMTransferDataFrom(EEPROMDeviceMap[eepromDevice].flashArea1, EEPROMDeviceMap[eepromDevice].flashArea2);
 			if (success != RET_OK)
 			{
 				return success;
@@ -487,10 +521,6 @@ eError VirtualEEPROMinitVirtual (tVirtualEEPROMDevice eepromDevice )
 
 		break;
 	}
-
-
-	FlashGetSize( virtualEEPROMRegister.actualPage, &MaxOffset);
-	virtualEEPROMRegister.maxOffset = MaxOffset;
 
 	return success;
 }
@@ -630,6 +660,102 @@ uint16_t VirtualEEPROMVerifyPageFullWriteVariable(tFlash areaNumber, uint16_t Vi
 	return PAGE_FULL;
 }
 
+/**************************************************************************//**
+ * @brief  Find valid Area for write or read operation
+ * @param  Operation: operation to achieve on the valid page.
+ *   This parameter can be one of the following values:
+ *     @arg READ_FROM_VALID_PAGE: read operation from valid page
+ *     @arg WRITE_IN_VALID_PAGE: write operation from valid page
+ * @retval Valid page number (FlashAreaStatus1 or PAGE1) or NO_VALID_PAGE in case
+ *   of no valid page was found
+ ****************************************************************************/
+tFlash VirtualEEPROMFindValidArea(tVirtualEEPROMDevice eepromDevice, uint8_t Operation)
+{
+	tFlash areaNumber 	= NO_VALID_AREA;
+
+	uint16_t FlashAreaStatus1 	= 0;
+	uint16_t FlashAreaStatus2 	= 0;
+
+	/* Get Page0 status */
+	FlashReadData(EEPROMDeviceMap[eepromDevice].flashArea1, &FlashAreaStatus1, PAGE_STATUS2);
+	if (FlashAreaStatus1 == STATUS2_OBSOLETE )
+	{
+		FlashAreaStatus1 = ERASED;
+	}
+	else
+	{
+		FlashReadData(EEPROMDeviceMap[eepromDevice].flashArea1, &FlashAreaStatus1, PAGE_STATUS);
+	}
+
+	/* Get Page1 status */
+	FlashReadData(EEPROMDeviceMap[eepromDevice].flashArea2, &FlashAreaStatus2, PAGE_STATUS2);
+	if (FlashAreaStatus2 == STATUS2_OBSOLETE )
+	{
+		FlashAreaStatus2 = ERASED;
+	}
+	else
+	{
+		FlashReadData(EEPROMDeviceMap[eepromDevice].flashArea2, &FlashAreaStatus2, PAGE_STATUS);
+	}
+
+	/* Write or read operation */
+	switch (Operation)
+	{
+	/* ---- Write operation ---- */
+	case WRITE_IN_VALID_PAGE:
+		if (FlashAreaStatus2 == VALID_AREA)
+		{
+			/* Page0 receiving data */
+			if (FlashAreaStatus1 == RECEIVE_DATA)
+			{
+				areaNumber = EEPROMDeviceMap[eepromDevice].flashArea1;         /* Area1 valid */
+			}
+			else
+			{
+				areaNumber = EEPROMDeviceMap[eepromDevice].flashArea2;         /* Area2 valid */
+			}
+		}
+		else if (FlashAreaStatus1 == VALID_AREA)
+		{
+			/* Page1 receiving data */
+			if (FlashAreaStatus2 == RECEIVE_DATA)
+			{
+				areaNumber = EEPROMDeviceMap[eepromDevice].flashArea2;         /* Area2 valid */
+			}
+			else
+			{
+				areaNumber = EEPROMDeviceMap[eepromDevice].flashArea1;         /* Area1 valid */
+			}
+		}
+		else
+		{
+			areaNumber = NO_VALID_AREA;   /* No valid Area */
+		}
+		break;
+
+		/* ---- Read operation ---- */
+	case READ_FROM_VALID_AREA:
+		if (FlashAreaStatus1 == VALID_AREA)
+		{
+			areaNumber = EEPROMDeviceMap[eepromDevice].flashArea1;           /* Area1 valid */
+		}
+		else if (FlashAreaStatus2 == VALID_AREA)
+		{
+			areaNumber = EEPROMDeviceMap[eepromDevice].flashArea2;           /* Area2 valid */
+		}
+		else
+		{
+			areaNumber = NO_VALID_AREA ;  /* No valid Area */
+		}
+		break;
+
+	default:
+		areaNumber = EEPROMDeviceMap[eepromDevice].flashArea1;             /* Area1 valid */
+		break;
+	}
+
+	return areaNumber;
+}
 
 /**************************************************************************//**
  * @brief  Writes/upadtes variable data in EEPROM.
@@ -658,7 +784,7 @@ uint16_t VirtualEEPROMWriteVariable(tVirtualEEPROMDevice eepromDevice, uint16_t 
 	{
 		VirtualEEPROMTransferPage(eepromDevice);
 	}
-	else if ( diffOffset < EEPROM_BYTES_TRANSFER_PAGE && diffOffset + 4 >= EEPROM_BYTES_TRANSFER_PAGE )
+	else if ( diffOffset < EEPROM_BYTES_TRANSFER_PAGE )
 	{
 		VirtualEEPROMEraseOldPage(eepromDevice);
 	}
@@ -677,23 +803,44 @@ uint16_t VirtualEEPROMWriteVariable(tVirtualEEPROMDevice eepromDevice, uint16_t 
 eError VirtualEEPROMEraseOldPage( tVirtualEEPROMDevice eepromDevice )
 {
 	eError success = RET_OK;
+	uint16_t FlashAreaStatus = 0;
 	tFlash OldArea;
 
 	if (virtualEEPROMRegister.actualPage == EEPROMDeviceMap[eepromDevice].flashArea2)       /* Area 2 valid */
 	{
+		FlashReadData(EEPROMDeviceMap[eepromDevice].flashArea1, &FlashAreaStatus, PAGE_STATUS2);
+		if (FlashAreaStatus != STATUS2_OBSOLETE )
+		{
+			FlashAreaStatus = ERASED;
+		}
+		else
+		{
+			FlashReadData(EEPROMDeviceMap[eepromDevice].flashArea1, &FlashAreaStatus, PAGE_STATUS);
+		}
 		OldArea = EEPROMDeviceMap[eepromDevice].flashArea1;
 	}
 	else	/*Area 1 valid */
 	{
+		FlashReadData(EEPROMDeviceMap[eepromDevice].flashArea2, &FlashAreaStatus, PAGE_STATUS2);
+		if (FlashAreaStatus != STATUS2_OBSOLETE )
+		{
+			FlashAreaStatus = ERASED;
+		}
+		else
+		{
+			FlashReadData(EEPROMDeviceMap[eepromDevice].flashArea2, &FlashAreaStatus, PAGE_STATUS);
+		}
 		OldArea = EEPROMDeviceMap[eepromDevice].flashArea2;
 	}
 
-	success = FlashErase( OldArea, FLASH_ALL_PAGES);
-	if(success != RET_OK)
+	if ( FlashAreaStatus != ERASED )
 	{
-		return success;
+		success = FlashErase( OldArea, FLASH_ALL_PAGES);
+		if(success != RET_OK)
+		{
+			return success;
+		}
 	}
-
 	return success;
 }
 
@@ -706,10 +853,16 @@ eError VirtualEEPROMEraseOldPage( tVirtualEEPROMDevice eepromDevice )
 eError VirtualEEPROMTransferPage( tVirtualEEPROMDevice eepromDevice )
 {
 	eError success = RET_OK;
+
 	tFlash NewArea;
 	tFlash OldArea;
-	uint32_t MaxOffset;
 
+	uint16_t eepromTable, eepromVar, instance, offsetInstance;
+	uint32_t MaxOffset;
+	uint16_t offsetVar;
+	uint16_t EepromStatus 	= 0;
+	uint16_t ReadStatus 	= 0;
+	uint16_t DataVar		= 0;
 
 	/* Get active Page for read operation */
 
@@ -732,7 +885,42 @@ eError VirtualEEPROMTransferPage( tVirtualEEPROMDevice eepromDevice )
 
 	/* Point to new Page */
 	virtualEEPROMRegister.ptrAddrOffset = INITIAL_DATA_AREA;
-	VirtualEEPROMTransferDataFrom(OldArea, NewArea, TRANSFER_STATE_NO);
+
+	/* Transfer process: transfer variables from old to the new active page */
+	for (eepromTable = 0; eepromTable < NUM_OF_TABLE_EEPROM; eepromTable++ )
+	{
+		for (eepromVar = 0; eepromVar < virtualEEPROMareaContext[eepromTable].areaSize; eepromVar++)
+		{
+			for (instance=0; instance < EEPROMGetNumOfInstances(eepromTable,eepromVar); instance++)
+			{
+				for(offsetInstance=0; offsetInstance < EEPROMGetAreaSize(eepromTable, eepromVar); offsetInstance+=2)
+				{
+					/* Read the other last variable updates */
+					offsetVar = virtualEEPROMareaContext[eepromTable].areaEEPROM[eepromVar].virtualOffset + (virtualEEPROMareaContext[eepromTable].areaEEPROM[eepromVar].size * instance);
+					if ( findInCache(offsetVar+(offsetInstance/2), &DataVar) != RET_OK )
+					{
+						ReadStatus = VirtualEEPROMReadVariable(OldArea, offsetVar+(offsetInstance/2), &DataVar, virtualEEPROMRegister.maxOffset);
+					}
+					else
+					{
+						ReadStatus = 0;
+					}
+
+					/* In case variable corresponding to the virtual address was found */
+					if (ReadStatus != 0x1)
+					{
+						/* Transfer the variable to the new active page */
+						EepromStatus = VirtualEEPROMVerifyPageFullWriteVariable(NewArea, offsetVar+(offsetInstance/2), DataVar);
+						/* If program operation was failed, a Flash error code is returned */
+						if (EepromStatus != RET_OK)
+						{
+							return EepromStatus;
+						}
+					}
+				}
+			}
+		}
+	}
 
 	/* Set new Page status to VALID_PAGE status */
 	success = FlashProgramData(NewArea, VALID_AREA, PAGE_STATUS);
@@ -763,138 +951,66 @@ eError VirtualEEPROMTransferPage( tVirtualEEPROMDevice eepromDevice )
  * @param  	Value:        Specifies the data to be programmed
  * @return  HAL_StatusTypeDef FlashMarkStatus
  ****************************************************************************/
-static eError VirtualEEPROMMarkPageAs(tFlash flashArea, uint16_t Value)
+eError VirtualEEPROMMarkPageAs(tFlash flashArea, uint16_t Value)
 {
 	eError FlashMarkStatus = RET_OK;
 	FlashMarkStatus = FlashProgramData( flashArea, Value, PAGE_STATUS);
 	return FlashMarkStatus;
 }
 
-
-/**************************************************************************//**
- * @brief   Marks a page with the indicated value
- * @param  	Value:        Specifies the data to be programmed
- * @return  HAL_StatusTypeDef FlashMarkStatus
- ****************************************************************************/
-static uint16_t VirtualEEPROMReadStatus( tFlash flashArea )
-{
-	uint16_t FlashAreaStatus = 0;
-
-	FlashReadData(flashArea, &FlashAreaStatus, PAGE_STATUS2);
-	if (FlashAreaStatus == STATUS2_OBSOLETE )
-	{
-		FlashAreaStatus = ERASED;
-	}
-	else
-	{
-		FlashReadData(flashArea, &FlashAreaStatus, PAGE_STATUS);
-	}
-
-	return FlashAreaStatus;
-}
-
-
-
-/**************************************************************************//**
- * @brief   Search if virtualOffset is in the areaNumber
- * @param  	VirtualOffset
- * @return  RET_OK (exist) or RET_FAIL
- ****************************************************************************/
-static eError VirtualEEPROMAdressExist( tFlash areaNumber, uint16_t VirtOffset ,uint8_t transferState)
-{
-	uint16_t Virtaddress, data;
-	uint32_t address;
-	if (transferState == TRANSFER_STATE_RESTART)
-	{
-		for ( address=INITIAL_DATA_AREA; address < virtualEEPROMRegister.maxOffset; address=address+4 )
-		{
-			FlashReadData(areaNumber, &data, address);
-			FlashReadData(areaNumber, &Virtaddress, address+2);
-			if ( Virtaddress == VirtOffset )
-			{
-				return RET_OK;
-			}
-			else if (data==0xFFFF && Virtaddress==0xFFFF)
-			{
-				break;
-			}
-		}
-	}
-	return RET_FAIL;
-}
-
-
 /**************************************************************************//**
  * @brief   Transfers data from one page to other page
  * @param  	OldArea, NewArea
  * @return  EepromStatus:	result of verifying data and read memory
  ****************************************************************************/
-eError VirtualEEPROMTransferDataFrom(tFlash flashAreaOld, tFlash flashAreaNew, uint8_t transferState)
+eError VirtualEEPROMTransferDataFrom(tFlash flashAreaOld, tFlash flashAreaNew)
 {
 	eError success = RET_OK;
 
 	uint16_t eepromTable, eepromVar, instance;
-	uint32_t DataVar = 0;
-	uint16_t word;
+	uint16_t DataVar 			= 0;
 	uint16_t ReadStatus = 0;
 	uint16_t EepromStatus 	= 0;
+	uint16_t FlashOffset;
 	uint16_t offsetVar;
 
+	int16_t x = -1;
+
 	/* Transfer process: transfer variables from old to the new active page */
-	for (eepromTable = 0; eepromTable < NUM_OF_TABLE_EEPROMS; eepromTable++ )
+	for (eepromTable = 0; eepromTable < NUM_OF_TABLE_EEPROM; eepromTable++ )
 	{
 		for (eepromVar = 0; eepromVar < virtualEEPROMareaContext[eepromTable].areaSize; eepromVar++)
 		{
-			for (instance=0; instance < virtualEEPROMInstanceMap[eepromTable].regTable[eepromVar].numOfInstances; instance++)
+			for (instance=0; instance < EEPROMGetNumOfInstances(eepromTable,eepromVar); instance++)
 			{
-				/* Read the other last variable updates */
-				offsetVar = virtualEEPROMareaContext[eepromTable].areaEEPROM[eepromVar].virtualOffset + (virtualEEPROMareaContext[eepromTable].areaEEPROM[eepromVar].size * instance);
-				if ( virtualEEPROMareaContext[eepromTable].areaEEPROM[eepromVar].size > 2 )
+				FlashReadData(flashAreaOld, &FlashOffset, PAGE_STATUS + 6 );
+				if ( FlashOffset == virtualEEPROMareaContext[eepromTable].areaEEPROM[eepromVar].virtualOffset )
 				{
-					if ( findInCache(offsetVar, &word) != RET_OK )
+					x = eepromVar;
+				}
+				if (eepromVar != x)
+				{
+					/* Read the other last variable updates */
+					offsetVar = virtualEEPROMareaContext[eepromTable].areaEEPROM[eepromVar].virtualOffset + (virtualEEPROMareaContext[eepromTable].areaEEPROM[eepromVar].size * instance);
+					if ( findInCache(offsetVar, &DataVar) != RET_OK )
 					{
-						ReadStatus = VirtualEEPROMReadVariable(flashAreaOld, offsetVar+1, &word, virtualEEPROMRegister.maxOffset);
-					}
-					DataVar = ((uint32_t)word)<<16;
-					if ( findInCache(offsetVar+1, &word) != RET_OK )
-					{
-						ReadStatus = VirtualEEPROMReadVariable(flashAreaOld, offsetVar, &word, virtualEEPROMRegister.maxOffset);
+						ReadStatus = VirtualEEPROMReadVariable(flashAreaOld, offsetVar, &DataVar, virtualEEPROMRegister.maxOffset);
 					}
 					else
 					{
 						ReadStatus = 0;
 					}
-					DataVar = DataVar | word;
-				}
-				else
-				{
-					if ( findInCache(offsetVar, &word) != RET_OK )
-					{
-						ReadStatus = VirtualEEPROMReadVariable(flashAreaOld, offsetVar, &word, virtualEEPROMRegister.maxOffset);
-					}
-					else
-					{
-						ReadStatus = 0;
-					}
-					DataVar = (uint32_t)word;
-				}
 
-				/* In case variable corresponding to the virtual address was found */
-				if ( ReadStatus != 0x1 && VirtualEEPROMAdressExist(flashAreaNew, offsetVar, transferState)==RET_FAIL)
-				{
-					/* Transfer the variable to the new active page */
-					EepromStatus = VirtualEEPROMVerifyPageFullWriteVariable(flashAreaNew, offsetVar, word_0(DataVar));
-					updateCache(offsetVar, word_0(DataVar));
-					if ( virtualEEPROMareaContext[eepromTable].areaEEPROM[eepromVar].size > 2 )
+					/* In case variable corresponding to the virtual address was found */
+					if (ReadStatus != 0x1)
 					{
-						EepromStatus = VirtualEEPROMVerifyPageFullWriteVariable(flashAreaNew, offsetVar+1, word_1(DataVar));
-						updateCache(offsetVar+1, word_1(DataVar));
-					}
-
-					/* If program operation was failed, a Flash error code is returned */
-					if (EepromStatus != RET_OK)
-					{
-						return EepromStatus;
+						/* Transfer the variable to the new active page */
+						EepromStatus = VirtualEEPROMVerifyPageFullWriteVariable(flashAreaNew, offsetVar, DataVar);
+						/* If program operation was failed, a Flash error code is returned */
+						if (EepromStatus != RET_OK)
+						{
+							return EepromStatus;
+						}
 					}
 				}
 			}
@@ -912,21 +1028,28 @@ eError VirtualEEPROMTransferDataFrom(tFlash flashAreaOld, tFlash flashAreaNew, u
  * @param  eepromDevice
  * @retval RET_OK or RET_FAIL
  ****************************************************************************/
-eError VirtualEEPROMSearchPointer(tVirtualEEPROMDevice eepromDevice, tFlash flashArea)
+eError VirtualEEPROMSearchPointer(tVirtualEEPROMDevice eepromDevice)
 {
 	eError success 	= RET_OK;
+	tFlash areaNumber;
 	uint16_t OffsetValue, OffsetValue2;
-	uint32_t diffOffset = 0, MaxOffset;
+
+	uint32_t diffOffset = 0;
+	uint32_t MaxOffset;
+
+	areaNumber = VirtualEEPROMFindValidArea(eepromDevice, READ_FROM_VALID_AREA);
+
+	virtualEEPROMRegister.actualPage = areaNumber;
+	FlashGetSize( areaNumber, &MaxOffset);
+	virtualEEPROMRegister.maxOffset = MaxOffset;
 
 	/* HEADER virtualEEPROM offset */
-	FlashGetSize( flashArea, &MaxOffset);
-	virtualEEPROMRegister.maxOffset = MaxOffset;
-	virtualEEPROMRegister.ptrAddrOffset = MaxOffset;
+	virtualEEPROMRegister.ptrAddrOffset = virtualEEPROMRegister.maxOffset;
 
 	while ( virtualEEPROMRegister.ptrAddrOffset > INITIAL_DATA_AREA)
 	{
-		success = FlashReadData( flashArea, &OffsetValue, virtualEEPROMRegister.ptrAddrOffset - 2);
-		success = FlashReadData( flashArea, &OffsetValue2, virtualEEPROMRegister.ptrAddrOffset - 4);
+		success = FlashReadData( areaNumber, &OffsetValue, virtualEEPROMRegister.ptrAddrOffset - 2);
+		success = FlashReadData( areaNumber, &OffsetValue2, virtualEEPROMRegister.ptrAddrOffset - 4);
 		if ( OffsetValue == 0xFFFF && OffsetValue2 == 0xFFFF )
 		{
 			virtualEEPROMRegister.ptrAddrOffset -= 4;
@@ -1028,6 +1151,46 @@ eError addToCache( uint16_t virtualAddress, uint16_t value )
 	}
 
 	return result;
+}
+
+
+
+/*****************************************************************************
+ * @brief  Get num of instances depending on the tEEPROM table
+ * @param  EEPROM Table and register
+ * @return num of instances
+ ***************************************************************************/
+static uint8_t EEPROMGetNumOfInstances(tVirtualEEPROM eeprom, uint16_t reg)
+{
+	uint8_t num;
+	if (VirtualEEPROMInstanceMap[eeprom].typeArea == EEPROM_AREA_INST)
+	{
+		num = VirtualEEPROMInstanceMap[eeprom].regTable.withInst[reg].numOfInstances;
+	}
+	else
+	{
+		num = UNIQUE_EEPROM_INSTANCE;
+	}
+	return num;
+}
+
+/*****************************************************************************
+ * @brief  Get size of register depending on the tEEPROM table
+ * @param  EEPROM Table and register
+ * @return size
+ ***************************************************************************/
+static uint16_t EEPROMGetAreaSize(tVirtualEEPROM eeprom, uint16_t reg)
+{
+	uint16_t size;
+	if (VirtualEEPROMInstanceMap[eeprom].typeArea == EEPROM_AREA_INST)
+	{
+		size = VirtualEEPROMInstanceMap[eeprom].regTable.withInst[reg].sizeOfInstance;
+	}
+	else
+	{
+		size = VirtualEEPROMInstanceMap[eeprom].regTable.noInst[reg].sizeOfInstance;
+	}
+	return size;
 }
 
 

@@ -7,27 +7,45 @@ uartInit                                 =    116
 uartDriverWriteIT                        =    116
 HAL_UART_RxCpltCallback                  =    116
 HAL_UART_MspInit                         =     88
-uartStart                                =     68
+uartStart                                =     72
 HAL_UART_MspDeInit                       =     68
+uartDriverReadIT                         =     56
+uartStop                                 =     44
 uartDriverMainIRQHandler                 =     32
 uartDriverWrite                          =     24
+uartDriverGetBufferSize                  =     24
+uartDriverRead                           =     20
 uartDriverSetBufferSize                  =     16
+onReadHregUartStatus                     =     16
+onReadHregUartBufferSize                 =     16
+uartDriverStatus                         =     12
+onWriteHregUartData                      =     12
+onWriteHregUartBufferSize                =     12
+onReadHregUartData                       =     12
+stopHregUart                             =     10
+startHregUart                            =     10
+sleepHregUart                            =     10
+initHregUart                             =     10
+wakeHregUart                             =      4
+uartSleep                                =      4
 HAL_UART_ErrorCallback                   =      2
 
 RAM: 
 uart2TxBuffer                            =    256
-ST_UartHandlers                          =    120
+uart1TxBuffer                            =    256
+ST_UartHandlers                          =    240
 uart2RxBuffer                            =    100
-uartCBuffers                             =     24
-uartBufferSize                           =      4
-uartStatus                               =      1
+uart1RxBuffer                            =    100
+uartCBuffers                             =     48
+uartBufferSize                           =      8
+uartStatus                               =      2
 uartPortIrq                              =      1
 byteRxBuffer                             =      1
 
 DATA: 
-UARTInstanceMap                          =     44
+UARTInstanceMap                          =     88
 ------------------------------------------------------------------
-TOTAL FLASH SIZE UART                    =    770
-TOTAL RAM SIZE UART                      =    507
-TOTAL DATA SIZE UART                     =     44
+TOTAL FLASH SIZE UART                    =   1046
+TOTAL RAM SIZE UART                      =   1012
+TOTAL DATA SIZE UART                     =     88
 ------------------------------------------------------------------

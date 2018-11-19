@@ -16,18 +16,18 @@
  *  COMMON INCLUDE
  ***************************************************************************/
 #include "common.h"
-
+#include "string.h"
 /****************************************************************************
  *  ARCHITECTURE INCLUDES
  ***************************************************************************/
 #include "statemachine.h"
-#include "ATCommand_fsm.h"
-
+#include "hreg_dat.h"
+#include "SwTimer_map.h"
 /****************************************************************************
  *  INCLUDES
  ***************************************************************************/
 #include "ATCommand.h"
-#include "string.h"
+#include "ATCommand_fsm.h"
 
 /****************************************************************************
  *  DEFINES
@@ -56,6 +56,8 @@ static uint8_t toRetries;
 
 static tFsm fsmATCmd;
 static uint8_t indexfsmATCmd;
+
+tBool AtTimeoutCallback(tSwTimerIndex SwTimerIndex);
 /****************************************************************************
  *    PRIVATE FUNCTIONS
  ****************************************************************************/
@@ -66,40 +68,52 @@ eError ATCommandParse(void)
 	uint8_t headerSize = 0;
 	uint8_t i = 0;
 
-	if((ATActualRequest.command[0] == 'A') && (ATActualRequest.command[1] == 'T'))
+	commandSize = strlen(ATActualRequest.command);
+
+	if(ATActualRequest.mode == AT_REQ_CMD)
 	{
-		memset(commandHeader, 0, 15);
-		commandSize = strlen(ATActualRequest.command);
-		if((commandSize+2) <= AT_CMD_BUFFER_SIZE)
+		if((ATActualRequest.command[0] == 'A') && (ATActualRequest.command[1] == 'T'))
 		{
-			for(i=2; i<commandSize; i++)
+			if((commandSize+2) <= AT_CMD_BUFFER_SIZE)
 			{
-				if((ATActualRequest.command[i]!='+') && (ATActualRequest.command[i]!='#') && (ATActualRequest.command[i]!=0)
-					&& (ATActualRequest.command[i]!='=') && (ATActualRequest.command[i]!='?'))
+				memset(commandHeader, 0, 15);
+				for(i=2; i<commandSize; i++)
 				{
-					headerSize++;
-					if(!initOffset)
+					if((ATActualRequest.command[i]!='+') && (ATActualRequest.command[i]!='#') && (ATActualRequest.command[i]!=0)
+						&& (ATActualRequest.command[i]!='=') && (ATActualRequest.command[i]!='?'))
 					{
-						initOffset = i;
+						headerSize++;
+						if(!initOffset)
+						{
+							initOffset = i;
+						}
+					}
+					else if(initOffset)
+					{
+						break;
 					}
 				}
-				else if(initOffset)
-				{
-					memcpy(commandHeader, &ATActualRequest.command[initOffset], headerSize);
-					memcpy(actualCommand, ATActualRequest.command, commandSize);
-					memcpy(&actualCommand[commandSize], "\r\n", 2);
-					commandSize += 2;
-					ret = RET_OK;
-					break;
-				}
+				memcpy(commandHeader, &ATActualRequest.command[initOffset], headerSize);
+				ret = RET_OK;
 			}
 		}
+	}
+	else if(ATActualRequest.mode == AT_REQ_TEXT)
+	{
+		ret = RET_OK;
+	}
+
+	if(ret == RET_OK)
+	{
+		memcpy(actualCommand, ATActualRequest.command, commandSize);
+		memcpy(&actualCommand[commandSize], "\r\n", 2);
+		commandSize += 2;
 	}
 
 	return ret;
 }
 
-eError AtProcessResponse(tAtClients client)
+eError AtProcessResponse(tAtClients client, tAtResponseID event)
 {
 	eError ret = RET_OK;
 	uint8_t clientPipe = 0;
@@ -108,7 +122,7 @@ eError AtProcessResponse(tAtClients client)
 	{
 		if(isRequestInProgress)
 		{
-			ATClient[ATActualClient].callback(AT_RESP_OK, AtRxBuffer, AtRxBufferBytes);
+			ATClient[ATActualClient].callback(event, AtRxBuffer, AtRxBufferBytes);
 		}
 	}
 	else
@@ -133,17 +147,31 @@ eError AtProcessResponse(tAtClients client)
 
 tBool AtCheckMaxRetries(uint8_t val)
 {
+	tBool ret = FALSE;
 
-	return FALSE;
-}
+	if(toRetries >= ATActualRequest.timeoutRetries)
+	{
+		toRetries = 0;
+		ret = TRUE;
+	}
 
-tBool AtCheckExpectedResponse(uint8_t val)
-{
-
-	return TRUE;
+	return ret;
 }
 
 tBool AtCheckNoMaxRetries(uint8_t val)
+{
+	tBool ret = FALSE;
+
+	if(toRetries < ATActualRequest.timeoutRetries)
+	{
+		toRetries++;
+		ret = TRUE;
+	}
+
+	return ret;
+}
+
+tBool AtCheckExpectedResponse(uint8_t val)
 {
 
 	return TRUE;
@@ -161,11 +189,16 @@ eError AtSendCommand(uint8_t val)
 {
 	eError ret = RET_OK;
 
-//	WRITE_HREG(ATClient[ATActualClient].UARTInstance, HREG_UART_BUFFER_SIZE, strlen((const char *)(ATActualRequest.command)));
-//	WRITE_HREG(ATClient[ATActualClient].UARTInstance, HREG_UART_DATA, ATActualRequest.command);
-	uartDriverSetBufferSize((tUart)ATClient[ATActualClient].UARTInstance, commandSize);
-	uartDriverWrite((tUart)ATClient[ATActualClient].UARTInstance, (uint8_t*)actualCommand);
+	/* Send command through UART */
+	WRITE_HREG(ATClient[ATActualClient].UARTInstance, HREG_UART_BUFFER_SIZE, commandSize);
+	WRITE_HREG(ATClient[ATActualClient].UARTInstance, HREG_UART_DATA, actualCommand);
 
+	/* Start timeout timer */
+	if(ATActualRequest.timeout > 0)
+	{
+		WRITE_HREG(SW_TIMER_AT, HREG_SWTIMER_SET, ATActualRequest.timeout);
+		WRITE_HREG(SW_TIMER_AT, HREG_SWTIMER_STATE, SW_TIMER_STATE_STARTED);
+	}
 	return ret;
 }
 
@@ -176,23 +209,23 @@ eError AtCheckResponse(uint8_t val)
 
 	for(client=0; client<NUM_OF_AT_CLIENTS; client++)
 	{
-		if(pipeDeviceParseCommand(ATClient[client].pipe, AtRxBuffer, AT_CMD_BUFFER_SIZE, "\r\n", 2, &AtRxBufferBytes))
+		if(pipeDeviceParseCommand(ATClient[client].pipe, AtRxBuffer, AT_CMD_BUFFER_SIZE,(int8_t *) "\r\nOK\r\n", 6, &AtRxBufferBytes))
 		{
-			ret = AtProcessResponse(client);
+			ret = AtProcessResponse(client, AT_RESP_OK);
+			/* Stop timer */
+			WRITE_HREG(SW_TIMER_AT, HREG_SWTIMER_STATE, SW_TIMER_STATE_CANCELLED);
 		}
-		else if(isRequestInProgress && (ATActualClient==client))
+		else if(pipeDeviceParseCommand(ATClient[client].pipe, AtRxBuffer, AT_CMD_BUFFER_SIZE,(int8_t *) "\r\nERROR\r\n", 9, &AtRxBufferBytes))
 		{
-			/* Check timeout */
-			if(ATActualRequest.timeout > 0)
-			{
-				toRetries++;
-				if(toRetries >= ATActualRequest.timeoutRetries)
-				{
-					pipeDeviceExtractData(ATClient[client].pipe, AtRxBuffer, AT_CMD_BUFFER_SIZE, &AtRxBufferBytes);
-					isRequestInProgress = FALSE;
-					announceFsmEvent(indexfsmATCmd, AT_RESP_TIMEOUT_EVENT);
-				}
-			}
+			ret = AtProcessResponse(client, AT_RESP_ERROR);
+			/* Stop timer */
+			WRITE_HREG(SW_TIMER_AT, HREG_SWTIMER_STATE, SW_TIMER_STATE_CANCELLED);
+		}
+		else if(pipeDeviceParseCommand(ATClient[client].pipe, AtRxBuffer, AT_CMD_BUFFER_SIZE,(int8_t *) "\r\n", 2, &AtRxBufferBytes))
+		{
+			ret = AtProcessResponse(client, AT_RESP_DATA);
+			/* Stop timer */
+			WRITE_HREG(SW_TIMER_AT, HREG_SWTIMER_STATE, SW_TIMER_STATE_CANCELLED);
 		}
 	}
 
@@ -201,7 +234,11 @@ eError AtCheckResponse(uint8_t val)
 
 eError AtReportTimeout(uint8_t val)
 {
+	isRequestInProgress = FALSE;
+	pipeDeviceExtractData(ATClient[ATActualClient].pipe, AtRxBuffer, AT_CMD_BUFFER_SIZE, &AtRxBufferBytes);
 	ATClient[ATActualClient].callback(AT_RESP_TIMEOUT, AtRxBuffer, AtRxBufferBytes);
+	ATActualClient = NUM_OF_AT_CLIENTS;
+	AtRxBufferBytes = 0;
 	return RET_OK;
 }
 
@@ -215,6 +252,7 @@ eError AtReportResponse(uint8_t val)
 
 eError AtPublishURC(uint8_t val)
 {
+	AtRxBufferBytes = 0;
 	return RET_OK;
 }
 
@@ -257,6 +295,9 @@ eError AtCommandStart(void)
 	/* Start FSM */
 	resetFsm(indexfsmATCmd);
 
+	/* Configure SW timer */
+	WRITE_HREG(SW_TIMER_AT, HREG_SWTIMER_CALLBACK_FUNCTION, AtTimeoutCallback);
+
 	return ret;
 }
 
@@ -269,6 +310,7 @@ eError ATCommandSetRequest(tAtClients ATClient, tAtRequest ATRequest)
 		isRequestInProgress = TRUE;
 		ATActualRequest = ATRequest;
 		ATActualClient = ATClient;
+		toRetries = 0;
 
 		ret = ATCommandParse();
 
@@ -279,6 +321,16 @@ eError ATCommandSetRequest(tAtClients ATClient, tAtRequest ATRequest)
 	}
 
 	return ret;
+}
+
+tBool AtTimeoutCallback(tSwTimerIndex SwTimerIndex)
+{
+	if(isRequestInProgress)
+	{
+		announceFsmEvent(indexfsmATCmd, AT_RESP_TIMEOUT_EVENT);
+	}
+
+	return FALSE;
 }
 
 #endif // _ATCOMMAND_C_

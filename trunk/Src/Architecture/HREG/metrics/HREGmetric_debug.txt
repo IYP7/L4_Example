@@ -2,12 +2,48 @@
 		 HREG METRIC COMPONENT WITH debug 
 ------------------------------------------------------------------
 FLASH: 
+startHregGroupAll                        =    172
+readHreg                                 =    140
+writeHreg                                =    136
+writeShellHreg                           =    100
+readShellHreg                            =     96
+writeHregTableStd                        =     54
+stopHregGroupAll                         =     52
+readHregTableStd                         =     52
+initHregAll                              =     52
+wakeHregGroupAll                         =     44
+sleepHregGroupAll                        =     44
+getNumOfHregs                            =     12
 
 RAM: 
+hregInterruptsState                      =     18
+hregFlashSize                            =     16
+hregFlashOffset                          =     16
+hregGPIOValue                            =      9
+hregUartData                             =      8
+hregUartBufferSize                       =      8
+hregSpiData                              =      8
+hregSpiBufferSize                        =      8
+hregFlashData                            =      8
+hregVirtualEEPROMData                    =      4
+hregSystemTime                           =      4
+hregSystemDate                           =      4
+hregSwTimerSet                           =      4
+hregSwTimerGetPending                    =      4
+hregSwTimerGetElapsed                    =      4
+hregSwTimerCallbackFunction              =      4
+hregVirtualEEPROMRegister                =      2
+hregVirtualEEPROMInstanceReg             =      2
+hregUartStatus                           =      2
+hregSpiStatus                            =      2
+numOfHregs                               =      1
+hregSystemPowerUpReason                  =      1
+hregSystemPowerMode                      =      1
+hregSwTimerState                         =      1
 
 DATA: 
 ------------------------------------------------------------------
-TOTAL FLASH SIZE HREG                    =      0
-TOTAL RAM SIZE HREG                      =      0
+TOTAL FLASH SIZE HREG                    =    954
+TOTAL RAM SIZE HREG                      =    139
 TOTAL DATA SIZE HREG                     =      0
 ------------------------------------------------------------------

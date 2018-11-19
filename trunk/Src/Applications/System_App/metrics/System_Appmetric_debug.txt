@@ -6,6 +6,7 @@ callSystemApp                            =    220
 ATLTECallback                            =     44
 ATGPSCallback                            =     44
 initSystemApp                            =     20
+requestSystemAppPowerState               =     12
 
 RAM: 
 x                                        =      1
@@ -13,7 +14,7 @@ requestPowerState                        =      1
 
 DATA: 
 ------------------------------------------------------------------
-TOTAL FLASH SIZE SYSTEM_APP              =    328
+TOTAL FLASH SIZE SYSTEM_APP              =    340
 TOTAL RAM SIZE SYSTEM_APP                =      2
 TOTAL DATA SIZE SYSTEM_APP               =      0
 ------------------------------------------------------------------

@@ -26,14 +26,14 @@
  * DEFINES
  **********************************************************************/
 //Define here which driver implementation to use
-#define MON_UART_TX_IT
+//#define MON_UART_TX_IT
 #define MON_UART_RX_IT
-//#define MON_UART_TX_POLL
+#define MON_UART_TX_POLL
 //#define MON_UART_RX_POLL
 
 #define UART_TX_BUFFER 100
 
-//#define IS_UART1
+#define IS_UART1
 #define IS_UART2
 //#define IS_UART3
 //#define IS_UART4

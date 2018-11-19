@@ -16,7 +16,7 @@
  ***************************************************************************/
 #include "common.h"
 #include "hreg_dat.h"
-
+#include "uart_map.h"
 /****************************************************************************
  *  ARCHITECTURE INCLUDE
  ***************************************************************************/
@@ -38,6 +38,11 @@ typedef enum eGPIO
 	GPIO_LED_1,
 	GPIO_BUTTON_B1,
 
+#ifdef IS_UART1
+    GPIO_UART1_TX,
+    GPIO_UART1_RX,
+#endif
+
 #ifdef IS_UART2
     GPIO_UART2_TX,
     GPIO_UART2_RX,
@@ -55,24 +60,6 @@ typedef enum eGPIO
 	GPIO_SPI3_MOSI,
 	GPIO_SPI3_SCK,
 #endif
-
-
-//	GPIO_SPI3_MISO,
-//	GPIO_SPI3_MOSI,
-//	GPIO_SPI3_SCK,
-
-	GPIO_SDIO_D0,
-	GPIO_SDIO_D1,
-	GPIO_SDIO_D2,
-	GPIO_SDIO_D3,
-	GPIO_SDIO_CK,
-	GPIO_SDIO_CMD,
-
-	GPIO_DRAIN_CURRENT,
-
-
-
-
 
     NUM_OF_GPIO
 } tGPIO;

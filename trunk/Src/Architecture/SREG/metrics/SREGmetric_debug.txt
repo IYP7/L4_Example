@@ -7,8 +7,11 @@ sregWrite                                =     72
 writeSregTableStd                        =     46
 initSregAll                              =     36
 readSregTableStd                         =     26
+writeShellSreg                           =     10
+readShellSreg                            =     10
 writeSreg                                =      8
 readSreg                                 =      8
+getNumOfSregs                            =      4
 
 RAM: 
 SREG32Context                            =      8
@@ -19,7 +22,7 @@ SREGInstanceMap                          =     36
 SREG32InstanceMap                        =     24
 SREG8InstanceMap                         =     21
 ------------------------------------------------------------------
-TOTAL FLASH SIZE SREG                    =    364
+TOTAL FLASH SIZE SREG                    =    388
 TOTAL RAM SIZE SREG                      =     15
 TOTAL DATA SIZE SREG                     =     81
 ------------------------------------------------------------------

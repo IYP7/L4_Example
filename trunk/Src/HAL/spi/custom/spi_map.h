@@ -30,9 +30,9 @@
 //#define MON_SPI_TX_POLL
 //#define MON_SPI_RX_POLL
 
-#define IS_SPI1
+//#define IS_SPI1
 //#define IS_SPI2
-#define IS_SPI3
+//#define IS_SPI3
 
 #define SPI1_WR_BUFFER          100
 //#define SPI2_WR_BUFFER          100

@@ -26,6 +26,7 @@
  ****************************************************************************/
 typedef enum eAtClients
 {
+	AT_CLIENT_SHELL,
 	AT_CLIENT_GPS,
 	AT_CLIENT_LTE,
 	NUM_OF_AT_CLIENTS

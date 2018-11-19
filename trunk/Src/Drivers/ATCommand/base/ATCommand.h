@@ -27,7 +27,7 @@
 /****************************************************************************
  *  DEFINES
  ****************************************************************************/
-#define AT_CMD_BUFFER_SIZE 64
+#define AT_CMD_BUFFER_SIZE 255
 
 /****************************************************************************
  *  TYPES DEFINITION
@@ -36,14 +36,20 @@ typedef enum
 {
 	AT_RESP_OK,
 	AT_RESP_ERROR,
+	AT_RESP_DATA,
 	AT_RESP_TIMEOUT,
 	AT_RESP_URC
 } tAtResponseID;
 
+typedef enum
+{
+	AT_REQ_CMD,
+	AT_REQ_TEXT
+} tAtRequestMode;
+
 typedef struct sAtClient
 {
 	tBool 		isURCSubscribed;
-	//uint8_t		*AtRxBuffer;
 	ePipes		pipe;
 	void 		(*callback)(tAtResponseID eventID, uint8_t *buffer, uint16_t length);
 	tUart		UARTInstance;
@@ -51,11 +57,11 @@ typedef struct sAtClient
 
 typedef struct sAtRequest
 {
-	uint8_t		errorRetries;
-	uint8_t		timeoutRetries;
-	uint16_t	timeout;
-	uint16_t	delay;
-	uint8_t		*command;
+	uint8_t			errorRetries;
+	uint8_t			timeoutRetries;
+	uint16_t		timeout;
+	tAtRequestMode 	mode;
+	uint8_t			*command;
 } tAtRequest;
 
 /****************************************************************************

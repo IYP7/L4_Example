@@ -92,7 +92,7 @@ const tUartInstanceMap UARTInstanceMap[NUM_OF_UART] =  {
 #ifdef IS_UART1
     {
         USART1,
-        9600,
+		115200,
         UART_WORDLENGTH_8B,
         UART_PARITY_NONE,
         UART_STOPBITS_1,
@@ -103,7 +103,7 @@ const tUartInstanceMap UARTInstanceMap[NUM_OF_UART] =  {
         0, //NO DMA
         0, //NO DMA
         0, //NO DMA
-        &pipeDevice1ByteReceived, //&testRxCallback, //example RX callback
+        &pipeDevice2ByteReceived, //&testRxCallback, //example RX callback
         NULL, //&testTxCallback, //example TX callback
     },
 #endif

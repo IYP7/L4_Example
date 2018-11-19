@@ -2,12 +2,14 @@
 		 SYSTEM_MW METRIC COMPONENT WITH debug 
 ------------------------------------------------------------------
 FLASH: 
+callSystemMwTask                         =    172
+initSystemMw                             =     20
 
 RAM: 
 
 DATA: 
 ------------------------------------------------------------------
-TOTAL FLASH SIZE SYSTEM_MW               =      0
+TOTAL FLASH SIZE SYSTEM_MW               =    192
 TOTAL RAM SIZE SYSTEM_MW                 =      0
 TOTAL DATA SIZE SYSTEM_MW                =      0
 ------------------------------------------------------------------

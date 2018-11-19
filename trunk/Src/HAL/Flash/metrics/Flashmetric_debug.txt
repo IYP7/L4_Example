@@ -3,7 +3,24 @@
 ------------------------------------------------------------------
 FLASH: 
 FlashInit                                =    176
+FlashProgramData                         =     88
+FlashReadData                            =     44
+onWriteHregFlashData                     =     40
+onReadHregFlashData                      =     36
+FlashGetSize                             =     20
+FlashUnlock                              =     16
+FlashLock                                =     16
+onReadHregFlashSize                      =     12
+wakeHregFlash                            =      8
+stopHregFlash                            =      8
+startHregFlash                           =      8
+sleepHregFlash                           =      8
+initHregFlash                            =      8
 FlashCalcOffset                          =      6
+FlashWake                                =      4
+FlashStop                                =      4
+FlashStart                               =      4
+FlashSleep                               =      4
 
 RAM: 
 FlashContext                             =     48
@@ -11,7 +28,7 @@ FlashContext                             =     48
 DATA: 
 FlashInstanceMap                         =     16
 ------------------------------------------------------------------
-TOTAL FLASH SIZE FLASH                   =    182
+TOTAL FLASH SIZE FLASH                   =    510
 TOTAL RAM SIZE FLASH                     =     48
 TOTAL DATA SIZE FLASH                    =     16
 ------------------------------------------------------------------

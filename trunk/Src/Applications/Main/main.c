@@ -30,19 +30,7 @@
 ****************************************************************************/
 #include "main.h"
 #include "Scheduler.h"
-
-
 #include "system.h"
-#include "interrupts.h"
-#include "swtimer.h"
-#include "GPIO.h"
-
-#include "uart.h"
-#include "flash.h"
-#include "spi.h"
-#include "DMA.h"
-#include "sd.h"
-#include "PipeDevice.h"
 /*************************************************************************//**
  * @brief   Embedded application start routine.
  *
@@ -57,28 +45,6 @@ int  main()
 {
 	/* Call to initial specific platform configuration */
     systemPreConfiguration();
-
-    /* HAL TEST */
-    GPIOInit();
-    stm32L4Init();
-
-    interruptsInit();
-    interruptsStart();
-
-    spiInit();
-    spiStart();
-
-    uartInit();
-    uartStart();
-
-    FlashInit();
-    SwTimerInit();
-    pipeDeviceInit();
-/*    dmaInit();
-    dmaStart()
-    sdInit();
-    sdStart();*/
-    /*\ HAL TEST */
 
 	/* Applications Initialization */
     SchedulerInit();

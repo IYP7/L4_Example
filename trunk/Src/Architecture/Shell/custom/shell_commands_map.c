@@ -64,7 +64,7 @@ tShellCommandTableEntry shellCommandsTable[] = {
 #endif
 
 #ifdef MON_SHELL_PROJECT_SPECIFIC_COMMANDS
-    /* SHELL_COMMAND_RESET    */{ "Example1"  , 0, &projectExampleCommand1},
+    /* SHELL_COMMAND_RESET    */{ "at"  , 4, &projectAtCmd},
     /* SHELL_COMMAND_BOOTMODE */{ "Example2"  , 0, &projectExampleCommand2},
 #endif
 

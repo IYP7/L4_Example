@@ -5,9 +5,9 @@ FLASH:
 AtCheckResponse                          =    188
 AtProcessResponse                        =    180
 ATCommandParse                           =    176
-ATCommandSetRequest                      =     88
+ATCommandSetRequest                      =     84
+AtSendCommand                            =     76
 AtCommandStart                           =     76
-AtSendCommand                            =     68
 AtReportTimeout                          =     48
 AtReportResponse                         =     32
 AtPublishURC                             =      4
@@ -37,7 +37,7 @@ ATClient                                 =     24
 fsmStateATCommand                        =      8
 ATActualClient                           =      1
 ------------------------------------------------------------------
-TOTAL FLASH SIZE ATCOMMAND               =    876
+TOTAL FLASH SIZE ATCOMMAND               =    880
 TOTAL RAM SIZE ATCOMMAND                 =    191
 TOTAL DATA SIZE ATCOMMAND                =    193
 ------------------------------------------------------------------

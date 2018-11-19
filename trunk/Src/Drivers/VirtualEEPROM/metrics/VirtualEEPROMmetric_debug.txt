@@ -2,12 +2,40 @@
 		 VIRTUALEEPROM METRIC COMPONENT WITH debug 
 ------------------------------------------------------------------
 FLASH: 
+VirtualEEPROMinit                        =    164
+EEPROMGetAreaSize                        =     48
+EEPROMGetNumOfInstances                  =     36
+wakeHregVirtualEEPROM                    =     10
+stopHregVirtualEEPROM                    =     10
+startHregVirtualEEPROM                   =     10
+sleepHregVirtualEEPROM                   =     10
+initHregVirtualEEPROM                    =     10
+onReadHregVirtualEEPROMData              =      8
+VirtualEEPROMWake                        =      4
+VirtualEEPROMStop                        =      4
+VirtualEEPROMStart                       =      4
+VirtualEEPROMSleep                       =      4
+onWriteHregVirtualEEPROMData             =      4
 
 RAM: 
+virtualEEPROMCache                       =    320
+virtualEEPROMsregUserContext             =     12
+virtualEEPROMsregFactoryContext          =     12
+virtualEEPROMsregCalibrationContext      =     12
+virtualEEPROMRegister                    =     12
+virtualEEPROMhregContext                 =     12
+virtualEEPROMdataContext                 =     12
 
 DATA: 
+VirtualEEPROMInstanceMap                 =     40
+virtualEEPROMareaContext                 =     40
+VirtualEEPROMsreguserMap                 =      6
+VirtualEEPROMsregfactoryMap              =      6
+VirtualEEPROMsregcalibrationMap          =      6
+VirtualEEPROMhregMap                     =      6
+VirtualEEPROMdataMap                     =      6
 ------------------------------------------------------------------
-TOTAL FLASH SIZE VIRTUALEEPROM           =      0
-TOTAL RAM SIZE VIRTUALEEPROM             =      0
-TOTAL DATA SIZE VIRTUALEEPROM            =      0
+TOTAL FLASH SIZE VIRTUALEEPROM           =    326
+TOTAL RAM SIZE VIRTUALEEPROM             =    392
+TOTAL DATA SIZE VIRTUALEEPROM            =    110
 ------------------------------------------------------------------

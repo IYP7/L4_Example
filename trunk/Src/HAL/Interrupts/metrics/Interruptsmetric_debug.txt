@@ -2,12 +2,25 @@
 		 INTERRUPTS METRIC COMPONENT WITH debug 
 ------------------------------------------------------------------
 FLASH: 
+interruptsSetState                       =    112
 interruptsStart                          =     52
 interruptsInit                           =     48
+interruptsStop                           =     40
+interruptsGetState                       =     40
 interruptsEnable                         =     40
 interruptsDisable                        =     20
 HAL_SYSTICK_Callback                     =     16
+onReadHregInterruptsState                =     14
+wakeHregInterrupts                       =     10
+stopHregInterrupts                       =     10
+startHregInterrupts                      =     10
+sleepHregInterrupts                      =     10
+onWriteHregInterruptsState               =     10
+interruptsWake                           =     10
+interruptsSleep                          =     10
+initHregInterrupts                       =     10
 HAL_UART2_Callback                       =     10
+HAL_UART1_Callback                       =     10
 HAL_SPI3_Callback                        =     10
 HAL_SPI1_Callback                        =     10
 EXTI9_5_IRQHandler                       =     10
@@ -28,7 +41,6 @@ PendSV_Handler                           =      2
 NMI_Handler                              =      2
 MemManage_Handler                        =      2
 HardFault_Handler                        =      2
-HAL_UART1_Callback                       =      2
 HAL_SPI2_Callback                        =      2
 HAL_I2C2_Callback                        =      2
 HAL_I2C1_Callback                        =      2
@@ -43,7 +55,7 @@ countIrqAllDisable                       =      2
 DATA: 
 interruptsInstanceMap                    =     68
 ------------------------------------------------------------------
-TOTAL FLASH SIZE INTERRUPTS              =    314
+TOTAL FLASH SIZE INTERRUPTS              =    608
 TOTAL RAM SIZE INTERRUPTS                =      2
 TOTAL DATA SIZE INTERRUPTS               =     68
 ------------------------------------------------------------------

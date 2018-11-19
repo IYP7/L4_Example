@@ -115,6 +115,57 @@ uint16_t CalculateCrc(EE_DATA_TYPE Data, uint16_t VirtAddress);
 
 
 /**************************************************************************//**
+ * @brief  	Initializes Virtual Address for VirtualEEPROM table
+ * @param	None.
+ * @return  success: RET_OK or RET_FAIL
+ ****************************************************************************/
+eError VirtualEEPROMinit(void)
+{
+	eError 	success = RET_OK;
+
+	uint8_t reg = 0, eeprom = 0;
+	uint16_t areaSize;
+	uint8_t nextNumInst = 0;
+	uint16_t nextVirtOffset = 0;
+	uint16_t lastOffsetArea = 0;
+
+	for (eeprom = 0; eeprom < NUM_OF_TABLE_EEPROM; eeprom++)
+	{
+		/* if offsetArea is 0, ignore this Area */
+		if ( VirtualEEPROMInstanceMap[eeprom].offsetArea != 0 )
+		{
+			areaSize = virtualEEPROMareaContext[eeprom].areaSize;
+			for (reg = 0; reg < areaSize; reg++ )
+			{
+				virtualEEPROMareaContext[eeprom].areaEEPROM[reg].virtualOffset = nextVirtOffset;
+				virtualEEPROMareaContext[eeprom].areaEEPROM[reg].size = EEPROMGetAreaSize(eeprom,reg);
+				nextNumInst = EEPROMGetNumOfInstances(eeprom,reg);
+				nextVirtOffset = virtualEEPROMareaContext[eeprom].areaEEPROM[reg].virtualOffset + nextNumInst * virtualEEPROMareaContext[eeprom].areaEEPROM[reg].size;
+			}
+
+			/* Check that offset is between the reserved offset area */
+			if ( nextVirtOffset > (VirtualEEPROMInstanceMap[eeprom].offsetArea + lastOffsetArea))
+			{
+				return RET_NOT_INITIALIZED;
+			}
+			else
+			{
+				nextVirtOffset = VirtualEEPROMInstanceMap[eeprom].offsetArea + lastOffsetArea;
+				lastOffsetArea = nextVirtOffset;
+			}
+		}
+
+		/* offset Area is 0: Map of Area have a Not Valid VirtualOffset = 0xFFFF */
+		else
+		{
+			virtualEEPROMareaContext[eeprom].areaEEPROM[0].virtualOffset = 0xFFFF;
+		}
+	}
+	return success;
+}
+
+
+/**************************************************************************//**
   * @brief  Restore the pages to a known good state in case of power loss.
   *         If a page is in RECEIVE state, resume transfer.
   *         Then if some pages are ERASING state, erase these pages.

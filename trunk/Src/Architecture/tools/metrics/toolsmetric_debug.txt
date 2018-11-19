@@ -2,6 +2,9 @@
 		 TOOLS METRIC COMPONENT WITH debug 
 ------------------------------------------------------------------
 FLASH: 
+itos                                     =    156
+_atoi                                    =     74
+dtoh                                     =     52
 AddQueueByte                             =     46
 GetQueueByte                             =     44
 my_printf                                =     34
@@ -15,7 +18,7 @@ RAM:
 
 DATA: 
 ------------------------------------------------------------------
-TOTAL FLASH SIZE TOOLS                   =    170
+TOTAL FLASH SIZE TOOLS                   =    452
 TOTAL RAM SIZE TOOLS                     =      0
 TOTAL DATA SIZE TOOLS                    =      0
 ------------------------------------------------------------------

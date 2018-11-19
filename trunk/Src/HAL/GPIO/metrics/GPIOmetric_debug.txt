@@ -5,13 +5,25 @@ FLASH:
 InitGPIOClock                            =    272
 GPIOInit                                 =     84
 GPIOWritePort                            =     56
+GPIOReadPort                             =     28
+onWriteHregGPIOValue                     =     10
+onReadHregGPIOValue                      =     10
+wakeHregGPIO                             =      8
+stopHregGPIO                             =      8
+startHregGPIO                            =      8
+sleepHregGPIO                            =      8
+initHregGPIO                             =      8
+GPIOWake                                 =      4
+GPIOStop                                 =      4
+GPIOStart                                =      4
+GPIOSleep                                =      4
 
 RAM: 
 
 DATA: 
 GPIOInstanceMap                          =    272
 ------------------------------------------------------------------
-TOTAL FLASH SIZE GPIO                    =    412
+TOTAL FLASH SIZE GPIO                    =    516
 TOTAL RAM SIZE GPIO                      =      0
 TOTAL DATA SIZE GPIO                     =    272
 ------------------------------------------------------------------

@@ -125,10 +125,10 @@ typedef enum
 	 HREG_GROUP_INDEX_MAX, 
 }eHregGroupIndex;
 
-extern const HREG_FUNC_READ_CALL onReadHregFunc[19];
-extern const HREG_FUNC_WRITE_CALL onWriteHregFunc[16];
-extern const HREG_GROUP_INT_CALL apiFuncHregGroup[10];
-extern HREG_GROUP_STATE hregGroupsState[10];
+extern const HREG_FUNC_READ_CALL onReadHregFunc[16];
+extern const HREG_FUNC_WRITE_CALL onWriteHregFunc[14];
+extern const HREG_GROUP_INT_CALL apiFuncHregGroup[8];
+extern HREG_GROUP_STATE hregGroupsState[8];
 extern const HREG tableHregSystem[4];
 extern const HREG tableHregFlash[3];
 extern const HREG tableHregGPIO[1];
@@ -137,6 +137,6 @@ extern const HREG tableHregSpi[3];
 extern const HREG tableHregInterrupts[1];
 extern const HREG tableHregSwTimer[5];
 extern const HREG tableHregVirtualEEPROM[3];
-extern const HREG_TABLE_INFO hregTableList[10];
+extern const HREG_TABLE_INFO hregTableList[8];
 extern const HREG_FUNC hregFunc;
 #endif

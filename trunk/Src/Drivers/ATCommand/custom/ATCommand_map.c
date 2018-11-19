@@ -23,6 +23,7 @@
  ***************************************************************************/
 #include "ATCommand.h"
 #include "System_app.h"
+#include "shell_project_commands.h"
 //#include "PipeDevice_map.h"
 /****************************************************************************
  *  DEFINES
@@ -35,9 +36,6 @@
  *    VARIABLES
  ****************************************************************************/
 
-uint8_t AT_GPSRxBuffer[AT_CMD_BUFFER_SIZE];
-uint8_t AT_LTERxBuffer[AT_CMD_BUFFER_SIZE];
-
 /*	AT CLIENTS MAP
  *
  * 	isURCSubscribed	: TRUE if it is subscribed to URC messages.
@@ -48,8 +46,9 @@ uint8_t AT_LTERxBuffer[AT_CMD_BUFFER_SIZE];
 
 tAtClientMap ATClient[NUM_OF_AT_CLIENTS] =
 {
-	/* AT_CLIENT_GPS */ {	TRUE,	/*AT_GPSRxBuffer,	*/	PIPE_1,		ATGPSCallback,		UART_2},
-	/* AT_CLIENT_LTE */ {	TRUE,	/*AT_LTERxBuffer,*/		PIPE_1, 	ATLTECallback, 		UART_2}
+	/* AT_CLIENT_SHELL */ 	{	TRUE,	PIPE_2,		ATShellCallback,		UART_1},
+	/* AT_CLIENT_GPS */ 	{	TRUE,	PIPE_2,		ATGPSCallback,		UART_1},
+	/* AT_CLIENT_LTE */ 	{	TRUE,	PIPE_2, 	ATLTECallback, 		UART_1}
 };
 
 

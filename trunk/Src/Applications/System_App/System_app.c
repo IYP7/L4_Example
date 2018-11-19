@@ -129,20 +129,20 @@ void callSystemApp( void )
 
         case SYSTEM_APP_ON:
 			/* Application dispatcher */
-        	if(x)
-        	{
-        		if(ATCommandSetRequest(AT_CLIENT_GPS, req)==RET_OK)
-        		{
-        			x=0;
-        		}
-        	}
-        	else
-        	{
-        		if(ATCommandSetRequest(AT_CLIENT_LTE, req)==RET_OK)
-        		{
-        			x=1;
-        		}
-        	}
+//        	if(x)
+//        	{
+//        		if(ATCommandSetRequest(AT_CLIENT_GPS, req)==RET_OK)
+//        		{
+//        			x=0;
+//        		}
+//        	}
+//        	else
+//        	{
+//        		if(ATCommandSetRequest(AT_CLIENT_LTE, req)==RET_OK)
+//        		{
+//        			x=1;
+//        		}
+//        	}
 			/* Power Sequence control */
             if ( requestPowerState == POWER_STATE_START_SHUTDOWN )
             {
@@ -231,18 +231,18 @@ void requestSystemAppReset( void )
 
 void ATLTECallback(tAtResponseID eventID, uint8_t *buffer, uint16_t length)
 {
-	uartDriverSetBufferSize((tUart)UART_2, 6);
-	uartDriverWrite((tUart)UART_2, (uint8_t*)"LTE: ");
-	uartDriverSetBufferSize((tUart)UART_2, length);
-	uartDriverWrite((tUart)UART_2, (uint8_t*)buffer);
+//	uartDriverSetBufferSize((tUart)UART_2, 6);
+//	uartDriverWrite((tUart)UART_2, (uint8_t*)"LTE: ");
+//	uartDriverSetBufferSize((tUart)UART_2, length);
+//	uartDriverWrite((tUart)UART_2, (uint8_t*)buffer);
 }
 
 void ATGPSCallback(tAtResponseID eventID, uint8_t *buffer, uint16_t length)
 {
-	uartDriverSetBufferSize((tUart)UART_2, 6);
-	uartDriverWrite((tUart)UART_2, (uint8_t*)"GPS: ");
-	uartDriverSetBufferSize((tUart)UART_2, length);
-	uartDriverWrite((tUart)UART_2, (uint8_t*)buffer);
+//	uartDriverSetBufferSize((tUart)UART_2, 6);
+//	uartDriverWrite((tUart)UART_2, (uint8_t*)"GPS: ");
+//	uartDriverSetBufferSize((tUart)UART_2, length);
+//	uartDriverWrite((tUart)UART_2, (uint8_t*)buffer);
 }
 
 #endif /* _SYSTEM_APP_C_ */
