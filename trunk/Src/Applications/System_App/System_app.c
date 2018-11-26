@@ -29,13 +29,9 @@
 ****************************************************************************/
 #include "System_mw.h"
 #include "System_app.h"
-//#include "shell.h"
 
 #include "GPIO.h"
-#include "uart.h"
-#include "Flash.h"
-#include "system.h"
-#include "ATCommand.h"
+#include "VirtualEEPROM.h"
 /****************************************************************************
 *  PRIVATE VARIABLES
 ****************************************************************************/
@@ -80,14 +76,9 @@ void callSystemApp( void )
     /* HAL TEST */
     // GPIO
     GPIOWritePort(GPIO_LED_1, GPIO_TOGGLE);
-//    uint8_t cmd[9] = "AT+CGREG";
-    //uint8_t cmd[32] = "AT+CGCLASS=1,0,0,\"movistar.com\"";
-	tAtRequest req;/* = {0, 0, 0, 0, cmd};*/
-	req.delay = 0;
-	req.errorRetries = 0;
-	req.timeout = 0;
-	req.timeoutRetries = 0;
-	req.command = (uint8_t *)"AT+CGCLASS=1,0,0,\"movistar.com\"";
+
+    // VirtualEEPROM
+
     /* END HAL TEST */
 
     /* System state machine */
@@ -129,20 +120,6 @@ void callSystemApp( void )
 
         case SYSTEM_APP_ON:
 			/* Application dispatcher */
-//        	if(x)
-//        	{
-//        		if(ATCommandSetRequest(AT_CLIENT_GPS, req)==RET_OK)
-//        		{
-//        			x=0;
-//        		}
-//        	}
-//        	else
-//        	{
-//        		if(ATCommandSetRequest(AT_CLIENT_LTE, req)==RET_OK)
-//        		{
-//        			x=1;
-//        		}
-//        	}
 			/* Power Sequence control */
             if ( requestPowerState == POWER_STATE_START_SHUTDOWN )
             {

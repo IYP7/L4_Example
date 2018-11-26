@@ -1,0 +1,45 @@
+------------------------------------------------------------------
+		 SWTIMER METRIC COMPONENT WITH default 
+------------------------------------------------------------------
+FLASH: 
+SwTimerUpdateTimer                       =    104
+SwTimerSetState                          =     52
+SwTimerStartTimer                        =     44
+SwTimerGetPending                        =     44
+SwTimerIrq                               =     32
+SwTimerInit                              =     28
+SwTimerSetCallbackFunction               =     24
+SwTimerResetTimer                        =     24
+SwTimerGetElapsed                        =     24
+SwTimerCancelTimer                       =     20
+SwTimerStopTimer                         =     16
+SwTimerSetTimeout                        =     16
+SwTimerGetState                          =     16
+onReadHregSwTimerState                   =     14
+onReadHregSwTimerGetPending              =     14
+onReadHregSwTimerGetElapsed              =     14
+diffTime                                 =     14
+getTime                                  =     12
+onWriteHregSwTimerState                  =     10
+onWriteHregSwTimerSet                    =     10
+onWriteHregSwTimerCallbackFunction       =     10
+wakeHregSwTimer                          =      8
+stopHregSwTimer                          =      8
+startHregSwTimer                         =      8
+sleepHregSwTimer                         =      8
+initHregSwTimer                          =      8
+SwTimerWake                              =      4
+SwTimerStop                              =      4
+SwTimerStart                             =      4
+SwTimerSleep                             =      4
+
+RAM: 
+SwTimersArray                            =     16
+timeMs                                   =      4
+
+DATA: 
+------------------------------------------------------------------
+TOTAL FLASH SIZE SWTIMER                 =    598
+TOTAL RAM SIZE SWTIMER                   =     20
+TOTAL DATA SIZE SWTIMER                  =      0
+------------------------------------------------------------------

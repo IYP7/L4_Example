@@ -1,0 +1,44 @@
+------------------------------------------------------------------
+		 ATCOMMAND METRIC COMPONENT WITH default 
+------------------------------------------------------------------
+FLASH: 
+AtCheckResponse                          =    224
+ATCommandParse                           =    196
+AtProcessResponse                        =    184
+AtSendCommand                            =    116
+ATCommandSetRequest                      =    100
+AtReportTimeout                          =     96
+AtCommandStart                           =     96
+AtCheckNoMaxRetries                      =     36
+AtCheckMaxRetries                        =     36
+AtTimeoutCallback                        =     32
+AtReportResponse                         =     32
+AtPublishURC                             =     12
+AtCheckNoExpectedResponse                =      4
+AtCheckExpectedResponse                  =      4
+
+RAM: 
+AtRxBuffer                               =    255
+actualCommand                            =    255
+fsmATCmd                                 =     28
+commandHeader                            =     15
+ATActualRequest                          =     12
+respSize                                 =      2
+commandSize                              =      2
+toRetries                                =      1
+isRequestInProgress                      =      1
+indexfsmATCmd                            =      1
+AtRxBufferBytes                          =      1
+
+DATA: 
+fsmState1                                =     66
+fsmEventATCommand                        =     48
+fsmState0                                =     46
+ATClient                                 =     36
+fsmStateATCommand                        =      8
+ATActualClient                           =      1
+------------------------------------------------------------------
+TOTAL FLASH SIZE ATCOMMAND               =   1168
+TOTAL RAM SIZE ATCOMMAND                 =    573
+TOTAL DATA SIZE ATCOMMAND                =    205
+------------------------------------------------------------------

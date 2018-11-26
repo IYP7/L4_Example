@@ -141,7 +141,7 @@ __weak eError onReadHregFlashData( uint8_t instance, const HREG* hregPtr, void* 
 
 	uint32_t offset;
 	READ_HREG( instance, HREG_FLASH_OFFSET, &offset);
-	result = FlashReadData((tFlash)instance, (uint32_t*) param1, offset);
+	result = FlashReadData((tFlash)instance, (uint64_t*) param1, offset);
 
 	return result;
 }

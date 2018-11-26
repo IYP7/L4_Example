@@ -1,0 +1,46 @@
+------------------------------------------------------------------
+		 HREG METRIC COMPONENT WITH default 
+------------------------------------------------------------------
+FLASH: 
+startHregGroupAll                        =    276
+writeHreg                                =    156
+readHreg                                 =    140
+writeShellHreg                           =    100
+readShellHreg                            =     96
+writeHregTableStd                        =     54
+stopHregGroupAll                         =     52
+readHregTableStd                         =     52
+initHregAll                              =     52
+wakeHregGroupAll                         =     44
+sleepHregGroupAll                        =     44
+getNumOfHregs                            =     12
+
+RAM: 
+hregInterruptsState                      =     18
+hregFlashSize                            =     16
+hregFlashOffset                          =     16
+hregUartData                             =      8
+hregUartBufferSize                       =      8
+hregFlashData                            =      8
+hregGPIOValue                            =      6
+hregVirtualEEPROMData                    =      4
+hregSystemTime                           =      4
+hregSystemDate                           =      4
+hregSwTimerSet                           =      4
+hregSwTimerGetPending                    =      4
+hregSwTimerGetElapsed                    =      4
+hregSwTimerCallbackFunction              =      4
+hregVirtualEEPROMRegister                =      2
+hregVirtualEEPROMInstanceReg             =      2
+hregUartStatus                           =      2
+numOfHregs                               =      1
+hregSystemPowerUpReason                  =      1
+hregSystemPowerMode                      =      1
+hregSwTimerState                         =      1
+
+DATA: 
+------------------------------------------------------------------
+TOTAL FLASH SIZE HREG                    =   1078
+TOTAL RAM SIZE HREG                      =    118
+TOTAL DATA SIZE HREG                     =      0
+------------------------------------------------------------------

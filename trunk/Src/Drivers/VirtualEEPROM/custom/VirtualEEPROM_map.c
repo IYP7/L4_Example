@@ -62,6 +62,9 @@ const tVirtualEEPROMAreaMap VirtualEEPROMsreguserMap [EEPROM_NUM_OF_SREG_USER] =
 	/*EEPROM_SREG_USER_LENGTH            */ { EEPROM_SIZE_LENGTH},
 	/*EEPROM_SREG_USER_CRC               */ { EEPROM_SIZE_CRC},
 	/*EEPROM_SREG_USER_MAP               */ { EEPROM_SIZE_MAP},
+	/*EEPROM_SREG_HW_ID,				 */ {1},
+	/*EEPROM_SREG_FW_MAJOR_VERSION,		 */ {1},
+	/*EEPROM_SREG_FW_MINOR_VERSION,		 */ {1},
 };
 const tVirtualEEPROMAreaMap VirtualEEPROMdataMap [EEPROM_NUM_OF_DATA] =
 {

@@ -1,0 +1,40 @@
+------------------------------------------------------------------
+		 SPI METRIC COMPONENT WITH default 
+------------------------------------------------------------------
+FLASH: 
+spiDriverWrite                           =    128
+spiDriverWriteIT                         =     64
+spiDriverStatus                          =     64
+spiDriverReadITSlaveMode                 =     64
+spiDriverRead                            =     64
+spiDriverReadITMasterMode                =     36
+spiRestartSlaveMode                      =     32
+spiDriverGetBufferSize                   =     32
+spiDriverSetBufferSize                   =     24
+onReadHregSpiStatus                      =     14
+onReadHregSpiBufferSize                  =     14
+wakeHregSpi                              =     10
+stopHregSpi                              =     10
+startHregSpi                             =     10
+sleepHregSpi                             =     10
+onWriteHregSpiData                       =     10
+onWriteHregSpiBufferSize                 =     10
+onReadHregSpiData                        =     10
+initHregSpi                              =     10
+HAL_SPI_TxCpltCallback                   =      8
+HAL_SPI_ErrorCallback                    =      8
+spiWake                                  =      4
+spiStop                                  =      4
+spiStart                                 =      4
+spiSleep                                 =      4
+spiInit                                  =      4
+
+RAM: 
+
+DATA: 
+SPIPeripheralMap                         =      2
+------------------------------------------------------------------
+TOTAL FLASH SIZE SPI                     =    652
+TOTAL RAM SIZE SPI                       =      0
+TOTAL DATA SIZE SPI                      =      2
+------------------------------------------------------------------

@@ -73,7 +73,7 @@ eError FlashWake( void );
 
 eError FlashLock( void);
 eError FlashUnlock( void);
-eError FlashReadData(tFlash flashArea, uint32_t *data, uint32_t offset);
+eError FlashReadData(tFlash flashArea, uint64_t *data, uint32_t offset);
 eError FlashProgramData( tFlash flashArea, uint64_t data, uint32_t offset);
 eError FlashErase( tFlash flashArea, uint8_t page);
 uint32_t FlashGetStartAddress( tFlash flashArea);

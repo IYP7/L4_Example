@@ -1,5 +1,5 @@
 ------------------------------------------------------------------
-		 VIRTUALEEPROM METRIC COMPONENT WITH debug 
+		 SD METRIC COMPONENT WITH default 
 ------------------------------------------------------------------
 FLASH: 
 
@@ -7,7 +7,7 @@ RAM:
 
 DATA: 
 ------------------------------------------------------------------
-TOTAL FLASH SIZE VIRTUALEEPROM           =      0
-TOTAL RAM SIZE VIRTUALEEPROM             =      0
-TOTAL DATA SIZE VIRTUALEEPROM            =      0
+TOTAL FLASH SIZE SD                      =      0
+TOTAL RAM SIZE SD                        =      0
+TOTAL DATA SIZE SD                       =      0
 ------------------------------------------------------------------
