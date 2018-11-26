@@ -2,15 +2,23 @@
 		 PIPEDEVICE METRIC COMPONENT WITH debug 
 ------------------------------------------------------------------
 FLASH: 
+pipeDeviceParseCommand                   =    240
+pipeDeviceExtractData                    =    100
+pipeDeviceInit                           =     68
 pipeDeviceByteReceived                   =     52
+pipeDevice2ByteReceived                  =     12
 pipeDevice1ByteReceived                  =     12
+pipeDeviceStart                          =      4
 
 RAM: 
-pipes                                    =      8
+pipe2Buffer                              =    150
+pipe1Buffer                              =    150
+pipes                                    =     16
 
 DATA: 
+pipeMap                                  =     24
 ------------------------------------------------------------------
-TOTAL FLASH SIZE PIPEDEVICE              =     64
-TOTAL RAM SIZE PIPEDEVICE                =      8
-TOTAL DATA SIZE PIPEDEVICE               =      0
+TOTAL FLASH SIZE PIPEDEVICE              =    488
+TOTAL RAM SIZE PIPEDEVICE                =    316
+TOTAL DATA SIZE PIPEDEVICE               =     24
 ------------------------------------------------------------------

@@ -34,9 +34,9 @@
 ***********************************************************************/
 const tSREGInstanceMap SREGInstanceMap[] = 
 {
-	 { SREG_UINT8,   SREG8_HwId,                                        NVM_NOP,                                      SREG_NO_STORAGE },   
-	 { SREG_UINT8,   SREG8_FwMajorVersion,                              NVM_NOP,                                      SREG_NO_STORAGE },   
-	 { SREG_UINT8,   SREG8_FwMinorVersion,                              NVM_NOP,                                      SREG_NO_STORAGE },   
+	 { SREG_UINT8,   SREG8_HwId,                                        EEPROM_SREG_HW_ID,                            SREG_USER },
+	 { SREG_UINT8,   SREG8_FwMajorVersion,                              EEPROM_SREG_FW_MAJOR_VERSION,                 SREG_USER },
+	 { SREG_UINT8,   SREG8_FwMinorVersion,                              EEPROM_SREG_FW_MINOR_VERSION,                 SREG_USER },
 	 { SREG_UINT8,   SREG8_FwPatchVersion,                              NVM_NOP,                                      SREG_NO_STORAGE },   
 	 { SREG_UINT8,   SREG8_SystemState,                                 NVM_NOP,                                      SREG_NO_STORAGE },   
 	 { SREG_UINT8,   SREG8_SystemMwNotif,                               NVM_NOP,                                      SREG_NO_STORAGE },   

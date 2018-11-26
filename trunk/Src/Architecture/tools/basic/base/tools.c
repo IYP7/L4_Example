@@ -26,6 +26,9 @@
  *  INCLUDES
  ***************************************************************************/
 #include "tools.h"
+#ifdef CAN_TRACE
+#include "ProtocolSlave.h"
+#endif
 
 /****************************************************************************
  *  PRIVATE VARIABLES
@@ -33,8 +36,17 @@
 
 
 /****************************************************************************
+ *  PRIVATE FUNCTIONS PROTOTYPE
+ ***************************************************************************/
+
+static void vprint(eVerboseLevels level,const char *fmt, va_list argp);
+static void vprintTrace(uint8_t channel,const char *fmt, va_list argp);
+static void vprintTraceBin(uint8_t channel,uint8_t *buffer,uint8_t size);
+
+/****************************************************************************
  *  PUBLIC FUNCTIONS
  ***************************************************************************/
+
 
 /*************************************************************************//**
  * @brief   Converts current VALUE into HEX format.
@@ -247,6 +259,33 @@ uint8_t SearchIntoDelimitedTable(tTokenDelimitedTable table, uint8_t dataToSearc
 	}
 }
 
+
+
+void my_printf(tBool enable,uint8_t level,const char *fmt, ...) // custom printf() function
+{
+	if ((enable) || (level != VERBOSE_GENERAL))
+	{
+		va_list argp;
+		va_start(argp, fmt);
+		vprint(level, fmt, argp);
+		va_end(argp);
+	}
+}
+
+void my_printTrace(uint8_t channel,const char *fmt, ...) // custom printf() function
+{
+    va_list argp;
+    va_start(argp, fmt);
+    vprintTrace(channel,fmt, argp);
+    va_end(argp);
+}
+
+void my_printTraceBin(uint8_t channel,uint8_t *buffer,uint8_t size)
+{
+    vprintTraceBin(channel,buffer, size);
+}
+
+
 /**********************************************************************
  * @brief   Prints assert fail debug info.
  * @param	sFile: Name of file with failed assert.
@@ -264,6 +303,47 @@ void myAssertFail(const char *sFile, const char *sFunction, uint16_t line,
 }
 #endif
 
+/****************************************************************************
+ *  PRIVATE FUNCTIONS
+ ***************************************************************************/
+
+static void vprint(eVerboseLevels level,const char *fmt, va_list argp)
+{
+    char string[500];
+    if(0 < vsprintf(string,fmt,argp)) // build string
+    {
+    	//printShellString((int8_t*)string,level);
+    }
+}
+
+static void vprintTrace(uint8_t channel,const char *fmt, va_list argp)
+{
+    char string[500];
+    if(0 < vsprintf(string,fmt,argp)) // build string
+    {
+#ifdef UART_TRACE
+    	WRITE_HREG(UART_TRACE, HREG_UART_BUFFER_SIZE, strlen((char* )string));
+    	WRITE_HREG(UART_TRACE, HREG_UART_DATA, string);
+#endif
+#ifdef CAN_TRACE
+        ProtocolTraceSend((uint8_t *)string,channel,strlen((char* )string));
+#endif
+    }
+}
+
+static void vprintTraceBin(uint8_t channel,uint8_t *buffer,uint8_t size)
+{
+    if(size > 0)
+    {
+#ifdef UART_TRACE
+    	WRITE_HREG(UART_TRACE, HREG_UART_BUFFER_SIZE, size));
+    	WRITE_HREG(UART_TRACE, HREG_UART_DATA, buffer);
+#endif
+#ifdef CAN_TRACE
+    	ProtocolTraceSendBin(buffer,channel,size);
+#endif
+    }
+}
 #endif /* _TOOLS_C_ */
 
 /****************************************************************************

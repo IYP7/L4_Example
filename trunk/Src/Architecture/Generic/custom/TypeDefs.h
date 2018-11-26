@@ -40,7 +40,7 @@ typedef enum eVerboseLevels
 	VERBOSE_ERROR,
 
 	NUM_OF_VERBOSE_LEVELS
-} tVerboseLevels;
+} tVerboseLevels, eVerboseLevels;
 
 //	|																|																|
 //	|							Word 1								|							Word 0								|

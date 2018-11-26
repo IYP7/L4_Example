@@ -14,7 +14,7 @@
 				</extensions>
 			</storageModule>
 			<storageModule moduleId="cdtBuildSystem" version="4.0.0">
-				<configuration artifactExtension="elf" artifactName="${ProjName}" buildArtefactType="org.eclipse.cdt.build.core.buildArtefactType.exe" buildProperties="org.eclipse.cdt.build.core.buildArtefactType=org.eclipse.cdt.build.core.buildArtefactType.exe" cleanCommand="rm -rf" description="" errorParsers="org.eclipse.cdt.core.GmakeErrorParser;org.eclipse.cdt.core.CWDLocator;org.eclipse.cdt.core.GCCErrorParser;org.eclipse.cdt.core.GASErrorParser;org.eclipse.cdt.core.GLDErrorParser" id="com.atollic.truestudio.exe.debug.2002364815" name="Debug" parent="com.atollic.truestudio.exe.debug" postannouncebuildStep="" postbuildStep="python ..\MetricGenerator.py --path .. -o debug --configuration Debug" preannouncebuildStep="" prebuildStep="">
+				<configuration artifactExtension="elf" artifactName="${ProjName}" buildArtefactType="org.eclipse.cdt.build.core.buildArtefactType.exe" buildProperties="org.eclipse.cdt.build.core.buildArtefactType=org.eclipse.cdt.build.core.buildArtefactType.exe" cleanCommand="rm -rf" description="" errorParsers="org.eclipse.cdt.core.GmakeErrorParser;org.eclipse.cdt.core.CWDLocator;org.eclipse.cdt.core.GCCErrorParser;org.eclipse.cdt.core.GASErrorParser;org.eclipse.cdt.core.GLDErrorParser" id="com.atollic.truestudio.exe.debug.2002364815" name="Debug" parent="com.atollic.truestudio.exe.debug" postannouncebuildStep="" postbuildStep="" preannouncebuildStep="" prebuildStep="">
 					<folderInfo id="com.atollic.truestudio.exe.debug.2002364815." name="/" resourcePath="">
 						<toolChain errorParsers="" id="com.atollic.truestudio.exe.debug.toolchain.1862181027" name="Atollic ARM Tools" nonInternalBuilderId="org.eclipse.cdt.build.core.settings.default.builder" superClass="com.atollic.truestudio.exe.debug.toolchain">
 							<option id="com.atollic.truestudio.general.runtimelib.202243600" name="Runtime Library" superClass="com.atollic.truestudio.general.runtimelib" useByScannerDiscovery="false" value="com.atollic.truestudio.ld.general.clib.small" valueType="enumerated"/>
@@ -31,6 +31,11 @@
 								<option id="com.atollic.truestudio.common_options.target.interwork.1732016528" name="Mix ARM/Thumb" superClass="com.atollic.truestudio.common_options.target.interwork" useByScannerDiscovery="false"/>
 								<option id="com.atollic.truestudio.as.general.incpath.1324991903" name="Include path" superClass="com.atollic.truestudio.as.general.incpath" useByScannerDiscovery="false" valueType="includePath">
 									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/${ProjName}/Src/HAL/spi}&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/${ProjName}/Src/Drivers/StorageManager}&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/${ProjName}/Src/Drivers/ATCommand}&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/${ProjName}/Src/Drivers/ATCommand/fsm}&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/${ProjName}/Src/Drivers/ATCommand/custom}&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/${ProjName}/Src/Drivers/ATCommand/base}&quot;"/>
 								</option>
 								<inputType id="com.atollic.truestudio.as.input.1582553107" name="Input" superClass="com.atollic.truestudio.as.input"/>
 							</tool>
@@ -68,10 +73,6 @@
 									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/${ProjName}/Src/Architecture/SREG/custom}&quot;"/>
 									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/${ProjName}/Src/Architecture/StateMachine/base}&quot;"/>
 									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/${ProjName}/Src/Architecture/tools/basic/base}&quot;"/>
-									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/${ProjName}/Src/Drivers/Buttons/base}&quot;"/>
-									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/${ProjName}/Src/Drivers/Buttons/custom}&quot;"/>
-									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/${ProjName}/Src/Drivers/Leds/base}&quot;"/>
-									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/${ProjName}/Src/Drivers/Leds/custom}&quot;"/>
 									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/${ProjName}/Src/Drivers/pipeDevice/base}&quot;"/>
 									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/${ProjName}/Src/Drivers/pipeDevice/custom}&quot;"/>
 									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/${ProjName}/Src/Drivers/SwTimer/base}&quot;"/>
@@ -95,6 +96,11 @@
 									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/${ProjName}/libraries/ST_HAL/Inc}&quot;"/>
 									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/${ProjName}/libraries/ST_HAL/Inc/Legacy}&quot;"/>
 									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/${ProjName}/Src/HAL/spi}&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/${ProjName}/Src/Drivers/StorageManager}&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/${ProjName}/Src/Drivers/ATCommand}&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/${ProjName}/Src/Drivers/ATCommand/fsm}&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/${ProjName}/Src/Drivers/ATCommand/custom}&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/${ProjName}/Src/Drivers/ATCommand/base}&quot;"/>
 								</option>
 								<option id="com.atollic.truestudio.gcc.warnings.extra.1935938983" name="Enable extra warning flags" superClass="com.atollic.truestudio.gcc.warnings.extra" useByScannerDiscovery="false" value="false" valueType="boolean"/>
 								<option id="com.atollic.truestudio.gcc.warnings.fatal.2065757766" name="Abort compilation on first error" superClass="com.atollic.truestudio.gcc.warnings.fatal" useByScannerDiscovery="false" value="false" valueType="boolean"/>
@@ -150,7 +156,7 @@
 						</toolChain>
 					</folderInfo>
 					<sourceEntries>
-						<entry excluding="Src/Drivers/SD/base/sd_api.c|Src/Architecture/Shell|Src/Architecture/HREG|stm32l4xx_hal_msp.c|Src/Drivers/VirtualEEPROM|Src/Drivers/Leds|Src/Drivers/Buttons|Src/HAL/Timer/test|Src/HAL/GPIO/test|Src/HAL/Interrupts/test|Src/HAL/spi/test|Src/HAL/i2c/test|Src/HAL/uart/test" flags="VALUE_WORKSPACE_PATH" kind="sourcePath" name=""/>
+						<entry excluding="Src/HAL/VirtualEEPROM|Src/HAL/VirtualEEPROM/custom/flash_interface.c|Src/Drivers/StorageManager|Src/HAL/Interrupts/test|Src/HAL/GPIO/test|Src/HAL/i2c/test|stm32l4xx_hal_msp.c|Src/HAL/spi/test|Src/Drivers/Leds|Src/HAL/uart/test|Src/Drivers/Buttons|Src/Drivers/SD/base/sd_api.c|Src/HAL/Timer/test" flags="VALUE_WORKSPACE_PATH" kind="sourcePath" name=""/>
 					</sourceEntries>
 				</configuration>
 			</storageModule>
@@ -186,6 +192,11 @@
 								<option id="com.atollic.truestudio.common_options.target.interwork.1308345310" name="Mix ARM/Thumb" superClass="com.atollic.truestudio.common_options.target.interwork"/>
 								<option id="com.atollic.truestudio.as.general.incpath.2070885720" name="Include path" superClass="com.atollic.truestudio.as.general.incpath" valueType="includePath">
 									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/${ProjName}/Src/HAL/spi}&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/${ProjName}/Src/Drivers/StorageManager}&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/${ProjName}/Src/Drivers/ATCommand}&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/${ProjName}/Src/Drivers/ATCommand/fsm}&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/${ProjName}/Src/Drivers/ATCommand/custom}&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/${ProjName}/Src/Drivers/ATCommand/base}&quot;"/>
 								</option>
 								<inputType id="com.atollic.truestudio.as.input.1279666376" name="Input" superClass="com.atollic.truestudio.as.input"/>
 							</tool>
@@ -246,6 +257,11 @@
 									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/${ProjName}/libraries/ST_HAL/Inc}&quot;"/>
 									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/${ProjName}/libraries/ST_HAL/Inc/Legacy}&quot;"/>
 									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/${ProjName}/Src/HAL/spi}&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/${ProjName}/Src/Drivers/StorageManager}&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/${ProjName}/Src/Drivers/ATCommand}&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/${ProjName}/Src/Drivers/ATCommand/fsm}&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/${ProjName}/Src/Drivers/ATCommand/custom}&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/${ProjName}/Src/Drivers/ATCommand/base}&quot;"/>
 								</option>
 								<option id="com.atollic.truestudio.gcc.warnings.extra.1176405152" name="Enable extra warning flags" superClass="com.atollic.truestudio.gcc.warnings.extra" value="false" valueType="boolean"/>
 								<option id="com.atollic.truestudio.gcc.warnings.fatal.1835545593" name="Abort compilation on first error" superClass="com.atollic.truestudio.gcc.warnings.fatal" value="false" valueType="boolean"/>
@@ -301,7 +317,7 @@
 						</toolChain>
 					</folderInfo>
 					<sourceEntries>
-						<entry excluding="Src/Drivers/SD/base/sd_api.c|Src/Architecture/Shell|Src/Architecture/HREG|stm32l4xx_hal_msp.c|Src/Drivers/VirtualEEPROM|Src/Drivers/Leds|Src/Drivers/Buttons|Src/HAL/ADC/base/ADC_copy_ok_polling.c|Src/HAL/Timer/test|Src/HAL/GPIO/test|Src/HAL/Interrupts/test|Src/HAL/spi/test|Src/HAL/i2c/test|Src/HAL/uart/test" flags="VALUE_WORKSPACE_PATH|RESOLVED" kind="sourcePath" name=""/>
+						<entry excluding="Src/HAL/VirtualEEPROM|Src/HAL/VirtualEEPROM/custom/flash_interface.c|Src/Drivers/StorageManager|Src/HAL/Interrupts/test|Src/HAL/GPIO/test|Src/HAL/i2c/test|stm32l4xx_hal_msp.c|Src/HAL/ADC/base/ADC_copy_ok_polling.c|Src/HAL/spi/test|Src/Drivers/Leds|Src/HAL/uart/test|Src/Drivers/Buttons|Src/Drivers/SD/base/sd_api.c|Src/HAL/Timer/test" flags="VALUE_WORKSPACE_PATH|RESOLVED" kind="sourcePath" name=""/>
 					</sourceEntries>
 				</configuration>
 			</storageModule>

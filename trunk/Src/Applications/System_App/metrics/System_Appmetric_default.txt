@@ -1,0 +1,19 @@
+------------------------------------------------------------------
+		 SYSTEM_APP METRIC COMPONENT WITH default 
+------------------------------------------------------------------
+FLASH: 
+callSystemApp                            =    132
+initSystemApp                            =     20
+requestSystemAppPowerState               =     12
+ATLTECallback                            =      2
+ATGPSCallback                            =      2
+
+RAM: 
+requestPowerState                        =      1
+
+DATA: 
+------------------------------------------------------------------
+TOTAL FLASH SIZE SYSTEM_APP              =    168
+TOTAL RAM SIZE SYSTEM_APP                =      1
+TOTAL DATA SIZE SYSTEM_APP               =      0
+------------------------------------------------------------------

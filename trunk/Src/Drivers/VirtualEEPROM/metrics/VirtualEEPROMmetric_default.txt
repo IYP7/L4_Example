@@ -1,0 +1,60 @@
+------------------------------------------------------------------
+		 VIRTUALEEPROM METRIC COMPONENT WITH default 
+------------------------------------------------------------------
+FLASH: 
+VirtualEEPROMTransferPage                =    300
+VirtualEEPROMinitVirtual                 =    260
+VirtualEEPROMinit                        =    156
+GetPageState                             =    148
+SetPageState                             =    130
+VirtualEEPROMSearchPointer               =    116
+VirtualEEPROMVerifyPageFullWriteVariable =    104
+VirtualEEPROMFormat                      =    104
+VirtualEEPROMReadVariable                =     82
+VirtualEEPROMReadRegister                =     72
+VirtualEEPROMEraseOldPage                =     72
+updateCache                              =     64
+findInCache                              =     64
+VirtualEEPROMWriteVariable               =     60
+VirtualEEPROMFindValidArea               =     52
+VirtualEEPROMWriteRegister               =     48
+EEPROMGetAreaSize                        =     48
+addToCache                               =     44
+EEPROMGetNumOfInstances                  =     36
+CalculateCrc                             =     24
+VirtualEEPROMStart                       =     18
+wakeHregVirtualEEPROM                    =     10
+stopHregVirtualEEPROM                    =     10
+startHregVirtualEEPROM                   =     10
+sleepHregVirtualEEPROM                   =     10
+initHregVirtualEEPROM                    =     10
+onReadHregVirtualEEPROMData              =      8
+VirtualEEPROMWake                        =      4
+VirtualEEPROMStop                        =      4
+VirtualEEPROMSleep                       =      4
+onWriteHregVirtualEEPROMData             =      4
+
+RAM: 
+virtualEEPROMCache                       =    640
+virtualEEPROMsregUserContext             =     24
+virtualEEPROMsregFactoryContext          =     12
+virtualEEPROMsregCalibrationContext      =     12
+virtualEEPROMRegister                    =     12
+virtualEEPROMhregContext                 =     12
+virtualEEPROMdataContext                 =     12
+VirtualEEPROMCacheUsed                   =      1
+
+DATA: 
+VirtualEEPROMInstanceMap                 =     40
+virtualEEPROMareaContext                 =     40
+VirtualEEPROMsreguserMap                 =     12
+VirtualEEPROMsregfactoryMap              =      6
+VirtualEEPROMsregcalibrationMap          =      6
+VirtualEEPROMhregMap                     =      6
+VirtualEEPROMdataMap                     =      6
+EEPROMDeviceMap                          =      2
+------------------------------------------------------------------
+TOTAL FLASH SIZE VIRTUALEEPROM           =   2076
+TOTAL RAM SIZE VIRTUALEEPROM             =    725
+TOTAL DATA SIZE VIRTUALEEPROM            =    118
+------------------------------------------------------------------

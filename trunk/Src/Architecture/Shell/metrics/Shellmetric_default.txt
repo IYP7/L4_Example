@@ -1,0 +1,45 @@
+------------------------------------------------------------------
+		 SHELL METRIC COMPONENT WITH default 
+------------------------------------------------------------------
+FLASH: 
+printStartingMessage                     =    192
+parseShellStack                          =    160
+parseShellCommand                        =    156
+ATShellCallback                          =    120
+tokenizeShellCommand                     =    106
+parseShellParamToken                     =    102
+runShellCommandHelp                      =     92
+projectAtCmd                             =     74
+runShellCommandReadHreg                  =     68
+printShellString                         =     64
+callShellStackTask                       =     64
+initShellStack                           =     56
+shellCommandIdFromToken                  =     52
+runShellCommandWriteHreg                 =     52
+runShellCommandReadSreg                  =     40
+printCommonString                        =     32
+runShellCommandSetLogLevel               =     26
+runShellCommandSchedulerStopTask         =     26
+runShellCommandSchedulerStartTask        =     26
+runShellCommandWriteSreg                 =     24
+printShellValue                          =     24
+runShellCommandUnknown                   =     16
+shellSetVerboseLevel                     =     12
+shellGetDebugState                       =     12
+shellGetNumOfCommands                    =      4
+projectExampleCommand2                   =      2
+
+RAM: 
+shellDataBuffer                          =    128
+command                                  =    128
+shellState                               =      1
+debugEnable                              =      1
+
+DATA: 
+shellCommonMessages                      =    312
+verboseLevel                             =      1
+------------------------------------------------------------------
+TOTAL FLASH SIZE SHELL                   =   1602
+TOTAL RAM SIZE SHELL                     =    258
+TOTAL DATA SIZE SHELL                    =    313
+------------------------------------------------------------------

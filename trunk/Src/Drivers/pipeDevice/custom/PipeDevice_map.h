@@ -23,7 +23,7 @@
  *  DEFINES
  ****************************************************************************/
 #define IS_PIPE1
-//#define IS_PIPE2
+#define IS_PIPE2
 //#define IS_PIPE3
 //#define IS_PIPE4
 //#define IS_PIPE5
@@ -35,7 +35,7 @@
 #endif
 
 #ifdef IS_PIPE2
-#define PIPE2_BUFFER_LENGTH 250
+#define PIPE2_BUFFER_LENGTH 150
 #endif
 
 #ifdef IS_PIPE3

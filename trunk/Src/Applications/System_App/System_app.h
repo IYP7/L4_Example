@@ -17,6 +17,7 @@
  ***************************************************************************/
 #include "common.h"
 
+#include "ATCommand.h"
 /****************************************************************************
  *  TYPE DEFINITIONS
  ****************************************************************************/
@@ -52,6 +53,9 @@ void initSystemApp( void );
 void requestSystemAppPowerState( uint8_t powerState );
 void requestSystemAppLaunchBootloader(void);
 void requestSystemAppReset( void );
+
+void ATLTECallback(tAtResponseID eventID, uint8_t *buffer, uint16_t length);
+void ATGPSCallback(tAtResponseID eventID, uint8_t *buffer, uint16_t length);
 
 #endif /* _SYSTEM_APP_H_ */
 

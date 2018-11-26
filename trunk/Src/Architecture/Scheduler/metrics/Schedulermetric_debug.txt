@@ -8,17 +8,19 @@ SchedulerExecuteSystemProcess            =    100
 SchedulerProcessesAutoEnable             =     92
 SchedulerUpdateTaskTime                  =     84
 SchedulerInit                            =     72
+SchedulerEnableTask                      =     20
+SchedulerDisableTask                     =     20
 
 RAM: 
-schedulerContext                         =     48
+schedulerContext                         =     96
+schedulerProcess                         =      8
 ticks_per_us                             =      4
-schedulerProcess                         =      4
 ptrTask                                  =      1
 
 DATA: 
-SchedulerInstanceMap                     =     24
+SchedulerInstanceMap                     =     48
 ------------------------------------------------------------------
-TOTAL FLASH SIZE SCHEDULER               =    648
-TOTAL RAM SIZE SCHEDULER                 =     57
-TOTAL DATA SIZE SCHEDULER                =     24
+TOTAL FLASH SIZE SCHEDULER               =    688
+TOTAL RAM SIZE SCHEDULER                 =    109
+TOTAL DATA SIZE SCHEDULER                =     48
 ------------------------------------------------------------------

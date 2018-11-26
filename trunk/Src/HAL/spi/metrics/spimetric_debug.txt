@@ -4,11 +4,33 @@
 FLASH: 
 spiDriverMainIRQHandler                  =    228
 spiInit                                  =    144
+spiDriverWrite                           =    128
 spiStart                                 =     92
 HAL_SPI_MspInit                          =     80
 HAL_SPI_MspDeInit                        =     72
+spiDriverWriteIT                         =     64
+spiDriverStatus                          =     64
+spiDriverReadITSlaveMode                 =     64
+spiDriverRead                            =     64
 spiRestartSlaveMode                      =     60
+spiStop                                  =     36
+spiDriverReadITMasterMode                =     36
+spiDriverGetBufferSize                   =     32
+spiDriverSetBufferSize                   =     24
+onReadHregSpiStatus                      =     14
+onReadHregSpiBufferSize                  =     14
+wakeHregSpi                              =     10
+stopHregSpi                              =     10
+startHregSpi                             =     10
+sleepHregSpi                             =     10
+onWriteHregSpiData                       =     10
+onWriteHregSpiBufferSize                 =     10
+onReadHregSpiData                        =     10
+initHregSpi                              =     10
+HAL_SPI_TxCpltCallback                   =      8
 HAL_SPI_ErrorCallback                    =      8
+spiWake                                  =      4
+spiSleep                                 =      4
 
 RAM: 
 ST_SpiHandlers                           =    200
@@ -22,8 +44,9 @@ spiBufferSize                            =      8
 
 DATA: 
 SPIInstanceMap                           =    160
+SPIPeripheralMap                         =      2
 ------------------------------------------------------------------
-TOTAL FLASH SIZE SPI                     =    684
+TOTAL FLASH SIZE SPI                     =   1320
 TOTAL RAM SIZE SPI                       =    766
-TOTAL DATA SIZE SPI                      =    160
+TOTAL DATA SIZE SPI                      =    162
 ------------------------------------------------------------------

@@ -35,7 +35,7 @@
 
 typedef enum eSwTimerIndex
 {
-	SW_TIMER_TEST = 0,
+	SW_TIMER_AT = 0,
 
 	NUM_OF_SW_TIMER
 }tSwTimerIndex;

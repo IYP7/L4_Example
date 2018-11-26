@@ -213,7 +213,7 @@ eError FlashUnlock( void)
  * 			flashArea: Specifies the flash area.
  * @return 	Success or error status.
  ****************************************************************************/
-eError FlashReadData(tFlash flashArea, uint32_t *data, uint32_t offset)
+eError FlashReadData(tFlash flashArea, uint64_t *data, uint32_t offset)
 {
 	eError 	success = RET_OK;
 
@@ -226,7 +226,7 @@ eError FlashReadData(tFlash flashArea, uint32_t *data, uint32_t offset)
 	else
 	{
 		address = FlashContext[flashArea].initAddress + offset;
-		*data = (*(uint32_t*)(address));
+		*data = (*(__IO uint64_t*)(address));
 	}
 
 	return success;

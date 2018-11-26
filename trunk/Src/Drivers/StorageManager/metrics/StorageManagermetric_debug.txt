@@ -1,0 +1,13 @@
+------------------------------------------------------------------
+		 STORAGEMANAGER METRIC COMPONENT WITH debug 
+------------------------------------------------------------------
+FLASH: 
+
+RAM: 
+
+DATA: 
+------------------------------------------------------------------
+TOTAL FLASH SIZE STORAGEMANAGER          =      0
+TOTAL RAM SIZE STORAGEMANAGER            =      0
+TOTAL DATA SIZE STORAGEMANAGER           =      0
+------------------------------------------------------------------

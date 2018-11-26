@@ -37,7 +37,7 @@
 /***********************************************************************
  * DEFINES
  **********************************************************************/
-#define FLASH_PROGRAM_PAGES					(uint32_t) 16
+#define FLASH_PROGRAM_PAGES					(uint32_t) 32
 #define FLASH_EEPROM_IMAGE_PAGES			1
 #define FLASH_DATA_PAGES					5
 

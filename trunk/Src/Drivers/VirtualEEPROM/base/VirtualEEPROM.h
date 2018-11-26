@@ -24,7 +24,8 @@
  ****************************************************************************/
 #include "VirtualEEPROM_map.h"
 #include "Flash.h"
-
+#include "stm32l4xx_ll_crc.h"
+#include "stm32l4xx_ll_bus.h"
 /****************************************************************************
  *    DEFINES
  ****************************************************************************/
@@ -34,11 +35,66 @@
 #define EEPROM_SIZE_MAP			1
 #define UNIQUE_EEPROM_INSTANCE 	1
 
-//#define SIZE_OF_VIRTUAL_EEPROM_CACHE 80
 #define EEPROM_REVERSE_CACHE
+
+#define EEPROM_HEADER           3
+#define EEPROM_LENGTH_ID   	    0
+#define EEPROM_CRC_ID			1
+#define EEPROM_MAP_ID			2
+
+#define EEPROM_SIZE_LENGTH      2
+#define EEPROM_SIZE_CRC         1
+
+/* Page state header */
+#define EE_PAGESTAT_ERASED      (uint64_t)0xFFFFFFFFFFFFFFFFU  /*!< State saved in 1st,2nd,3rd,4th data type of page header */
+#define EE_PAGESTAT_RECEIVE     (uint64_t)0xAAAAAAAAAAAAAAAAU  /*!< State saved in 1st data type of page header */
+#define EE_PAGESTAT_ACTIVE      (uint64_t)0xAAAAAAAAAAAAAAAAU  /*!< State saved in 2nd data type of page header */
+#define EE_PAGESTAT_VALID       (uint64_t)0xAAAAAAAAAAAAAAAAU  /*!< State saved in 3rd data type of page header */
+#define EE_PAGESTAT_ERASING     (uint64_t)0xAAAAAAAAAAAAAAAAU  /*!< State saved in 4th data type of page header */
+/* Description of the 8 Bytes (64 bits) element in flash   */
+/* Bit:  63                  32  31      16  15         0  */
+/*       <--- Data Value ----->  <-unused->  <-VirtAddr->  */
+#define EE_ELEMENT_SIZE         8U                            /*!< Size of element in Bytes */
+#define EE_ELEMENT_TYPE         uint64_t                      /*!< Type of element */
+#define EE_VIRTUALADDRESS_TYPE  uint16_t                      /*!< Type of Virtual Address */
+#define EE_VIRTUALADDRESS_SHIFT 0U                            /*!< Bits Shifting to get Virtual Address in element */
+#define EE_CRC_TYPE             uint16_t                      /*!< Type of Crc */
+#define EE_CRC_SHIFT            16U                           /*!< Bits Shifting to get Crc in element */
+#define EE_DATA_TYPE            uint32_t                      /*!< Type of Data */
+#define EE_DATA_SHIFT           32U                           /*!< Bits Shifting to get Data value in element */
+#define EE_MASK_VIRTUALADDRESS  (uint64_t)0x000000000000FFFFU
+#define EE_MASK_CRC             (uint64_t)0x00000000FFFF0000U
+#define EE_MASK_DATA            (uint64_t)0xFFFFFFFF00000000U
+#define EE_MASK_FULL            (uint64_t)0xFFFFFFFFFFFFFFFFU
+
+/* Macros to manipulate elements */
+#define EE_VIRTUALADDRESS_VALUE(__ELEMENT__)            (EE_VIRTUALADDRESS_TYPE)((__ELEMENT__) & EE_MASK_VIRTUALADDRESS) /*!< Get virtual address value from element value */
+#define EE_DATA_VALUE(__ELEMENT__)                      (EE_DATA_TYPE)(((__ELEMENT__) & EE_MASK_DATA) >> EE_DATA_SHIFT) /*!< Get Data value from element value */
+#define EE_CRC_VALUE(__ELEMENT__)                       (EE_CRC_TYPE)(((__ELEMENT__) & EE_MASK_CRC) >> EE_CRC_SHIFT) /*!< Get Crc value from element value */
+#define EE_ELEMENT_VALUE(__VIRTADDR__,__DATA__,__CRC__) (((EE_ELEMENT_TYPE)(__DATA__) << EE_DATA_SHIFT) | (__CRC__) << EE_CRC_SHIFT | (__VIRTADDR__)) /*!< Get element value from virtual addr, data and crc values */
+
+/* Configuration of crc calculation for eeprom emulation in flash */
+#define CRC_POLYNOMIAL_LENGTH   LL_CRC_POLYLENGTH_16B /* CRC polynomial length 16 bits */
+#define CRC_POLYNOMIAL_VALUE    0x8005U /* Polynomial to use for CRC calculation */
 /****************************************************************************
  *  TYPE DEFINITIONS
  ****************************************************************************/
+
+/**
+  * @brief  EE State Type structure definition.
+  */
+/* Type of state requested :
+       ERASED  --> page is erased
+       RECEIVE --> page used during data transfer when no more space available in the system
+       VALID   --> page contains valid data
+       INVALID --> page invalid state */
+typedef enum {
+   STATE_PAGE_ERASED,
+   STATE_PAGE_RECEIVE,
+   STATE_PAGE_ACTIVE,
+   STATE_PAGE_VALID,
+   STATE_PAGE_ERASING
+} EE_State_type;
 
 typedef struct sVirtualEEPROMRegister
 {
@@ -57,22 +113,37 @@ const typedef struct sVirtualEEPROMDeviceMap
 
 const typedef struct SVirtualEEPROMAreaMap
 {
-    uint8_t	numOfInstances;
-    uint8_t	sizeOfInstance;
+    uint16_t	sizeOfInstance;
 }tVirtualEEPROMAreaMap;
 
-
-const typedef struct sVirtualEEPROMInstanceMap
+const typedef struct sVirtualEEPROMAreaInstMap
 {
-    uint16_t                offsetArea;
-    tVirtualEEPROMAreaMap*	regTable;
+    uint8_t	numOfInstances;
+    uint8_t sizeOfInstance;
+}tVirtualEEPROMAreaInstMap;
+
+
+typedef enum eVirtualEEPROMAreaType {
+    EEPROM_AREA_NO_INST,
+    EEPROM_AREA_INST,
+} tVirtualEEPROMAreaType;
+
+
+typedef struct sVirtualEEPROMInstanceMap
+{
+    uint16_t offsetArea;
+    tVirtualEEPROMAreaType typeArea;
+    union{
+    	const tVirtualEEPROMAreaMap* noInst;
+    	const tVirtualEEPROMAreaInstMap* withInst;
+    }regTable;
 }tVirtualEEPROMInstanceMap;
 
 
 typedef struct sVirtualEEPROMContext
 {
 	uint16_t 	virtualOffset;
-	uint8_t		size;
+	uint16_t		size;
 }tVirtualEEPROMContext;
 
 
@@ -98,7 +169,6 @@ eError VirtualEEPROMSleep( void );
 eError VirtualEEPROMWake( void );
 eError VirtualEEPROMWriteRegister(tVirtualEEPROM eeprom, uint16_t reg, uint16_t instanceReg, uint32_t value);
 eError VirtualEEPROMReadRegister(tVirtualEEPROM eeprom, uint16_t reg,  uint16_t instanceReg, uint32_t *value);
-
 
 
 #endif /* _EEPROM_H_ */

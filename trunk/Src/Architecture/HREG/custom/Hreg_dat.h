@@ -18,8 +18,6 @@
 #include "Uart.h"
 #include "Spi.h"
 #include "Interrupts.h"
-#include "Buttons.h"
-#include "Leds.h"
 #include "SwTimer.h"
 #include "VirtualEeprom.h"
 #endif
@@ -59,15 +57,6 @@
 #define HREG_INTERRUPTS_STATE (&tableHregInterrupts[0])
 
 
-//Buttons
-#define HREG_BUTTONS_STATE (&tableHregButtons[0])
-
-
-//Leds
-#define HREG_LEDS_EFFECT (&tableHregLeds[0])
-#define HREG_LEDS_STATE (&tableHregLeds[1])
-
-
 //SwTimer
 #define HREG_SWTIMER_CALLBACK_FUNCTION (&tableHregSwTimer[0])
 #define HREG_SWTIMER_GET_PENDING (&tableHregSwTimer[1])
@@ -97,9 +86,6 @@ typedef enum
 	 ON_READ_HREG_INDEX_SPI_DATA, 
 	 ON_READ_HREG_INDEX_SPI_STATUS, 
 	 ON_READ_HREG_INDEX_INTERRUPTS_STATE, 
-	 ON_READ_HREG_INDEX_BUTTONS_STATE, 
-	 ON_READ_HREG_INDEX_LEDS_EFFECT, 
-	 ON_READ_HREG_INDEX_LEDS_STATE, 
 	 ON_READ_HREG_INDEX_SWTIMER_GET_PENDING, 
 	 ON_READ_HREG_INDEX_SWTIMER_STATE, 
 	 ON_READ_HREG_INDEX_SWTIMER_GET_ELAPSED, 
@@ -119,8 +105,6 @@ typedef enum
 	 ON_WRITE_HREG_INDEX_SPI_BUFFER_SIZE, 
 	 ON_WRITE_HREG_INDEX_SPI_DATA, 
 	 ON_WRITE_HREG_INDEX_INTERRUPTS_STATE, 
-	 ON_WRITE_HREG_INDEX_LEDS_EFFECT, 
-	 ON_WRITE_HREG_INDEX_LEDS_STATE, 
 	 ON_WRITE_HREG_INDEX_SWTIMER_CALLBACK_FUNCTION, 
 	 ON_WRITE_HREG_INDEX_SWTIMER_STATE, 
 	 ON_WRITE_HREG_INDEX_SWTIMER_SET, 
@@ -136,27 +120,23 @@ typedef enum
 	 HREG_GROUP_INDEX_UART, 
 	 HREG_GROUP_INDEX_SPI, 
 	 HREG_GROUP_INDEX_INTERRUPTS, 
-	 HREG_GROUP_INDEX_BUTTONS, 
-	 HREG_GROUP_INDEX_LEDS, 
 	 HREG_GROUP_INDEX_SWTIMER, 
 	 HREG_GROUP_INDEX_VIRTUALEEPROM, 
 	 HREG_GROUP_INDEX_MAX, 
 }eHregGroupIndex;
 
-extern const HREG_FUNC_READ_CALL onReadHregFunc[19];
-extern const HREG_FUNC_WRITE_CALL onWriteHregFunc[16];
-extern const HREG_GROUP_INT_CALL apiFuncHregGroup[10];
-extern HREG_GROUP_STATE hregGroupsState[10];
+extern const HREG_FUNC_READ_CALL onReadHregFunc[16];
+extern const HREG_FUNC_WRITE_CALL onWriteHregFunc[14];
+extern const HREG_GROUP_INT_CALL apiFuncHregGroup[8];
+extern HREG_GROUP_STATE hregGroupsState[8];
 extern const HREG tableHregSystem[4];
 extern const HREG tableHregFlash[3];
 extern const HREG tableHregGPIO[1];
 extern const HREG tableHregUart[3];
 extern const HREG tableHregSpi[3];
 extern const HREG tableHregInterrupts[1];
-extern const HREG tableHregButtons[1];
-extern const HREG tableHregLeds[2];
 extern const HREG tableHregSwTimer[5];
 extern const HREG tableHregVirtualEEPROM[3];
-extern const HREG_TABLE_INFO hregTableList[10];
+extern const HREG_TABLE_INFO hregTableList[8];
 extern const HREG_FUNC hregFunc;
 #endif

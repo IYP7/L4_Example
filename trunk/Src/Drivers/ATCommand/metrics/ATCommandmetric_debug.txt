@@ -1,0 +1,43 @@
+------------------------------------------------------------------
+		 ATCOMMAND METRIC COMPONENT WITH debug 
+------------------------------------------------------------------
+FLASH: 
+AtCheckResponse                          =    188
+AtProcessResponse                        =    180
+ATCommandParse                           =    176
+ATCommandSetRequest                      =     84
+AtSendCommand                            =     76
+AtCommandStart                           =     76
+AtReportTimeout                          =     48
+AtReportResponse                         =     32
+AtPublishURC                             =      4
+AtCheckNoMaxRetries                      =      4
+AtCheckNoExpectedResponse                =      4
+AtCheckMaxRetries                        =      4
+AtCheckExpectedResponse                  =      4
+
+RAM: 
+AtRxBuffer                               =     64
+actualCommand                            =     64
+fsmATCmd                                 =     28
+commandHeader                            =     15
+ATActualRequest                          =     12
+respSize                                 =      2
+commandSize                              =      2
+toRetries                                =      1
+isRequestInProgress                      =      1
+indexfsmATCmd                            =      1
+AtRxBufferBytes                          =      1
+
+DATA: 
+fsmState1                                =     66
+fsmEventATCommand                        =     48
+fsmState0                                =     46
+ATClient                                 =     24
+fsmStateATCommand                        =      8
+ATActualClient                           =      1
+------------------------------------------------------------------
+TOTAL FLASH SIZE ATCOMMAND               =    880
+TOTAL RAM SIZE ATCOMMAND                 =    191
+TOTAL DATA SIZE ATCOMMAND                =    193
+------------------------------------------------------------------

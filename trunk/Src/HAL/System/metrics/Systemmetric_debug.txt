@@ -6,9 +6,24 @@ SystemClock_Config                       =    212
 storePowerUpReason                       =    180
 RTCSetInitDateTime                       =    104
 RTCInit                                  =     92
+stm32L4SetPowerMode                      =     80
 stm32L4Init                              =     30
 systemGetCLkFreq                         =     14
+stm32L4Stop                              =     10
+stm32L4Sleep                             =     10
+onWriteHregSystemPowerMode               =     10
+wakeHregSystem                           =      8
+stopHregSystem                           =      8
+startHregSystem                          =      8
+sleepHregSystem                          =      8
+initHregSystem                           =      8
 watchdogInit                             =      4
+stm32L4Wake                              =      4
+stm32L4Start                             =      4
+onWriteHregSystemTime                    =      4
+onWriteHregSystemDate                    =      4
+onReadHregSystemTime                     =      4
+onReadHregSystemDate                     =      4
 systemPreConfiguration                   =      2
 
 RAM: 
@@ -18,7 +33,7 @@ powerUpReason                            =      1
 DATA: 
 SystemMap                                =     84
 ------------------------------------------------------------------
-TOTAL FLASH SIZE SYSTEM                  =    638
+TOTAL FLASH SIZE SYSTEM                  =    812
 TOTAL RAM SIZE SYSTEM                    =     37
 TOTAL DATA SIZE SYSTEM                   =     84
 ------------------------------------------------------------------

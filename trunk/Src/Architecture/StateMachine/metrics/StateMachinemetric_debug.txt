@@ -2,12 +2,30 @@
 		 STATEMACHINE METRIC COMPONENT WITH debug 
 ------------------------------------------------------------------
 FLASH: 
+executeFsm                               =    172
+checkDestination                         =    172
+announceFsmEvent                         =    164
+callFsmTask                              =    104
+checkEvent                               =     96
+checkTimingEvents                        =     88
+startFsm                                 =     80
+configureFsm                             =     80
+resetFsm                                 =     40
+initFsm                                  =     36
+checkCondition                           =     34
+checkAction                              =     34
+setLogFsm                                =     32
+clearEvents                              =     26
+checkExitAction                          =     20
+checkEntryAction                         =     20
+clearEvent                               =     12
 
 RAM: 
+fsmContext                               =    320
 
 DATA: 
 ------------------------------------------------------------------
-TOTAL FLASH SIZE STATEMACHINE            =      0
-TOTAL RAM SIZE STATEMACHINE              =      0
+TOTAL FLASH SIZE STATEMACHINE            =   1210
+TOTAL RAM SIZE STATEMACHINE              =    320
 TOTAL DATA SIZE STATEMACHINE             =      0
 ------------------------------------------------------------------

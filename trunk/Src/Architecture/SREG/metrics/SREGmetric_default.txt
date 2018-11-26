@@ -1,0 +1,29 @@
+------------------------------------------------------------------
+		 SREG METRIC COMPONENT WITH default 
+------------------------------------------------------------------
+FLASH: 
+initSregAll                              =    232
+sregReadParam                            =    168
+writeSregTableStd                        =     92
+sregWrite                                =     72
+readSregTableStd                         =     26
+writeShellSreg                           =     10
+readShellSreg                            =     10
+writeSreg                                =      8
+readSreg                                 =      8
+getNumOfSregs                            =      4
+
+RAM: 
+SREG32Context                            =      8
+SREG8Context                             =      7
+
+DATA: 
+SREGInstanceMap                          =     36
+SREG32InstanceMap                        =     24
+SREG8InstanceMap                         =     21
+SregMapNVM                               =     12
+------------------------------------------------------------------
+TOTAL FLASH SIZE SREG                    =    630
+TOTAL RAM SIZE SREG                      =     15
+TOTAL DATA SIZE SREG                     =     93
+------------------------------------------------------------------

@@ -26,6 +26,8 @@
 
 void projectExampleCommand1(tParsedCommand*);
 void projectExampleCommand2(tParsedCommand*);
+void projectAtCmd(tParsedCommand*);
+void ATShellCallback(tAtResponseID eventID, uint8_t *buffer, uint16_t length);
 
 #endif //MON_SHELL_PROJECT_SPECIFIC_COMMANDS
 

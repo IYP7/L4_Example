@@ -29,17 +29,14 @@
 ****************************************************************************/
 #include "System_mw.h"
 #include "System_app.h"
-//#include "shell.h"
 
 #include "GPIO.h"
-#include "uart.h"
-#include "Flash.h"
-#include "system.h"
+#include "VirtualEEPROM.h"
 /****************************************************************************
 *  PRIVATE VARIABLES
 ****************************************************************************/
 uint8_t requestPowerState;  /**< keeps power state request to be analized during system app task */
-
+uint8_t x = 0;
 /****************************************************************************
 *  PUBLIC FUCNTIONS
 ****************************************************************************/
@@ -79,6 +76,9 @@ void callSystemApp( void )
     /* HAL TEST */
     // GPIO
     GPIOWritePort(GPIO_LED_1, GPIO_TOGGLE);
+
+    // VirtualEEPROM
+
     /* END HAL TEST */
 
     /* System state machine */
@@ -93,7 +93,7 @@ void callSystemApp( void )
         
 		case SYSTEM_APP_INIT:
 			/* Application init dispather */
-			
+			AtCommandStart();
 			systemState = SYSTEM_APP_ON;
             break;
 		
@@ -120,7 +120,6 @@ void callSystemApp( void )
 
         case SYSTEM_APP_ON:
 			/* Application dispatcher */
-
 			/* Power Sequence control */
             if ( requestPowerState == POWER_STATE_START_SHUTDOWN )
             {
@@ -205,6 +204,22 @@ void requestSystemAppReset( void )
 
 	/* Update system state */
     WRITE_SREG(SREG_SYSTEM_STATE, systemState);
+}
+
+void ATLTECallback(tAtResponseID eventID, uint8_t *buffer, uint16_t length)
+{
+//	uartDriverSetBufferSize((tUart)UART_2, 6);
+//	uartDriverWrite((tUart)UART_2, (uint8_t*)"LTE: ");
+//	uartDriverSetBufferSize((tUart)UART_2, length);
+//	uartDriverWrite((tUart)UART_2, (uint8_t*)buffer);
+}
+
+void ATGPSCallback(tAtResponseID eventID, uint8_t *buffer, uint16_t length)
+{
+//	uartDriverSetBufferSize((tUart)UART_2, 6);
+//	uartDriverWrite((tUart)UART_2, (uint8_t*)"GPS: ");
+//	uartDriverSetBufferSize((tUart)UART_2, length);
+//	uartDriverWrite((tUart)UART_2, (uint8_t*)buffer);
 }
 
 #endif /* _SYSTEM_APP_C_ */

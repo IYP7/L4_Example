@@ -32,8 +32,8 @@
 #define SHELL_MESSAGE_LENGHT_MAX  39
 #define END_OF_LINE_CHARACTER 13        //EOL character to search for
 #define CR_CHARACTER 10                 //Carriage return
-#define SHELL_NUMBER_OF_PARAMETERS 3    //Maximum number of parameters for a Shell command
-#define MON_SHELL_PARAM_BUFFER_SIZE 32  //Maximum size of a param buffer
+#define SHELL_NUMBER_OF_PARAMETERS 4    //Maximum number of parameters for a Shell command
+#define MON_SHELL_PARAM_BUFFER_SIZE 128  //Maximum size of a param buffer
 #define SHELL_COMMAND_VERBOSITY VERBOSE_EVENT
 #define SHELL_MAX_COMMAND_NAME_SIZE 8
 
@@ -98,6 +98,7 @@ typedef enum
 typedef struct sParsedParam{
     eParamType type;
     uint32_t value;     /**< Depending on the Type this is treated as a number or as a pointer*/
+    uint8_t size;
 } tShellParam;
 
 /**

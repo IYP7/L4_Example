@@ -1,65 +1,113 @@
 COMPONENT                     	 FLASH	   RAM	   DATA
 --------------------------------------------------------------------------------
-SCHEDULER                     	   648	    57	    24
-SREG                          	   364	    15	    81
-TOOLS                         	   118	     0	     0
-DMA                           	   320	   144	     0
-FLASH                         	   182	    48	    16
-GPIO                          	   412	     0	   272
-INTERRUPTS                    	   314	     2	    68
-SPI                           	   684	   766	   160
-SYSTEM                        	   638	    37	    84
-UART                          	   614	   507	    44
-PIPEDEVICE                    	    64	     8	     0
-SD                            	   232	   132	    24
-SWTIMER                       	   258	    20	     0
-MAIN                          	    72	     0	     0
-SYSTEM_APP                    	   148	     1	     0
+HREG                          	   954	   139	     0
+SCHEDULER                     	   688	   109	    48
+SHELL                         	  1396	   258	   313
+SREG                          	   388	    15	    81
+STATEMACHINE                  	  1210	   320	     0
+TOOLS                         	   452	     0	     0
+SYSTEM_MW                     	   192	     0	     0
+FLASH                         	   510	    48	    16
+GPIO                          	   516	     0	   272
+INTERRUPTS                    	   608	     2	    68
+SPI                           	  1320	   766	   162
+SYSTEM                        	   812	    37	    84
+UART                          	  1046	  1012	    88
+ATCOMMAND                     	   880	   191	   193
+PIPEDEVICE                    	   488	   316	    24
+SWTIMER                       	   598	    20	     0
+VIRTUALEEPROM                 	   326	   392	   110
+MAIN                          	    16	     0	     0
+SYSTEM_APP                    	   340	     2	     0
 --------------------------------------------------------------------------------
- TOTAL MONTSENY (Bytes)       	  5068	  1737	   773
- TOTAL ST (Bytes)             	 13908	     4	     0
- TOTAL OTHERS (Bytes)         	   808	    25	    76
+ TOTAL MONTSENY (Bytes)       	 12740	  3627	  1459
+ TOTAL ST (Bytes)             	 11268	     4	     0
+ TOTAL OTHERS (Bytes)         	  3542	    41	  1156
 --------------------------------------------------------------------------------
- TOTAL (Bytes)                	 20877	  1766
+ TOTAL (Bytes)                	 30409	  3672
 --------------------------------------------------------------------------------
 
 --------------------------------------------------------------------------------
 		 ST LIBRARY 
 --------------------------------------------------------------------------------
-STM32L4XX_HAL.C               	   102	     4	     0
-STM32L4XX_HAL_CORTEX.C        	   208	     0	     0
-STM32L4XX_HAL_DMA.C           	   528	     0	     0
-STM32L4XX_HAL_GPIO.C          	   462	     0	     0
+STM32L4XX_HAL.C               	   134	     4	     0
+STM32L4XX_HAL_CORTEX.C        	   236	     0	     0
+STM32L4XX_HAL_DMA.C           	    80	     0	     0
+STM32L4XX_HAL_FLASH.C         	   456	     0	     0
+STM32L4XX_HAL_FLASH_EX.C      	    96	     0	     0
+STM32L4XX_HAL_GPIO.C          	   476	     0	     0
+STM32L4XX_HAL_PWR.C           	    68	     0	     0
 STM32L4XX_HAL_PWR_EX.C        	   160	     0	     0
 STM32L4XX_HAL_RCC.C           	  2308	     0	     0
 STM32L4XX_HAL_RCC_EX.C        	  1300	     0	     0
 STM32L4XX_HAL_RTC.C           	   854	     0	     0
-STM32L4XX_HAL_SD.C            	  1728	     0	     0
-STM32L4XX_HAL_SPI.C           	  2098	     0	     0
+STM32L4XX_HAL_SPI.C           	  2436	     0	     0
 STM32L4XX_HAL_UART.C          	  2662	     0	     0
 STM32L4XX_HAL_UART_EX.C       	     2	     0	     0
-STM32L4XX_LL_SDMMC.C          	  1496	     0	     0
 
 --------------------------------------------------------------------------------
 		 ARM LIBRARY METRIC COMPONENT WITH debug 
 --------------------------------------------------------------------------------
 FLASH: 
 __udivmoddi4                             =    732
+_printf_i                                =    576
+_svfprintf_r                             =    488
+_svfiprintf_r                            =    488
+_printf_common                           =    236
+_malloc_r                                =    188
+__ssputs_r                               =    182
+_free_r                                  =    156
+_realloc_r                               =     76
 __libc_init_array                        =     72
+memmove                                  =     52
+_vsprintf_r                              =     48
+_vsiprintf_r                             =     48
+strncmp                                  =     36
+_sbrk_r                                  =     32
+_sbrk                                    =     28
+memcpy                                   =     22
+vsprintf                                 =     20
+vsiprintf                                =     20
+_malloc_usable_size_r                    =     18
+strlen                                   =     16
+__malloc_unlock                          =      2
+__malloc_lock                            =      2
 __aeabi_ldiv0                            =      2
 __aeabi_idiv0                            =      2
 
 RAM: 
 object.9800                              =     24
+heap_end.5239                            =      4
+errno                                    =      4
+__malloc_sbrk_start                      =      4
+__malloc_free_list                       =      4
 completed.9795                           =      1
 
 DATA: 
+apiFuncHregGroup                         =    160
+shellCommandsTable                       =    128
+tableHregSwTimer                         =    100
+impure_data                              =     96
+tableHregSystem                          =     80
+onReadHregFunc                           =     64
+hregTableList                            =     64
+tableHregVirtualEEPROM                   =     60
+tableHregUart                            =     60
+tableHregSpi                             =     60
+tableHregFlash                           =     60
+onWriteHregFunc                          =     56
 MSIRangeTable                            =     48
+pFlash                                   =     32
+tableHregInterrupts                      =     20
+tableHregGPIO                            =     20
 AHBPrescTable                            =     16
+hregGroupsState                          =      8
+hregFunc                                 =      8
 APBPrescTable                            =      8
 SystemCoreClock                          =      4
+_impure_ptr                              =      4
 
 --------------------------------------------------------------------------------
-TOTAL FLASH SIZE OTHER                   =    808
-TOTAL RAM SIZE OTHER                     =     25
-TOTAL DATA SIZE OTHER                    =     76
+TOTAL FLASH SIZE OTHER                   =   3542
+TOTAL RAM SIZE OTHER                     =     41
+TOTAL DATA SIZE OTHER                    =   1156
